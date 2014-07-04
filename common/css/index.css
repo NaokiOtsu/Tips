@@ -1,0 +1,40 @@
+/* line 1, ../scss/index.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, ../scss/index.scss */
+ul {
+  margin: 50px;
+}
+
+/* line 8, ../scss/index.scss */
+ul li {
+  list-style: none;
+}
+
+/* line 11, ../scss/index.scss */
+.animation {
+  -webkit-animation: animation 0.25s linear 1;
+}
+
+@-webkit-keyframes animation {
+  /* line 15, ../scss/index.scss */
+  0% {
+    -webkit-transform: translate(-10px, 0);
+    opacity: 0;
+  }
+
+  /* line 19, ../scss/index.scss */
+  90% {
+    -webkit-transform: translate(4px, 0);
+    opacity: 0.8;
+  }
+
+  /* line 23, ../scss/index.scss */
+  100% {
+    -webkit-transform: translate(0, 0);
+    opacity: 1;
+  }
+}

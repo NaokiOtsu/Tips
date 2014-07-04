@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>TouchEvents | single btn</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 50px;
+}
+#btn {
+	display: inline-block;
+	border: 1px solid #999;
+	background-color: #ddd;
+	padding: 20px 50px;
+}
+</style>
+</head>
+<body>
+
+<div id="btn">btn</div>
+<div id="result"></div>
+
+<script>
+	(function(){
+		var isSP = (window.document.ontouchstart !== undefined),
+			eventType = {
+				touchStart : isSP ? 'touchstart' : 'mousedown',
+				touchMove : isSP ? 'touchmove' : 'mousemove',
+				touchEnd : isSP ? 'touchend' : 'mouseup'
+			},
+			dis = 0,
+			startX = 0,
+			startY = 0,
+			disX = 0,
+			disY = 0;
+
+		// initialize
+		var initialize = function (){
+			var btn = document.getElementById('btn');
+			btn.addEventListener(eventType.touchStart, _touchStart);
+		};
+
+		// touch start
+		var _touchStart = function(e){
+			console.log('touch start');
+			startX = isSP ? e.changedTouches[0].pageX : e.pageX;
+			startY = isSP ? e.changedTouches[0].pageY : e.pageY;
+			disX = 0;
+			disY = 0;
+			e.target.addEventListener(eventType.touchMove, _touchMove);
+			e.target.addEventListener(eventType.touchEnd, _touchEnd);
+		};
+		
+		// touch move
+		var _touchMove = function(e){
+			console.log('touch move');
+			disX = (isSP ? e.changedTouches[0].pageX : e.pageX) - startX;
+			disY = (isSP ? e.changedTouches[0].pageY : e.pageY) - startY;
+		};
+		
+		// touch end
+		var _touchEnd = function(e){
+			console.log('touch end');
+			e.target.removeEventListener(eventType.touchMove, _touchMove);
+			e.target.removeEventListener(eventType.touchEnd, _touchEnd);
+			dis = Math.sqrt(disX * disX + disY * disY);
+			// console.log(disX, disY, dis);
+			if(dis < 3) {
+				touchInitialize();
+			}
+		};
+
+		// touch initialize
+		var touchInitialize = function(){
+			var result = document.getElementById('result');
+			result.innerHTML += 'aaa';
+		}
+		
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>

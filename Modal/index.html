@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tab</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	text-align: center;
+}
+.modal-btn {
+	display: inline-block;
+	margin: 50px;
+	padding: 10px 20px;
+	border: 1px solid #333;
+	background-color: #999;
+}
+#modal-wrapper {
+	display: none;
+}
+#modal-wrapper.active {
+	display: block;
+}
+#modal-filter {
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 500px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#modal-contents {
+	color: #000;
+	width: 300px;
+	padding: 20px 0;
+	background-color: white;
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	margin-left: -150px;
+}
+#modal-close {
+	font-size: 16px;
+	border: 1px solid #333;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #999;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+}
+</style>
+</head>
+<body>
+
+<p class="modal-btn">Modal Start</p>
+
+<div id="modal-wrapper">
+	<div id="modal-filter"></div>
+	<div id="modal-contents">
+		<div id="modal-close">X</div>
+		<div class="modal-box">
+			hogehoge<br>
+			hogehoge<br>
+			hogehoge<br>
+			hogehoge<br>
+			hogehoge<br>
+			hogehoge<br>
+			hogehoge<br>
+		</div>
+	</div>
+</div>
+
+<script src="riddle.js"></script>
+<script>
+	(function(){
+		// initialize
+		function initialize(){
+			r('.modal-btn').bind('click', modalStart);
+			r('#modal-close').bind('click', modalClose);
+			r('#modal-filter').bind('click', modalClose);
+		}
+
+		// modalStart
+		function modalStart(){
+			var pageHeight = getPageSize();
+			r('#modal-filter').css({ height: pageHeight + 'px' });
+			r('#modal-wrapper').toggleClass('active');
+		}
+
+		// modalClose
+		function modalClose(){
+			r('#modal-wrapper').removeClass('active');
+		}
+
+		// getPageSize
+		function getPageSize(){
+			return Math.max(
+				document.body.clientHeight,
+				document.body.scrollHeight,
+				document.documentElement.scrollHeight,
+				document.documentElement.clientHeight
+			);
+		}
+
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>

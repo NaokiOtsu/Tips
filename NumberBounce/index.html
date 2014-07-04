@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<title>NumberBounce</title>
+<link rel="stylesheet" href="https://reset5.googlecode.com/hg/reset.min.css">
+<style>
+	div {
+		margin: 20px;
+		text-align: center;
+	}
+	.pt-text {
+		color: #d42f0e;
+	}
+	.sprite-common{
+		display: inline-block;
+		width: 26px;
+		height: 28px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: url('img/number-s053ea7da85.png') no-repeat;
+		background-size: 26px 280px;
+	}
+	.sprite-0 { background-position: 0 0; }
+	.sprite-1 { background-position: 0 -28px; }
+	.sprite-2 { background-position: 0 -56px; }
+	.sprite-3 { background-position: 0 -84px; }
+	.sprite-4 { background-position: 0 -112px; }
+	.sprite-5 { background-position: 0 -140px; }
+	.sprite-6 { background-position: 0 -168px; }
+	.sprite-7 { background-position: 0 -196px; }
+	.sprite-8 { background-position: 0 -224px; }
+	.sprite-9 { background-position: 0 -252px; }
+	
+	#bounce-animation {
+		-webkit-animation: bounce-animation 0.3s linear 1;
+	}
+	@-webkit-keyframes bounce-animation {
+		0%	{ -webkit-transform: translate(0, 0); }
+		40%	{ -webkit-transform: translate(0, -10px); }
+		60%	{ -webkit-transform: translate(0, 4px); }
+		90%	{ -webkit-transform: translate(0, -2px); }
+		100%{ -webkit-transform: translate(0, 0); }
+	}
+</style>
+</head>
+<body>
+	<div>
+		<span id="numberReplace">9457</span>
+		<span class="pt-text">ptゲット!!</span>
+	</div>
+	
+	<script>
+		(function(){
+			var target = document.getElementById('numberReplace'),
+				targetHtml = target.innerHTML,
+				targetLength = targetHtml.length;
+			
+			// 数値から数字の画像に差し替える
+			function numberReplace(){
+				var resultHtml = '';
+				
+				// 差し替えるHTML要素を準備する
+				for(var i = 0; i < targetLength; i++){
+					var targetNumber = targetHtml.charAt(i)-0;
+					resultHtml += '<span class="sprite-common sprite-'+ targetNumber +'">'+ targetNumber +'</span>';
+				}
+				
+				// HTML要素を書き換える
+				target.innerHTML = resultHtml;
+			}
+			
+			// 要素が弾むアニメーションを加える
+			function numberBounce(){
+				var targetChildren = target.childNodes;
+				
+				// 弾むアニメーションをスタート
+				function animationStart(){
+					var endAnimationTime;
+					
+					// アニメーションを時間差で付与していく
+					for(var i = 0; i < targetLength; i++){
+						setTimeout(animationAdded, 50*i, i);
+					}
+					
+					// アニメーションを付与する
+					function animationAdded(num) {
+						targetChildren[num].id = 'bounce-animation';
+						
+						// アニメーションが終了したらclassを削除
+						targetChildren[num].addEventListener('webkitAnimationEnd', function(){
+							this.id = '';
+						}, false);
+					}
+					
+					// アニメーションの最後の時間を算出
+					endAnimationTime = 50 * targetLength+1000;
+					setTimeout(animationStart, endAnimationTime);
+				}
+				
+				animationStart();
+			} 
+			
+			window.addEventListener('DOMContentLoaded', function(){
+				numberReplace(); // 数値から数字の画像に差し替える
+				numberBounce(); // 数字を弾ませるアニメーション
+			}, false);
+		})();
+	</script>
+</body>
+</html>

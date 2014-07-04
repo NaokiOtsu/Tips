@@ -1,0 +1,2 @@
+/*! Test 2014-06-27 */
+*{margin:0;padding:0}ul{margin:50px}ul li{list-style:none}.animation{-webkit-animation:animation .25s linear 1}@-webkit-keyframes animation{0%{-webkit-transform:translate(-10px,0);opacity:0}90%{-webkit-transform:translate(4px,0);opacity:.8}100%{-webkit-transform:translate(0,0);opacity:1}}

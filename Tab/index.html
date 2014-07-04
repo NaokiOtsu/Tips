@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tab</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 50px;
+}
+ul {
+	overflow: hidden;
+}
+li {
+	width: 100px;
+	float: left;
+	text-align: center;
+	border: 1px solid #999;
+	background-color: #ccc;
+	list-style: none;
+}
+li.active {
+	background-color: #333;
+	color: white;
+}
+.tab-contents {
+	padding: 20px;
+	border: 1px solid #999;
+	display: none;
+}
+.tab-contents.active {
+	display: block;
+}
+</style>
+</head>
+<body>
+
+	<ul id="tab-container">
+		<li class="tab-navi active" data-tab="tab-contents1">tab1</li>
+		<li class="tab-navi" data-tab="tab-contents2">tab2</li>
+		<li class="tab-navi" data-tab="tab-contents3">tab3</li>
+	</ul>
+
+	<div id="tab-contents1" class="tab-contents active">
+		contents1
+	</div>
+
+	<div id="tab-contents2" class="tab-contents">
+		contents2
+	</div>
+
+	<div id="tab-contents3" class="tab-contents">
+		contents3
+	</div>
+
+<script src="riddle.js"></script>
+<script>
+	(function(){
+		// initialize
+		function initialize(){
+			r('[data-tab]').bind('click', function(){
+				tabNaviClickHandler(this);
+			});
+		}
+		
+		// tab-navi click handler
+		function tabNaviClickHandler(element){
+			var target = r(element).attr('data-tab');
+			r('.tab-navi').removeClass('active');
+			r(element).addClass('active');
+			r('.tab-contents').removeClass('active');
+			r('#' + target).addClass('active');
+		}
+
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>

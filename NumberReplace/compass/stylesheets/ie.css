@@ -1,0 +1,48 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+.number-sprite, .number-sprite-0, .number-sprite-1, .number-sprite-2, .number-sprite-3, .number-sprite-4, .number-sprite-5, .number-sprite-6, .number-sprite-7, .number-sprite-8, .number-sprite-9 {
+  background: url('/images/number-s053ea7da85.png') no-repeat;
+}
+
+.number-sprite-0 {
+  background-position: 0 0;
+}
+
+.number-sprite-1 {
+  background-position: 0 -56px;
+}
+
+.number-sprite-2 {
+  background-position: 0 -112px;
+}
+
+.number-sprite-3 {
+  background-position: 0 -168px;
+}
+
+.number-sprite-4 {
+  background-position: 0 -224px;
+}
+
+.number-sprite-5 {
+  background-position: 0 -280px;
+}
+
+.number-sprite-6 {
+  background-position: 0 -336px;
+}
+
+.number-sprite-7 {
+  background-position: 0 -392px;
+}
+
+.number-sprite-8 {
+  background-position: 0 -448px;
+}
+
+.number-sprite-9 {
+  background-position: 0 -504px;
+}
