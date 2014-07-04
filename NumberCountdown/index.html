@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<title>NumberCountdown</title>
+<link rel="stylesheet" href="https://reset5.googlecode.com/hg/reset.min.css">
+<style>
+	div {
+		margin: 20px;
+		text-align: center;
+		line-height: 2.0;
+	}
+	.sprite-common{
+		display: inline-block;
+		width: 26px;
+		height: 28px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: url('img/number-s053ea7da85.png') no-repeat;
+		background-size: 26px 280px;
+	}
+	.sprite-0 { background-position: 0 0; }
+	.sprite-1 { background-position: 0 -28px; }
+	.sprite-2 { background-position: 0 -56px; }
+	.sprite-3 { background-position: 0 -84px; }
+	.sprite-4 { background-position: 0 -112px; }
+	.sprite-5 { background-position: 0 -140px; }
+	.sprite-6 { background-position: 0 -168px; }
+	.sprite-7 { background-position: 0 -196px; }
+	.sprite-8 { background-position: 0 -224px; }
+	.sprite-9 { background-position: 0 -252px; }
+</style>
+</head>
+<body>
+	<div id="numberCountdown"></div>
+	
+	<script>
+		(function(){
+			window.onload=showday;
+			
+			var target = document.getElementById('numberCountdown'), // id="target"を取得
+				year=2015, //年
+				mon=1, //月
+				day=1, //日
+				time=0, //時
+				xday = new Date(year,mon-1,day,time,00,00);//基準になる年月日
+
+			function showday() {
+				nowday = new Date();
+				passtime= xday.getTime()-nowday.getTime();　//今から基準になる日までの経過時間　1/1000秒単位
+
+				cnt_day = Math.floor(passtime/(1000*60*60*24));// カウントダウン表示 (日にち) の取得
+				passtime = passtime -(cnt_day*(1000*60*60*24)); // 経過秒から(日にち)を引く
+
+				cnt_hour = Math.floor(passtime/(1000*60*60));// カウントダウン表示 (時) の取得
+				passtime = passtime -(cnt_hour*(1000*60*60)); // 経過秒から(時)を引く
+
+				cnt_min = Math.floor(passtime/(1000*60)); // カウントダウン表示 (分) 取得
+				passtime = passtime -(cnt_min*(1000*60));// 経過秒から(分)を引く
+
+				cnt_sec = Math.floor(passtime/1000);// カウントダウン表示 (秒) 取得
+				passtime = passtime -(cnt_sec*(1000)); // 経過秒から(秒)を引く
+
+				cnt_millisec = Math.floor(passtime/10); // カウントダウン表示 (100/1秒) 取得
+
+				// 分、秒、ミリ秒を２桁で表示する。
+				if(cnt_min<10){cnt_min = '0' + cnt_min;}
+				if(cnt_sec<10){cnt_sec = '0' + cnt_sec;}
+				if(cnt_millisec<10){cnt_millisec = '0' + cnt_millisec;}
+
+				if((xday - nowday) > 0){
+					target.innerHTML = "指定日時まで "+numberReplace(cnt_day)+"日と "+numberReplace(cnt_hour)+"時間"+numberReplace(cnt_min)+"分"+numberReplace(cnt_sec)+"秒"+numberReplace(cnt_millisec)+" です！";
+				} else {
+					target.innerHTML = "指定日時は終了しました";
+				}
+				timerID = setTimeout(showday, 10);
+			}
+			
+			// 数値から数字の画像に差し替える
+			function numberReplace(str){
+				var resultHtml = '', // 返すHTML要素
+					targetHtml = str+""; // 数値から文字列に変換する( +"" する)
+				
+				// 差し替えるHTML要素を準備する
+				for(var i = 0; i < targetHtml.length; i++){
+					var targetNumber = targetHtml.charAt(i)-0; // i番目の文字を取得し、文字列から数値に変換( -0 する)
+					if(!isNaN(targetNumber)) resultHtml += '<span class="sprite-common sprite-'+ targetNumber +'">'+ targetNumber +'</span>'; // 数値以外の文字が入った場合にNaNとなるので、isNaN(値)でNaNかどうか判別、NaNじゃなかったら<span>タグを生成
+				}
+				
+				return resultHtml; // HTML要素を返す
+			}
+		})();
+	</script>
+</body>
+</html>

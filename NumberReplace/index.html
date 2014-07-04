@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<title>NumberReplace</title>
+<link rel="stylesheet" href="https://reset5.googlecode.com/hg/reset.min.css">
+<style>
+	div {
+		margin: 20px;
+		text-align: center;
+	}
+	.sprite-common{
+		display: inline-block;
+		width: 26px;
+		height: 28px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: url('img/number-s053ea7da85.png') no-repeat;
+		background-size: 26px 280px;
+	}
+	.sprite-0 { background-position: 0 0; }
+	.sprite-1 { background-position: 0 -28px; }
+	.sprite-2 { background-position: 0 -56px; }
+	.sprite-3 { background-position: 0 -84px; }
+	.sprite-4 { background-position: 0 -112px; }
+	.sprite-5 { background-position: 0 -140px; }
+	.sprite-6 { background-position: 0 -168px; }
+	.sprite-7 { background-position: 0 -196px; }
+	.sprite-8 { background-position: 0 -224px; }
+	.sprite-9 { background-position: 0 -252px; }
+</style>
+</head>
+<body>
+	<div id="numberReplace">0123456789</div>
+	
+	<script>
+		(function(){
+			var target; // id="target"要素
+			
+			// 数値から数字の画像に差し替える
+			function numberReplace(){
+				var targetHtml = target.innerHTML, // target内部のテキストを取得
+					resultHtml = ''; // 書き換えたいHTML要素
+				
+				// 差し替えるHTML要素を準備する
+				for(var i = 0; i < targetHtml.length; i++){
+					var targetNumber = targetHtml.charAt(i)-0; // i番目の文字を取得し、文字列から数値に変換( -0 する)
+					if(!isNaN(targetNumber)) resultHtml += '<span class="sprite-common sprite-'+ targetNumber +'">'+ targetNumber +'</span>'; // 数値以外の文字が入った場合にNaNとなるので、isNaN(値)でNaNかどうか判別、NaNじゃなかったら<span>タグを生成
+				}
+				
+				// HTML要素を書き換える
+				target.innerHTML = resultHtml;
+			}
+			
+			// DOMのロードが完了したら
+			window.addEventListener('DOMContentLoaded', function(){
+				target = document.getElementById('numberReplace'); // id="target"を取得
+				numberReplace(); // 数値から数字の画像に差し替える
+			}, false);
+		})();
+	</script>
+</body>
+</html>

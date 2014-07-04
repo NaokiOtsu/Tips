@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<title>NumberBounce</title>
+<link rel="stylesheet" href="https://reset5.googlecode.com/hg/reset.min.css">
+<style>
+	body {
+		margin: 20px;
+		text-align: center;
+	}
+	.number {
+		display: inline;
+	}
+	.text {
+		color: #d42f0e;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	.sprite-common{
+		display: inline-block;
+		width: 26px;
+		height: 28px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: url('img/number-s053ea7da85.png') no-repeat;
+		background-size: 26px 280px;
+	}
+	.sprite-0 { background-position: 0 0; }
+	.sprite-1 { background-position: 0 -28px; }
+	.sprite-2 { background-position: 0 -56px; }
+	.sprite-3 { background-position: 0 -84px; }
+	.sprite-4 { background-position: 0 -112px; }
+	.sprite-5 { background-position: 0 -140px; }
+	.sprite-6 { background-position: 0 -168px; }
+	.sprite-7 { background-position: 0 -196px; }
+	.sprite-8 { background-position: 0 -224px; }
+	.sprite-9 { background-position: 0 -252px; }
+	
+	.bounce-animation {
+		-webkit-animation-name: bounce-animation;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+	}
+	@-webkit-keyframes bounce-animation {
+		0%	{ -webkit-transform: translate(0, 0); }
+		10%	{ -webkit-transform: translate(0, -10px); }
+		20%	{ -webkit-transform: translate(0, 4px); }
+		30%	{ -webkit-transform: translate(0, -2px); }
+		40%{ -webkit-transform: translate(0, 0); }
+		100%{ -webkit-transform: translate(0, 0); }
+	}
+</style>
+</head>
+<body>
+	<div id="target" class="number">77777</div>
+	<span class="text">獲得勝利ptをゲット!!</span>
+	
+	<script>
+		(function(){
+			var target, // id="target"要素
+				targetHtml, // target内部のテキスト
+				targetLength; // targetのテキストの文字数
+			
+			// 初期設定
+			function initialize(){
+				target = document.getElementById('target'); // id="target"を取得
+				targetHtml = target.innerHTML; // target内部のテキストを取得
+				targetLength = targetHtml.length; // targetのテキストの文字数を取得
+				
+				numberReplace(); // 数値から数字の画像に差し替える
+				numberBounce(); // 数字を弾ませるアニメーション
+			}
+			
+			// 数値から数字の画像に差し替える
+			function numberReplace(){
+				var resultHtml = ''; // 書き換えたいHTML要素
+				
+				// 差し替えるHTML要素を準備する
+				for(var i = 0; i < targetLength; i++){
+					var targetNumber = targetHtml.charAt(i)-0; // i番目の文字を取得し、文字列から数値に変換( -0 する)
+					if(!isNaN(targetNumber)) resultHtml += '<span class="sprite-common sprite-'+ targetNumber +'">'+ targetNumber +'</span>'; // 数値以外の文字が入った場合にNaNとなるので、isNaN(値)でNaNかどうか判別、NaNじゃなかったら<span>タグを生成
+				}
+				
+				// HTML要素を書き換える
+				target.innerHTML = resultHtml;
+			}
+			
+			// 要素が弾むアニメーションを加える
+			function numberBounce(){
+				var count = 0;
+				var targetChildren = target.childNodes; // targetの子要素(spanタグたち)を取得。配列となる。
+				
+				// アニメーションを付与する
+				function animationAdd(num) {
+					var targetChildrenClassName = targetChildren[num].className; // spanタグのclass名を取得
+					targetChildren[num].className = targetChildrenClassName + ' bounce-animation'; // class名にbounce-animationクラスを付与して、アニメーションを開始
+					
+					count++;
+					if(count < targetLength) setTimeout(animationAdd, 50, count); // 0.5秒ごとにclassを付与していく
+				}
+				
+				setTimeout(animationAdd, 50, count); // 0.5秒ごとにclassを付与していく
+			} 
+			
+			// DOMのロードが完了したら
+			window.addEventListener('load', function(){
+				initialize(); // 初期設定
+			}, false);
+		})();
+	</script>
+</body>
+</html>

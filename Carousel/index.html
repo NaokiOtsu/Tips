@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>Carousel</title>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#carousel-wrapper {
+		margin: 50px;
+		width: 200px;
+		height: 150px;
+		border: 1px solid #f00;
+		overflow: hidden;
+	}
+	ul {
+		width: 100%;
+		display: -webkit-box;
+	}
+	ul li {
+		list-style: none;
+		color: white;
+		width: 200px;
+		height: 150px;
+	}
+	#carousel {
+		-webkit-transition: all 0.5s ease-in-out 0s;
+	}
+	#prev,
+	#next {
+		display: inline-block;
+		border: 1px solid #999;
+		padding: 5px 10px;
+		margin: 0 0 0 50px;
+	}
+	#next {
+		margin-left: 10px;
+	}
+</style>
+</head>
+<body>
+
+<div id="carousel-wrapper">
+	<ul id="carousel">
+		<li>contents1</li>
+		<li>contents2</li>
+		<li>contents3</li>
+		<li>contents4</li>
+		<li>contents5</li>
+	</ul>
+</div>
+
+<div id="prev">prev</div>
+<div id="next">next</div>
+
+<script src="riddle.js"></script>
+<script>
+	(function(){
+		
+		var i = 0,
+			counter = 0,
+			prev = r('#prev'),
+			next = r('#next'),
+			ul = r('#carousel'),
+			li = r('#carousel li'),
+			liLength = li.length;
+			console.log(liLength);
+		
+		// initialize
+		var initialize = function () {
+			
+			li.each(function(e){
+				var color = 111111 * (++i);
+				console.log(color);
+				r(e).css({ 'background-color': '#' + color });
+			});
+			
+			prev.bind('click', function(){
+				prevClick();
+			}, false);
+			
+			next.bind('click', function(){
+				nextClick();
+			}, false);
+		}
+		
+		// prev click
+		var prevClick = function () {
+			var prevPos;
+			
+			counter--;
+			if(counter < 0){
+				counter = liLength - 1;
+			}
+			prevPos = counter * -200;
+			ul.css({ '-webkit-transform': 'translate( '+ prevPos +'px, 0)' });
+		}
+		
+		// next click
+		var nextClick = function () {
+			var nextPos;
+			
+			counter++;
+			if(counter === liLength){
+				counter = 0;
+			}
+			nextPos = counter * -200;
+			ul.css({ '-webkit-transform': 'translate( '+ nextPos +'px, 0)' });
+		}
+		
+		r(document).bind('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>

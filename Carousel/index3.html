@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<title>Carousel</title>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#carousel-wrapper {
+		margin: 50px;
+		width: 200px;
+		height: 150px;
+		border: 1px solid #f00;
+		overflow: hidden;
+	}
+	ul {
+		width: 100%;
+		display: -webkit-box;
+	}
+	ul li {
+		list-style: none;
+		color: white;
+		width: 200px;
+		height: 150px;
+	}
+	#carousel {
+		cursor: move;
+	}
+	.animation {
+		-webkit-transition: all 0.5s ease-in-out 0s;
+	}
+	#prev,
+	#next {
+		display: inline-block;
+		border: 1px solid #999;
+		padding: 5px 10px;
+		margin: 0 0 0 50px;
+	}
+	#next {
+		margin-left: 10px;
+	}
+</style>
+</head>
+<body>
+
+<div id="carousel-wrapper">
+	<ul id="carousel">
+		<li>contents1</li>
+		<li>contents2</li>
+		<li>contents3</li>
+		<li>contents4</li>
+		<li>contents5</li>
+	</ul>
+</div>
+
+<div id="prev">prev</div>
+<div id="next">next</div>
+
+<script src="riddle.js"></script>
+<script>
+	(function(){
+		
+		var i = 0,
+			counter = 0,
+			prev = r('#prev'),
+			next = r('#next'),
+			next = r('#next'),
+			wrapper = r('#carousel-wrapper'),
+			ul = r('#carousel'),
+			li = r('#carousel li'),
+			liLength = li.length,
+			startX = 0,
+			startY = 0,
+			endX = 0,
+			endY = 0,
+			isMove = false,
+			isDown = false,
+			nowTranslateX = 0,
+			isSP,
+			typeStart,
+			typeMove,
+			typeEnd;
+		
+		isSP = 'ontouchstart' in window;
+		
+		typeStart = isSP ? 'touchstart' : 'mousedown';
+		typeMove = isSP ? 'touchmove' : 'mousemove';
+		typeEnd = isSP ? 'touchend' : 'mouseup';
+		
+		// initialize
+		var initialize = function () {
+			
+			li.each(function(e){
+				var color = 111111 * (++i);
+				r(e).css({ 'background-color': '#' + color });
+			});
+			
+			prev.bind('click', function(){
+				prevClick();
+			}, false);
+			
+			next.bind('click', function(){
+				nextClick();
+			}, false);
+			
+			wrapper.bind(typeStart, function(e){
+				console.log('start');
+				var eventType = isSP ? e.touches[0] : e;
+				startX = eventType.pageX;
+				startY = eventType.pageY;
+				nowTranslateX = new WebKitCSSMatrix(ul.css('-webkit-transform')).m41;
+				isMove = false;
+				isDown = true;
+			}, false);
+			
+			wrapper.bind(typeMove, function(e){
+				if(!isDown){
+					return;
+				}
+				console.log('move');
+				
+				var eventType = isSP ? e.touches[0] : e;
+				isMove = true;
+				endX = eventType.pageX;
+				// console.log(nowTranslateX + startX - endX);
+				// console.log(new WebKitCSSMatrix(ul.css('-webkit-transform')).m41); // translateX value
+				ul.css({ '-webkit-transform': 'translate( '+ (nowTranslateX + -(startX - endX)) +'px, 0)' });
+				console.log(nowTranslateX + -(startX - endX));
+			}, false);
+			
+			wrapper.bind(typeEnd, function(e){
+				if(!isMove){
+					return;
+				}
+				console.log('end');
+				
+				var eventType = isSP ? e.changedTouches[0] : e;
+				endX = eventType.pageX;
+				endY = eventType.pageY;
+				
+				if(endX - startX <= 0){
+					nextClick();
+				} else {
+					prevClick();
+				}
+				
+				isDown = false;
+			}, false);
+			
+			wrapper.bind('mouseleave', function(e){
+				if(!isDown){
+					return;
+				}
+				
+				var eventType = isSP ? e.touches[0] : e;
+				endX = eventType.pageX;
+				endY = eventType.pageY;
+				
+				if(endX - startX <= 0){
+					nextClick();
+				} else {
+					prevClick();
+				}
+				
+				isMove = false;
+				isDown = false;
+			}, false);
+		}
+		
+		// prev click
+		var prevClick = function () {
+			var prevPos;
+			
+			counter--;
+			if(counter < 0){
+				counter = liLength - 1;
+			}
+			prevPos = counter * -200;
+			ul.addClass('animation');
+			ul.css({ '-webkit-transform': 'translate( '+ prevPos +'px, 0)' });
+			ul.bind('webkitTransitionEnd', function(){
+				ul.removeClass('animation');
+			});
+		}
+		
+		// next click
+		var nextClick = function () {
+			var nextPos;
+			
+			counter++;
+			if(counter === liLength){
+				counter = 0;
+			}
+			nextPos = counter * -200;
+			ul.addClass('animation');
+			ul.css({ '-webkit-transform': 'translate( '+ nextPos +'px, 0)' });
+			ul.bind('webkitTransitionEnd', function(){
+				ul.removeClass('animation');
+			});
+		}
+		
+		r(document).bind('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>

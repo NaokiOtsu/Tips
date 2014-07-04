@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Accordion</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 50px;
+}
+.accordion-btn {
+	display: inline-block;
+	padding: 5px 15px;
+	background-color: #999999;
+	border: 1px solid #333333;
+}
+.accordion-contents {
+	overflow: hidden;
+	-webkit-transition: all 0.25s ease-in-out 0s;
+}
+.accordion-contents.accordion-hide {
+	height: 0 !important;
+}
+</style>
+</head>
+<body>
+
+<div class="accordion-btn">open contents</div>
+<div class="accordion-contents">
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+</div>
+<div class="accordion-btn">open contents</div>
+<div class="accordion-contents">
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+</div>
+<div class="accordion-btn">open contents</div>
+<div class="accordion-contents">
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+	hogehoge<br>
+</div>
+<div>next contents</div>
+
+<script src="../common/js/riddle.js"></script>
+<script src="../common/js/riddle.ex.js"></script>
+<script src="../common/js/sakura.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script>
+	(function(){
+		var btn = r('.accordion-btn'),
+			contents = r('.accordion-contents'),
+			heightArray = [];
+		
+		// initialize
+		function initialize(){
+			for( var i=0, l=btn.length; i<l; i++){
+				heightArray.push(contents.eq(i).css('height'));
+			}
+			btn.bind('click', function(){
+				open(this.__nid);
+			});
+			contents.addClass('accordion-hide');
+		}
+
+		// open contents
+		var open = function(num){
+			contents.eq(num-1).toggleClass('accordion-hide');
+			contents.eq(num-1).css({ height: heightArray[num-1] });
+		};
+		
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>
