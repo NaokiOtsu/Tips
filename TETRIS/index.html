@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>TETRIS</title>
+</head>
+<body>
+	
+	<div id="stage"></div>
+	
+<script>
+	(function(){
+		var stage = document.getElementById('stage'),
+			timerId,
+			map = [
+				[0,0,0,1,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0]
+			];
+		
+		// initialize
+		var initialize = function () {
+			console.log('init');
+			stageUpdate();
+			timer();
+		};
+		
+		// stage update
+		var stageUpdate = function () {
+			stage.innerHTML = '';
+			for(var i = 0; i < map.length; i++){
+				for(var s = 0; s < map[i].length; s++){
+					if(map[i][s] == 0){
+						stage.innerHTML += '□';
+					} else if (map[i][s] == 1) {
+						stage.innerHTML += '■';
+					}
+					if(s == 9){
+						stage.innerHTML += '<br>';
+					}
+				}
+			}
+		};
+		
+		// down setting
+		var downSetting = function (cols, rows) {
+			
+		};
+		
+		// timer
+		var timer = function () {
+			console.log('timer');
+			
+			stageUpdate();
+			timerId = setTimeout(timer, 1000);
+		};
+		
+		// DOM Content Loaded
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>
