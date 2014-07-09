@@ -7,39 +7,92 @@
 <body>
 	
 	<div id="stage"></div>
-	
+	<div id="down">down</div>
+
 <script>
 	(function(){
 		var stage = document.getElementById('stage'),
-			timerId,
-			map = [
-				[0,0,0,1,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,0,0,0,0]
+			cols = 10,
+			rows = 20,
+			map = [],
+			nextMap = [],
+			block = [
+				[1,1],
+				[1,1]
 			];
 		
 		// initialize
 		var initialize = function () {
 			console.log('init');
-			stageUpdate();
-			timer();
+
+			mapDataCreate(); // マップデータを生成
+			blockAdded(); // ブロックを追加する
+			stageUpdate(); // ステージをアップデート
+
+			document.getElementById('down').addEventListener('click', function(){
+				dataBlockDown(); // 一つ下にブロックを下げる
+				stageUpdate();
+			});
+		};
+
+		// check map data
+		var checkMapData = function () {
+			for(var i = 0; i < map.length; i++){
+				for(var s = 0; s < map[i].length; s++){
+					if(map[i][s] && i > map.length - block.length){
+						return false;
+					}
+				}
+			}
+			return true;
+		};
+
+		// reset next map data
+		var resetNextMapData = function(){
+			for(var i = 0; i < map.length; i++){
+				for(var s = 0; s < map[i].length; s++){
+					nextMap[i][s] = 0;
+				}
+			}
+		};
+
+		// map data create
+		var mapDataCreate = function () {
+			for(var i = 0; i < rows; i++){
+				map[i] = [];
+				nextMap[i] = [];
+				for(var s = 0; s < cols; s++){
+					map[i][s] = 0;
+					nextMap[i][s] = 0;
+				}
+			}
+		};
+
+		// data block down
+		var dataBlockDown = function () {
+			if(!checkMapData()) return;
+			resetNextMapData(); // nextMapをリセット
+			for(var i = 0; i < map.length; i++){
+				for(var s = 0; s < map[i].length; s++){
+					// もし1が入っていたら
+					if(map[i][s] && checkMapData()){
+						nextMap[i+1][s] = 1;
+					}
+				}
+			}
+		};
+		
+		// blockAdded
+		var blockAdded = function () {
+			// どこの位置からブロックを開始するか(x軸)
+			var num = Math.floor(Math.random() * (map[0].length - block[0].length+1));
+			// console.log(num);
+			for(var i = 0; i < block.length; i++){
+				for(var s = 0; s < block[i].length; s++){
+					map[i][s+num] = block[i][s];
+					nextMap[i][s+num] = block[i][s];
+				}
+			}
 		};
 		
 		// stage update
@@ -47,10 +100,11 @@
 			stage.innerHTML = '';
 			for(var i = 0; i < map.length; i++){
 				for(var s = 0; s < map[i].length; s++){
-					if(map[i][s] == 0){
-						stage.innerHTML += '□';
-					} else if (map[i][s] == 1) {
+					map[i][s] = nextMap[i][s];
+					if(map[i][s]){
 						stage.innerHTML += '■';
+					} else {
+						stage.innerHTML += '□';
 					}
 					if(s == 9){
 						stage.innerHTML += '<br>';
@@ -59,23 +113,12 @@
 			}
 		};
 		
-		// down setting
-		var downSetting = function (cols, rows) {
-			
-		};
-		
-		// timer
-		var timer = function () {
-			console.log('timer');
-			
-			stageUpdate();
-			timerId = setTimeout(timer, 1000);
-		};
-		
 		// DOM Content Loaded
 		document.addEventListener('DOMContentLoaded', function(){
 			initialize();
 		}, false);
+		
+		// initialize();
 	})();
 </script>
 </body>
