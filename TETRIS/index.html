@@ -70,7 +70,10 @@
 
 		// data block down
 		var dataBlockDown = function () {
-			if(!checkMapData()) return;
+			if(!checkMapData()){
+				blockAdded();
+				return;
+			}
 			resetNextMapData(); // nextMapをリセット
 			for(var i = 0; i < map.length; i++){
 				for(var s = 0; s < map[i].length; s++){
