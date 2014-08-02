@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>TouchEvents | single btn</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 50px;
+}
+#btn {
+	display: inline-block;
+	border: 1px solid #999;
+	background-color: #ddd;
+	padding: 20px 50px;
+}
+#btn2 {
+	display: inline-block;
+	border: 1px solid #999;
+	background-color: #ddd;
+	padding: 20px 50px;
+	margin: 20px 0 0;
+}
+</style>
+</head>
+<body>
+
+<div id="btn">btn</div>
+<div id="btn2">btn2</div>
+<div id="result"></div>
+
+<script>
+	(function(){
+		var isSP = (window.document.ontouchstart !== undefined),
+			eventType = {
+				touchStart : isSP ? 'touchstart' : 'mousedown',
+				touchMove : isSP ? 'touchmove' : 'mousemove',
+				touchEnd : isSP ? 'touchend' : 'mouseup'
+			},
+			dis = 0,
+			startX = 0,
+			startY = 0,
+			disX = 0,
+			disY = 0;
+
+		// initialize
+		var initialize = function (){
+			var btn = document.getElementById('btn');
+			var btn2 = document.getElementById('btn2');
+			
+			btn.addEventListener(eventType.touchStart, _touchStart, false);
+			btn.addEventListener(eventType.touchMove, _touchMove, false);
+			btn.addEventListener(eventType.touchEnd, function(){
+				_touchEnd(func1);
+			}, false);
+			
+			btn2.addEventListener(eventType.touchStart, _touchStart, false);
+			btn2.addEventListener(eventType.touchMove, _touchMove, false);
+			btn2.addEventListener(eventType.touchEnd, function(){
+				_touchEnd(func2);
+			}, false);
+			
+		};
+
+		// touch start
+		var _touchStart = function(e){
+			console.log('touch start');
+			startX = isSP ? e.changedTouches[0].pageX : e.pageX;
+			startY = isSP ? e.changedTouches[0].pageY : e.pageY;
+			disX = 0;
+			disY = 0;
+		};
+		
+		// touch move
+		var _touchMove = function(e){
+			console.log('touch move');
+			disX = (isSP ? e.changedTouches[0].pageX : e.pageX) - startX;
+			disY = (isSP ? e.changedTouches[0].pageY : e.pageY) - startY;
+		};
+		
+		// touch end
+		var _touchEnd = function(callback){
+			console.log('touch end');
+			dis = Math.sqrt(disX * disX + disY * disY);
+			console.log(dis);
+			
+			if(dis < 3) {
+				callback();
+			}
+		};
+
+		var func1 = function(){
+			var result = document.getElementById('result');
+			result.innerHTML += 'func1<br>';
+		}
+		
+		var func2 = function(){
+			var result = document.getElementById('result');
+			result.innerHTML += 'func2<br>';
+		}
+		
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>
