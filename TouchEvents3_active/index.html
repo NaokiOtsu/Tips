@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>TouchEvents3 | active</title>
+<style>
+#btn {
+	text-align: center;
+	width: 200px;
+	margin: 20px auto;
+	display: block;
+	background-color: #999;
+	border: 1px solid #333;
+}
+#btn.active {
+	background-color: red;
+}
+</style>
+</head>
+<body>
+
+<div id="btn">btn</div>
+
+<script>
+	(function(){
+		var isSP = (window.document.ontouchstart !== undefined),
+			eventType = {
+				touchStart : isSP ? 'touchstart' : 'mousedown',
+				touchMove : isSP ? 'touchmove' : 'mousemove',
+				touchEnd : isSP ? 'touchend' : 'mouseup'
+			},
+			dis = 0,
+			startX = 0,
+			startY = 0,
+			disX = 0,
+			disY = 0;
+
+		// initialize
+		var initialize = function (){
+			var btn = document.getElementById('btn');
+			
+			btn.addEventListener(eventType.touchStart, _touchStart, false);
+			btn.addEventListener(eventType.touchMove, _touchMove, false);
+			btn.addEventListener(eventType.touchEnd, function(){
+				_touchEnd(func1, this);
+			}, false);
+			btn.addEventListener('mouseout', _mouseOut, false);
+			
+		};
+
+		// touch start
+		var _touchStart = function(e){
+			// console.log('touch start');
+			startX = isSP ? e.changedTouches[0].pageX : e.pageX;
+			startY = isSP ? e.changedTouches[0].pageY : e.pageY;
+			disX = 0;
+			disY = 0;
+			
+			e.target.className = "active";
+		};
+		
+		// touch move
+		var _touchMove = function(e){
+			// console.log('touch move');
+			disX = (isSP ? e.changedTouches[0].pageX : e.pageX) - startX;
+			disY = (isSP ? e.changedTouches[0].pageY : e.pageY) - startY;
+		};
+		
+		// touch end
+		var _touchEnd = function(callback, element){
+			console.log('touch end');
+			dis = Math.sqrt(disX * disX + disY * disY);
+			console.log(dis);
+			
+			if(dis < 3) {
+				callback(element);
+			}
+			
+			element.className = "";
+		};
+		
+		// mouse out
+		var _mouseOut = function (e) {
+			e.target.className = "";
+		};
+		
+		// 何かの処理
+		var func1 = function(){
+			console.log('何かの処理');
+		};
+		
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>
