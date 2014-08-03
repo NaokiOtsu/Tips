@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>TouchEvents3 | active</title>
+<style>
+#result {
+	text-align: center;
+	margin: 30px;
+	border: 2px solid #333;
+	-webkit-border-radius: 10px;
+	padding: 5px 0;
+}
+</style>
+</head>
+<body>
+
+<div id="result"></div>
+
+<script>
+	(function(){
+		var ua = navigator.userAgent;
+		console.log(ua);
+		var isMobile = /android|ip(hone|od|ad)/i.test(ua);
+		var isIos = /ip(hone|od|ad)/i.test(ua);
+		var isAndroid = /android/i.test(ua);
+		
+		if(isIos){
+			document.getElementById('result').innerHTML = 'iOSだよ';
+		} else if(isAndroid) {
+			document.getElementById('result').innerHTML = 'Androidだよ';
+		} else if(!isMobile) {
+			document.getElementById('result').innerHTML = 'PCだよ';
+		}
+		
+	})();
+</script>
+</body>
+</html>
