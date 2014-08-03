@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>newIconAnimation</title>
+<style>
+body {
+	margin: 20px 0;
+	text-align: center;
+}
+.icon_new {
+	-webkit-animation: iconNewAnimation 3s linear infinite;
+	-webkit-transform-origin: 2px 2px;
+}
+@-webkit-keyframes iconNewAnimation {
+	0% { -webkit-transform: scale(0.7, 0.9); }
+	3% { -webkit-transform: scale(1.2, 1.1); }
+	6% { -webkit-transform: scale(0.8, 0.95); }
+	9% { -webkit-transform: scale(1, 1); }
+	100% { -webkit-transform: scale(1, 1); }
+}
+</style>
+</head>
+<body>
+
+<div><img class="icon_new" src="img/icon_new.png" width="40" alt=""></div>
+
+</body>
+</html>
