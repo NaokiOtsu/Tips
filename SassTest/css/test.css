@@ -1,0 +1,45 @@
+/* line 1, /Users/naoki.otsu/Desktop/Tips/SassTest/partials/_button.scss */
+.test2, .test ~ div {
+  margin: 100px;
+}
+
+/* line 5, ../sass/test.scss */
+.test {
+  margin: 0;
+}
+/* line 7, ../sass/test.scss */
+.test .test2, .test .test ~ div {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #555555;
+}
+/* line 14, ../sass/test.scss */
+.test > li {
+  top: 1px;
+}
+/* line 17, ../sass/test.scss */
+.test + p {
+  top: 2px;
+}
+/* line 20, ../sass/test.scss */
+.test:before {
+  height: 30px;
+}
+/* line 23, ../sass/test.scss */
+.test ~ div {
+  position: absolute;
+  -webkit-border-radius: 20px;
+}
+
+/* line 30, ../sass/test.scss */
+.warn {
+  margin: 500px;
+}
+
+/* line 36, ../sass/test.scss */
+.warn {
+  color: yellow;
+  width: 25px;
+}

@@ -1,0 +1,41 @@
+@import "partials/button";
+
+$color: #555;
+
+.test {
+	margin: 0;
+	.test2 {
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: $color;
+	}
+	> li {
+		top: 1px;
+	}
+	+ p {
+		top: 2px;
+	}
+	&:before {
+		height: 30px;
+	}
+	~ div {
+		position: absolute;
+		@include border-radius(20px);
+		@extend .test2;
+	}
+}
+
+%consoleTemplate {
+	margin: 500px;
+}
+
+$width: 100px;
+
+.warn {
+	@extend %consoleTemplate;
+	color: yellow;
+	width: (100 / 4) + px;
+}
+
