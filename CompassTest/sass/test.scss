@@ -1,0 +1,9 @@
+@import "compass";
+
+.test {
+	padding: 0;
+	background: image-url('dendenicon.png');
+	width: image-width('dendenicon.png');
+	width: image-height('dendenicon.png');
+}
+

@@ -1,0 +1,8 @@
+.test2 {
+	margin: 100px;
+}
+
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+}
+

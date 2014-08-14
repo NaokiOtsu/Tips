@@ -1,0 +1,23 @@
+@import "core/_core";
+
+$sprite-ja: sprite-map("ja/*.png",  $spacing: 5px, $layout: smart);
+$sprite-ja-img: sprite-url($sprite-ja);
+%sprite-ja-img {
+  @include sprite-base-bg($sprite-ja, $sprite-ja-img);
+}
+
+.image-01 {
+  @extend %sprite-ja-img;
+  @include sprite-bg($sprite-ja, "image01");
+}
+
+.image-02 {
+  @extend %sprite-ja-img;
+  @include sprite-bg($sprite-ja, "image02");
+}
+
+.image-03 {
+  @extend %sprite-ja-img;
+  @include sprite-bg($sprite-ja, "image03");
+}
+

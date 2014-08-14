@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>Closer</title>
+</head>
+<body>
+
+<script>
+	(function(){
+		function fn(n) {
+			var count = n;
+			return function() {
+				return ++count;
+			}
+		}
+
+		var f = fn(0);
+		console.log(f());
+		console.log(f());
+		console.log(f());
+		
+	})();
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+// ======================================
+// [index]
+// @mixin sprite-base-bg...sprite image retin support
+// @mixin sprite-bg........
+// ======================================
+
+//sprite image retin support
+@mixin sprite-base-bg($sprites, $sprite-img, $pixelRatio: 2) {
+    background: $sprite-img no-repeat;
+    $sprite-file-data: sprite-path($sprites);
+    @include background-size(ceil(image-width($sprite-file-data) / $pixelRatio) auto);
+}
+
+@mixin sprite-bg($sprites, $file-name, $width: "false", $height: "false", $size: "true", $pixelRatio: 2) {
+    $sprite-file-data: sprite-file($sprites, $file-name);
+    background-position: floor(nth(sprite-position($sprites, $file-name), 1) / $pixelRatio) floor(nth(sprite-position($sprites, $file-name), 2) / $pixelRatio);
+    @if $size == "true" {
+        @if $width == "false" {
+            width: ceil(image-width($sprite-file-data) / $pixelRatio);
+        } @else {
+            width: $width;
+        }
+        @if $height == "false" {
+            height: ceil(image-height($sprite-file-data) / $pixelRatio);
+        } @else {
+            height: $height;
+        }
+        @if $pixelRatio != 2 {
+            @include background-size(ceil(image-width(sprite-path($sprites)) / $pixelRatio) auto);
+        }
+    }
+}
+

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>GvG Test Develop</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+form {
+	margin: 0 5px;
+}
+.red {
+	color: red;
+}
+.wrapper {
+	width: 320px;
+	margin: 30px auto;
+}
+.select-user-btn,
+.select-ship {
+	width: 100px;
+	height: 30px;
+	background-color: #cccccc;
+	border: 1px solid #333333;
+	margin-bottom: 5px;
+}
+.select-user-btn.active,
+.select-ship.active {
+	background-color: #ff0000;
+}
+.box-align-g {
+	display: -webkit-box;
+	-webkit-box-pack: center;
+}
+#gvg-pop {
+	-webkit-animation-name: gvg-pop;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-duration: 0.1s;
+}
+@-webkit-keyframes gvg-pop {
+	0% { -webkit-transform: scale(1.1); }
+	100% { -webkit-transform: scale(1); }
+}
+.power-box {
+	text-align: center;
+	margin: 10px 0;
+}
+.power-icon {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-color: #999999;
+}
+.power-icon.active {
+	background-color: #ff0000;
+}
+.item-box {
+	display: -webkit-box;
+	-webkit-box-pack: center;
+}
+.item-orange,
+.item-meat {
+	width: 100px;
+	height: 50px;
+	padding: 5px;
+	background-color: #333333;
+	color: white;
+	text-align: center;
+}
+.item-orange.disable,
+.item-meat.disable {
+	background-color: #999999;
+	pointer-events: none;
+}
+.item-orange {
+	display: -webkit-box;
+	margin-right: 5px;
+}
+.item-meat {
+	margin-left: 5px;
+}
+.item-private-orange-btn,
+.item-orange-btn {
+	-webkit-box-flex: 1;
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper" data-num-power="0" data-num-orange="0" data-num-private-orange="0" data-num-meat="10">
+	
+	<!-- ユーザー選択 -->
+	<ul class="select-user">
+		<li class="select-user-btn js-select-btn" data-target-id="1000">1000</li>
+		<li class="select-user-btn js-select-btn" data-target-id="1001">1001</li>
+		<li class="select-user-btn js-select-btn" data-target-id="1002">1002</li>
+		<li class="select-user-btn js-select-btn" data-target-id="1003">1003</li>
+		<li class="select-user-btn js-select-btn" data-target-id="1004">1004</li>
+	</ul>
+	
+	<!-- 船本体 -->
+	<div class="select-ship js-select-btn" data-target-id="99">99</div>
+	
+	<div class="box-align-g">
+		<!-- BP1で攻撃 -->
+		<form action="attack">
+			<input type="hidden" name="target_id" class="js-target-id" value="">
+			<input type="submit" value="BP1で攻撃">
+		</form>
+		
+		<!-- BP5で攻撃 -->
+		<form action="attack">
+			<input type="hidden" name="target_id" class="js-target-id" value="">
+			<input type="submit" value="BP5で攻撃">
+		</form>
+	</div>
+	
+	<ul class="power-box">
+		<li class="power-icon"></li>
+		<li class="power-icon"></li>
+		<li class="power-icon"></li>
+		<li class="power-icon"></li>
+		<li class="power-icon"></li>
+	</ul>
+
+	<div class="item-box">
+		<div class="item-orange">
+			<div class="item-private-orange-btn">
+				<div class="item-private-orange-num">10</div>
+			</div>
+			<div class="item-orange-btn">
+				<div class="item-orange-num">10</div>
+			</div>
+		</div>
+		<div class="item-meat">
+			<div class="item-meat-num">10</div>
+		</div>
+	</div>
+	
+</div>
+<script src="riddle.js"></script>
+<script src="riddle.ex.js"></script>
+<script src="sakura.js"></script>
+<script>
+;(function(window, undefined){
+
+	//GvG 攻撃対象選択JS
+	
+	var isSP = (window.document.ontouchstart !== undefined);
+	var _startType = isSP ? "touchstart" : "mousedown",
+		_moveType  = isSP ? "touchmove"  : "mousemove",
+		_endType   = isSP ? "touchend"   : "mouseup",
+		dis = 0, // タップして指を離した時の座標の差分
+		startX = 0, // タップした時のX座標
+		startY = 0, // タップした時のY座標
+		disX = 0, // 指をスライドさせた時のX座標の距離
+		disY = 0; // 指をスライドさせた時のY座標の距離
+	
+	// DOM要素
+	var selectBtn,
+		hiddenTargetId,
+		wrapper,
+		powerIcon,
+		orangeBtn,
+		meatBtn,
+		numPrivateOrange,
+		numOrange,
+		numMeat;
+	
+	// 数値
+	var power,
+		maxPower = 5,
+		haveOrange,
+		havePrivateOrange,
+		haveMeat,
+		defaultOrange,
+		defaultPrivateOrange,
+		defaultMeat;
+	
+	// initialize
+	var initialize = function () {
+		// console.log('init');
+		
+		// DOM要素セッティング
+		selectBtn = r('.js-select-btn');
+		hiddenTargetId = r('.js-target-id');
+		wrapper = r('.wrapper');
+		powerIcon = r('.power-icon');
+		orangeBtn = r('.item-orange');
+		meatBtn = r('.item-meat');
+		numPrivateOrange = r('.item-private-orange-num');
+		numOrange = r('.item-orange-num');
+		numMeat = r('.item-meat-num');
+		
+		// 初期のセッティング
+		initializeSetting();
+		
+		// bind
+		bind();
+		
+		// test
+		test();
+	};
+
+	// 初期表示のセッティング
+	var initializeSetting = function () {
+		// 数値のセッティング
+		power = wrapper.attr('data-num-power');
+		haveOrange = defaultOrange = wrapper.attr('data-num-orange');
+		havePrivateOrange = defaultPrivateOrange = wrapper.attr('data-num-private-orange');
+		haveMeat = defaultMeat = wrapper.attr('data-num-meat');
+		
+		// ユーザー選択ボタン
+		selectBtn.eq(0).addClass('active');
+		hiddenTargetId.attr('value', selectBtn.eq(0).attr('data-target-id'));
+		
+		// バトルPWのセッティング
+		powerIconUpdate();
+		
+		// 回復ボタンのdisable処理
+		btnDisableCheck();
+	};
+
+	// selectTap
+	var selectTap = function (element) {
+		console.log(111);
+		
+		// active状態に
+		selectBtn.removeClass('active');
+		r(element).addClass('active');
+		
+		// hiddenにIDをセットする
+		hiddenTargetId.attr('value', r(element).attr('data-target-id'));
+		
+		// 弾ませる
+		pop(element);
+	};
+	
+	// orangeTap
+	var orangeTap = function (element) {
+		// 自分用とみかんの個数をチェックして数値を減らす
+		checkOrange();
+		
+		// powerを増やす
+		power++;
+		
+		// powerIconの表示を更新する
+		powerIconUpdate();
+		
+		// ボタンのdisable処理をチェックする
+		btnDisableCheck();
+		
+		// 弾ませる
+		pop(element);
+
+		// test
+		test();
+	};
+
+	// meatTap
+	var meatTap = function (element) {
+		// powerを増やす
+		power = maxPower;
+		
+		// powerIconの表示を更新する
+		powerIconUpdate();
+		
+		// ボタンのdisable処理をチェックする
+		btnDisableCheck();
+		
+		// 弾ませる
+		pop(element);
+
+		// test
+		test();
+	};
+
+	// btnDisableCheck
+	var btnDisableCheck = function(){
+		// みかんの所持数をチェックしてdisable処理する
+		if(havePrivateOrange == 0 && haveOrange == 0){
+			orangeBtn.addClass('disable');
+		}
+		
+		// バトルパワーがMAXまでいったらdisable
+		if(power == maxPower){
+			orangeBtn.addClass('disable');
+			meatBtn.addClass('disable');
+		}
+		
+		// バトルタワーが1以上だったら
+		if(power > 0){
+			meatBtn.addClass('disable');
+		}
+	};
+
+	// checkOrange
+	var checkOrange = function () {
+		if(havePrivateOrange > 0){
+			// 自分用みかんがあったら
+			havePrivateOrange--;
+			
+			// 数値を更新する
+			numPrivateOrange.html(defaultPrivateOrange + '→<span class="red">' + havePrivateOrange + '</span>');
+		} else if (haveOrange > 0) {
+			// みかんがあったら
+			haveOrange--;
+
+			// 数値を更新する
+			numOrange.html(defaultOrange + '→<span class="red">' + haveOrange + '</span>');
+		}
+		
+	};
+
+	// powerIconUpdate
+	var powerIconUpdate = function(){
+		for(var i=0,l=power; i<l; i++){
+			powerIcon.eq(i).addClass('active');
+		}
+	};
+	
+	// bind
+	var bind = function () {
+		// ユーザー選択
+		selectBtn.bind(_startType, touchStart);
+		selectBtn.bind(_moveType, touchMove);
+		selectBtn.bind(_endType, function(e){
+			touchEnd(selectTap, this);
+		}, false);
+		
+		// みかん選択
+		orangeBtn.bind(_startType, touchStart);
+		orangeBtn.bind(_moveType, touchMove);
+		orangeBtn.bind(_endType, function(e){
+			touchEnd(orangeTap, this);
+		}, false);
+		
+		// 肉選択
+		meatBtn.bind(_startType, touchStart);
+		meatBtn.bind(_moveType, touchMove);
+		meatBtn.bind(_endType, function(e){
+			touchEnd(meatTap, this);
+		}, false);
+	};
+	
+	// touch start
+	var touchStart = function (e) {
+		// console.log('touch start');
+		startX = isSP ? e.changedTouches[0].pageX : e.pageX;
+		startY = isSP ? e.changedTouches[0].pageY : e.pageY;
+		disX = 0;
+		disY = 0;
+	};
+
+	// touch move
+	var touchMove = function (e) {
+		// console.log('touch move');
+		disX = (isSP ? e.changedTouches[0].pageX : e.pageX) - startX;
+		disY = (isSP ? e.changedTouches[0].pageY : e.pageY) - startY;
+	};
+
+	// touch end
+	var touchEnd = function (func, element) {
+		// console.log('touch end');
+		dis = Math.sqrt(disX * disX + disY * disY);
+
+		// 指がスライドされていなかったら
+		if(dis < 3) {
+			func(element); // 処理実行
+		}
+	};
+	
+	// 要素を弾ませる
+	var pop = function (element) {
+		element.id = "gvg-pop";
+		element.addEventListener("webkitAnimationEnd", function(e){
+			element.id = "";
+		}, false);
+	};
+	
+	// test
+	var test = function () {
+		console.log("test");
+		console.log("power: "+power);
+		console.log("haveOrange: "+haveOrange);
+		console.log("havePrivateOrange: "+havePrivateOrange);
+		console.log("haveMeat: "+haveMeat);
+	};
+	
+	window.addEventListener('DOMContentLoaded', function(){
+		initialize();
+	}, false);
+
+})(window);
+	
+</script>
+</body>
+</html>
