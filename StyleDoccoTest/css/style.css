@@ -1,0 +1,32 @@
+/*
+#ボタン
+
+サイト共通のボタンスタイル。
+
+##デフォルトボタン
+
+'.btn'クラスを付与する。
+
+'''
+<div class="section">
+	<a href="#" class="btn">Default</a>
+</div>
+'''
+
+##主要ボタン
+
+'.btn'クラスと併せて、'.btn-primary'を付与する。
+
+'''
+<div class="section">
+	<a href="#" class="btn btn-primary">Primary</a>
+</div>
+'''
+
+
+*/
+.test {
+	padding: 0;
+	margin: 0;
+}
+
