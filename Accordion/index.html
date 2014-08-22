@@ -80,15 +80,18 @@ body {
 				heightArray.push(contents.eq(i).css('height'));
 			}
 			btn.bind('click', function(){
-				open(this.__nid);
+				for( var i=0, l=btn.length; i<l; i++){
+					if(btn.eq(i)[0] == this){
+						open(i);
+					}
+				}
 			});
-			contents.addClass('accordion-hide');
 		}
 
 		// open contents
 		var open = function(num){
-			contents.eq(num-1).toggleClass('accordion-hide');
-			contents.eq(num-1).css({ height: heightArray[num-1] });
+			contents.eq(num).toggleClass('accordion-hide');
+			contents.eq(num).css({ height: heightArray[num] });
 		};
 		
 		document.addEventListener('DOMContentLoaded', function(){
