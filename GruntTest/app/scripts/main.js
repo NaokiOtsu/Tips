@@ -1,1 +1,4 @@
-console.log('Grunt vs Gulp');
+function aaa() {
+	console.log('Grunt vs Gulp');
+}
+aaa();
