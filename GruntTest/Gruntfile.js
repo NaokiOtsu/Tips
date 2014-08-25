@@ -68,6 +68,35 @@ module.exports = function (grunt) {
 				}]
 			} // copy:build
 		}, // copy
+		
+		concat: {
+			options: {
+				separator: ';',
+			},
+			dist: {
+				src: ['scripts/main.js'],
+				dest: 'dist/built.js',
+			},
+		},
+		
+		cssmin: {
+			add_banner: {
+				options: {
+					banner: '/* My minified css file */'
+				},
+				files: {
+					'dist/built.css': ['styles/*.css']
+				}
+			}
+		},
+		
+		uglify: {
+			my_target: {
+				files: {
+					'dist/built.min.js': ['dist/built.js']
+				}
+			}
+		},
 
 		useminPrepare: {
 			html: 'app/index.html',
