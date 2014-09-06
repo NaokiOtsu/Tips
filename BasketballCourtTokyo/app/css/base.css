@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/* -----------------------------------------------------------------------------
+	html5-doctor-reset-stylesheet.min.css
+----------------------------------------------------------------------------- */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+ul li{list-style:none}
+img{vertical-align:bottom}
+
+/* -----------------------------------------------------------------------------
+	フォント設定
+----------------------------------------------------------------------------- */
+body, input, textarea{
+	font-family: "Lucida Grande","Verdana","Hiragino Kaku Gothic pro","ヒラギノ角ゴ Pro W3", Meiryo,"メイリオ", Osaka,"ＭＳ Ｐゴシック",sans-selif;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+/* -----------------------------------------------------------------------------
+	IE 禁則処理 IE6以下
+----------------------------------------------------------------------------- */
+* html body{
+	line-break: strict;
+}
+
+/* -----------------------------------------------------------------------------
+	IE 禁則処理 IE7
+----------------------------------------------------------------------------- */
+*:first-child+html body{
+	line-break: strict;
+}
+
+/* -----------------------------------------------------------------------------
+	メイリオ,Meiryo
+----------------------------------------------------------------------------- */
+* html body 
+,* html input
+,* html textarea
+,*:first-child+html body
+,*:first-child+html input
+,*:first-child+html textarea
+{
+	font-family:Meiryo,"メイリオ", sans-serif;
+}
+
+/* -----------------------------------------------------------------------------
+	aタグ設定
+----------------------------------------------------------------------------- */
+a{
+	color:#3174d0;
+	text-decoration:none;
+}
+a:hover{
+	color:#de7e37;
+	text-decoration:underline;
+}
+a:visited {
+	color: #941d55;
+	text-decoration: none;
+}
+a:active {
+}
+
+/* -----------------------------------------------------------------------------
+	clearfix
+----------------------------------------------------------------------------- */
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+	overflow:hidden;
+	font-size:0.1em;
+	line-height:0;
+}
+.clearfix{
+	display:inline-block;
+}
+
+/* Mac IE \*/
+* html .clearfix{
+	height:1%;
+}
+.clearfix{
+	display:block;
+}
+
+/* -----------------------------------------------------------------------------
+	END HACK Mac IE
+----------------------------------------------------------------------------- */
+.clearall{
+	clear:both;
+	font-size:1px;
+	height:0;
+	line-height:0;
+	display:block;
+	visibility:hidden;
+}
+
+/* -----------------------------------------------------------------------------
+	lay2col
+----------------------------------------------------------------------------- */
+.lay2col {
+	position: relative;
+	clear: both;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+	.lay2col .col1 {
+		position: relative;
+		float: left;
+		width: 50%;
+	}
+	.lay2col .col2 {
+		position: relative;
+		float: right;
+		width: 50%;
+	}
+.lay2col:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.lay2col { display : inline-block; }
+/* Hides from IE-mac \*/
+* html .lay2col { height : 1%; }
+.lay2col { display : block; }
+
+/* -----------------------------------------------------------------------------
+	lay3col
+----------------------------------------------------------------------------- */
+.lay3col {
+	position: relative;
+	clear: both;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+	.lay3col .col1 {
+		position: relative;
+		float: left;
+		width: 33%;
+	}
+	.lay3col .col2 {
+		position: relative;
+		float: left;
+		width: 33%;
+	}
+	.lay3col .col3 {
+		position: relative;
+		float: left;
+		width: 33%;
+	}
+.lay3col:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.lay3col { display : inline-block; }
+/* Hides from IE-mac \*/
+* html .lay3col { height : 1%; }
+.lay3col { display : block; }
