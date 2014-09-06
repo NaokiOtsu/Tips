@@ -5,7 +5,7 @@
 
 		var mapOptions = {
 			center: myLating,
-			zoom: 18,
+			zoom: 14,
 			mapTypId: google.maps.MapTypeId.ROADMAP
 		};
 		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
