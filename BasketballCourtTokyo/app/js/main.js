@@ -11,8 +11,8 @@
 		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 		
 		var icon = new google.maps.MarkerImage(
-			'./img/twitter.png',
-			new google.maps.Size(201, 61),
+			'./img/icon.png',
+			new google.maps.Size(80, 80),
 			new google.maps.Point(0, 0)
 		);
 		var marker = new google.maps.Marker({
