@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<title>HeaderItemView</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+.header-wrapper {
+	height: 44px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	-webkit-transition: all 0.2s ease-in-out;
+	overflow: hidden;
+}
+.header-wrapper.active {
+	height: 200px;
+	-webkit-transition: all 0.2s ease-in-out;
+}
+.arrow {
+	padding: 10px 0;
+	text-indent: -9999px;
+	background-image: url(img/arrow.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	cursor: pointer;
+}
+.arrow.active {
+	-webkit-transform: rotate(180deg);
+}
+.list {
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	padding: 10px 0;
+	overflow: scroll;
+	opacity: 0;
+	-webkit-overflow-scrolling: touch;
+}
+.list.active {
+	opacity: 1;
+}
+li {
+	list-style: none;
+	margin: 0 5px;
+	padding: 20px 0;
+}
+li.active {
+	-webkit-animation: scaleAnimation 0.7s cubic-bezier(0, 1.0, 0, 1.0) 1;
+}
+@-webkit-keyframes scaleAnimation {
+	0% { -webkit-transform: scale(0); }
+	100% { -webkit-transform: scale(1); }
+}
+img {
+	vertical-align: bottom;
+}
+</style>
+</head>
+<body>
+
+<header>
+	<div class="header-wrapper">
+		<div class="js-arrow-btn arrow">矢印</div>
+		<div class="js-contents">
+			<ul class="list">
+				<li><img src="img/1.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/2.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/3.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/4.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/5.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/1.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/2.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/3.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/4.png" width="80" height="80" alt="サムネイル"></li>
+				<li><img src="img/5.png" width="80" height="80" alt="サムネイル"></li>
+			</ul>
+		</div>
+	</div>
+</header>
+
+<script src="./js/riddle.js"></script>
+<script src="./js/riddle.ex.js"></script>
+<script src="./js/sakura.js"></script>
+<script>
+	(function(){
+
+		var isSP = (window.document.ontouchstart !== undefined),
+			eventType = {
+				touchStart : isSP ? 'touchstart' : 'mousedown',
+				touchMove : isSP ? 'touchmove' : 'mousemove',
+				touchEnd : isSP ? 'touchend' : 'mouseup'
+			},
+			dis = 0,
+			startX = 0,
+			startY = 0,
+			disX = 0,
+			disY = 0;
+			
+		// DOM要素
+		var btn,
+			wrapper,
+			list,
+			li;
+
+		// initialize
+		var initialize = function () {
+			btn = r('.js-arrow-btn');
+			wrapper = r('.header-wrapper');
+			list = r('.list');
+			li = r('.list li');
+
+			// bind
+			btn.bind(eventType.touchStart, _touchStart, false);
+			btn.bind(eventType.touchMove, _touchMove, false);
+			btn.bind(eventType.touchEnd, function(){
+				_touchEnd(arrowTap, this);
+			}, false);
+		};
+
+		var arrowTap = function(){
+			console.log(111);
+			wrapper.toggleClass('active');
+			list.toggleClass('active');
+			li.toggleClass('active');
+			btn.toggleClass('active');
+		}
+		
+		// touch start
+		var _touchStart = function(e){
+			startX = isSP ? e.changedTouches[0].pageX : e.pageX;
+			startY = isSP ? e.changedTouches[0].pageY : e.pageY;
+			disX = 0;
+			disY = 0;
+		};
+		
+		// touch move
+		var _touchMove = function(e){
+			disX = (isSP ? e.changedTouches[0].pageX : e.pageX) - startX;
+			disY = (isSP ? e.changedTouches[0].pageY : e.pageY) - startY;
+		};
+		
+		// touch end
+		var _touchEnd = function(callback, element){
+			dis = Math.sqrt(disX * disX + disY * disY);
+			
+			if(dis < 3) {
+				callback(element);
+			}
+		};
+
+		// DOMContentLoaded
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>

@@ -76,6 +76,7 @@ body {
 		
 		// initialize
 		function initialize(){
+			console.log(111);
 			for( var i=0, l=btn.length; i<l; i++){
 				heightArray.push(contents.eq(i).css('height'));
 			}
@@ -86,6 +87,8 @@ body {
 					}
 				}
 			});
+
+			contents.addClass('accordion-hide');
 		}
 
 		// open contents
@@ -94,7 +97,7 @@ body {
 			contents.eq(num).css({ height: heightArray[num] });
 		};
 		
-		document.addEventListener('DOMContentLoaded', function(){
+		window.addEventListener('load', function(){
 			initialize();
 		}, false);
 	})();
