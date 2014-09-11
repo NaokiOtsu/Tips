@@ -20,7 +20,7 @@ compassでsprite画像生成
 compass
 
 ## GruntTest
-Gruntテスト
+Gruntで、ローカルサーバー設定、Livereload、watch、build用のファイル削除、ファイルコピー、minifyファイルの選定、CSS,JSのminify、JSの圧縮、CSS,JSファイルの連結、画像,CSS,JSのキャッシュ、画像の最適化、htmlのminify、Gruntプラグインの一括読み込み、Grunt実行時間の計測、を実装
 
 ## GvgTestDevelop
 ボタンを押して回復して攻撃する仕様のもののテスト
