@@ -1,4 +1,4 @@
-# フロントエンドのTips
+# フロントエンドTips
 javascript,css,htmlの色んなTipsを練習がてら
 
 ## Accordion
@@ -29,7 +29,7 @@ Gruntテスト
 ヘッダーにアイテム配置して慣性スクロールで見れるように
 
 ## HelpIntroduction
-アプリ最初使った時によく見かけるヘルプの表示
+アプリを最初に使った時によく見かけるヘルプ表示
 
 ## Modal
 モーダル
@@ -41,7 +41,7 @@ Gruntテスト
 数字が跳ねるアニメーション2
 
 ## NumberCountdown
-あと◯◯時間!的なもの
+あと◯◯時間! 的なもの
 
 ## NumberReplace
 テキストの数字を画像の数字に変換
@@ -56,7 +56,7 @@ Sass
 StyleDoccoのテスト
 
 ## TETRIS
-テトリスのテスト実装
+テトリス
 
 ## Tab
 タブ
