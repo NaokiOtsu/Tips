@@ -1,4 +1,3 @@
-function aaa() {
-	console.log('Grunt vs Gulp');
-}
-aaa();
+console.log('Grunt');
+
+console.log('Awesome build tools !');
