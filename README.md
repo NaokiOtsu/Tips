@@ -28,6 +28,9 @@ Gruntテスト
 ## HeaderItemView
 ヘッダーにアイテム配置して慣性スクロールで見れるように
 
+## HelpIntroduction
+アプリ最初使った時によく見かけるヘルプの表示
+
 ## Modal
 モーダル
 
