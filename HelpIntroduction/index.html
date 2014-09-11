@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<title>HelpIntroduction</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+.contents1,
+.contents2,
+.contents3 {
+	position: relative;
+}
+.contents1.active,
+.contents2.active,
+.contents3.active {
+	z-index: 3;
+}
+.contents1 {
+	margin: 20px 0 0;
+	padding: 5px 0;
+	text-align: center;
+	background-color: #ccc;
+}
+.contents2 {
+	width: 100px;
+	height: 50px;
+	margin: 50px 0 0 20px;
+	padding: 10px;
+	background-color: #dd0000;
+}
+.contents3 {
+	width: 100px;
+	height: 50px;
+	margin: 50px 0 0 20px;
+	padding: 10px;
+	background-color: #00dd00;
+}
+.help {
+	opacity: 0;
+	position: absolute;
+	z-index: 3;
+}
+.help.active {
+	opacity: 1;
+	-webkit-animation: fadeAnimation 0.5s linear 1;
+}
+@-webkit-keyframes fadeAnimation {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+.help1 {
+	width: 250px;
+	top: 40px;
+	left: 50%;
+	margin-left: -125px;
+	background-color: rgba(255,255,255,1.0);
+	padding: 10px 0;
+	-webkit-border-radius: 5px;
+}
+.help1:after {
+	content: "";
+	position: absolute;
+	top: -8px; left: 50%;
+	margin-left: -8px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 1.0px 8px 8px;
+	border-color: transparent transparent rgba(255,255,255,1.0) transparent;
+}
+.help2 {
+	width: 250px;
+	top: 50%;
+	left: 140px;
+	margin-top: -34px;
+	background-color: rgba(255,255,255,1.0);
+	padding: 10px 0;
+	text-align: center;
+	-webkit-border-radius: 5px;
+}
+.help2:after {
+	content: "";
+	position: absolute;
+	top: 50%; left: -8px;
+	margin-top: -8px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 8px 8px 8px 0;
+	border-color: transparent rgba(255,255,255,1.0) transparent transparent;
+}
+.help3 {
+	width: 250px;
+	top: 50%;
+	left: 140px;
+	margin-top: -34px;
+	background-color: rgba(255,255,255,1.0);
+	padding: 10px 0;
+	text-align: center;
+	-webkit-border-radius: 5px;
+}
+.help3:after {
+	content: "";
+	position: absolute;
+	top: 50%; left: -8px;
+	margin-top: -8px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 8px 8px 8px 0;
+	border-color: transparent rgba(255,255,255,1.0) transparent transparent;
+}
+.filter {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 2
+}
+.filter.active {
+	opacity: 1;
+	-webkit-animation: fadeAnimation 0.5s linear 1;
+}
+</style>
+</head>
+<body>
+
+<div class="contents contents1">
+	contens1の内容
+	<div class="help help1">ヘルプ1の内容<br>タップして次のヘルプ表示</div>
+</div>
+
+<div class="contents contents2">
+	contens2の内容
+	<div class="help help2">ヘルプ2の内容<br>タップして次のヘルプ表示</div>
+</div>
+
+<div class="contents contents3">
+	contens3の内容
+	<div class="help help3">ヘルプ3の内容<br>タップして終了</div>
+</div>
+
+<div class="filter"></div>
+
+<script src="./js/riddle.js"></script>
+<script src="./js/riddle.ex.js"></script>
+<script src="./js/sakura.js"></script>
+<script>
+	(function(){
+
+		var isSP = (window.document.ontouchstart !== undefined),
+			eventType = {
+				touchStart : isSP ? 'touchstart' : 'mousedown',
+				touchMove : isSP ? 'touchmove' : 'mousemove',
+				touchEnd : isSP ? 'touchend' : 'mouseup'
+			},
+			dis = 0,
+			startX = 0,
+			startY = 0,
+			disX = 0,
+			disY = 0;
+			
+		// DOM要素
+		var filter,
+			help,
+			contents,
+			body;
+
+		// 数値
+		var counter = 0,
+			maxCounter = 2;
+
+		// initialize
+		var initialize = function () {
+			// DOM要素のセッティング
+			filter = r('.filter');
+			help = r('.help');
+			contents = r('.contents');
+			body = r('body');
+
+			// 最初のヘルプ表示
+			filter.addClass('active');
+			r(help[0]).addClass('active');
+			r(contents[0]).addClass('active');
+			
+			// bind
+			body.bind(eventType.touchStart, _touchStart, false);
+			body.bind(eventType.touchMove, _touchMove, false);
+			body.bind(eventType.touchEnd, function(){
+				_touchEnd(bodyTap, this);
+			}, false);
+		};
+
+		// bodyTap
+		var bodyTap = function () {
+			console.log('body click!!');
+			if(counter == maxCounter){
+				// 前のヘルプを消去
+				help.removeClass('active');
+				contents.removeClass('active');
+				filter.removeClass('active');
+				
+				// bodyをunbind
+				body.unbind();
+				return;
+			}
+			counter++;
+
+			// 前のヘルプを消去
+			help.removeClass('active');
+			contents.removeClass('active');
+			
+			// 次のヘルプの表示
+			r(help[counter]).addClass('active');
+			r(contents[counter]).addClass('active');
+
+		};
+
+		// touch start
+		var _touchStart = function(e){
+			startX = isSP ? e.changedTouches[0].pageX : e.pageX;
+			startY = isSP ? e.changedTouches[0].pageY : e.pageY;
+			disX = 0;
+			disY = 0;
+		};
+		
+		// touch move
+		var _touchMove = function(e){
+			disX = (isSP ? e.changedTouches[0].pageX : e.pageX) - startX;
+			disY = (isSP ? e.changedTouches[0].pageY : e.pageY) - startY;
+		};
+		
+		// touch end
+		var _touchEnd = function(callback, element){
+			dis = Math.sqrt(disX * disX + disY * disY);
+			
+			if(dis < 3) {
+				callback(element);
+			}
+		};
+
+		// DOMContentLoaded
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>
