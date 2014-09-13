@@ -1,0 +1,277 @@
+/*--------------------------
+縦向き時のCSS
+----------------------------*/
+@media screen and (orientation: portrait) {
+	.test{
+		background:transparent url(/s/img/index-header320.png) no-repeat scroll 0 0;
+		width:320px;
+		height:107px;
+	}
+}
+
+/*--------------------------
+横向き時のCSS
+----------------------------*/
+@media screen and (orientation: landscape) {
+	.test{
+		background:transparent url(/s/img/index-header480.png) no-repeat scroll 0 0;
+		width:480px;
+		height:160px;
+	}
+}
+
+/*--------------------------
+display:box
+----------------------------*/
+.test{
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+}
+
+/*--------------------------
+column-count(マルチカラムレイアウト), column-gap(段と段の間の幅), column-rule(幅の間のボーダー), column-width(カラムの幅)
+----------------------------*/
+.test{
+	-webkit-column-count: 3;
+	column-count: 3;
+	-webkit-column-gap: 10px;
+	column-gap: 10px;
+	-webkit-column-rule: 1px solid #cccccc;
+	column-rule: 1px solid #cccccc;
+	-webkit-column-width: 100px;
+	column-width: 100px;
+}
+
+/*--------------------------
+グラデーション
+----------------------------*/
+.test{
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f1f1f1));
+	background: -moz-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f1f1f1));
+	background: gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f1f1f1));
+}
+
+/*--------------------------
+複数点のグラデーション
+----------------------------*/
+.test{
+	background-image: -webkit-gradient(linear, left top, left bottom,color-stop(0.0, #ffffff),color-stop(0.5, #67BC04),color-stop(1.0, #54A201));
+	background-image: -moz-gradient(linear, left top, left bottom,color-stop(0.0, #ffffff),color-stop(0.5, #67BC04),color-stop(1.0, #54A201));
+	background-image: gradient(linear, left top, left bottom,color-stop(0.0, #ffffff),color-stop(0.5, #67BC04),color-stop(1.0, #54A201));
+}
+
+/*--------------------------
+背景画像＋グラデーション
+----------------------------*/
+.test{
+	background-image:url(/images/sm/index/recomIcon.png), -webkit-gradient(linear, left top, left bottom, from(#ff9938), to(#ff8738));
+	background-image:url(/images/sm/index/recomIcon.png), -moz-gradient(linear, left top, left bottom, from(#ff9938), to(#ff8738));
+	background-image:url(/images/sm/index/recomIcon.png), gradient(linear, left top, left bottom, from(#ff9938), to(#ff8738));
+}
+
+/*--------------------------
+複数の背景画像
+----------------------------*/
+.test{
+	background-image:url(/s/img/link-arrow.png), url(/s/img/link-img1.png);
+	background-position:98% 50%, 5% 50%;
+	background-repeat:no-repeat, no-repeat;
+}
+
+/*--------------------------
+box-flex
+----------------------------*/
+.test{
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+}
+
+/*--------------------------
+box-pack start,end,center,justify
+----------------------------*/
+.test{
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	box-pack: center;
+}
+
+/*--------------------------
+background-size
+----------------------------*/
+.test{
+	-webkit-background-size: 32px 32px;
+	-moz-background-size: 32px 32px;
+	background-size: 32px 32px;
+}
+
+/*--------------------------
+border-radius
+----------------------------*/
+.test{
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+
+/*--------------------------
+ボーダーを部分的に角丸にする
+----------------------------*/
+.test{
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+/*--------------------------
+box-align start,end,center,baseline,sretch(初期値)
+----------------------------*/
+.test{
+	-webkit-box-align : center;
+	-moz-box-align : center;
+	box-align : center;
+}
+
+/*--------------------------
+box-shadow x軸 y軸 ぼかし カラー
+----------------------------*/
+.test{
+	-webkit-box-shadow:0px 0px 3px rgba( 0, 0, 0, 0.2);
+	-moz-box-shadow:0px 0px 3px rgba( 0, 0, 0, 0.2);
+	box-shadow:0px 0px 3px rgba( 0, 0, 0, 0.2);
+}
+
+/*--------------------------
+box-sizing content-box(初期値),border-box,inherit
+----------------------------*/
+.test{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*--------------------------
+box-orient horizontal(水平),vertical(垂直),inline-axis(初期値,インライン軸),block-axis(初期値,ブロック軸),inherit(親を継承)
+フレキシブルボックス内の子要素の配置方向を指定
+----------------------------*/
+.test{
+	-moz-box-orient:vertical;
+	-webkit-box-orient:vertical;
+	box-orient:vertical;
+}
+
+/*--------------------------
+text-overflow 
+幅を超えたら...表示させる
+----------------------------*/
+.test{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+/*--------------------------
+n番目に指定する
+:nth-child(1)
+----------------------------*/
+.test:nth-child(1){
+	
+}
+
+/*--------------------------
+box-shadow
+内側のシャドウ,x軸のオフセット,y軸のオフセット,ぼかしの大きさ,シャドウの広がり,カラー
+----------------------------*/
+.test{
+	-webkit-box-shadow: inset 3px 3px 5px 0px #ccc;
+	-moz-box-shadow: inset 3px 3px 5px 0px #ccc;
+	box-shadow: inset 3px 3px 5px 0px #ccc;
+}
+
+/* ボックスのいい感じドロップシャドウ */
+.test{
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/*--------------------------
+text-shadow
+横軸のオフセット,縦軸のオフセット,ぼかしの大きさ,カラー
+----------------------------*/
+.test{
+	-webkit-text-shadow: 0px 1px 0px #ffffff;
+	-moz-text-shadow: 0px 1px 0px #ffffff;
+	text-shadow: 0px 1px 0px #ffffff;
+}
+
+/*--------------------------
+フォームのinput type="text"
+----------------------------*/
+.form_input_text{
+	font-size:16px;
+	padding:.4em;
+	width:97%;
+	line-height:1.4;
+	outline:0;
+	-webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
+	-moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
+	-moz-border-radius: .6em;
+	-webkit-border-radius: .6em;
+	border-radius: .6em;
+	border:1px solid #aaaaaa;
+	color:#333333;
+	-webkit-text-shadow: 0px 1px 0px #ffffff;
+	-moz-text-shadow: 0px 1px 0px #ffffff;
+	text-shadow: 0px 1px 0px #ffffff;
+	background-color:#f9f9f9;
+}
+
+/*--------------------------
+ボタングラデーションのいい感じ
+----------------------------*/
+.test{
+	background: -webkit-gradient( linear,left top,left bottom,color-stop(0,white),color-stop(0.49,#F4F4F4),color-stop(0.5,#E9E9E9),color-stop(1,#DDD) );
+	background: -moz-gradient( linear,left top,left bottom,color-stop(0,white),color-stop(0.49,#F4F4F4),color-stop(0.5,#E9E9E9),color-stop(1,#DDD) );
+	background: gradient( linear,left top,left bottom,color-stop(0,white),color-stop(0.49,#F4F4F4),color-stop(0.5,#E9E9E9),color-stop(1,#DDD) );
+	-webkit-box-shadow: inset 0 0 10px #ffffff;
+	-moz-box-shadow: inset 0 0 10px #ffffff;
+	box-shadow: inset 0 0 10px #ffffff;
+}
+
+/*--------------------------
+チェックボックスを押しやすい大きさに(Androidでinput[type="chexkbox"]にwidth,heightが効かないので)
+----------------------------*/
+.test input[type="chexkbox"]{
+	-webkit-transform: scale(1.8);
+	transform: scale(1.8);
+	vertical-align:top;
+	font-size:30px;
+}
+
+/*--------------------------
+PCサイトのグラデーション(クロスブラウザに対応したグラデーション)
+----------------------------*/
+.gradient{
+	background-color:#ffcc00;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff');
+	background: -webkit-gradient(linear, left top , left bottom , from(#000) ,color-stop(50%,#fc0), to(#FFF));
+	background: -webkit-linear-gradient(top, #000, #fc0 50% , #fff);
+	background: -moz-linear-gradient(top, #000, #fc0 50% , #fff);
+	background: -o-linear-gradient(top, #000, #fc0 50% , #fff);
+	background: -ms-linear-gradient(top, #000, #fc0 50% , #fff);
+	background: linear-gradient(to bottom, #000, #fc0 50% , #fff);
+}
+
+/*--------------------------
+IEのopacity
+----------------------------*/
+.test{
+	opacity: 0.9;
+	filter: alpha(opacity=90); /*IE6,7*/
+	-ms-filter: "alpha(opacity=90)";
+}
+
