@@ -4,6 +4,9 @@ javascript,css,htmlの色んなTipsを練習がてら
 ## Accordion
 アコーディオン
 
+## AngularTest
+AngularJSのテスト実装。日本語リファレンスから。
+
 ## BasketballCourtTokyo
 都内のバスケットボールコートの場所をGoogleMapで紹介
 
