@@ -5,7 +5,10 @@ javascript,css,htmlの色んなTipsを練習がてら
 アコーディオン
 
 ## AngularTest
-AngularJSのテスト実装。日本語リファレンスから。
+AngularJSのテスト実装。
+
+## Base
+PC,SPの開発がすぐ出来る為の雛形ファイル
 
 ## BasketballCourtTokyo
 都内のバスケットボールコートの場所をGoogleMapで紹介
@@ -27,6 +30,9 @@ Gruntで、ローカルサーバー設定、Livereload、watch、build用のフ�
 
 ## GvgTestDevelop
 ボタンを押して回復して攻撃する仕様のもののテスト
+
+## HajimeteShitta
+初めて知った事を共有するサービス
 
 ## HeaderItemView
 ヘッダーにアイテム配置して慣性スクロールで見れるように
