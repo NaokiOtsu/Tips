@@ -40,6 +40,9 @@ Gruntで、ローカルサーバー設定、Livereload、watch、build用のフ�
 ## HelpIntroduction
 アプリを最初に使った時によく見かけるヘルプ表示
 
+## MarioCartAnimationTest
+マリオカート8で出てくるアニメーションを参考にWeb実装
+
 ## Modal
 モーダル
 
