@@ -8,10 +8,10 @@ javascript,css,htmlの色んなTipsを練習がてら
 AngularJSのテスト実装。
 
 ## Base
-PC,SPの開発がすぐ出来る為の雛形ファイル
+PC,SPの開発をすぐ始める為のデフォルトファイル
 
 ## BasketballCourtTokyo
-都内のバスケットボールコートの場所をGoogleMapで紹介
+都内のバスケットボールコートの場所をGoogleMapで紹介するサービス
 
 ## Carousel
 カルーセル
@@ -35,7 +35,7 @@ Gruntで、ローカルサーバー設定、Livereload、watch、build用のフ�
 初めて知った事を共有するサービス
 
 ## HeaderItemView
-ヘッダーにアイテム配置して慣性スクロールで見れるように
+ヘッダーにアイテム配置して慣性スクロールで見れるように(Appleのスマホサイトを参考)
 
 ## HelpIntroduction
 アプリを最初に使った時によく見かけるヘルプ表示
@@ -86,7 +86,7 @@ StyleDoccoのテスト
 ソーシャルゲームで見かけるキャラクターの登場シーン
 
 ## newIconAnimation
-白猫プロジェクトで見たNEWアイコンのアニメーション
+白猫プロジェクトを参考にNEWアイコンのアニメーション
 
 ## userAgentShow
 ユーザーエージェントの確認(JSで)
