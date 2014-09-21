@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Language" content="ja">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>CountDown | MarioCartAnimation</title>
+<meta http-equiv="imagetoolbar" content="no">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body { text-align: center; }
+ul {
+	overflow: hidden;
+}
+li {
+	list-style: none;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #999;
+	background-color: #eee;
+	float: left;
+	margin: 20px 0 0 20px;
+	-webkit-border-radius: 5px;
+}
+#wrapper {
+	width: 200px;
+	height: 200px;
+	margin: 30px auto;
+	border: 4px dotted #ff0000;
+	background-color: rgba(255,0,0,0.5);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -102px;
+	margin-top: -102px;
+	-webkit-border-radius: 5px;
+	-webkit-animation: timerAnimation 0.3s ease-in-out 1;
+}
+#wrapper.complete {
+	width: 500px;
+	height: 100px;
+	margin-left: -252px;
+	margin-top: -52px;
+}
+#result {
+	color: #f00;
+	font-size: 130px;
+	line-height: 200px;
+}
+#result.complete {
+	font-size: 50px;
+	line-height: 100px;
+}
+#result.active {
+	-webkit-animation: timerAnimation 0.3s ease-in-out 1;
+}
+@-webkit-keyframes timerAnimation {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate(0,-8px);
+	}
+	95% {
+		opacity: 1;
+		-webkit-transform: translate(0,2px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(0,0);
+	}
+}
+</style>
+</head>
+<body>
+
+	<ul>
+		<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+	</ul>
+
+	<div id="wrapper">
+		<div id="result">10</div>
+	</div>
+
+	<script src="../riddle.js"></script>
+	<script src="../riddle.ex.js"></script>
+	<script src="../sakura.js"></script>
+	<script>
+		(function(){
+			var result,
+				wrapper,
+				timerId,
+				counter = 10;
+
+			var initialize = function () {
+				result = r('#result');
+				wrapper = r('#wrapper');
+				timerStart();
+			};
+
+			var timerStart = function () {
+				timerId = setTimeout(function(){
+					counter--;
+					result.html(counter).addClass('active');
+					result.bind('webkitAnimationEnd', function(){
+						result.removeClass('active');
+					}, false);
+					if(counter <= 0){
+						clearTimeout(timerId);
+						result.html('終了!').addClass('complete');
+						wrapper.addClass('complete');
+					} else {
+						timerStart();
+					}
+				}, 1000);
+			};
+
+			window.addEventListener('DOMContentLoaded', function(){
+				initialize();
+			}, false);
+		})();
+	</script>
+</body>
+</html>

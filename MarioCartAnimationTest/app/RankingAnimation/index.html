@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Language" content="ja">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>RankingAnimation | MarioCartAnimation</title>
+<meta http-equiv="imagetoolbar" content="no">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+.ranking {
+	
+}
+.ranking li {
+	list-style: none;
+	border: 1px solid #999;
+	background-color: #eee;
+	text-align: center;
+	padding: 10px 0;
+	margin: 10px;
+	opacity: 0;
+}
+.ranking .active {
+	opacity: 1;
+	-webkit-animation: rankingAnimation 1s ease-in-out 1;
+	/* backface-visibility: hidden; */
+}
+@-webkit-keyframes rankingAnimation {
+	0% { 
+		opacity: 0;
+		-webkit-transform: rotateX(180deg);
+	}
+	99.9%,to {
+		opacity: 1;
+		-webkit-transform: rotateX(0deg);
+	}
+}
+</style>
+</head>
+<body>
+	<ul class="ranking">
+		<li>1位 Player 50P</li>
+		<li>2位 Player 45P</li>
+		<li>3位 Player 41P</li>
+		<li>4位 Player 38P</li>
+		<li>5位 Player 35P</li>
+		<li>6位 Player 30P</li>
+		<li>7位 Player 25P</li>
+		<li>8位 Player 23P</li>
+		<li>9位 Player 18P</li>
+		<li>10位 Player 13P</li>
+	</ul>
+
+	<script src="../riddle.js"></script>
+	<script src="../riddle.ex.js"></script>
+	<script src="../sakura.js"></script>
+	<script>
+		(function(){
+			var li;
+
+			var initialize = function () {
+				var i = 0;
+
+				li = r('.ranking li');
+
+				li.each(function(element){
+					setTimeout(function(){
+						element.addClass('active');
+					}, 100 * i++);
+				});
+			};
+
+			window.addEventListener('DOMContentLoaded', function(){
+				initialize();
+			}, false);
+		})();
+	</script>
+</body>
+</html>
