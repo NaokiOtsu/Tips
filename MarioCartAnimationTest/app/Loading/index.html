@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Language" content="ja">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Loading | MarioCartAnimation</title>
+<meta http-equiv="imagetoolbar" content="no">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body { text-align: center; background-color: #fbfbfb; }
+li {
+	list-style: none;
+}
+.loading {
+	width: 45px;
+	height: 48px;
+	position: absolute;
+	top: 500px;
+	right: 0;
+	background-image: url(img/sprite.png);
+	-webkit-background-size: auto 48px;
+	-webkit-animation: play 0.2s steps(2) infinite;
+}
+@-webkit-keyframes play {
+	100% { background-position: -90px; }
+}
+</style>
+</head>
+<body>
+
+	<ul>
+		<li class="loading"></li>
+		<li class="loading"></li>
+		<li class="loading"></li>
+		<li class="loading"></li>
+		<li class="loading"></li>
+		<li class="loading"></li>
+		<li class="loading"></li>
+	</ul>
+	<div id="hoge"></div>
+
+	<script src="../riddle.js"></script>
+	<script src="../riddle.ex.js"></script>
+	<script src="../sakura.js"></script>
+	<script>
+		(function(){
+			var loading,
+				timerId,
+				w,
+				counter = 0;
+
+			var initialize = function () {
+				loading = r('.loading');
+				
+				tick();
+
+				w = window.innerWidth;
+				
+				window.addEventListener('resize', function(){
+					w = window.innerWidth;
+				}, false);
+
+				// loadingの初期位置を設定
+				loading.each(function(element){
+					element.css({ '-webkit-transform': 'translate('+ (counter * 45) +'px, 0)' });
+					counter++;
+				});
+			};
+
+			// 移動して、横幅超えたら反対側から出現させてループする
+			var tick = function(){
+				timerId = setTimeout(function(){
+					loading.each(function(element){
+						var nowRight = new WebKitCSSMatrix(element.css('-webkit-transform'));
+						nowRight = nowRight.m41;
+						if(nowRight <= -w){
+							element.css({
+								'-webkit-transform': 'translate('+ (nowRight+w+45) +'px, 0)'
+							});
+						} else {
+							element.css({
+								'-webkit-transform': 'translate('+ (nowRight-1) +'px, 0)'
+							});
+						}
+					});
+					tick();
+				}, 10);
+			};
+
+			window.addEventListener('DOMContentLoaded', function(){
+				initialize();
+			}, false);
+		})();
+	</script>
+</body>
+</html>
