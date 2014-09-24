@@ -23,6 +23,8 @@
     "grunt-image": "^0.8.4",
     "grunt-contrib-htmlmin": "^0.3.0",
     "load-grunt-tasks": "^0.6.0",
-    "time-grunt": "^1.0.0"
+    "time-grunt": "^1.0.0",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-styledocco": "^0.1.4"
   }
 }
