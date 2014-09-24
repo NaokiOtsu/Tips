@@ -4,3 +4,10 @@
   width: 50px;
   width: 50px;
 }
+.test li {
+  text-align: center;
+}
+
+.test2 {
+  margin: 0;
+}

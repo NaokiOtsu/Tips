@@ -9,6 +9,14 @@ module.exports = function(grunt) {
 	// タスクのオプション設定
 	grunt.initConfig({
 		
+		compass: {
+			dist: {
+				options: {
+					config: 'config.rb'
+				}
+			}
+		},
+
 		connect: {
 			livereload: {
 				options: {
@@ -39,9 +47,11 @@ module.exports = function(grunt) {
 				files: [
 					'app/images/**/*.{png,jpg,gif}',
 					'app/styles/**/*.css',
+					'app/sass/**/*.scss',
 					'app/scripts/**/*.js',
 					'app/**/*.html'
-				]
+				],
+				tasks: ['compass']
 			} // watch:livereload
 		}, // watch
 
