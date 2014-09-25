@@ -7,6 +7,9 @@ javascript,css,htmlの色んなTipsを練習がてら
 ## AngularTest
 AngularJSのテスト実装。
 
+## BackBoneJSTest
+BackBoneJSのテスト実装。
+
 ## Base
 PC,SPの開発をすぐ始める為のデフォルトファイル
 
@@ -57,6 +60,9 @@ Gruntで、ローカルサーバー設定、Livereload、watch、build用のフ�
 
 ## NumberReplace
 テキストの数字を画像の数字に変換
+
+## PhoneGapTest
+PhoneGapのテスト実装
 
 ## RandomNum
 ランダムな数字を生成
