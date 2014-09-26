@@ -3,13 +3,31 @@
 <head>
 <meta charset="utf-8">
 <title>BackboneJS Todo</title>
+<style>
+.completed {
+	text-decoration: line-through;
+	color: gray;
+}
+</style>
 </head>
 <body>
 
-<div id="tasks"></div>
+<h1>Tasks</h1>
 
-<script type="text/template" id="taskTemplate">
-	<%- title %>
+<form id="addTask">
+	<input type="text" id="title">
+	<input type="submit" value="add">
+	<span id="error"></span>
+</form>
+<div id="tasks"></div>
+<p> Tasks left: <span id="count"></span></p>
+
+<script type="text/template" id="task-template">
+	<input type="checkbox" class="toggle" <%= completed ? 'checked': '' %>>
+	<span class="<%= completed ? 'completed': '' %>">
+		<%- title %>
+	</span>
+	<span class="delete">[x]</span>
 </script>
 <script src="js/underscore.js"></script>
 <script src="js/jquery.js"></script>
