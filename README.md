@@ -73,6 +73,9 @@ Sass
 ## StyleDoccoTest
 StyleDoccoのテスト
 
+## SvgAnimation
+SVGで文字を作成し手書きのようにアニメーション
+
 ## TETRIS
 テトリス
 
