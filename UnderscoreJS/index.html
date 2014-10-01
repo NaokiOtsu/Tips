@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UnderscoreJS Test</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<script src="js/underscore-min.js"></script>
+<script>
+(function(){
+	
+	// 配列をシャッフルさせる shuffle
+	var a;
+	// x = _.shuffle([2,8,10,3]);
+	a = _([2,8,10,3]).shuffle();
+	console.log(a);
+
+	// 配列をループ処理する each
+	_.each([2,4,5], function(num){
+		console.log(num * 2);
+	});
+
+	// 処理結果を配列にする map
+	var b = _.map([2,4,6], function(num){
+		return num * 2;
+	});
+	console.log(b);
+
+	// 配列の中からマッチした最初のものを返す find
+	var c = [2,5,8,32,100];
+	var d;
+	d = _.find(c, function(num){
+		return num > 5;
+	});
+	console.log(d);
+
+	// 配列の中からマッチしたもの全てを配列で返す filter
+	var e;
+	e = _.filter(c, function(num){
+		return num > 5;
+	});
+	console.log(e);
+
+	// 配列の中に指定したものがあるかどうか contains
+	var f;
+	f = _.contains(c, 32);
+	console.log(f);
+
+	// 配列に対してグルーピングしてオブジェクトに返す groupBy
+	var g;
+	g = _.groupBy(c, function(num){
+		return num % 3;
+	});
+	console.log(g);
+
+	// 配列に対してグルーピングした数をカウントする coutBy
+	var h;
+	h = _.countBy(c, function(num){
+		return num % 2 == 0 ? 'even' : 'odd';
+	});
+	console.log(h);
+
+	// 配列に対してソートさせる sortBy
+	var i;
+	i = _.sortBy(c, function(num){
+		return Math.sin(num);
+	});
+	console.log(i);
+
+	// 配列に対して文字列の長さでソートさせたい sortBy 2
+	var j;
+	j = _.sortBy(['me', 'mine', 'and', 'aaaaaaaaaaaa'], 'length');
+	console.log(j);
+
+	// 配列と配列を合わせて重複したものは省いて配列を返す union
+	var k = [1,2,5];
+	var l = [5,2,8];
+	var m = _.union(k, l);
+	console.log(m);
+
+	// 配列と配列の共通部分を配列で返す intersection
+	var n = _.intersection(k, l);
+	console.log(n);
+
+	// 配列と配列の差を配列で返す difference
+	var o = _.difference(k, l);
+	console.log(o);
+
+	// 配列と配列のユニークなものを返す uniq
+	var p = _.uniq([2,4,5,2,5]);
+	console.log(p);
+
+	// オブジェクトのkeyだけを返す keys
+	var q;
+	var user = {
+		name: 'ohtsu',
+		score: 80,
+		web: 'http://test.com'
+	};
+	q = _.keys(user);
+	console.log(q);
+
+	// オブジェクトのvalueだけを返す values
+	var r = _.values(user);
+	console.log(r);
+
+	// オブジェクトのkeyとvalueを逆にする
+	var s = _.invert(user);
+	console.log(s);
+
+	// オブジェクトの中にあるkeyがあるかを返す has
+	var t = _.has(user, 'name');
+	console.log(t);
+
+	// オブジェクトのvalueの型を調べる isEmpty,isString,isNull,isNumber
+	var u = _.isString(user.score);
+	console.log(u);
+
+	// 配列を生成する range
+	var v;
+	v = _.range(1, 11);
+	console.log(v);
+
+	// ランダムな数値を返す random
+	var w;
+	w = _.random(3, 10);
+	console.log(w);
+
+	// エスケープした文字を作りたい escape
+	var x;
+	x = _.escape('<script>');
+	console.log(x);
+
+	// 繰り返し処理したい times
+	var y;
+	y = _.times(5, function(){
+		console.log('hello');
+	});
+
+	// メソッドを繋げて書く chain
+	var z;
+	var aa = [2,5,10,8];
+	z = _.chain(aa)
+		.shuffle()
+		.map(function(num){
+			return num * 2;
+		})
+		.value();
+	console.log(z);
+
+	// テンプレート機能
+	var aaa;
+	var uu = {
+		name: 'ohtsu',
+		score: 80,
+		web: 'http://test.com'
+	};
+	var tpl = '<li><%- name %> (<%- score %>)</li>';
+	aaa = _.template(tpl);
+	console.log(aaa(uu));
+
+})();
+</script>
+</body>
+</html>
