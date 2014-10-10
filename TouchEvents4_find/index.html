@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>TouchEvents | find</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 50px;
+}
+.btn {
+	display: inline-block;
+	border: 1px solid #999;
+	background-color: #ddd;
+	padding: 20px 50px;
+	margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="btn">btn</div>
+<div class="btn">btn</div>
+<div class="btn">btn</div>
+<div class="btn">btn</div>
+<div class="btn">btn</div>
+<div class="result"></div>
+
+<script src="../common/js/riddle.js"></script>
+<script src="../common/js/riddle.ex.js"></script>
+<script src="../common/js/sakura.js"></script>
+<script>
+	(function(){
+		var isSP = (window.document.ontouchstart !== undefined),
+			eventType = {
+				touchStart : isSP ? 'touchstart' : 'mousedown',
+				touchMove : isSP ? 'touchmove' : 'mousemove',
+				touchEnd : isSP ? 'touchend' : 'mouseup'
+			},
+			dis = 0,
+			startX = 0,
+			startY = 0,
+			disX = 0,
+			disY = 0;
+
+		// initialize
+		var initialize = function (){
+			var btn = r('.btn');
+			
+			btn.bind(eventType.touchStart, _touchStart, false);
+			btn.bind(eventType.touchMove, _touchMove, false);
+			btn.bind(eventType.touchEnd, function(){
+				for(var i=0, l=btn.length; i<l; i++){
+					if(btn.eq(i)[0] == this){
+						_touchEnd(func1, i);
+					}
+				}
+			}, false);
+			
+		};
+
+		// touch start
+		var _touchStart = function(e){
+			startX = isSP ? e.changedTouches[0].pageX : e.pageX;
+			startY = isSP ? e.changedTouches[0].pageY : e.pageY;
+			disX = 0;
+			disY = 0;
+		};
+		
+		// touch move
+		var _touchMove = function(e){
+			disX = (isSP ? e.changedTouches[0].pageX : e.pageX) - startX;
+			disY = (isSP ? e.changedTouches[0].pageY : e.pageY) - startY;
+		};
+		
+		// touch end
+		var _touchEnd = function(callback, num){
+			console.log('touch end');
+			dis = Math.sqrt(disX * disX + disY * disY);
+			
+			if(dis < 3) {
+				callback(num);
+			}
+		};
+
+		var func1 = function(num){
+			var result = r('.result');
+			result.html(num +'番目をタップしたね!');
+		}
+		
+		document.addEventListener('DOMContentLoaded', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>
