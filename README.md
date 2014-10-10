@@ -88,6 +88,9 @@ SVGで文字を作成し手書きのようにアニメーション
 ## TouchEvents3_active
 タッチイベント(ボタンのactive処理)
 
+## TouchEvents4_find
+タッチイベント(jQueryのfindの実装)
+
 ## TouchEvents_single
 タッチイベント(1つのボタン)
 
