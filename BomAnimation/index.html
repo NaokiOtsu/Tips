@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Accordion</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 50px;
+}
+.bom {
+	width: 457px;
+	height: 378px;
+	background: #000000;
+	-webkit-animation: bom 0.6s infinite linear;
+}
+@-webkit-keyframes bom {
+	0% {
+	opacity: 0;
+	-webkit-transform: scale3d(0.5, 0.5, 0.5);
+	-webkit-transform: scale(0.5, 0.5); 
+	}
+	10% {
+	opacity: 1;
+	-webkit-transform: scale3d(1, 1, 1);
+	-webkit-transform: scale(1, 1);
+	}
+	100% {
+	opacity: 0;
+	-webkit-transform: scale3d(1.5, 1.5, 1.5);
+	-webkit-transform: scale(1.5, 1.5); 
+	}
+}
+</style>
+</head>
+<body>
+
+<div class="bom"></div>
+</body>
+</html>
