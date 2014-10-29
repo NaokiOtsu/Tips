@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Test</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<script>
+	(function(){
+		// 仮変数の個数と呼び出し時の引数の個数を調べる
+		function func (arg1, arg2) {
+			console.log(func.length);
+			console.log(arguments.length);
+		}
+		console.log(func.length);
+		func('foo','boo','coo');
+	})();
+</script>
+</body>
+</html>
