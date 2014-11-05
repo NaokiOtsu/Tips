@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Test</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<script>
+	(function(){
+		// 継承用関数の作成
+		function inherit(o) {
+			function F(){}
+			F.prototype = o;
+			return new F();
+		}
+		
+		var person = { eats: true };
+		var employee = inherit(person);
+		
+		console.log(employee.eats);
+	})();
+</script>
+</body>
+</html>

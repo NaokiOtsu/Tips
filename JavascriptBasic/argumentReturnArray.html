@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Test</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<script>
+	(function(){
+		// 引数で受け取った値を配列として返す
+		function func(arg1, arg2) {
+			return Array.prototype.slice.apply(arguments);
+		}
+		console.log(func(1,2,3,4));
+	})();
+</script>
+</body>
+</html>
