@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FFEC73EE-493B-48BE-AB77-40161072E79B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>swiftStudy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D23B5B50DE4B64D7DEDD6B360033D3CA6ACCB0D9</key>
+		<string>https://github.com/NaokiOtsu/Tips.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Swift/swiftStudy/swiftStudy.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D23B5B50DE4B64D7DEDD6B360033D3CA6ACCB0D9</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/NaokiOtsu/Tips.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D23B5B50DE4B64D7DEDD6B360033D3CA6ACCB0D9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D23B5B50DE4B64D7DEDD6B360033D3CA6ACCB0D9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Tips</string>
+		</dict>
+	</array>
+</dict>
+</plist>
