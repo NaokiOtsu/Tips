@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Test</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<script>
+	(function(){
+		// クラスの生成
+		function Author(name){
+			this.name = name;
+		}
+		Author.prototype.speak = function (str) {
+			console.log(this.name + ' says: ' + str);
+		}
+		
+		var author = new Author('Naoki');
+		author.speak('Now is better than never.')
+	})();
+</script>
+</body>
+</html>

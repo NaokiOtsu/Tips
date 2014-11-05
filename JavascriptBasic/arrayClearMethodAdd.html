@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Test</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<script>
+	(function(){
+		// 配列に対してメソッドを追加する
+		var arr1 = [1,2,3];
+		Array.prototype.clear = function(){
+			this.length = 0;
+			return this;
+		}
+		var arr2 = [1,2,3,4,5];
+		console.log(arr1.clear().length);
+		console.log(arr2.clear().length);
+	})();
+</script>
+</body>
+</html>

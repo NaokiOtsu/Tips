@@ -15,6 +15,9 @@ PC,SPの開発をすぐ始める為のデフォルトファイル
 ## BasketballCourtTokyo
 都内のバスケットボールコートの場所をGoogleMapで紹介するサービス
 
+## BomAnimation
+爆発系のCSSアニメーション
+
 ## Carousel
 カルーセル
 
@@ -41,6 +44,9 @@ Gruntで、ローカルサーバー設定、Livereload、watch、build用のフ�
 
 ## HelpIntroduction
 アプリを最初に使った時によく見かけるヘルプ表示
+
+## JavascriptBasic
+Javascriptの基礎勉強
 
 ## MarioCartAnimationTest
 マリオカート8で出てくるアニメーションを参考にWeb実装
@@ -81,11 +87,17 @@ SVGで文字を作成し手書きのようにアニメーション
 ## Tab
 タブ
 
+## ThreeJS
+ThreeJSのテスト実装
+
 ## TouchEvents2_multi
 タッチイベント(複数ボタン版)
 
 ## TouchEvents3_active
 タッチイベント(ボタンのactive処理)
+
+## TouchEvents4_find
+タッチイベント(jQueryのfindの実装)
 
 ## TouchEvents_single
 タッチイベント(1つのボタン)

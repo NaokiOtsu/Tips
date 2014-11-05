@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Test</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<script>
+	(function(){
+		// Object.createを使って継承を行う
+		if (!Object.create) {
+			Object.create = function (o) {
+				function F(){}
+				F.prototype = o;
+				return new F();
+			}
+		}
+		
+		var a = { 'foo': 1 };
+		var b = Object.create(a);
+		b.bar = 'test';
+		console.log(b.foo);
+		console.log(b.bar);
+	})();
+</script>
+</body>
+</html>
