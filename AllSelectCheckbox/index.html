@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AllSelectCheckbox</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 50px;
+}
+.all-check-wrap {
+	margin: 0 0 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="all-check-wrap"><input id="all-check" type="checkbox"> 全選択</div>
+<ul>
+	<li><input class="checkbox" type="checkbox">項目1</li>
+	<li><input class="checkbox" type="checkbox">項目2</li>
+	<li><input class="checkbox" type="checkbox">項目3</li>
+	<li><input class="checkbox" type="checkbox">項目4</li>
+	<li><input class="checkbox" type="checkbox">項目5</li>
+</ul>
+
+<script src="../common/js/riddle.js"></script>
+<script src="../common/js/riddle.ex.js"></script>
+<script src="../common/js/sakura.js"></script>
+<script>
+	(function(){
+		
+		var isAllCheck = false;
+		
+		var $allCheck,
+			$checkbox;
+		
+		// initialize
+		var initialize = function (){
+			// DOM要素
+			$allCheck = r('#all-check');
+			$checkbox = r('.checkbox');
+			
+			// bind
+			bind();
+		};
+		
+		// bind
+		var bind = function () {
+			$allCheck.bind('click', allCheckClick, false);
+		};
+		
+		// allCheckClick attr()では正確にchecked状態をチェック出来ないので、Javascriptのcheckedを使って設定する
+		var allCheckClick = function () {
+			if(isAllCheck){
+				console.log('check外す');
+				$checkbox.each(function(element){
+					element[0].checked = false;
+				});
+				isAllCheck = false;
+			} else {
+				console.log('check入れる');
+				$checkbox.each(function(element){
+					element[0].checked = true;
+				});
+				isAllCheck = true;
+			}
+		};
+		
+		window.addEventListener('load', function(){
+			initialize();
+		}, false);
+	})();
+</script>
+</body>
+</html>
