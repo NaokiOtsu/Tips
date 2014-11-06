@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ScrollLoadImage</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br><img class="image">あ<br>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+	(function(){
+		$(window).bind('scroll', function () {
+			// 表示領域
+			var clientHeight = (window.innerHeight || document.documentElement.clientHeight);
+			// スクロール量
+			var scrollTop = (document.body.scrollTop || document.documentElement.scrollTop);
+
+			// 現在のスクロール位置から画面半分上
+			var from = scrollTop - (clientHeight/2);
+			// 現在のスクロール位置から画面半分下
+			var to = scrollTop + clientHeight;
+			var url = 'sample.png';
+			
+			console.log('clientHeight: ' + clientHeight);
+			console.log('scrollTop: ' + scrollTop);
+			console.log('from: ' + from);
+			console.log('to: ' + to);
+
+			$('.image').each(function(){
+				var $dom = $(this);
+				if(this.offsetTop >= from && this.offsetTop < to){
+					var cache = new Image(); // 新しくImageインスタンスを生成
+					cache.onload = function () {
+						// 新しくimgタグを作って置き換え
+						var $image = $('<img>')
+							.attr('src', url)
+							.attr('alt', $dom.attr('alt'))
+							.addClass('image');
+						$dom.replaceWith($image);
+					}; // 読み込み完了時のハンドラを追加
+					cache.src = url; // 読み込み開始
+				}
+			});
+		});
+	})();
+</script>
+</body>
+</html>
