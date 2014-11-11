@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Test</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<input type="button" id="add" value="追加">
+<input type="button" id="delete" value="削除">
+<input type="button" id="update" value="更新">
+<div class="updatee"></div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+	(function(){
+		$(function(){
+			// 時刻配列。初めに現在時刻を格納する
+			var timestamps = [(new Date).getTime()];
+			
+			// 追加ボタンのクリックイベントハンドラ
+			// 時刻配列に現在時刻を追加し、表示が必要な事を通知する
+			$('#add').bind('click', function(){
+				timestamps.push((new Date).getTime());
+				notifyRequireUpdate();
+			});
+			
+			// 削除ボタンのクリックイベントハンドラ
+			// 時刻配列の先頭要素を削除し、表示が必要な事を通知する
+			$('#delete').bind('click', function(){
+				timestamps.shift();
+				notifyRequireUpdate();
+			});
+			
+			// 更新ボタンのクリックイベントハンドラ
+			// 表示が必要な事を通知する
+			$('#update').bind('click', function(){
+				notifyRequireUpdate();
+			});
+			
+			// 表示領域が更新処理を要求された時のイベントハンドラ
+			// 表示領域の更新を行う
+			$('.updatee').bind('timestamps.require.update', function(){
+				var $ul = $('<ul>');
+				// 時刻配列をすべて画面に出力する
+				$.each(timestamps, function(){
+					$ul.append('<li>updated: ' + this + '</li>');
+				});
+				$(this).html($ul);
+			});
+			
+			// 表示が必要な事を通知する関数
+			function notifyRequireUpdate(){
+				$('.updatee').trigger('timestamps.require.update');
+			}
+			
+			// 初回更新
+			notifyRequireUpdate();
+		});
+	})();
+</script>
+</body>
+</html>
