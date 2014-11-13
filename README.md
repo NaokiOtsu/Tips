@@ -10,6 +10,9 @@ javascript,css,htmlの色んなTipsを練習がてら
 ## AngularTest
 AngularJSのテスト実装。
 
+## AutoScroll
+読み込み時に対象divまでページ内をスクロールさせる
+
 ## BackBoneJSTest
 BackBoneJSのテスト実装。
 
