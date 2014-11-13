@@ -22,6 +22,9 @@ PC,SPの開発をすぐ始める為のデフォルトファイル
 ## BomAnimation
 爆発系のCSSアニメーション
 
+## BorderImageSample
+CSS3:border-imageのサンプル
+
 ## Bower
 Bowerのテスト
 
