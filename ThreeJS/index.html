@@ -13,18 +13,25 @@
 (function(){
 	
 	var width = 500,
-		height = 300;
+		height = 300,
+		cube = [],
+		count = 10,
+		i,
+		cubeSize;
 	
 	// Scene 
 	var scene = new THREE.Scene();
 	
 	// mesh
-	var geometry = new THREE.CubeGeometry(50,50,50);
-	var material = new THREE.MeshLambertMaterial({ color: 0xff0000 });
-	var cube = new THREE.Mesh( geometry, material );
-	cube.position.set(0,50,0);
-	cube.castShadow = true;
-	scene.add(cube);
+	for(i=0; i<count; i++){
+		cubeSize = r(50);
+		var geometry = new THREE.CubeGeometry(cubeSize,cubeSize,cubeSize);
+		var material = new THREE.MeshLambertMaterial({ color: 'rgb('+r(255)+','+r(255)+','+r(255)+')' });
+		cube[i] = new THREE.Mesh( geometry, material );
+		cube[i].position.set(0, 50+r(200),0);
+		cube[i].castShadow = true;
+		scene.add(cube[i]);
+	}
 	
 	// plane
 	var pGeometry = new THREE.PlaneGeometry(300,300);
@@ -41,13 +48,13 @@
 	light.castShadow = true;
 	scene.add(light);
 	
-	var ambient = new THREE.AmbientLight(0x555555);
+	var ambient = new THREE.AmbientLight(0x550000);
 	scene.add(ambient);
 	
 	// Camera
 	var camera = new THREE.PerspectiveCamera(45, width/height, 1, 1000);
 	camera.position.set(200,300,500);
-	camera.lookAt(cube.position);
+	// camera.lookAt(cube.position);
 	
 	// helper
 	var axis = new THREE.AxisHelper(1000);
@@ -66,16 +73,22 @@
 	
 	function render(){
 		requestAnimationFrame(render);
-		cube.rotation.x += 1 * Math.PI / 180;
-		cube.rotation.y += 1 * Math.PI / 180;
-		cube.rotation.z += 1 * Math.PI / 180;
-		cube.position.x = Math.sin(new Date().getTime() / 200) * 100;
-		cube.position.z = Math.cos(new Date().getTime() / 200) * 100;
+		for(i=0; i<count; i++){
+			cube[i].rotation.x += i * Math.PI / 180;
+			cube[i].rotation.y += i * Math.PI / 180;
+			cube[i].rotation.z += i * Math.PI / 180;
+			cube[i].position.x = Math.sin(new Date().getTime() / (200+i)) * 100;
+			cube[i].position.z = Math.cos(new Date().getTime() / (200+i)) * 100;
+		}
 		renderer.render(scene, camera);
 		
 		controls.update();
 	}
 	render();
+	
+	function r(n) {
+		return Math.floor(Math.random() * (n+1));
+	}
 	
 })();
 </script>
