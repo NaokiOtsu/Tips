@@ -1,5 +1,4 @@
-# フロントエンドTips
-javascript,css,htmlの色んなTipsを練習がてら
+# FrontEnd Tips
 
 ## Accordion
 アコーディオン

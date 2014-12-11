@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ImagePreloader</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+<script>
+	(function(){
+		function ImageLoader(){
+			this.imageUrls = [];
+			this.loaded = 0;
+		}
+
+		ImageLoader.prototype.addPreLoad = function (url){
+			var self = this;
+			self.imageUrls.push(url); // 読み込み対象に追加
+			var cache = new Image(); // 新しくImageインスタンスを生成
+			cache.onload = function(){
+				self.loaded++;
+				console.log(self.loaded + "/" + self.imageUrls.length + "loaded");
+			}; // 読み込み完了時のハンドラを追加
+			cache.src = url; // 画像URLを設定(ここで読み込みが始まる)
+			return cache;
+		}
+
+		var loader = new ImageLoader();
+		loader.addPreLoad('sample1.png');
+		loader.addPreLoad('sample2.png');
+		loader.addPreLoad('sample3.png');
+	})();
+</script>
+</body>
+</html>
