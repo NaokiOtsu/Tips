@@ -13,6 +13,7 @@
 		053D1F201A38366C00F807D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053D1F1F1A38366C00F807D9 /* Images.xcassets */; };
 		053D1F231A38366C00F807D9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053D1F211A38366C00F807D9 /* MainMenu.xib */; };
 		053D1F2F1A38366C00F807D9 /* Game1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1F2E1A38366C00F807D9 /* Game1Tests.swift */; };
+		053D1F391A383A7900F807D9 /* 211902_150.png in Resources */ = {isa = PBXBuildFile; fileRef = 053D1F381A383A7900F807D9 /* 211902_150.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		053D1F281A38366C00F807D9 /* Game1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Game1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		053D1F2D1A38366C00F807D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		053D1F2E1A38366C00F807D9 /* Game1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game1Tests.swift; sourceTree = "<group>"; };
+		053D1F381A383A7900F807D9 /* 211902_150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 211902_150.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		053D1F161A38366B00F807D9 /* Game1 */ = {
 			isa = PBXGroup;
 			children = (
+				053D1F381A383A7900F807D9 /* 211902_150.png */,
 				053D1F191A38366B00F807D9 /* AppDelegate.swift */,
 				053D1F1B1A38366B00F807D9 /* GameScene.swift */,
 				053D1F1D1A38366C00F807D9 /* GameScene.sks */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				053D1F1E1A38366C00F807D9 /* GameScene.sks in Resources */,
+				053D1F391A383A7900F807D9 /* 211902_150.png in Resources */,
 				053D1F201A38366C00F807D9 /* Images.xcassets in Resources */,
 				053D1F231A38366C00F807D9 /* MainMenu.xib in Resources */,
 			);
