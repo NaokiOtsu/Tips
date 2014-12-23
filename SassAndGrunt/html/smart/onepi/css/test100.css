@@ -1,0 +1,33 @@
+/* line 3, ../../../../dev/scss/test100.scss */
+.body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 9, ../../../../dev/scss/test100.scss */
+.test {
+  font-size: 12px;
+  font-weight: bold;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* line 15, ../../../../dev/scss/test100.scss */
+.test2 {
+  width: 640px;
+  height: 640px;
+  background-image: url('../../../i/onepi/sample.jpg?6ff49d339d');
+  color: #ff0000;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* line 24, ../../../../dev/scss/test100.scss */
+.test3 {
+  width: 640px;
+  height: 640px;
+  background-image: url('../../../i/onepi/sample2.jpg?bbd1ed7716');
+  font-size: 12px;
+  font-weight: bold;
+}
