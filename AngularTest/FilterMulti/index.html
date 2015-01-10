@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS demo</title>
+		<script src="../js/angular.v1.2.28.min.js"></script>
+		<script src="myApp.js"></script>
+	</head>
+	<body>
+		<div ng-controller="MainCtrl">
+			<input type="text" ng-model="searchText">
+			<pre>{{names | filter:searchText | json}}</pre>
+		</div>
+	</body>
+</html>

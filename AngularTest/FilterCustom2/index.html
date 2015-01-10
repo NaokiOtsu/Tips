@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS demo</title>
+		<script src="../js/angular.v1.2.28.min.js"></script>
+		<script src="myApp.js"></script>
+	</head>
+	<body>
+		<div ng-controller="MainCtrl">
+			<div>{{name | truncate}}</div>
+			<div>{{name | truncate:4}}</div>
+			<div>{{name | truncate:4:'....'}}</div>
+		</div>
+	</body>
+</html>
