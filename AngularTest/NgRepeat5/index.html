@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS demo</title>
+		<script src="../js/angular.v1.2.28.min.js"></script>
+		<script src="myApp.js"></script>
+	</head>
+	<body>
+		<div ng-controller="MainCtrl">
+			<div>
+				並び順: 
+				<input type="radio" name="order" ng-model="order" value="name">名前
+				<input type="radio" name="order" ng-model="order" value="age">年齢
+			</div>
+			
+			<div>
+				逆にする: <input type="checkbox" ng-model="reverse">
+			</div>
+			
+			<ul ng-repeat="member in members | orderBy:order:reverse">
+				<li>{{member.name}} {{member.age}}</li>
+			</ul>
+		</div>
+	</body>
+</html>
