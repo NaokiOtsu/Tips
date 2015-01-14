@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS demo</title>
+		<script src="../js/angular.v1.2.28.min.js"></script>
+		<script src="myApp.js"></script>
+	</head>
+	<body>
+		<div ng-controller="MainCtrl">
+			<table>
+				<tr>
+					<td>Value</td>
+					<td>$index</td>
+					<td>$first</td>
+					<td>$middle</td>
+					<td>$last</td>
+					<td>$even</td>
+					<td>$odd</td>
+				</tr>
+				<tr ng-repeat="name in names">
+					<td>{{name}}</td>
+					<td>{{$index}}</td>
+					<td>{{$first}}</td>
+					<td>{{$middle}}</td>
+					<td>{{$last}}</td>
+					<td>{{$even}}</td>
+					<td>{{$odd}}</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
