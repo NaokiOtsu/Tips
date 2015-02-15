@@ -81,6 +81,9 @@ Javascriptの基礎勉強
 ## PhoneGapTest
 PhoneGapのテスト実装
 
+## PixiJS
+Pixi.jsを使って、画像を回転されるサンプル
+
 ## RandomNum
 ランダムな数字を生成
 
