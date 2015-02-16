@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TweenMax.js</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+#image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -60px 0 0 -60px;
+}
+ul {
+	margin: 50px;
+}
+li {
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<div id="image"><img src="sample.png" height="120" width="120" alt=""></div>
+
+<ul>
+	<li class="image"><img src="sample.png" height="60" width="60" alt=""></li>
+	<li class="image"><img src="sample.png" height="60" width="60" alt=""></li>
+	<li class="image"><img src="sample.png" height="60" width="60" alt=""></li>
+</ul>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.1/TweenMax.min.js"></script>
+<script>
+(function(){
+	// ドキュメント http://greensock.com/docs/#/HTML5/GSAP/TweenMax
+	// easingのドキュメント http://greensock.com/docs/#/HTML5/Easing/Back/
+	
+	// 対応ブラウザ
+	// IE 6+ ただし古いバージョンは回転などのアニメーションが効かない
+	// Chrome(現行バージョン)
+	// Firefox(現行バージョン)
+	// iOS 5+
+	// Android 2.3+ ただし下位端末は重たい報告
+	
+	// ライセンス
+	// http://greensock.com/standard-license
+	// https://greensock.com/licensing/
+	// 無料で公開されている商用コンテンツでは無償で使用可能
+	// 有料(何かを買わないと見れない)だったり、有料会員向けの場合はライセンスの購入が必要
+	
+	// 基本的な使い方
+	// .to(); 今いるところからアニメーション
+	// .from(); ゴール地点から今いる場所にアニメーション
+	// .fromTo(); ゴール地点から新たなゴール地点を指定してアニメーション(2つの指定が必要)
+	// .set(); 指定したCSSにセットする
+	// .delay(); 指定した秒数待ってからアニメーションする
+	// .repeat(); アニメーション後に繰り返しアニメーションする回数を指定してリピートする
+	// .reverse(); アニメーションを逆再生する(fromと同じ効果になる)
+	// .killTweensOf(); 指定した要素のアニメーションを終了させる
+	// .delayedCall(); 一定時間遅らせて引数の関数を実行する
+	TweenMax.to('#image', 1, {
+		x: 100,
+		opacity: 1,
+		rotation: 360,
+		scale: 0.5,
+		ease: Back.easeOut.config(1.7),
+		onComplete: animationEnd
+	});
+	
+	// 少しずらしてアニメーション
+	// .staggerTo(); 今いるところから少し0.2秒ずつずらしてアニメーション
+	// .staggerFrom(); ゴール地点から今いる場所に少し0.2秒ずつずらしてアニメーション
+	// .staggerFromTo(); ゴール地点から新たなゴール地点に少し0.2秒ずつずらしてアニメーション(2つの指定が必要)
+	TweenMax.staggerTo('.image', 1, {
+		x: 100,
+		opacity: 0,
+		rotation: 360,
+		scale: 0
+	}, 0.2);
+	
+	// onComplete
+	function animationEnd() {
+		console.log('animationEnd!');
+	};
+	
+})();
+</script>
+</body>
+</html>
