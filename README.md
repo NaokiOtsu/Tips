@@ -60,6 +60,9 @@ Gruntで、ローカルサーバー設定、Livereload、watch、build用のフ�
 ## JavascriptBasic
 Javascriptの基礎勉強
 
+## JavascriptSpecification
+Javascriptの仕様や理解を深めるメモ
+
 ## MarioCartAnimationTest
 マリオカート8で出てくるアニメーションを参考にWeb実装
 
