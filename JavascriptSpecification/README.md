@@ -377,6 +377,79 @@ var sayNameForPerson2 = sayNameForAll.bind(person2, "person2");
 sayNameForPerson2(); // "person2:Greg"
 ```
 
+## オブジェクトのプロパティの存在確認
+
+より信頼性の高い方法は、in演算子を使用する事。  
+in演算子は指定されたオブジェクト内で、与えられた名前を持つプロパティを検索し、発見されたらtrueを返す。  
+```
+console.log("name" in person1); // true
+console.log("age" in person1); // true
+console.log("title" in person1); // false
+```
+メソッドの存在確認も同じように行うことができる。  
+```
+var person1 = {
+	name: "Naoki",
+	sayName: function() {
+		console.log(this.name);
+	}
+};
+
+console.log("sayName" in person1); // true
+console.log(typeof person1.sayName === "function"); // true
+```
+ただしin演算子は、自信のプロパティとプロトタイプのプロパティの両方が検索対象となる。  
+オブジェクト自身のプロパティのみを対象としてプロパティの存在確認をしたいときは、hasOwnProperty()メソッドを使う。  
+hasOwnProperty()はすべてのオブジェクトで使用する事ができ、名前を持つプロパティが存在し、自身のプロパティの場合のみtrueを返す。
+```
+console.log(person1.hasOwnProperty("name");); // true
+```
+
+## プロパティの削除
+
+オブジェクトにnullを与えただけでは削除したことにはならない。  
+完全に削除するにはdelete演算子を使用する。  
+```
+// delete演算子の使用例
+var person1 = {
+	name: "naoki"
+};
+
+console.log("name" in person1); // true
+
+delete person1.name; // trueを返す
+
+console.log("name" in person1); // false
+console.log(person1.name); // undefined
+```
+
+## 列挙
+
+オブジェクトのプロパティのすべては、for-inループで列挙出来る。  
+```
+var property;
+
+for(property in object) {
+	console.log("Name: " + property);
+	console.log("Value: " + object[property]);
+}
+```
+
+オブジェクトが持つプロパティ名のリストだけを取得して後にプログラム内で使用する場合は、ES5で追加されたObject.keys()メソッドが利用出来る。  
+```
+var properties = Object.keys(object);
+
+var i, len;
+
+for(i=0, len=properties; i < len; i++) {
+	console.log("Name: " + properties[i]);
+	console.log("Value: " + object[properties[i]]);
+}
+```
+一般的には、プロパティ名の配列が欲しい時は、Object.keys()を使用し、配列が必要ない時はfor-inループを使用する。  
+Object.keys()は自身のプロパティのみが取得対象となる。  
+
+
 
 
 
