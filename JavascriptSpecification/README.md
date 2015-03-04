@@ -449,11 +449,48 @@ for(i=0, len=properties; i < len; i++) {
 一般的には、プロパティ名の配列が欲しい時は、Object.keys()を使用し、配列が必要ない時はfor-inループを使用する。  
 Object.keys()は自身のプロパティのみが取得対象となる。  
 
+すべてのプロパティが列挙可能な訳ではない。  
+プロパティが列挙可能かどうかは、すべてのオブジェクトで使用できるpropertyIsEnumerable()メソッドで確認できます。  
+```
+var person1 = {
+	name: 'naoki'
+};
 
+console.log("name" in person1); // true
+console.log(person1.propertyIsEnumerable('name')); // true
 
+var array = [1, 2, 3];
 
+console.log("length" in array); // true
+console.log(array.propertyIsEnumerable("length")); / false
+```
 
+## データプロパティとアクセサプロパティ
 
+JavaScriptのプロパティは、データプロパティとアクセサプロパティの2種類に分類される。  
+データプロパティ: 値を格納する  
+アクセサプロパティ: 値を格納せず、プロパティの値を読み出す場合に呼び出される関数getter、書き込みが行われる時に呼び出される関数setterを定義する。  
+オブジェクトリテラル内でアクセサプロパティを設定する記法は下記となる。  
+```
+var person1 = {
+	_name: 'Naoki',
+
+	get name() {
+		console.log('nameを読みます');
+		return this._name;
+	},
+
+	set name(value) {
+		console.log("nameに%sを設定します", value);
+		this._name = value;
+	}
+};
+
+console.log(person1.name); // Naoki
+
+person1.name = 'Daisuke';
+console.log(person1.name); // Daisuke
+```
 
 
 
