@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MovePhotoDeviceMotion</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+#image {
+	position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(1.3);
+}
+</style>
+</head>
+<body>
+
+<div id="image"><img src="FullSizeRender.jpg" width="100%" alt=""></div>
+
+<script>
+(function(){
+	'use strict';
+	
+  // android 3以降 iOS safari 4.2以降
+  window.addEventListener("deviceorientation", function(e) {
+      var beta = e.beta,
+          gamma = e.gamma,
+          image = document.getElementById('image');
+      
+      image.style.left = gamma.toFixed(0) + 'px';
+      image.style.top = geta.toFixed(0) + 'px';
+      
+  }, true);
+	
+})();
+</script>
+</body>
+</html>
