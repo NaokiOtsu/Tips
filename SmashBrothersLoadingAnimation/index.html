@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SmashBrothersLoadingAnimation</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+#loading {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 100px;
+	width: 100px;
+	height: 100px;
+	-webkit-border-radius: 100px;
+	overflow: hidden;
+	color: rgba(0,0,0,0);
+	background-image: url(bg.png);
+	-webkit-background-size: 150px 250px;
+	background-size: 150px 250px;
+	-webkit-background-clip: border-box;
+	background-clip: border-box;
+	border: 4px solid #b50151;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-animation: move 4s linear infinite;
+}
+@-webkit-keyframes move {
+	0% { background-position: 0 0; }
+	100% { background-position: 0 -250px; }
+}
+#rotation {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	-webkit-animation: rotation 1.5s linear infinite;
+}
+@-webkit-keyframes rotation {
+	0% { -webkit-transform: rotate(0); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+
+<div id="loading"></div>
+<img id="rotation" src="rotate.png" height="140" width="140" alt="">
+
+</body>
+</html>
