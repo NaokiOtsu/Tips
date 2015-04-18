@@ -69,6 +69,9 @@ Javascriptの仕様や理解を深めるメモ
 ## Modal
 モーダル
 
+## MovePhotoDeviceMotion
+デバイスの傾きによって画像を移動させるサンプル(iPadの待ち受け画面のように)  
+
 ## NumberBounce
 数字が跳ねるアニメーション
 
