@@ -78,6 +78,9 @@ Javascriptの仕様や理解を深めるメモ
 ## Modal
 モーダル
 
+## ModalPrototype
+モーダルをprototypeを使って実装(prev,nextボタン付き)
+
 ## MovePhotoDeviceMotion
 デバイスの傾きによって画像を移動させるサンプル(iPadの待ち受け画面を真似て)  
 
