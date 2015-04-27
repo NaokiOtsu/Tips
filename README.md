@@ -30,6 +30,9 @@ CSS3:border-imageのサンプル
 ## BowerTest
 Bowerのテスト
 
+## CanvasSample
+Canvasでパーティクルサンプルを実装
+
 ## Carousel
 カルーセル
 
