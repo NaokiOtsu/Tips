@@ -75,6 +75,9 @@ Javascriptの基礎勉強
 ## JavascriptSpecification
 Javascriptの仕様や理解を深めるメモ
 
+## LocalServerGrunt
+Gruntでローカルサーバー立ち上げのみを実装
+
 ## MarioCartAnimationTest
 マリオカート8で出てくるアニメーションを参考にWeb実装
 
@@ -120,6 +123,9 @@ Sass
 ## ScrollLoadImage
 画面をスクロールして表示領域内の画像を読み込んで表示
 
+## SinglePageApplicationSample
+SPA(Single Page Application)でコンテンツ切り替えのサンプルを実装
+
 ## StyleDoccoTest
 StyleDoccoのテスト
 
@@ -131,6 +137,9 @@ SVGで文字を作成し手書きのようにアニメーション
 
 ## Tab
 タブ
+
+## TableContentsFilterSort
+Ajax,API連携,データ検索のサンプルを追加
 
 ## ThreeJS
 ThreeJSのテスト実装
