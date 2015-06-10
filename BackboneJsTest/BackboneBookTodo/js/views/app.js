@@ -49,7 +49,7 @@ app.AppView = Backbone.View.extend({
 			this.$footer.hide();
 		}
 		
-		this.addCheckbox.checked = !remaining;
+		this.allCheckbox.checked = !remaining;
 	},
 	
 	addOne: function(todo) {
