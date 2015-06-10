@@ -20,6 +20,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func kakusu(sender: AnyObject) {
+//        mainImage.hidden = true
+    }
 
+    @IBAction func hyouji(sender: AnyObject) {
+//        mainImage.hidden = false
+    }
 }
 
