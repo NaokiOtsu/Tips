@@ -13,6 +13,7 @@
 		05F836A11B27BB28002FE0E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05F836A01B27BB28002FE0E3 /* Images.xcassets */; };
 		05F836A41B27BB28002FE0E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F836A21B27BB28002FE0E3 /* LaunchScreen.xib */; };
 		05F836B01B27BB28002FE0E3 /* MyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F836AF1B27BB28002FE0E3 /* MyAppTests.swift */; };
+		05F836BA1B27BE85002FE0E3 /* chara_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 05F836B91B27BE85002FE0E3 /* chara_1.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		05F836A91B27BB28002FE0E3 /* MyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F836AE1B27BB28002FE0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05F836AF1B27BB28002FE0E3 /* MyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppTests.swift; sourceTree = "<group>"; };
+		05F836B91B27BE85002FE0E3 /* chara_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = chara_1.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				05F836991B27BB28002FE0E3 /* AppDelegate.swift */,
 				05F8369B1B27BB28002FE0E3 /* ViewController.swift */,
 				05F8369D1B27BB28002FE0E3 /* Main.storyboard */,
+				05F836B91B27BE85002FE0E3 /* chara_1.gif */,
 				05F836A01B27BB28002FE0E3 /* Images.xcassets */,
 				05F836A21B27BB28002FE0E3 /* LaunchScreen.xib */,
 				05F836971B27BB28002FE0E3 /* Supporting Files */,
@@ -194,6 +197,7 @@
 			files = (
 				05F8369F1B27BB28002FE0E3 /* Main.storyboard in Resources */,
 				05F836A41B27BB28002FE0E3 /* LaunchScreen.xib in Resources */,
+				05F836BA1B27BE85002FE0E3 /* chara_1.gif in Resources */,
 				05F836A11B27BB28002FE0E3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
