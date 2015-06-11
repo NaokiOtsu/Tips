@@ -40,9 +40,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="chara_1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ui8-WW-C57">
-                                <rect key="frame" x="-13" y="64" width="343" height="365"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -50,7 +47,6 @@
                     <connections>
                         <outlet property="hyouji" destination="txW-QD-ZCk" id="nQL-fN-HxL"/>
                         <outlet property="kakusu" destination="ky1-ba-Ki8" id="5eC-wY-IMy"/>
-                        <outlet property="mainImage" destination="ui8-WW-C57" id="dGM-vS-0ay"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -58,7 +54,4 @@
             <point key="canvasLocation" x="-23" y="153"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="chara_1.gif" width="343" height="365"/>
-    </resources>
 </document>

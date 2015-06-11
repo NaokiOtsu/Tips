@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05899EA01B290B9800C08874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05899E9F1B290B9800C08874 /* AppDelegate.swift */; };
+		05899EA21B290B9800C08874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05899EA11B290B9800C08874 /* ViewController.swift */; };
+		05899EA51B290B9800C08874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05899EA31B290B9800C08874 /* Main.storyboard */; };
+		05899EA71B290B9800C08874 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05899EA61B290B9800C08874 /* Images.xcassets */; };
+		05899EAA1B290B9800C08874 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05899EA81B290B9800C08874 /* LaunchScreen.xib */; };
+		05899EB61B290B9800C08874 /* FortuneTellingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05899EB51B290B9800C08874 /* FortuneTellingTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05899EB01B290B9800C08874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05899E921B290B9800C08874 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05899E991B290B9800C08874;
+			remoteInfo = FortuneTelling;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05899E9A1B290B9800C08874 /* FortuneTelling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneTelling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05899E9E1B290B9800C08874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05899E9F1B290B9800C08874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		05899EA11B290B9800C08874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05899EA41B290B9800C08874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05899EA61B290B9800C08874 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		05899EA91B290B9800C08874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		05899EAF1B290B9800C08874 /* FortuneTellingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FortuneTellingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05899EB41B290B9800C08874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05899EB51B290B9800C08874 /* FortuneTellingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneTellingTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05899E971B290B9800C08874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05899EAC1B290B9800C08874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05899E911B290B9800C08874 = {
+			isa = PBXGroup;
+			children = (
+				05899E9C1B290B9800C08874 /* FortuneTelling */,
+				05899EB21B290B9800C08874 /* FortuneTellingTests */,
+				05899E9B1B290B9800C08874 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05899E9B1B290B9800C08874 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05899E9A1B290B9800C08874 /* FortuneTelling.app */,
+				05899EAF1B290B9800C08874 /* FortuneTellingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05899E9C1B290B9800C08874 /* FortuneTelling */ = {
+			isa = PBXGroup;
+			children = (
+				05899E9F1B290B9800C08874 /* AppDelegate.swift */,
+				05899EA11B290B9800C08874 /* ViewController.swift */,
+				05899EA31B290B9800C08874 /* Main.storyboard */,
+				05899EA61B290B9800C08874 /* Images.xcassets */,
+				05899EA81B290B9800C08874 /* LaunchScreen.xib */,
+				05899E9D1B290B9800C08874 /* Supporting Files */,
+			);
+			path = FortuneTelling;
+			sourceTree = "<group>";
+		};
+		05899E9D1B290B9800C08874 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05899E9E1B290B9800C08874 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05899EB21B290B9800C08874 /* FortuneTellingTests */ = {
+			isa = PBXGroup;
+			children = (
+				05899EB51B290B9800C08874 /* FortuneTellingTests.swift */,
+				05899EB31B290B9800C08874 /* Supporting Files */,
+			);
+			path = FortuneTellingTests;
+			sourceTree = "<group>";
+		};
+		05899EB31B290B9800C08874 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05899EB41B290B9800C08874 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05899E991B290B9800C08874 /* FortuneTelling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05899EB91B290B9800C08874 /* Build configuration list for PBXNativeTarget "FortuneTelling" */;
+			buildPhases = (
+				05899E961B290B9800C08874 /* Sources */,
+				05899E971B290B9800C08874 /* Frameworks */,
+				05899E981B290B9800C08874 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FortuneTelling;
+			productName = FortuneTelling;
+			productReference = 05899E9A1B290B9800C08874 /* FortuneTelling.app */;
+			productType = "com.apple.product-type.application";
+		};
+		05899EAE1B290B9800C08874 /* FortuneTellingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05899EBC1B290B9800C08874 /* Build configuration list for PBXNativeTarget "FortuneTellingTests" */;
+			buildPhases = (
+				05899EAB1B290B9800C08874 /* Sources */,
+				05899EAC1B290B9800C08874 /* Frameworks */,
+				05899EAD1B290B9800C08874 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05899EB11B290B9800C08874 /* PBXTargetDependency */,
+			);
+			name = FortuneTellingTests;
+			productName = FortuneTellingTests;
+			productReference = 05899EAF1B290B9800C08874 /* FortuneTellingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05899E921B290B9800C08874 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = NaokiOtsu;
+				TargetAttributes = {
+					05899E991B290B9800C08874 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					05899EAE1B290B9800C08874 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 05899E991B290B9800C08874;
+					};
+				};
+			};
+			buildConfigurationList = 05899E951B290B9800C08874 /* Build configuration list for PBXProject "FortuneTelling" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05899E911B290B9800C08874;
+			productRefGroup = 05899E9B1B290B9800C08874 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05899E991B290B9800C08874 /* FortuneTelling */,
+				05899EAE1B290B9800C08874 /* FortuneTellingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05899E981B290B9800C08874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05899EA51B290B9800C08874 /* Main.storyboard in Resources */,
+				05899EAA1B290B9800C08874 /* LaunchScreen.xib in Resources */,
+				05899EA71B290B9800C08874 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05899EAD1B290B9800C08874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05899E961B290B9800C08874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05899EA21B290B9800C08874 /* ViewController.swift in Sources */,
+				05899EA01B290B9800C08874 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05899EAB1B290B9800C08874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05899EB61B290B9800C08874 /* FortuneTellingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05899EB11B290B9800C08874 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05899E991B290B9800C08874 /* FortuneTelling */;
+			targetProxy = 05899EB01B290B9800C08874 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		05899EA31B290B9800C08874 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05899EA41B290B9800C08874 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		05899EA81B290B9800C08874 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05899EA91B290B9800C08874 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05899EB71B290B9800C08874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		05899EB81B290B9800C08874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05899EBA1B290B9800C08874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FortuneTelling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05899EBB1B290B9800C08874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FortuneTelling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		05899EBD1B290B9800C08874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FortuneTellingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FortuneTelling.app/FortuneTelling";
+			};
+			name = Debug;
+		};
+		05899EBE1B290B9800C08874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FortuneTellingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FortuneTelling.app/FortuneTelling";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05899E951B290B9800C08874 /* Build configuration list for PBXProject "FortuneTelling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05899EB71B290B9800C08874 /* Debug */,
+				05899EB81B290B9800C08874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05899EB91B290B9800C08874 /* Build configuration list for PBXNativeTarget "FortuneTelling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05899EBA1B290B9800C08874 /* Debug */,
+				05899EBB1B290B9800C08874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		05899EBC1B290B9800C08874 /* Build configuration list for PBXNativeTarget "FortuneTellingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05899EBD1B290B9800C08874 /* Debug */,
+				05899EBE1B290B9800C08874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05899E921B290B9800C08874 /* Project object */;
+}
