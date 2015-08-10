@@ -888,3 +888,6 @@ window.console = new console();
 	});
 
 })(r, window);
+
+console.log('111');
+console.log('bbb');
