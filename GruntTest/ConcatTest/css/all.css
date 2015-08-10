@@ -4357,3 +4357,7 @@ body {
 
 
 /*-------------------------------*/
+
+.test { margin: 1px; }
+body { padding: 0; }
+body { margin-top: 0; }

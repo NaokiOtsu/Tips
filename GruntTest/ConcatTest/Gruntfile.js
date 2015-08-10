@@ -10,9 +10,9 @@ module.exports = function(grunt) {
 		concat: {
 			files: {
 				// 元ファイルの指定。
-				src : './css/**/*.css',
+				src : './js/**/*.js',
 				// 出力ファイルの名前・パス指定
-				dest: './css/all.css'
+				dest: './js/all.js'
 			}
 		}
 	});
