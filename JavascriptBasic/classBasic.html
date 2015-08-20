@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Class Basic</title>
+</head>
+<body>
+	
+<script>
+	var Person = function(firstName) {
+		this.firstName = firstName;
+	};
+	
+	Person.prototype.walk = function() {
+		console.log('I am walking!');
+	};
+	
+	Person.prototype.sayHello = function() {
+		console.log("Hello, I'm" + this.firstName);
+	};
+	
+	function Student(firstName, subject) {
+		Person.call(this, firstName);
+		
+		this.subject = subject;
+	}
+	
+	Student.prototype = Object.create(Person.prototype);
+	Student.prototype.constructor = Student;
+	
+	Student.prototype.sayHello = function() {
+		console.log("Hello, I'm " + this.firstName + ". I'm studying " + this.subject + ".");
+	};
+	
+	Student.prototype.sayGoodBye = function() {
+		console.log('Goodbye!');
+	};
+	
+	var student1 = new Student("Janet", "Applied Physics");
+	student1.sayHello();
+	student1.walk();
+	student1.sayGoodBye();
+	
+	console.log(student1 instanceof Person);
+	console.log(student1 instanceof Student);
+</script>
+</body>
+</html>
