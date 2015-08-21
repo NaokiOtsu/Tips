@@ -1,5 +1,5 @@
 # Gruntで、Connect,Watch,Livereload
-Gruntの  
+Gruntの
 - [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 - [connect-livereload](https://github.com/intesso/connect-livereload)  
