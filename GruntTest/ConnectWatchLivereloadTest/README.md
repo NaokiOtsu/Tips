@@ -2,7 +2,8 @@
 Gruntの  
 - [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
-- [connect-livereload](https://github.com/intesso/connect-livereload)  を使って、ローカルサーバーの立ち上げとファイル監視、変更の際にブラウザ自動更新(livereload)機能を実装。
+- [connect-livereload](https://github.com/intesso/connect-livereload)
+を使って、ローカルサーバーの立ち上げとファイル監視、変更の際にブラウザ自動更新(livereload)機能を実装。
 
 ## 実装の際の注意点
 connect-livereloadは、loadNpmTasksしなくてよかったが、  
