@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>フィルタ・ソート機能付き表コンテンツ</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+</head>
+<body>
+    <div class="container">
+      <div class="page-header">
+        <h1>AJAX・API連携・データ検索</h1>
+      </div>
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label for="" class="col-sm-2 control-label">group</label>
+          <div class="col-sm-10">
+            <!--select.form-control.filter-->
+            <select name="filter" class="form-control">
+              <option></option>
+              <option value="a">a</option>
+              <option value="b">b</option>
+              <option value="c">c</option>
+              <option value="d">d</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-sm-2 control-label">sort</label>
+          <div class="col-sm-10">
+            <!--select.form-control.sort-->
+            <select name="sort" class="form-control">
+              <option></option>
+              <option value="id">id</option>
+              <option value="name">name</option>
+              <option value="age">age</option>
+              <option value="group">group</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>group</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <script type="text/template" data-template="item">
+        <% _.each(list, function(e, i) { %>
+          <tr>
+            <th><%= e.id %></th>
+            <td><%= e.name %></td>
+            <td><%= e.age %></td>
+            <td><%= e.group %></td>
+          </tr>
+        <% }); %>
+      </script>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

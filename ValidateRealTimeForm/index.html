@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ValidateRealTimeForm</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<labal for="">アカウントを作成</labal>
+		</div>
+		<div class="col">
+			<input type="text" placeholder="4文字以上8文字以内で入力してください" data-minlength="4" data-maxlength="8" required>
+			<ul>
+				<li data-error="required">必須項目です</li>
+				<li data-error="minlength">4文字以上で入力してください</li>
+				<li data-error="maxlength">8文字以内で入力してください</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<label for="">パスワードを作成</label>
+		</div>
+		<div class="col">
+			<input type="text" placeholder="4文字以上8文字以内で入力してください" data-minlength="4" data-maxlength="8" required>
+			<ul>
+				<li data-error="required">必須項目です</li>
+				<li data-error="minlength">4文字以上で入力してください</li>
+				<li data-error="maxlength">8文字以内で入力してください</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BackboneJS</title>
+<link rel="stylesheet" href="assets/base.css">
+</head>
+<body>
+<sction id="todoapp">
+	<header id="header">
+		<h1>Todo リスト</h1>
+		<input type="text" id="new-todo" placeholder="することを入力してください" autofocus>
+	</header>
+</sction>
+<sction id="main">
+	<input type="checkbox" id="toggle-all">
+	<label for="toggle-all">すべて完了済みにする</label>
+	<ul id="todo-list"></ul>
+	<footer id="footer"></footer>
+</sction>
+
+<div id="info">
+	<p>項目はダブルクリックすると編集できます</p>
+	<p>作: <a href="https://github.com/addyosmani">Addy Osmani</a></p>
+	<p><a href="http://todomvc.com">TodoMVC</a>の一部として開発</p>
+</div>
+<script type="text/template" id="item-template">
+	<div class="view">
+		<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+		<label><%- title %></label>
+	</div>
+	<input class="edit" value="<%- title %>">
+</script>
+<script type="text/template" id="stats-template">
+	<span id="todo-count">残り<strong><%= remaining %></strong>件</span>
+	<ul id="filters">
+		<li>
+			<a class="selected" href="#/">すべて</a>
+		</li>
+		<li>
+			<a href="#/active">未了</a>
+		</li>
+		<li>
+			<a href="#/completed">完了済み</a>
+		</li>
+	</ul>
+	
+	<% if (completed) { %>
+		<button id="clear-completed">完了済みの項目を消去(<%= completed %>件)</button>
+	<% } %>
+</script>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/underscore-min.js"></script>
+<script src="js/lib/backbone-min.js"></script>
+<script src="js/lib/backbone.localStorage.js"></script>
+<script src="js/models/todo.js"></script>
+<script src="js/collections/todos.js"></script>
+<script src="js/views/todos.js"></script>
+<script src="js/views/app.js"></script>
+<script src="js/rounters/router.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
