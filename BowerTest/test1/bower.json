@@ -1,0 +1,21 @@
+{
+  "name": "test1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/NaokiOtsu/Tips",
+  "authors": [
+    "naoki.otsu <naoki.otsu@dena.jp>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "jQuery": "~2.1.4",
+    "normalize.css": "~3.0.3"
+  }
+}

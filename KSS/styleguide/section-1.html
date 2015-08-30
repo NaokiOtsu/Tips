@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>スタイルガイド</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="../css/test.css">
+
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <div class="kss-wrapper">
+      <div class="kss-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <h1 class="kss-doc-title"><a href="index.html">スタイルガイド</a></h1>
+          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="1">
+              <li class="kss-menu-item"><a href="index.html"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Button</span></a></li>
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Paragraph</span></a></li>
+            </ul>
+            <ul class="kss-menu-child">
+              <li class="kss-menu-item"><a href="#section-1.1"><span class="kss-ref">1.1</span><span class="kss-name">Button corners</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        <article class="kss-article">
+          <section id="section-1" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">1</span> Button</h1>
+            <div class="kss-description">
+              <p>Buttons are action items.</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <a href="#" class="button [modifier class]">Link Button</a>
+<button class="button [modifier class]">Button Element</button>
+<input type="button" class="button [modifier class]" value="Input Element"/>
+                </div>
+              </div>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">:hover</div>
+                  <div class="kss-modifier-description">
+                    Highlight the button
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <a href="#" class="button pseudo-class-hover">Link Button</a>
+<button class="button pseudo-class-hover">Button Element</button>
+<input type="button" class="button pseudo-class-hover" value="Input Element"/>
+                </div>
+              </div>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">:active</div>
+                  <div class="kss-modifier-description">
+                    &quot;Press&quot; the button down when clicked.
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <a href="#" class="button pseudo-class-active">Link Button</a>
+<button class="button pseudo-class-active">Button Element</button>
+<input type="button" class="button pseudo-class-active" value="Input Element"/>
+                </div>
+              </div>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.info</div>
+                  <div class="kss-modifier-description">
+                    Indicate information
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <a href="#" class="button info">Link Button</a>
+<button class="button info">Button Element</button>
+<input type="button" class="button info" value="Input Element"/>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;button [modifier class]&quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;button [modifier class]&quot;&gt;Button Element&lt;/button&gt;
+&lt;input type=&quot;button&quot; class=&quot;button [modifier class]&quot; value=&quot;Input Element&quot;/&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-1.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">1.1</span> Button corners</h1>
+            <div class="kss-description">
+              <p>Buttons can be as rounded as desired.</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <a href="#" class="button [modifier class]">Link Button</a>
+<button class="button [modifier class]">Button Element</button>
+<input type="button" class="button [modifier class]" value="Input Element"/>
+                </div>
+              </div>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.curved</div>
+                  <div class="kss-modifier-description">
+                    Indicate slightly rounded buttons
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <a href="#" class="button curved">Link Button</a>
+<button class="button curved">Button Element</button>
+<input type="button" class="button curved" value="Input Element"/>
+                </div>
+              </div>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.rounded</div>
+                  <div class="kss-modifier-description">
+                    Indicated circular buttons
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <a href="#" class="button rounded">Link Button</a>
+<button class="button rounded">Button Element</button>
+<input type="button" class="button rounded" value="Input Element"/>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;a href=&quot;#&quot; class=&quot;button [modifier class]&quot;&gt;Link Button&lt;/a&gt;
+&lt;button class=&quot;button [modifier class]&quot;&gt;Button Element&lt;/button&gt;
+&lt;input type=&quot;button&quot; class=&quot;button [modifier class]&quot; value=&quot;Input Element&quot;/&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+        </article>
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>
