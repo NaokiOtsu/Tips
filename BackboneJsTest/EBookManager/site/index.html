@@ -22,7 +22,7 @@
 	</form>
 </div>
 <script id="bookTemplate" type="text/template">
-	<img src="<%= coverImage %>" alt=""/>
+	<img src="<%= coverImage %>" width="100" alt=""/>
 	<ul>
 		<li><%= title %></li>
 		<li><%= author %></li>
@@ -32,18 +32,6 @@
 	
 	<button class="delete">削除</button>
 </script>
-
-<div class="bookContainer">
-	<img src="img/placeholder.gif" width="100" alt="">
-	<ul>
-		<li>タイトル</li>
-		<li>著者</li>
-		<li>発売日</li>
-		<li>キーワード</li>
-	</ul>
-	
-	<button class="delete">削除</button>
-</div>
 
 <script src="js/lib/jquery-1.11.3.min.js"></script>
 <script src="js/lib/underscore.min.js"></script>
