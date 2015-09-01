@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Backbone.jsによるライブラリアプリケーション</title>
+	<link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+<div id="books">
+	<form id="addBook" action="#">
+		<div>
+			<label for="coverImage">表紙画像: </label>
+			<input id="coverImage" type="file">
+			<label for="title">タイトル: </label><input id="title" type="text">
+			<label for="author">著者: </label><input id="author" type="text">
+			<label for="releaseDate">発売日: </label>
+			<input id="releaseDate" type="text">
+			<label for="keywords">キーワード: </label>
+			<input id="keywords" type="text">
+			<button id="add">追加</button>
+		</div>
+	</form>
+</div>
+<script id="bookTemplate" type="text/template">
+	<img src="<%= coverImage %>" alt=""/>
+	<ul>
+		<li><%= title %></li>
+		<li><%= author %></li>
+		<li><%= releaseDate %></li>
+		<li><%= keywords %></li>
+	</ul>
+	
+	<button class="delete">削除</button>
+</script>
+
+<div class="bookContainer">
+	<img src="img/placeholder.gif" width="100" alt="">
+	<ul>
+		<li>タイトル</li>
+		<li>著者</li>
+		<li>発売日</li>
+		<li>キーワード</li>
+	</ul>
+	
+	<button class="delete">削除</button>
+</div>
+
+<script src="js/lib/jquery-1.11.3.min.js"></script>
+<script src="js/lib/underscore.min.js"></script>
+<script src="js/lib/backbone.min.js"></script>
+<script src="js/models/book.js"></script>
+<script src="js/collections/library.js"></script>
+<script src="js/views/book.js"></script>
+<script src="js/views/library.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
