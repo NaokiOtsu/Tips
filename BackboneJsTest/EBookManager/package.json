@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-  	"express": "~3.1.0",
-  	"path": "0.4.9",
-  	"mongoose": "~3.5.5"
+    "express": "^3.1.0",
+    "path": "^0.4.9",
+    "mongoose": "4.1.5"
   }
 }
