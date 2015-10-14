@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja" data-framework="backbonejs">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Backbone.js</title>
+	<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
+	<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+</head>
+<body>
+	<section class="todoapp">
+		<header class="header">
+			<h1>todos</h1>
+			<input type="new-todo" placeholder="TODO....">
+		</header>
+		<section class="main">
+			<input type="toggle-all" type="checkbox">
+			<label for="toggle-all">すべてをチェック</label>
+			<ul class="todo-list"></ul>
+		</section>
+		<footer class="footer"></footer>
+	</section>
+	<sctipt type="text/template" id="item-template">
+		<div class="view">
+			<input type="checkbox" class="toggle" <%= completed ? 'checked' : '' %>>
+			<label><%- title %></label>
+			<button class="destroy"></button>
+			<input class="edit" value="<%- title %>">
+		</div>
+	</sctipt>
+	<script type="text/template" id="stats-template">
+		<span class="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
+		<ul class="filters">
+			<li>
+				<a href="#/" class="selected">ALL</a>
+			</li>
+			<li>
+				<a href="#/active">Active</a>
+			</li>
+			<li>
+				<a href="#/completed">Completed</a>
+			</li>
+		</ul>
+		<% if (completed) { %>
+			<button class="clear-completed">Clear completed</button>
+		<% } %>
+	</script>
+	<script src="node_modules/todomvc-common/base.js"></script>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/underscore/underscore.js"></script>
+	<script src="node_modules/backbone/backbone.js"></script>
+	<script src="node_modules/backbone.localstorage/backbone.localStorage.js"></script>
+	<script src="js/models/todo.js"></script>
+	<script src="js/collections/todos.js"></script>
+	<script src="js/views/todo-view.js"></script>
+	<script src="js/views/app-view.js"></script>
+	<script src="js/routers/router.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
