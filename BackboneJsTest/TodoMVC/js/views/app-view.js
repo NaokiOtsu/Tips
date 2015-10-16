@@ -34,6 +34,7 @@ var app = app || {};
 			var completed = app.todos.completed().length;
 			var remaining = app.todos.remaining().length;
 			
+			console.log(app.todos.length)
 			if (app.todos.length) {
 				this.$main.show();
 				this.$footer.show();
@@ -58,6 +59,11 @@ var app = app || {};
 		addOne: function(todo) {
 			var view = new app.TodoView({ model: todo });
 			this.$list.append(view.render().el);
+		},
+		
+		addAll: function() {
+			this.$list.html('');
+			app.todos.each(this.addOne, this);
 		},
 		
 		filterOne: function(todo) {
