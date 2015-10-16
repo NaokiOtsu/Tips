@@ -11,23 +11,23 @@
 	<section class="todoapp">
 		<header class="header">
 			<h1>todos</h1>
-			<input type="new-todo" placeholder="TODO....">
+			<input class="new-todo" placeholder="TODO....">
 		</header>
 		<section class="main">
-			<input type="toggle-all" type="checkbox">
+			<input class="toggle-all" type="checkbox">
 			<label for="toggle-all">すべてをチェック</label>
 			<ul class="todo-list"></ul>
 		</section>
 		<footer class="footer"></footer>
 	</section>
-	<sctipt type="text/template" id="item-template">
+	<script type="text/template" id="item-template">
 		<div class="view">
-			<input type="checkbox" class="toggle" <%= completed ? 'checked' : '' %>>
+			<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
 			<label><%- title %></label>
 			<button class="destroy"></button>
-			<input class="edit" value="<%- title %>">
 		</div>
-	</sctipt>
+		<input class="edit" value="<%- title %>">
+	</script>
 	<script type="text/template" id="stats-template">
 		<span class="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
 		<ul class="filters">
