@@ -34,7 +34,6 @@ var app = app || {};
 			var completed = app.todos.completed().length;
 			var remaining = app.todos.remaining().length;
 			
-			console.log(app.todos.length)
 			if (app.todos.length) {
 				this.$main.show();
 				this.$footer.show();
