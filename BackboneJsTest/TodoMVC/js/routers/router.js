@@ -9,6 +9,7 @@ var app = app || {};
 		},
 		
 		setFilter: function (param) {
+			console.log(param)
 			app.TodoFilter = param || '';
 			
 			app.todos.trigger('filter');
