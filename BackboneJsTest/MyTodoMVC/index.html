@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MyTodoMVC</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<section class="todo-app">
+		<div>入力: <input type="text" class="new-todo"></div>
+		<div>全てにチェック: <input type="checkbox" class="toggle-all"></div>
+		<ul class="todo-list"></ul>
+		<footer class="footer"></footer>
+	</section>
+	<script type="text/template" id="item-template">
+		<input type="checkbox" class="toggle" <%= completed ? checked : '' %>>
+		<label><%- title %></label>
+		<button class="destory">削除</button>
+		<input type="text" class="edit" value="<%- title %>">
+	</script>
+	<script type="text/template" id="stats-template">
+		<div>
+			<%= remaining %>
+			<% remaining === 1 ? 'item' : 'items' %>
+			left
+		</div>
+		<ul class="filters">
+			<li>
+				<a href="#/" class="selected">ALL</a>
+			</li>
+			<li>
+				<a href="#/active">Active</a>
+			</li>
+			<li>
+				<a href="#/completed">Completed</a>
+			</li>
+		</ul>
+		<% if () { %>
+			<button class="clear-completed">Clear compleed</button>
+		<% } %>
+	</script>
+	<script src="node_modules/todomvc-common/base.js"></script>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/underscore/underscore.js"></script>
+	<script src="node_modules/backbone/backbone.js"></script>
+	<script src="node_modules/backbone.localstorage/backbone.localStorage.js"></script>
+	<script src="js/models/todo.js"></script>
+	<script src="js/collections/todos.js"></script>
+	<script src="js/views/todo-view.js"></script>
+	<script src="js/views/app-view.js"></script>
+	<script src="js/routers/router.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
