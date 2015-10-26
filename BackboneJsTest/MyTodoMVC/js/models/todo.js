@@ -1,6 +1,6 @@
 var app = app || {};
 
-(function(){
+(function() {
 	'use strict';
 	
 	app.Todo = Backbone.Model.extend({
