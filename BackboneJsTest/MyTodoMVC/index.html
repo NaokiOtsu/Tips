@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja" data-framework="backbonejs">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MyTodoMVC</title>
-	<style>
-		
-	</style>
+	<title>Backbone.js</title>
 </head>
 <body>
-	<section class="todo-app">
-		<div>入力: <input type="text" class="new-todo"></div>
-		<div>全てにチェック: <input type="checkbox" class="toggle-all"></div>
-		<ul class="todo-list"></ul>
+	<section class="todoapp">
+		<header class="header">
+			<h1>todos</h1>
+			<input class="new-todo" placeholder="TODO....">
+		</header>
+		<section class="main">
+			<input class="toggle-all" type="checkbox">
+			<label for="toggle-all">すべてをチェック</label>
+			<ul class="todo-list"></ul>
+		</section>
 		<footer class="footer"></footer>
 	</section>
 	<script type="text/template" id="item-template">
-		<input type="checkbox" class="toggle" <%= completed ? checked : '' %>>
-		<label><%- title %></label>
-		<button class="destory">削除</button>
-		<input type="text" class="edit" value="<%- title %>">
+		<div class="view">
+			<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+			<label><%- title %></label>
+			<button class="destroy"></button>
+		</div>
+		<input class="edit" value="<%- title %>">
 	</script>
 	<script type="text/template" id="stats-template">
-		<div>
-			<%= remaining %>
-			<% remaining === 1 ? 'item' : 'items' %>
-			left
-		</div>
+		<span class="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
 		<ul class="filters">
 			<li>
 				<a href="#/" class="selected">ALL</a>
@@ -38,11 +39,10 @@
 				<a href="#/completed">Completed</a>
 			</li>
 		</ul>
-		<% if () { %>
-			<button class="clear-completed">Clear compleed</button>
+		<% if (completed) { %>
+			<button class="clear-completed">Clear completed</button>
 		<% } %>
 	</script>
-	<script src="node_modules/todomvc-common/base.js"></script>
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/underscore/underscore.js"></script>
 	<script src="node_modules/backbone/backbone.js"></script>
