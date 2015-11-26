@@ -1,0 +1,37 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+/* line 8, ../sass/ie.scss */
+.test {
+  margin: 0;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  text-transform: capitalize;
+  background-image: url('../images/dendenicon.png?1448117580');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* line 12, ../sass/ie.scss */
+a {
+  color: #333;
+}
+/* line 18, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:visited {
+  color: #555;
+}
+/* line 21, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:focus {
+  color: #f00;
+}
+/* line 24, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover {
+  color: #00f;
+}
+/* line 27, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:active {
+  color: #f00;
+}
