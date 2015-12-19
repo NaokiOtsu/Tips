@@ -1,0 +1,233 @@
+@charset "UTF-8";
+body {
+	font:14px/1.231 "ヒラギノ角ゴ Pro W3", Arial, san-serif;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	text-size-adjust: none;
+	line-height: 1;
+	word-wrap: break-word;
+}
+a{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+}
+li{ list-style: none; }
+img{ vertical-align: bottom; }
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+	display:block;
+}
+nav ul {
+	list-style:none;
+}
+blockquote, q {
+	quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:'';
+	content:none;
+}
+/* change colours to suit your needs */
+ins {
+	background-color:#ff9;
+	color:#000;
+	text-decoration:none;
+}
+/* change colours to suit your needs */
+mark {
+	background-color:#ff9;
+	color:#000; 
+	font-style:italic;
+	font-weight:bold;
+}
+del {
+	text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+/* change border colour to suit your needs */
+hr {
+	display:block;
+	height:1px;
+	border:0;   
+	border-top:1px solid #cccccc;
+	margin:1em 0;
+	padding:0;
+}
+input, select {
+	ical-align:middle;
+}
+
+/* -----------------------------------------------------------------------------
+	キャラクターアニメーション
+----------------------------------------------------------------------------- */
+body {
+	background-color: #efefef;
+}
+
+/* 全体(背景画像 + キャラクター) */
+.wrapper {
+	position: relative;
+	width: 400px;
+	height: 245px;
+	margin: 100px auto 0;
+	overflow: hidden;
+	background-color: #a6edef;
+	border: 10px solid #ffffff;
+	-webkit-animation: wrapper-animation 20s infinite ease-in-out;
+}
+
+@-webkit-keyframes wrapper-animation {
+	0% { background-color: #a6edef; }
+	33% { background-color: #ffbd8d; }
+	66% { background-color: #464646; }
+	100% { background-color: #a6edef; }
+}
+
+/* 背景画像 */
+.bg {
+	height: 245px;
+	background-image: url(img/bg.png);
+	background-repeat: repeat-x;
+	-webkit-animation: bg-animation 25s infinite linear;
+}
+
+@-webkit-keyframes bg-animation {
+	0% { background-position: 0 0; }
+	100% { background-position: -400px 0; }
+}
+
+/* キャラクター全体 */
+.character {
+	position: absolute;
+	top: -68px;
+	left: 22px;
+	-webkit-animation: character-animation 3s infinite ease-in-out;
+}
+
+@-webkit-keyframes character-animation {
+	0% { -webkit-transform: translateY(0) rotate(0deg); }
+	50% { -webkit-transform: translateY(10px) rotate(5deg); }
+	100% { -webkit-transform: translateY(0) rotate(0deg); }
+}
+
+.parts-wing-left,
+.parts-wing-right,
+.parts-body,
+.parts-eyes-close,
+.parts-eyes-open {
+	position: absolute;
+}
+
+/* 左の翼 */
+.parts-wing-left {
+	width: 31px;
+	height: 34px;
+	top: 147px;
+	left: 125px;
+	background-image: url(img/parts_wing_left.png);
+	-webkit-animation: wing-left-animation 3s infinite ease-in-out alternate;
+	-webkit-transform-origin: 100% 18px;
+}
+
+@-webkit-keyframes wing-left-animation {
+	0% { -webkit-transform: rotate(-15deg); }
+	25% { -webkit-transform: rotate(15deg); }
+	50% { -webkit-transform: rotate(-20deg); }
+	90% { -webkit-transform: rotate(5deg); }
+	100% { -webkit-transform: rotate(-15deg); }
+}
+
+/* 右の翼 */
+.parts-wing-right {
+	width: 32px;
+	height: 31px;
+	top: 160px;
+	left: 189px;
+	background-image: url(img/parts_wing_right.png);
+	-webkit-animation: wing-right-animation 3s infinite ease-in-out alternate;
+	-webkit-transform-origin: 0 13px;
+}
+
+@-webkit-keyframes wing-right-animation {
+	0% { -webkit-transform: rotate(15deg); }
+	25% { -webkit-transform: rotate(-15deg); }
+	50% { -webkit-transform: rotate(20deg); }
+	90% { -webkit-transform: rotate(-5deg); }
+	100% { -webkit-transform: rotate(15deg); }
+}
+
+/* ボディ */
+.parts-body {
+	width: 55px;
+	height: 79px;
+	top: 126px;
+	left: 150px;
+	background-image: url(img/parts_body.png);
+}
+
+/* 閉じた目 */
+.parts-eyes-close {
+	width: 29px;
+	height: 8px;
+	top: 149px;
+	left: 165px;
+	background-image: url(img/parts_eyes_close.png);
+}
+
+/* 開いた目 */
+.parts-eyes-open {
+	width: 32px;
+	height: 15px;
+	top: 144px;
+	left: 163px;
+	background-image: url(img/parts_eyes_open.png);
+	-webkit-animation: eyes-animation 4s infinite linear;
+}
+
+@-webkit-keyframes eyes-animation {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.1% { opacity: 0; }
+	53% { opacity: 0; }
+	53.1% { opacity: 1; }
+	100% { opacity: 1; }
+}
