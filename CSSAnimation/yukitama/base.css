@@ -1,0 +1,204 @@
+@charset "UTF-8";
+body {
+	font:14px/1.231 "ヒラギノ角ゴ Pro W3", Arial, san-serif;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	text-size-adjust: none;
+	line-height: 1;
+	word-wrap: break-word;
+}
+a{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+img{
+	vertical-align: bottom;
+}
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+	display:block;
+}
+nav ul {
+	list-style:none;
+}
+blockquote, q {
+	quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:'';
+	content:none;
+}
+/* change colours to suit your needs */
+ins {
+	background-color:#ff9;
+	color:#000;
+	text-decoration:none;
+}
+/* change colours to suit your needs */
+mark {
+	background-color:#ff9;
+	color:#000; 
+	font-style:italic;
+	font-weight:bold;
+}
+del {
+	text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+/* change border colour to suit your needs */
+hr {
+	display:block;
+	height:1px;
+	border:0;   
+	border-top:1px solid #cccccc;
+	margin:1em 0;
+	padding:0;
+}
+input, select {
+	ical-align:middle;
+}
+
+/* -----------------------------------------------------------------------------
+	キャラクターアニメーション
+----------------------------------------------------------------------------- */
+body {
+	background-color: #BFE2DC;
+}
+
+/* キャラクター全体 */
+.character-wrapper {
+	position: relative;
+	width: 126px;
+	margin: 300px auto 0;
+}
+
+.character-wrapper div { position: absolute; }
+
+/* 影 */
+.chara-shadow {
+	left: 50%;
+	bottom: -158px;
+	margin-left: -61px;
+	-webkit-animation: shadow-animation 2s infinite ease-in-out;
+}
+@-webkit-keyframes shadow-animation {
+	0% { -webkit-transform: scale(1); }
+	20% { -webkit-transform: scale(1.05); }
+	60% { -webkit-transform: scale(0.6); }
+	100% { -webkit-transform: scale(1); }
+}
+
+/* 影以外のパーツ(体、左手、右手、頭、帽子) */
+.chara-body-box {
+	position: relative;
+	width: 126px;
+	margin: 0 auto;
+	-webkit-animation: body-box-animation 2s infinite ease-in-out;
+}
+@-webkit-keyframes body-box-animation {
+	0% { -webkit-transform: translateY(0); }
+	20% { -webkit-transform: translateY(5px); }
+	60% { -webkit-transform: translateY(-100px); }
+	100% { -webkit-transform: translateY(0); }
+}
+
+/* 帽子 */
+.chara-hat {
+	top: -151px;
+	left: 50%;
+	margin-left: -43px;
+	-webkit-animation: hat-animation 2s infinite ease-in;
+}
+@-webkit-keyframes hat-animation {
+	0% { -webkit-transform: translateY(0); }
+	20% { -webkit-transform: translateY(0); }
+	60% { -webkit-transform: translateY(-20px); }
+	100% { -webkit-transform: translateY(0); }
+}
+
+/* 左手 */
+.chara-hand-left {
+	top: 10px;
+	left: -20px;
+	/*-webkit-animation: hand-left-animation 0.5s infinite alternate ease-in-out;*/
+	-webkit-transform-origin: 100% 100%;
+}
+@-webkit-keyframes hand-left-animation {
+	0% { -webkit-transform: rotate(0); }
+	100% { -webkit-transform: rotate(-45deg); }
+}
+
+/* 右手 */
+.chara-hand-right {
+	top: 5px;
+	right: -25px;
+	/*-webkit-animation: hand-right-animation 0.5s infinite alternate ease-in-out;*/
+	-webkit-transform-origin: 0% 100%;
+}
+@-webkit-keyframes hand-right-animation {
+	0% { -webkit-transform: rotate(0); }
+	100% { -webkit-transform: rotate(45deg); }
+}
+
+/* 体 */
+.chara-body {
+	top: 10px;
+	left: 50%;
+	margin-left: -63px;
+}
+
+/* 頭 */
+.chara-head {
+	top: -64px;
+	left: 50%;
+	margin-left: -45px;
+	-webkit-animation: head-animation 2s infinite ease-in;
+}
+@-webkit-keyframes head-animation {
+	0% { -webkit-transform: translateY(0); }
+	20% { -webkit-transform: translateY(0); }
+	60% { -webkit-transform: translateY(-10px); }
+	100% { -webkit-transform: translateY(0); }
+}
