@@ -1,0 +1,22 @@
+{
+  "name": "BookSample",
+  "homepage": "https://github.com/NaokiOtsu/Tips",
+  "authors": [
+    "NaokiOtsu <n.otsu1029@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "backbone": "~1.2.3",
+    "jquery": "~2.2.1"
+  }
+}
