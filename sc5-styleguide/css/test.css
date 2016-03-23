@@ -1,0 +1,89 @@
+@charset UTF-8;
+
+/*
+  KSSの仕様変更により、{$modifiers}から{$modifier_class}または{{modifier_class}}に変更になった。
+  kss-node のversionが 1.X の場合は{$modifiers}
+  versionが2.Xからは、{$modifier_class}または{{modifier_class}}となったもよう。
+ */
+
+/*
+Button
+
+Buttons are action items.
+
+Markup:
+<a href="#" class="button {{modifier_class}}">Link Button</a>
+<button class="button {{modifier_class}}">Button Element</button>
+<input type="button" class="button {{modifier_class}}" value="Input Element"/>
+
+:hover                - Highlight the button
+:active               - "Press" the button down when clicked.
+.info                 - Indicate information
+
+Styleguide 1
+*/
+.button {
+  background-color: #bbb;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: red;
+}
+
+.button:active {
+  background-color: black;
+}
+
+.button.info {
+  background-color: lightblue;
+}
+
+/*
+Button corners
+
+Buttons can be as rounded as desired.
+
+Markup:
+<a href="#" class="button {{modifier_class}}">Link Button</a>
+<button class="button {{modifier_class}}">Button Element</button>
+<input type="button" class="button {{modifier_class}}" value="Input Element"/>
+
+.curved                - Indicate slightly rounded buttons
+.rounded               - Indicated circular buttons
+
+Styleguide 1.1
+*/
+.button.curved {
+  border-radius: 10px;
+}
+
+.button.rounded {
+  border-radius: 50%;
+}
+/*
+Paragraph
+
+Main typography across the pages
+
+Markup:
+<p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+
+.warning               - Displays warning
+.error                 - Display error
+
+Styleguide 2
+*/
+p {
+  color: #444;
+}
+
+p.warning {
+  background-color: yellow;
+}
+
+p.error {
+  background-color: red;
+}

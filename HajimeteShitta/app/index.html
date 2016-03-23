@@ -37,55 +37,41 @@
 		<div class="btn">投稿ボタン</div>
 	</header>
 	
-	<div id="contents">
-		<ul class="ul">
-			<li class="li">
-				<p class="date">9月12日</p>
-				<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
-				<div class="trash">削除</div>
-			</li>
-			<li class="li">
-				<p class="date">9月12日</p>
-				<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
-				<div class="trash">削除</div>
-			</li>
-			<li class="li">
-				<p class="date">9月12日</p>
-				<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
-				<div class="trash">削除</div>
-			</li>
-			<li class="li">
-				<p class="date">9月12日</p>
-				<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
-				<div class="trash">削除</div>
-			</li>
-			<li class="li">
-				<p class="date">9月12日</p>
-				<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
-				<div class="trash">削除</div>
-			</li>
-			<li class="li">
-				<p class="date">9月12日</p>
-				<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
-				<div class="trash">削除</div>
-			</li>
-			<li class="li">
-				<p class="date">9月12日</p>
-				<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
-				<div class="trash">削除</div>
-			</li>
-			<li class="li">
-				<p class="date">9月12日</p>
-				<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
-				<div class="trash">削除</div>
-			</li>
-		</ul>
+	<div class="popup" hidden>
+		<div class="popup-body">
+			<div class="popup-close">close</div>
+			<h2 class="popup-title">初めて知った事を投稿しよう</h2>
+			<textarea name="" id="textarea" class="textarea"></textarea>
+			<input type="submit" value="投稿" class="submit">
+		</div>
 	</div>
 	
-	<p class="copyright">© 2014 H.</p>
+	<div id="contents">
+		<ul class="ul"></ul>
+	</div>
+	
+	<script type="text/template" id="item-template">
+		<li class="li">
+			<p class="date">9月12日</p>
+			<p class="text">SublimeTextのタブ切り替えってcontrolを離すか離さないかで挙動変えてくれる素敵機能があったのか..<span class="hajimete">#初めて知った</p>
+			<div class="edit-area">
+				<div class="edit">編集</div>
+				<div class="trash">削除</div>
+			</div>
+		</li>
+	</script>
+	
+	<p class="copyright">© 2016 Otty</p>
 	
 	<!-- build:js scripts/main.js -->
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/underscore.js"></script>
+	<script src="scripts/backbone.js"></script>
+	<script src="scripts/backbone-localstorage.js"></script>
+	<!-- <script src="scripts/moment.js"></script> -->
 	<script src="scripts/main.js"></script>
+	<script src="scripts/model.js"></script>
+	<script src="scripts/view.js"></script>
 	<!-- endbuild -->
 </body>
 </html>
