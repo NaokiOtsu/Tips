@@ -12,7 +12,7 @@ body {
   font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
-  background-color: #effeff;
+  background-color: #efefef;
 }
 
 #header {
@@ -90,11 +90,73 @@ body {
 	font-size: 1.4rem;
 }
 
-.trash {
-	text-align: right;
-	text-decoration: underline;
-	margin: 8px 0 -5px;
+.popup {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: fixed;
+	top: 0; left: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.popup-body {
+	position: relative;
+	text-align: center;
+	width: 500px;
+	margin: 100px auto;
+	padding: 20px;
+	background-color: white;
+}
+
+.popup-title {
+	font-size: 2.0rem;
+	margin-bottom: 20px;
+}
+
+.textarea {
+	display: block;
+	width: 90%;
+	height: 100px;
+	margin: 0 auto 20px;
+	border: 1px solid #999999;
+}
+
+.popup-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
 	cursor: pointer;
 }
 
+.popup-close:hover {
+	text-decoration: underline;
+}
 
+.submit {
+	-webkit-appearance: none;
+	display: block;
+	color: #333;
+	font-size: 2.0rem;
+	margin: 0 auto;
+	background-color: white;
+	border: 1px solid #666;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.submit:hover {
+	text-decoration: underline;
+}
+
+.edit-area {
+	text-align: right;
+}
+
+.edit,
+.trash {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.edit:hover,
+.trash:hover { text-decoration: underline; }
