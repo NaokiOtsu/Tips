@@ -1,0 +1,46 @@
+@charset "UTF-8";
+body {
+  background-color: #fff; }
+
+.test {
+  color: red; }
+  .test:hover {
+    color: blue; }
+
+/*
+#overview
+Gulp入門サンプル
+ 
+サンプルファイルです
+*/
+/*#styleguide
+サンプル見出し1
+ 
+サンプルの見出しスタイル
+hoverすると青く2倍になる
+ 
+```
+<h1 class="test1">見出し1</h1>
+```
+*/
+.test1 {
+  color: black;
+  -webkit-transition: 200ms ease-out transform;
+  transition: 200ms ease-out transform;
+  -webkit-animation: hoge 1s 0 infinite alternate;
+          animation: hoge 1s 0 infinite alternate; }
+  .test1:hover {
+    color: blue;
+    -webkit-transform: translate(10px, 0);
+            transform: translate(10px, 0); }
+
+.test2 {
+  color: red;
+  -webkit-transition: 200ms ease-out transform;
+  transition: 200ms ease-out transform;
+  -webkit-animation: hoge 1s 0 infinite alternate;
+          animation: hoge 1s 0 infinite alternate; }
+  .test2:hover {
+    color: blue;
+    -webkit-transform: translate(10px, 0);
+            transform: translate(10px, 0); }
