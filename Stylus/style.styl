@@ -1,0 +1,37 @@
+// ネスト
+.hoge
+	color red
+
+	&:hover
+		color blue
+
+// 変数
+base-color = #00a6fc
+.title
+	color base-color
+
+// 条件分岐
+liquid = true
+.hoge
+	if liquid
+		width 100%
+	else
+		width 960px
+
+// FOR/IN文
+array = 1 2 3 4
+for num in array
+	.mg-{num * 5}
+		margin num * 5px
+
+// mixin
+box-sizing(arg)
+	-webkit-box-sizing arg
+	-moz-box-sizing arg
+	box-sizing arg
+.test
+	box-sizing border-box
+
+.btn-blue
+	@extend .hoge
+	background-color black
