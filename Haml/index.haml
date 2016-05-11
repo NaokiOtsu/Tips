@@ -1,0 +1,13 @@
+!!!
+%html{:lang => 'ja'}
+	%head
+		%meta(charaset="UTF-8")
+	%body
+		%p total is #{5 * 3}
+		%p= Time.now
+		- x = 5
+		%p= x
+		
+		- (1..10).each do |i|
+			-# %p= i
+			%p{:id => "item_#{i}"} #{i}
