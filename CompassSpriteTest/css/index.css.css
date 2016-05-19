@@ -1,4 +1,4 @@
-/* line 5, ../scss/index.css.scss */
+/* line 7, ../scss/index.css.scss */
 .image-01, .image-02, .image-03 {
   background: url('../img/compile/ja-s812280e94c.png') no-repeat;
   -moz-background-size: 160px auto;
@@ -7,21 +7,21 @@
   background-size: 160px auto;
 }
 
-/* line 9, ../scss/index.css.scss */
+/* line 11, ../scss/index.css.scss */
 .image-01 {
   background-position: 0 0;
   width: 160px;
   height: 160px;
 }
 
-/* line 14, ../scss/index.css.scss */
+/* line 16, ../scss/index.css.scss */
 .image-02 {
   background-position: 0 -160px;
   width: 160px;
   height: 160px;
 }
 
-/* line 19, ../scss/index.css.scss */
+/* line 21, ../scss/index.css.scss */
 .image-03 {
   background-position: 0 -320px;
   width: 160px;
