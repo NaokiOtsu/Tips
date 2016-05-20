@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sound Icon Animation</title>
+<style>
+.sound-icon {
+	margin: 50px;
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+.sound-icon i,
+.sound-icon i:before,
+.sound-icon i:after {
+	content: '';
+	position: absolute;
+	display: block;
+	bottom: 0;
+	width: 2px;
+	height: 10px;
+	background-color: #333;
+}
+.sound-icon i {
+	left: 0;
+	-webkit-animation: animateSound1 infinite 0.5s ease-in-out alternate;
+}
+.sound-icon i:before {
+	left: 4px;
+	-webkit-animation: animateSound2 infinite 0.4s 0.2s ease-in-out alternate;
+}
+.sound-icon i:after {
+	left: 8px;
+	-webkit-animation: animateSound3 infinite 0.7s 0.1s ease-in-out alternate;
+}
+
+@-webkit-keyframes animateSound1 {
+	0% { height: 2px; }
+	99.9%,to { height: 10px; }
+}
+@-webkit-keyframes animateSound2 {
+	0% { height: 0; }
+	99.9%,to { height: 10px; }
+}
+@-webkit-keyframes animateSound3 {
+	0% { height: 4px; }
+	99.9%,to { height: 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="sound-icon">
+	<i></i>
+</div>
+
+</body>
+</html>
