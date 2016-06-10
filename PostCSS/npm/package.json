@@ -1,0 +1,20 @@
+{
+  "name": "n",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-serve": "browser-sync start --server app/ --files 'app/**/*.*'",
+    "css": "postcss -c ./.postcss.json --map",
+    "watch": "npm run start-serve & postcss -c ./.postcss.json -w --map"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.13.0",
+    "cssnano": "^3.7.0",
+    "postcss": "^5.0.21",
+    "postcss-nested": "^1.0.0"
+  }
+}
