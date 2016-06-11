@@ -25,9 +25,9 @@ webpackJsonp([1],[
 
 	var _Tap2 = _interopRequireDefault(_Tap);
 
-	var _Carousel = __webpack_require__(9);
+	var _CountDown = __webpack_require__(9);
 
-	var _Carousel2 = _interopRequireDefault(_Carousel);
+	var _CountDown2 = _interopRequireDefault(_CountDown);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37,7 +37,7 @@ webpackJsonp([1],[
 
 	var init = function init() {
 		new _Tap2.default();
-		new _Carousel2.default();
+		new _CountDown2.default(2017, 1, 1, 0, 0, 0);
 	};
 
 /***/ },
@@ -133,182 +133,52 @@ webpackJsonp([1],[
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _Device = __webpack_require__(10);
-
-	var _Device2 = _interopRequireDefault(_Device);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var WIDTH = 300;
+	var CountDown = function () {
+		function CountDown(year, month, day, hour, minute, second) {
+			_classCallCheck(this, CountDown);
 
-	var DOM_ELEMENT = {
-		'list': '.carousel-list',
-		'prev': '.carousel-prev',
-		'next': '.carousel-next',
-		'thumb': '.carousel-thumb li'
-	};
+			this.$countdown = (0, _jquery2.default)('.countdown-container');
 
-	var CLASS_NAME = {
-		'active': 'active'
-	};
+			year = year || 2020;
+			month = month || 1;
+			day = day || 1;
+			hour = hour || 0;
+			minute = minute;
+			second = second || 0;
 
-	var Carousel = function () {
-		function Carousel() {
-			_classCallCheck(this, Carousel);
-
-			this.$list = (0, _jquery2.default)(DOM_ELEMENT.list);
-			this.$prev = (0, _jquery2.default)(DOM_ELEMENT.prev);
-			this.$next = (0, _jquery2.default)(DOM_ELEMENT.next);
-			this.$thumb = (0, _jquery2.default)(DOM_ELEMENT.thumb);
-
-			this.counter = 0;
-			this.length = (0, _jquery2.default)(DOM_ELEMENT.list + ' li').length;
+			this.goal_date = new Date(year, month, day, hour, minute, second);
 
 			this.init();
 		}
 
-		_createClass(Carousel, [{
+		_createClass(CountDown, [{
 			key: 'init',
 			value: function init() {
-				this.bindEvents();
-				this.thumbCheck();
+				setInterval(this.render.bind(this), 1 * 1000);
 			}
 		}, {
-			key: 'bindEvents',
-			value: function bindEvents() {
-				var touch_end = _Device2.default.isTouchable ? 'touchend' : 'click';
+			key: 'render',
+			value: function render() {
+				var now_date = new Date();
+				var diff = this.goal_date - now_date;
+				var a_day = 24 * 60 * 60 * 1000; // 24HのMillisecond
+				var remain_day = Math.floor(diff / a_day); // 残りの日
+				var remain_hour = Math.floor(diff % a_day / (60 * 60 * 1000)); // 残り時間
+				var remain_minute = Math.floor(diff % a_day / (60 * 1000)) % 60; // 残りの分
+				var remain_second = Math.floor(diff % a_day / 1000) % 60 % 60; // 残りの秒数
 
-				this.$prev.on(touch_end, this.onPrev.bind(this));
-				this.$next.on(touch_end, this.onNext.bind(this));
-			}
-		}, {
-			key: 'onPrev',
-			value: function onPrev() {
-				this.counter = this.counter - 1;
-
-				if (this.counter <= -1) {
-					this.counter = this.length - 1;
-				}
-
-				this.slide();
-			}
-		}, {
-			key: 'onNext',
-			value: function onNext() {
-				this.counter = this.counter + 1;
-
-				if (this.counter >= this.length) {
-					this.counter = 0;
-				}
-
-				this.slide();
-			}
-		}, {
-			key: 'slide',
-			value: function slide() {
-				this.$list.css({
-					'-webkit-transform': 'translate3d(' + -(this.counter * WIDTH) + 'px, 0, 0)'
-				});
-				this.thumbCheck();
-			}
-		}, {
-			key: 'thumbCheck',
-			value: function thumbCheck() {
-				this.$thumb.removeClass(CLASS_NAME.active);
-				this.$thumb.eq(this.counter).addClass(CLASS_NAME.active);
+				this.$countdown.html('あと' + remain_day + '日' + remain_hour + '時間' + remain_minute + '分' + remain_second + '秒');
 			}
 		}]);
 
-		return Carousel;
+		return CountDown;
 	}();
 
-	module.exports = Carousel;
-
-/***/ },
-/* 10 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Device = function Device() {
-		_classCallCheck(this, Device);
-	};
-
-	Device.isTouchable = function () {
-		var is_touchable = false;
-
-		try {
-			document.createEvent('TouchEvent');
-			is_touchable = true;
-		} catch (e) {}
-
-		return is_touchable;
-	};
-
-	Device.isIOS = function () {
-		var user_agent = window.navigator.userAgent;
-		var is_ios = /iphone|ipad|ipod/i.test(user_agent);
-
-		Device.isIOS = function () {
-			return is_ios;
-		};
-
-		return is_ios;
-	};
-
-	Device.isAndroid = function () {
-		var user_agent = window.navigator.userAgent;
-		var is_android = /android/i.test(user_agent);
-
-		Device.isAndroid = function () {
-			return is_android;
-		};
-
-		return is_android;
-	};
-
-	Device.getOSVersion = function () {
-		var user_agent = window.navigator.userAgent;
-
-		var version = '';
-		var matches;
-		if (Device.isIOS()) {
-			matches = user_agent.match(/iphone os ([0-9_]+)/i) || [];
-			if (matches.length === 2) version = matches[1];
-
-			version = version.replace(/\_/g, '.');
-		} else if (Device.isAndroid()) {
-			matches = user_agent.match(/ Android ([0-9.]+)/i) || [];
-			if (matches.length === 2) version = matches[1];
-		}
-
-		Device.getOSVersion = function () {
-			return version;
-		};
-
-		return version;
-	};
-
-	Device.getOSMajorVersion = function () {
-		var version = Device.getOSVersion();
-
-		if (!version) return '';
-
-		var matches = version.match(/^([0-9]+)\.?/) || [];
-		if (matches.length !== 2) return '';
-
-		Device.getOSMajorVersion = function () {
-			return matches[1];
-		};
-
-		return matches[1];
-	};
-
-	module.exports = Device;
+	module.exports = CountDown;
 
 /***/ }
 ]);

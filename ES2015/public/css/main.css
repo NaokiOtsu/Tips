@@ -169,3 +169,18 @@ li {
       border-radius: 100px; }
       .carousel-container .carousel-thumb li.active {
         background-color: red; }
+
+.accordion-container {
+  margin: 50px; }
+  .accordion-container .accordion-title {
+    padding: 5px;
+    border: 1px solid #333; }
+  .accordion-container .accordion-text {
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    transition: height 0.3s; }
+
+.tab-container .tab-contents {
+  display: none; }
+  .tab-container .tab-contents.active {
+    display: block; }
