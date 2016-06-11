@@ -1,0 +1,12 @@
+{
+  "use": [
+    "postcss-nested",
+    "autoprefixer",
+    "cssnano"
+  ],
+  "input": "./dev/css/*.css",
+  "output": "./app/css/main.min.css",
+  "autoprefixer": {
+    "browsers": "Android >= 2"
+  }
+}

@@ -1,0 +1,21 @@
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.block {
+    color: #fff;
+    width: 100%;
+    background-color: #000;
+    &__element {
+        width: 50%;
+        background-color: #f00;
+        &--modifire {
+            background-color: #666;
+            color: #333;
+            transform: scale(1);
+        }
+    }
+}
