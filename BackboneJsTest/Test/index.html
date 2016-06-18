@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+
+<ul class="attack-list">
+	<li>●</li>
+	<li>●</li>
+	<li>●</li>
+	<li>●</li>
+	<li>●</li>
+</ul>
+<div>
+	<div class="item1">10</div>
+	<button id="item1">item1</button>
+</div>
+<div>
+	<div class="item2">10</div>
+	<button id="item2">item2</button>
+</div>
+<div>
+	<div class="item3">10</div>
+	<button id="item3">item3</button>
+</div>
+
+<button id="attack1">attack1</button>
+<button id="attack2">attack2</button>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="bower_components/backbone/backbone-min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/model/itemModel.js"></script>
+<script src="js/model/attackPowerModel.js"></script>
+<script src="js/view/itemView.js"></script>
+<script src="js/view/attackPowerView.js"></script>
+<script>
+(function() {
+	var config = {
+		'items': {
+			'item1': 10,
+			'item2': 10,
+			'item3': 10
+		},
+		'attack': 3
+	};
+	var main = new app.App(config);
+})();
+</script>
+</body>
+</html>
