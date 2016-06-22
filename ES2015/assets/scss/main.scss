@@ -107,3 +107,26 @@ li { list-style: none; }
 		}
 	}
 }
+
+// Accordion
+.accordion-container {
+	margin: 50px;
+	
+	.accordion-title {
+		padding: 5px;
+		border: 1px solid #333;
+	}
+	
+	.accordion-text {
+		overflow: hidden;
+		transition: height 0.3s;
+	}
+}
+
+// Tab
+.tab-container {
+	.tab-contents {
+		display: none;
+		&.active { display: block; }
+	}
+}
