@@ -1,0 +1,20 @@
+{
+  "name": "w",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "NaokiOtsu <n.otsu1029@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/NaokiOtsu/Tips",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.0.0"
+  }
+}
