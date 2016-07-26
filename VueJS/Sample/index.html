@@ -8,14 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <input v-model="newTodo" v-on:keyup.enter="addTodo">
-        <ul>
-            <li v-for="todo in todos">
-                <span>{{ todo.text }}</span>
-                <button v-on:click="removeTodo($index)">X</button>
-            </li>
-        </ul>
+    <template id="child-template">
+        <input type="text" v-model="msg">
+        <button v-on:click="notify">Dispatch Event</button>
+    </template>
+
+    <div id="events-example">
+        <p>Messages: {{ messages | json }}</p>
+        <child></child>
     </div>
 
     <script src="node_modules/vue/dist/vue.min.js"></script>

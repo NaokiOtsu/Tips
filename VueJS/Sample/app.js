@@ -1,21 +1,26 @@
-new Vue({
-    el: '#app',
-    data: {
-        newTodo: '',
-        todos: [
-            { text: 'Add some todos' }
-        ]
+Vue.component('child', {
+    template: '#child-template',
+    data: function () {
+        return { msg: 'hello' }
     },
     methods: {
-        addTodo: function () {
-            var text = this.newTodo.trim()
-            if (text) {
-                this.todos.push({ text: text })
-                this.newTodo = ''
+        notify: function () {
+            if (this.msg.trim()) {
+                this.$dispatch('child-msg', this.msg);
+                this.msg = '';
             }
-        },
-        removeTodo: function (index) {
-            this.todos.splice(index, 1)
+        }
+    }
+})
+
+var parent = new Vue({
+    el: '#events-example',
+    data: {
+        messages: []
+    },
+    events: {
+        'child-msg': function (msg) {
+            this.messages.push(msg);
         }
     }
 })
