@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title>Attack Sample</title>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/battlePowerService.js"></script>
+<script src="js/itemsService.js"></script>
+<script src="js/attackRateService.js"></script>
+<style>
+.disable { opacity: 0.5; pointer-events: none; }
+.gray-out { opacity: 0.5; }
+.active { color: red; }
+</style>
+</head>
+<body ng-controller="AttackConfirmController as attack" ng-init="attack.init()">
+
+<div>バトルPW: {{attack.battle_power.current}}</div>
+
+<ul>
+	<li>料理: {{attack.items.cuisine.current}}</li>
+	<li>みかん: {{attack.items.orange.current}}</li>
+	<li>肉: {{attack.items.meat.current}}</li>
+</ul>
+
+<div>
+	<button ng-click="attack.clickOrange()" ng-class="{'disable': !attack.items.orange.can_use, 'gray-out': attack.items.orange.is_gray_out}">みかん</button>
+	<button ng-click="attack.clickMeat()" ng-class="{'disable': !attack.items.meat.can_use, 'gray-out': attack.items.meat.is_gray_out}">肉</button>
+	<button ng-click="attack.clickCuisine()" ng-class="{'disable': !attack.items.cuisine.can_use, 'active': attack.items.cuisine.is_use}">料理</button>
+	<button ng-click="attack.clickPowerAttack()" ng-class="{'disable': !attack.items.meat.can_use_power_attack, 'active': attack.items.meat.is_use_power_attack}">パワーアタック</button>
+</div>
+
+<div style="margin-top: 10px;">
+	<div>
+		<button ng-class="{'disable': attack.battle_power.current == 0 }">BP1</button>
+		攻撃{{attack.attack_rate.bp1.default}}<span ng-show="attack.items.cuisine.is_use || attack.items.meat.is_use_power_attack">→{{attack.attack_rate.bp1.current}}</span>倍
+	</div>
+	<div>
+		<button ng-class="{'disable': attack.battle_power.current != attack.battle_power.max }">BP5</button>
+		攻撃{{attack.attack_rate.bp5.default}}<span ng-show="attack.items.cuisine.is_use || attack.items.meat.is_use_power_attack">→{{attack.attack_rate.bp5.current}}</span>倍
+	</div>
+</div>
+
+</body>
+</html>
