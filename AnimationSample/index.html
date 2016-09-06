@@ -8,7 +8,7 @@
 	margin: 0;
 	padding: 0;
 }
-body { margin: 50px; }
+body { margin: 50px; background-color: #fafafa; }
 #hoge {
 	position: relative;
 	display: inline-block;
@@ -34,6 +34,83 @@ body { margin: 50px; }
 .rect.end {
 	transform: translate(100%, 0);
 }
+
+.circle {
+	margin-top: 30px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #999;
+	cursor: pointer;
+	animation: circle-out 0.25s cubic-bezier(.51,.3,.21,1) both;
+}
+.circle:hover {
+	background-color: red;
+	animation: circle-in 0.25s cubic-bezier(.51,.3,.21,1) both;
+}
+@keyframes circle-in {
+	0% { transform: scale(1); }
+	100% { transform: scale(1.8); }
+}
+@keyframes circle-out {
+	0% { transform: scale(1.4); }
+	60% { transform: scale(0.5); }
+	100% { transform: scale(1); }
+}
+
+#section1 {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #999;
+	-webkit-transform: perspective(1000);
+	transform: perspective(1000);
+	will-change: transform;
+}
+#section1.move {
+	animation: move 1s both linear;
+}
+@keyframes move {
+	0% { transform: scale(1); }
+	60% { transform: scale(0.7) rotate(-5deg); }
+	100% { transform: scale(0.7) translate3d(200%, 200%, 0); }
+}
+
+.girl {
+	margin-top: 30px;
+	width: 50px;
+	height: 50px;
+	background-color: #999;
+	transition: all 0.7s cubic-bezier(1,-0.04, 0.26, 3.0);
+}
+.girl:hover {
+	border-radius: 50%;
+	transform: scale(1.1);
+}
+
+.box {
+	width: 0%;
+	margin-top: 30px;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+}
+.contents {
+	padding: 10px;
+	white-space: nowrap;
+	/*background-color: #64b0da;*/
+}
 </style>
 </head>
 <body>
@@ -43,19 +120,65 @@ body { margin: 50px; }
 	<p class="text">About</p>
 </div>
 
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script>
-var hoge = $('#hoge');
-var rect = $('.rect');
-var text = $('.text');
+<div class="circle"></div>
 
-window.setTimeout(function() {
-	hoge.addClass('animation');
-	rect.on('webkitTransitionEnd', function() {
-		rect.addClass('end');
-		text.css({ opacity: 1 });
-	})
-}, 500)
+<div id="section1">section1</div>
+
+<div class="girl"></div>
+
+<div class="box">
+	<div class="overlay"></div>
+	<div class="contents">
+		あああ<br>
+		あああ
+	</div>
+</div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
+<script>
+$(function() {
+	var hoge = $('#hoge');
+	var rect = $('.rect');
+	var text = $('.text');
+
+	var section1 = $('#section1');
+	
+	var box = $('.box');
+	var overlay = $('.overlay');
+
+	window.setTimeout(function() {
+		hoge.addClass('animation');
+		rect.on('webkitTransitionEnd', function() {
+			rect.addClass('end');
+			text.css({ opacity: 1 });
+		})
+	}, 500);
+
+	section1.on('click', function() {
+		TweenLite.set(section1, {
+			x: "0%",
+			y: "0%",
+			rotationY: 0,
+			transformPerspective: 1000
+		});
+		TweenLite.to(section1, 1.5, {bezier: [
+			{ x: '30%', y: '30%', rotationY: 10, z: -1000 },
+			{ x: '100%', y: '100%', rotationY: 10, z: -1000}
+		]});
+	});
+	
+	TweenLite.to(box, 0.6, {
+		width: "100%",
+		ease: Power4.easeInOut,
+		onComplete: function() {
+			TweenLite.to(overlay, 1, {
+				x: "100%",
+				ease: Power4.easeInOut
+			});
+		}
+	});
+});
 </script>
 </body>
 </html>
