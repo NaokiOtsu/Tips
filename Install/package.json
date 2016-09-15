@@ -1,0 +1,15 @@
+{
+  "name": "Install",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "live": "browser-sync start --server --files \"**/*\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.16.0"
+  }
+}
