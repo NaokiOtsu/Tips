@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      font-size: 16px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    input[type="text"] {
+      padding: 7px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      width: 100px;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: right;
+    }
+    #btn {
+      margin: 30px auto;
+      width: 180px;
+      border-radius: 5px;
+      box-shadow: 0 4px 0 #e91b0c;
+      background: #f44336;
+      color: white;
+      cursor: pointer;
+      padding: 7px;
+    }
+    #btn:hover {
+      opacity: .5;
+    }
+  </style>
+</head>
+<body>
+  <p>金額<input type="text" id="price" value="0"></p>
+  <p>人数<input type="text" id="num" value="0"></p>
+  <div id="btn">計算する</div>
+  <p id="result"></p>
+
+  <script>
+    (function() {
+      'use strict';
+
+      var priceForm  = document.getElementById('price');
+      var numForm    = document.getElementById('num');
+      var btn    = document.getElementById('btn');
+      var result = document.getElementById('result');
+
+      priceForm.addEventListener('click', function() {
+        this.select();
+      });
+
+      numForm.addEventListener('click', function() {
+        this.select();
+      });
+
+      btn.addEventListener('click', function() {
+        var price = priceForm.value;
+        var num = numForm.value;
+        var x1, x2, y1, y2;
+        var unit = 10;
+
+        if (price.match(/^[1-9][0-9]*$/) && num.match(/^[1-9][0-9]*$/)) {
+          // ok
+          if (price % num === 0) {
+            // 割り切れた
+            result.innerHTML = '一人 '+ (price / num) +' 円ちょうどです!';
+          } else {
+            // 割り切れず
+            x1 = Math.floor(price / num / unit) * unit; // 1600 / 3
+            y1 = price - (x1 * num);
+            x2 = Math.ceil(price / num / unit) * unit;
+            y2 = Math.abs(price - (x2 * num));
+            result.innerHTML = 
+              '一人 '+ x1 +' 円だと '+ y1 +' 円足りません。<br>' +
+              '一人 '+ x2 +' 円だと '+ y2 +' 円余ります。';
+          }
+        } else {
+          // error
+          result.innerHTML = '入力された値に誤りがあります。';
+        }
+
+      });
+
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background: #e0e0e0;
+      text-align: center;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+    }
+    #result {
+      font-weight: bold;
+      font-size: 32px;
+      margin: 60px auto;
+      color: #00aaff;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    }
+    #btn {
+      margin: 0 auto;
+      width: 200px;
+      padding: 7px;
+      color: white;
+      border-radius: 5px;
+      background: #00aaff;
+      box-shadow: 0 4px 0 #0088ff;
+      cursor: pointer;
+    }
+    #btn:hover {
+      opacity: .5;
+    }
+  </style>
+</head>
+<body>
+  <div id="result"></div>
+  <div id="btn">START</div>
+  <script>
+    (function() {
+      'use strict';
+
+      var isStarted = false;
+      var startTime;
+      var diff;
+      var msg = 'Stop at 00:05';
+
+      var btn = document.getElementById('btn');
+      var result = document.getElementById('result');
+
+      result.innerHTML = msg;
+
+      btn.addEventListener('click', function() {
+        if (!isStarted) {
+          isStarted = true;
+
+          this.innerHTML = 'STOP';
+          result.innerHTML = msg;
+          
+          startTime = Date.now();
+        } else {
+          isStarted = false;
+
+          this.innerHTML = 'START';
+          
+          diff = (Date.now() - startTime) / 1000 - 5;
+
+          if (diff >= -0.1 && diff <= 0.1) {
+            result.innerHTML = 'Perfect!'
+          } else if (diff > 0) {
+            result.innerHTML = 'You are '+ diff.toFixed(2) +' seconds late!'
+          } else {
+            result.innerHTML = 'You are '+ Math.abs(diff).toFixed(2) +' seconds fast!'
+          }
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>
