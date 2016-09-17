@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, sans-serif;
+    }
+    .container {
+      padding: 0;
+      margin: 30px auto;
+      width: 500px;
+      background: #dce0e0;
+    }
+    ul.menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+    }
+    ul.menu li {
+      display: inline-block;
+    }
+    ul.menu li a {
+      display: inline-block;
+      font-size: 14px;
+      width: 80px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      text-decoration: none;
+      padding: 7px;
+      color: #333;
+    }
+    ul.menu li a.active {
+      background: #353d3e;
+      color: white;
+    }
+    ul.menu li a:not(.active):hover {
+      opacity: .5;
+      transition: .5s;
+    }
+    .content {
+      font-size: 14px;
+      padding: 7px 10px;
+      line-height: 1.4;
+      background: #353d3e;
+      color: white;
+      min-height: 150px;
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <ul class="menu">
+      <li><a href="#" class="active menu_item" data-id="about">About</a></li>
+      <li><a href="#" class="menu_item" data-id="service">Service</a></li>
+      <li><a href="#" class="menu_item" data-id="contact">Contact</a></li>
+    </ul>
+
+    <div class="content active" id="about">
+      about about about about about about about about
+    </div>
+    
+    <div class="content" id="service">
+      service
+    </div>
+    
+    <div class="content" id="contact">
+      contact
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      'use strict';
+
+      var menuItems = document.getElementsByClassName('menu_item');
+      var contents = document.getElementsByClassName('content');
+
+      var i;
+      for (i = 0; i < menuItems.length; i++) {
+        menuItems[i].addEventListener('click', onClick);
+      }
+
+      function onClick() {
+        var i;
+        event.preventDefault();
+
+        for (i = 0; i < contents.length; i++) {
+          contents[i].className = 'content';
+        }
+        document.getElementById(event.target.dataset.id).className = 'content active';
+      }
+    })();
+  </script>
+</body>
+</html>
