@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.16.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "normalize.css": "^4.2.0"
   }
 }
