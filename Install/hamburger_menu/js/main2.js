@@ -1,12 +1,14 @@
 (function(){
   'use strict';
 
-  var body = document.body;
-  var show = document.getElementById('show');
-  var hide = document.getElementById('hide');
+  var CLASS_NAME = 'menu-open';
+
+  var body  = document.body;
+  var show  = document.getElementById('show');
+  var hide  = document.getElementById('hide');
   var cover = document.getElementById('cover');
-  var menu = document.getElementById('menu');
-  var link = document.querySelectorAll('#menu a');
+  var menu  = document.getElementById('menu');
+  var link  = document.querySelectorAll('#menu a');
   
   function addEventListeners() {
     show.addEventListener('click', openMenu);
@@ -23,22 +25,20 @@
     // }
     link.forEach(function(element, index) {
       element.addEventListener('click', function(event) {
-        stopPropagation(event, element);
+        stopPropagation(event);
       });
     });
   }
 
   function openMenu(){
-    body.className = 'menu-open';
+    body.className = CLASS_NAME;
   }
 
   function closeMenu(){
     body.className = '';
   }
 
-  function stopPropagation(event, index){
-    console.log(event);
-    console.log(index);
+  function stopPropagation(event){
     event.stopPropagation();
   }
 
