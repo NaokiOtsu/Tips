@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "live": "browser-sync start --server --files \"**/*\""
+    "live": "browser-sync start --server --no-notify --files \"**/*\""
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
     "normalize.css": "^4.2.0"
   }
 }
