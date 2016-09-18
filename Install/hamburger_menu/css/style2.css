@@ -30,7 +30,7 @@ body.menu-open #cover {
 }
 
 body.menu-open #menu {
-  right: 0;
+  transform: translateX(0);
 }
 
 #cover {
@@ -49,14 +49,15 @@ body.menu-open #menu {
   position: absolute;
   z-index: 2;
   top: 0;
-  right: -180px;
+  right: 0;
   box-sizing: border-box;
   width: 180px;
   min-height: 100%;
   padding: 8px;
-  transition: right .4s;
+  transition: transform .4s;
   color: white;
   background: #4c81e9;
+  transform: translateX(180px);
 }
 
 #show,

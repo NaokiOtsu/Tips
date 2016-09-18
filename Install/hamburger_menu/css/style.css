@@ -1,5 +1,14 @@
 @charset 'utf-8';
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: hsl(0, 100%, 90%);
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -40,6 +49,16 @@ body {
 }
 
 #show {
+  position: relative;
   float: right;
   cursor: pointer;
+}
+
+#show:after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
 }
