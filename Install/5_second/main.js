@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var TIME = 1;
+  var TIME = 5;
   var THRESHOLD = 0.5;
 
   var start_time;
