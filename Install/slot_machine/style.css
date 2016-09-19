@@ -1,0 +1,54 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+body {
+  margin: 50px;
+  text-align: center;
+  background: #efefef;
+}
+
+.slot-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot-list li {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #71d1ff;
+  background: white;
+}
+
+.slot-list li.hit {
+  background: #fdffd8;
+}
+
+.slot-list li + li {
+  margin-left: 10px;
+}
+
+.slot-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot-btns li {
+  width: 50px;
+}
+
+.slot-btns li + li {
+  margin-left: 10px;
+}
+
+
