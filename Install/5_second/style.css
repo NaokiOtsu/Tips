@@ -1,0 +1,14 @@
+@charset 'utf-8';
+
+body {
+  margin: 50px;
+  text-align: center;
+}
+
+#result {
+  font-size: 20px;
+}
+
+#btn {
+  margin-top: 50px;
+}
