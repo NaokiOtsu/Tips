@@ -1,0 +1,56 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul { list-style: none; }
+
+body {
+  margin: 50px;
+  text-align: center;
+  background: #efefef;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#stage {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#stage ul {
+  font-size: 0;
+}
+
+#stage li {
+  width: 25%;
+  height: 100px;
+  line-height: 100px;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  vertical-align: top;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+#stage li:nth-child(1) { background: #eeeeee; }
+#stage li:nth-child(2) { background: #dddddd; }
+#stage li:nth-child(3) { background: #cccccc; }
+#stage li:nth-child(4) { background: #bbbbbb; }
+#stage li:nth-child(5) { background: #aaaaaa; }
+#stage li:nth-child(6) { background: #999999; }
+#stage li:nth-child(7) { background: #888888; }
+#stage li:nth-child(8) { background: #777777; }
+#stage li:nth-child(9) { background: #666666; color: white; }
+#stage li:nth-child(10) { background: #555555; color: white; }
+#stage li:nth-child(11) { background: #444444; color: white; }
+#stage li:nth-child(12) { background: #333333; color: white; }
+#stage li:nth-child(13) { background: #222222; color: white; }
+#stage li:nth-child(14) { background: #111111; color: white; }
+#stage li:nth-child(15) { background: #000000; color: white; }
+#stage li:nth-child(16) { background: #000000; color: white; }
+#stage li.empty { background: #ffffff; }
+
+
