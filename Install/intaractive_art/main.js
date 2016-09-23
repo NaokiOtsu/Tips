@@ -5,6 +5,8 @@
   var ctx;
   var Ball;
   var balls = [];
+  var Stage;
+  var stage;
   
   canvas = document.getElementById('mycanvas');
   
@@ -54,44 +56,54 @@
     this.vx = rand(-10, 10);
     this.vy = rand(-10, 10);
     this.color = 'hsla('+ rand(50, 100) +', '+ rand(40, 80) +'%, '+ rand(50, 60) +'%, '+ Math.random() +')';
-    
-    this.draw = function () {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
-      ctx.fillStyle = this.color;
-      ctx.closePath();
-      ctx.fill();
-    };
+  };
 
-    this.move = function() {
-      if (this.x + this.r > canvas.width || this.x - this.r < 0) {
-        this.vx *= -1;
-      }
-      if (this.y + this.r > canvas.height || this.y - this.r < 0) {
-        this.vy *= -1;
-      }
+  Ball.prototype.draw = function () {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+    ctx.fillStyle = this.color;
+    ctx.closePath();
+    ctx.fill();
+  };
 
-      this.x += this.vx;
-      this.y += this.vy;
+  Ball.prototype.move = function () {
+    if (this.x + this.r > canvas.width || this.x - this.r < 0) {
+      this.vx *= -1;
     }
+    if (this.y + this.r > canvas.height || this.y - this.r < 0) {
+      this.vy *= -1;
+    }
+
+    this.x += this.vx;
+    this.y += this.vy;
   };
 
   // var ball = new Ball(rand(100, 200), rand(100, 200), rand(10, 50));
   // ball.draw();
 
-  function update() {
-    var i;
+  Stage = function () {
+    this.update = function () {
+      var i;
 
+      this.clear();
+
+      for (i = 0; i < balls.length; i++) {
+        balls[i].draw();
+        balls[i].move();
+      }
+
+      setTimeout(function() {
+        this.update();
+      }.bind(this), 30);
+    };
+  };
+
+  Stage.prototype.clear = function () {
     ctx.fillStyle = '#ecf0f1';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    for (i = 0; i < balls.length; i++) {
-      balls[i].draw();
-      balls[i].move();
-    }
-
-    setTimeout(update, 30);
   }
 
-  update();
+  stage = new Stage();
+  stage.update();
+
 })();
