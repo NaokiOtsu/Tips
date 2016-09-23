@@ -139,6 +139,7 @@
         tiles[targetRow][targetCol] = tiles[row][col];
         tiles[row][col] = -1;
         drawPuzzle();
+        console.log(111111);
 
         if (checkResult()) {
           alert('Game Clear')

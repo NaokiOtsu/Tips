@@ -1,94 +1,100 @@
 (function() {
   'use strict';
 
-  var PANEL_NUM = 16;
-
-  var MAP = [
-    [0,0],[0,1],[0,2],[0,3],
-    [1,0],[1,1],[1,2],[1,3],
-    [2,0],[2,1],[2,2],[2,3],
-    [3,0],[3,1],[3,2],[3,3]
-  ]
-
+  var COL = 4;
+  var ROW = 4;
+  var NUMBERS = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,-1];
+  var tiles = []; // tiles[row][cor] = 0;
   var UDLR = [
-    [0, -1], // UP
-    [0,  1], // DOWN
-    [-1, 0], // LEFT
-    [ 1, 0] // RIGHT
+    [-1, 0],
+    [1, 0],
+    [0, -1],
+    [0, 1]
   ];
-
+  
   var stage = document.getElementById('stage');
+  var triggers;
 
-  function initalize() {
-    createStage();
+  function initialize() {
+    buildTiles();
+    drawStage();
   }
 
-  function createStage() {
-    var dom = '';
-    var array = [];
-    var panels;
-
-    dom += '<ul>';
-
-    for (var i = 0; i < PANEL_NUM - 1; i++) {
-      array.push('<li>'+ i +'</li>');
-    }
-    array.push('<li class="empty"></li>');
-
-    while (array.length) {
-      dom += array.splice(Math.floor(Math.random() * array.length), 1)[0];
-    }
-    
-    dom += '</ul>';
-
-    stage.innerHTML = dom;
-
-    panels = document.querySelectorAll('#stage li');
-    panels.forEach(function(element, index) {
-      element.addEventListener('click', function() {
-        onPanelClick(element, index);
-      });
-
-      // data-idをつける
-      element.setAttribute('data-id', MAP[index]);
-    });
-  }
-
-  // パネルのクリック
-  function onPanelClick(element, index) {
-    if (element.className === 'empty') return;
-    
-    var current_map_y = MAP[index][0];
-    var current_map_x = MAP[index][1];
-    var target_map_y;
-    var target_map_x;
-    // console.log(current_map_x);
-    // console.log(current_map_y);
-    
-    // クリックしたパネルの上下左右を調べる
-    for (var i = 0; i < UDLR.length; i++) {
-      target_map_y = current_map_y + UDLR[i][1];
-      target_map_x = current_map_x + UDLR[i][0];
-
-      // パネル外の時はcontinue
-      if (target_map_y < 0 || target_map_y >= 4) continue;
-      if (target_map_x < 0 || target_map_x >= 4) continue;
-
-      var target = document.querySelector('[data-id="'+ target_map_y +','+ target_map_x +'"]'); // querySelector([data-id="Y,X"]);
-      
-      // emptyだったら入れ替える
-      if (target.className === 'empty') {
-        changeDom(current_map_y, current_map_x);
+  // 最初のtilesを作る
+  function buildTiles() {
+    for (var row = 0; row < ROW; row++) {
+      tiles[row] = [];
+      for (var col = 0; col < COL; col++) {
+        tiles[row][col] = Number(NUMBERS.splice(Math.floor(Math.random() * NUMBERS.length), 1));
       }
     }
   }
 
-  function changeDom(x, y) {
-    console.log(x);
-    console.log(y);
+  // tilesに基づいてstageを描画
+  function drawStage() {
+    var html = '';
+
+    html += '<ul>';
+
+    for (var row = 0; row < ROW; row++) {
+      for (var col = 0; col < COL; col++) {
+        if (tiles[row][col] === -1) {
+          html += '<li class="empty"></li>';
+        } else {
+          html += '<li>'+ tiles[row][col] +'</li>';
+        }
+      }
+    }
+
+    html += '</ul>';
+    
+    stage.innerHTML = html;
+
+    triggers = document.querySelectorAll('#stage li');
+    triggers.forEach(function(element) {
+      element.addEventListener('click', onTileClick);
+    });
+  }
+
+  // タイルのクリック処理
+  function onTileClick() {
+    if (this.className === 'empty') return;
+    
+    // タイルをクリックした箇所のrowとcolを出して、その上下左右に空白があるかチェックする
+    var number = Number(this.innerHTML);
+    for (var row = 0; row < ROW; row++) {
+      for (var col = 0; col < COL; col++) {
+        if (number === tiles[row][col]) {
+          checkUDLR(row, col);
+          return;
+        }
+      }
+    }
+  }
+
+  // クリックした要素の上下左右に空白があるかチェック
+  function checkUDLR(row, col) {
+    var target_row;
+    var target_col;
+
+    for (var i = 0; i < UDLR.length; i++) {
+      target_row = row + UDLR[i][0];
+      target_col = col + UDLR[i][1];
+      
+      // タイル外に出てしまう場合はcontinueする
+      if (target_row < 0 || target_row >= ROW) continue;
+      if (target_col < 0 || target_col >= COL) continue;
+      
+      // 空白だったら、その要素と空白を入れ替えて、描画しなおす
+      if (tiles[target_row][target_col] === -1) {
+        tiles[target_row][target_col] = tiles[row][col];
+        tiles[row][col] = -1;
+        drawStage();
+      }
+    }
   }
 
   window.addEventListener('DOMContentLoaded', function() {
-    initalize();
+    initialize();
   });
 })();
