@@ -18,6 +18,7 @@
   function initialize() {
     buildTiles();
     drawStage();
+    addEventListeners();
   }
 
   // 最初のtilesを作る
@@ -49,31 +50,32 @@
     html += '</ul>';
     
     stage.innerHTML = html;
+  }
 
-    triggers = document.querySelectorAll('#stage li');
-    triggers.forEach(function(element) {
-      element.addEventListener('click', onTileClick);
-    });
+  function addEventListeners() {
+    document.querySelector('#stage').addEventListener('click', onTileClick);
   }
 
   // タイルのクリック処理
   function onTileClick() {
-    if (this.className === 'empty') return;
+    if ([].indexOf.call(this.children, event.target) === 0) return; // ul要素だったらreturn 
+    if (event.target.className === 'empty') return; // 空マスだったらreturn
     
     // タイルをクリックした箇所のrowとcolを出して、その上下左右に空白があるかチェックする
-    var number = Number(this.innerHTML);
+    var number = Number(event.target.innerHTML);
     for (var row = 0; row < ROW; row++) {
       for (var col = 0; col < COL; col++) {
         if (number === tiles[row][col]) {
-          checkUDLR(row, col);
+          checkUDLR(row, col, event.target);
           return;
+          // break; // breakで抜けるのは一つ内側のfor文のみ
         }
       }
     }
   }
 
   // クリックした要素の上下左右に空白があるかチェック
-  function checkUDLR(row, col) {
+  function checkUDLR(row, col, element) {
     var target_row;
     var target_col;
 
@@ -89,7 +91,14 @@
       if (tiles[target_row][target_col] === -1) {
         tiles[target_row][target_col] = tiles[row][col];
         tiles[row][col] = -1;
-        drawStage();
+        
+        // クリックした要素とempty要素の入れ替え
+        var ul = element.parentNode;
+        var empty = document.querySelector('.empty');
+        var clone_element = element.cloneNode(true);
+        var clone_empty = empty.cloneNode(true);
+        ul.replaceChild(clone_element, empty)
+        ul.replaceChild(clone_empty, element)
       }
     }
   }
