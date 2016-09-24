@@ -6,8 +6,10 @@ $(function() {
     ['太', 'ふ'],
     ['か', 'ん']
   ];
+  var DIMENTION_FIRST = 5; // 最初のカラムの数
+  var DIMENTION_DELTA = 3; // レベルアップ時の増分
 
-  var size = 4;
+  var dimention = DIMENTION_FIRST;
   var level = 0;
   var timer_id;
   var current_time;
@@ -26,23 +28,22 @@ $(function() {
     is_playing = true;
     createStage();
     timerStart();
-    $time.html();
+    $time.empty();
   }
 
   // ステージの作成
   function createStage() {
     var html = '';
-    size += level;
-    var random_num = Math.floor(Math.random() * size * size) + 1;
+    var random_num = Math.floor(Math.random() * dimention * dimention) + 1;
 
-    for (var i = 1; i <= size * size; i++) {
+    for (var i = 1; i <= dimention * dimention; i++) {
       if (i === random_num) {
         html += '<span>'+ TEXTS[level][1] +'</span>'
       } else {
         html += '<span>'+ TEXTS[level][0] +'</span>'
       }
 
-      if (i % size === 0) html += '<br>';
+      if (i % dimention === 0) html += '<br>';
     }
 
     $stage.html(html)
@@ -51,16 +52,17 @@ $(function() {
   // テキストをクリックしたら
   function onTextClick() {
     if (this.textContent === TEXTS[level][1]) {
-      if (level === 2) {
+      if (level + 1 === TEXTS.length) {
         clearTimeout(timer_id);
         $time.html('Your score is ' + current_time);
         level = 0;
-        size = 4;
+        dimention = DIMENTION_FIRST;
         is_playing = false;
         return;
       }
 
       level++;
+      dimention += DIMENTION_DELTA;
       createStage();
     }
   }
