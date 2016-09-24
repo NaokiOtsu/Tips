@@ -1,2 +1,5 @@
 @charset 'utf-8';
 
+span {
+  cursor: pointer;
+}
