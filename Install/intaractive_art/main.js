@@ -9,6 +9,7 @@
   var stage;
   
   canvas = document.getElementById('mycanvas');
+  canvas.style.backgroundColor = '#efefef';
   
   if (!canvas || !canvas.getContext) return false;
 
@@ -17,6 +18,8 @@
   function rand(min, max) {
     return min + Math.floor(Math.random() * (max - min + 1));
   }
+
+
 
   function adjustPosition(pos, r, max) {
     if (pos - r < 0) {
@@ -55,7 +58,7 @@
     this.r = r;
     this.vx = rand(-10, 10);
     this.vy = rand(-10, 10);
-    this.color = 'hsla('+ rand(50, 100) +', '+ rand(40, 80) +'%, '+ rand(50, 60) +'%, '+ Math.random() +')';
+    this.color = 'hsla('+ rand(0, 360) +', '+ rand(60, 100) +'%, '+ rand(50, 60) +'%, '+ Math.random() +')';
   };
 
   Ball.prototype.draw = function () {
@@ -81,26 +84,19 @@
   // var ball = new Ball(rand(100, 200), rand(100, 200), rand(10, 50));
   // ball.draw();
 
-  Stage = function () {
-    this.update = function () {
-      var i;
+  Stage = function () {};
 
-      this.clear();
+  Stage.prototype.update = function () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    for (var i = 0; i < balls.length; i++) {
+      balls[i].draw();
+      balls[i].move();
+    }
 
-      for (i = 0; i < balls.length; i++) {
-        balls[i].draw();
-        balls[i].move();
-      }
-
-      setTimeout(function() {
-        this.update();
-      }.bind(this), 30);
-    };
-  };
-
-  Stage.prototype.clear = function () {
-    ctx.fillStyle = '#ecf0f1';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    setTimeout(function() {
+      this.update();
+    }.bind(this), 30);
   }
 
   stage = new Stage();
