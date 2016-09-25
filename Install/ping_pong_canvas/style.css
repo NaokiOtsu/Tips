@@ -1,0 +1,16 @@
+@charaset 'utf-8';
+
+body {
+  padding: 50px;
+  text-align: center;
+}
+
+#canvas {
+  display: block;
+  margin: 0 auto 10px;
+  background-color: #E2D6FF;
+}
+
+#btn {
+  font-size: 20px;
+}
