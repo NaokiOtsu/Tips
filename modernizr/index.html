@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <button id="btn">btn</button>
+
+  <script src="./modernizr.js"></script>
+  <script>
+    document.getElementById('btn').addEventListener('click', function() {
+      var transform = 'scale(2)';
+      this.style[Modernizr.prefixed('transform')] = transform;
+    });
+  </script>
+</body>
+</html>
