@@ -1,0 +1,28 @@
+%hoge {
+  width: 1000px;
+}
+
+.test {
+  height: 30px;
+  @extend %hoge;
+
+  &--large {
+    height: 50px;
+    width: 100px;
+    transition: opaicty 3s;
+    animation: hoge 1s;
+  }
+
+  @keyframes hoge {
+    0% { transform: translate(0, 0) }
+    100% { transform: translate(0, 10px) }
+  }
+
+  &--red {
+    color: var(--red);
+  }
+
+  &--blue {
+    color: var(--blue);
+  }
+}
