@@ -1,0 +1,20 @@
+{
+  "name": "CountDown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "browser-sync start --server --files '**/*' & postcss -w -c ./config/postcss.js",
+    "css": "postcss -c ./config/postcss.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "browser-sync": "^2.17.3",
+    "cssnano": "^3.7.7",
+    "postcss-cli": "^2.6.0",
+    "postcss-nested": "^1.0.0"
+  }
+}
