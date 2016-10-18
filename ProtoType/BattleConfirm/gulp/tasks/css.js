@@ -3,7 +3,7 @@ var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('css', function(callback) {
-  gulp.src('./assets/**/*.scss')
+  gulp.src('./assets/scss/**/*.scss')
     .pipe(sass({
       'outputStyle': 'compressed'
     }).on('error', sass.logError))
