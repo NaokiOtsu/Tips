@@ -1,3 +1,42 @@
-.test {
-  transform: translate(0, 0);
+body {
+  margin: 10px;
 }
+
+#bp-btn-list {
+  list-style: none;
+
+  li {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #333;
+    display: inline-block;
+    background-color: #ff8f8f;
+    cursor: pointer;
+    &.selected { background-color: #ff5858; }
+    &.disable { background-color: #999; }
+  }
+}
+
+#item-btn-list {
+  list-style: none;
+
+  li {
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+}
+
+#attack-btn-list {
+  list-style: none;
+
+  li {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+}
+
+
