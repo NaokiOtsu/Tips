@@ -7,7 +7,7 @@
 </head>
 <body>
   
-  <p>[<span id="remain-time">29分59秒</span>]</p>
+  <p>[<span id="remain-time"></span>]</p>
   
   <ul id="bp-btn-list">
     <li class="selected">1</li>
@@ -41,5 +41,18 @@
 
   <script src="./js/common.bundle.js"></script>
   <script src="./js/index.bundle.js"></script>
+  <script>
+    (function(window) {
+      'use strict';
+      
+      var config = {
+        'date': '2016/10/19 00:00'
+      };
+
+      window.addEventListener('DOMContentLoaded', function() {
+        var app = new window.App(config);
+      });
+    })(window);
+  </script>
 </body>
 </html>

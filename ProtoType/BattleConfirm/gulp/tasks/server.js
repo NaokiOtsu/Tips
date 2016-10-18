@@ -15,7 +15,6 @@ gulp.task('server', function() {
   return browserSync({
     server: {
       baseDir: './public'
-    },
-    open: false
+    }
   });
 });
