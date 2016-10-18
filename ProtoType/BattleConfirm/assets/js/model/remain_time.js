@@ -1,12 +1,13 @@
 (function(window) {
   'use strict';
 
-  function RemainTime(date) {
+  // 残り時間のモデル
+  function ModelRemainTime(date) {
     this.date = date;
   }
 
   // ゴール日をUNIXタイムで返す
-  RemainTime.prototype.getGoalUnixTime = function() {
+  ModelRemainTime.prototype.getGoalUnixTime = function() {
     var time = new Date(this.date).getTime();
 
     this.getGoalUnixTime = function() { return time; } // 2回目移行はキャッシュされたtimeを返す
@@ -15,7 +16,7 @@
   };
 
   // 残り時間を返す
-  RemainTime.prototype.getDate = function() {
+  ModelRemainTime.prototype.getDate = function() {
     var date = {};
     var gold_time = this.getGoalUnixTime();
     var diff_time = gold_time - Date.now();
@@ -29,12 +30,12 @@
     diff = diff % (1000 * 60 * 60);
     date.minute = Math.floor(diff / (1000 * 60));
     
-    diff = diff_time % (1000 * 60);
+    diff = diff % (1000 * 60);
     date.second = Math.floor(diff / 1000);
 
     return date;
   };
 
-  module.exports = RemainTime; // exports
+  module.exports = ModelRemainTime; // exports
 
 })(window);

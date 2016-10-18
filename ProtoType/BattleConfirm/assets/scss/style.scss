@@ -10,10 +10,10 @@ body {
     height: 30px;
     border: 1px solid #333;
     display: inline-block;
-    background-color: #ff8f8f;
+    background-color: #999999;
     cursor: pointer;
+    &.active { background-color: #ff8f8f; }
     &.selected { background-color: #ff5858; }
-    &.disable { background-color: #999; }
   }
 }
 
@@ -24,7 +24,9 @@ body {
     display: inline-block;
     padding: 0 10px;
     border: 1px solid #333;
+    background-color: #999999;
     cursor: pointer;
+    &.active { background-color: #ff8f8f; }
   }
 }
 
