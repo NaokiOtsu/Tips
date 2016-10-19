@@ -15,7 +15,6 @@
     this.$children = this.$container.find('li');
     
     this.model = model;
-    this.selected_num = 0;
 
     this.render();
 
@@ -25,6 +24,9 @@
   // イベント設定
   ViewBattlePower.prototype.addEventListeners = function() {
     this.$children.on('click', this.onClick.bind(this));
+    _.defer(function() {
+      window.app.observer.on('change:battle_power', this.render.bind(this));
+    }.bind(this));
   };
 
   // バトルパワーの描画
@@ -45,7 +47,12 @@
   // 選択されているボタンを描画
   ViewBattlePower.prototype.renderSelectButton = function() {
     this.$children.removeClass(CLASS_NAME.selected);
-    this.$children.eq(this.selected_num).addClass(CLASS_NAME.selected);
+    
+    // 選択状態に出来るか
+    if (this.model.getCurrentBattlePower()) {
+      var selected_num = this.model.getSelectedNum();
+      this.$children.eq(selected_num).addClass(CLASS_NAME.selected);
+    }
   };
 
   // クリックイベント
@@ -54,7 +61,7 @@
     
     if (! $target.hasClass(CLASS_NAME.active)) return; // disableの時は処理しない
 
-    this.selected_num = $target.index();
+    this.model.setSelectedNum($target.index());
     this.renderSelectButton();
   };
 
