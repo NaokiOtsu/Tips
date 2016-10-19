@@ -27,6 +27,7 @@ body {
     background-color: #999999;
     cursor: pointer;
     &.active { background-color: #ff8f8f; }
+    &.grayout { background-color: #999999; }
   }
 }
 

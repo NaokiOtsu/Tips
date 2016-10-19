@@ -5,7 +5,8 @@
   var _ = require('underscore');
 
   var CLASS_NAME = {
-    'active': 'active'
+    'active': 'active',
+    'grayout': 'grayout'
   };
 
   // みかんのView
@@ -32,15 +33,40 @@
   ViewOrange.prototype.render = function() {
     var current_orange_num = this.model.getCurrentNum();
     
-    // if (current_orange_num <= 0) return;
-
-    this.$btn.addClass(CLASS_NAME.active);
+    this.$btn.removeClass();
+    if (current_orange_num === 0) {
+      this.$btn.addClass(CLASS_NAME.grayout); // みかんの個数が0だったらグレイアウト
+    } else {
+      this.$btn.addClass(CLASS_NAME.active);
+    }
+    
     this.$current.text(current_orange_num);
+  };
+
+  // リセットかどうか
+  ViewOrange.prototype.isReset = function() {
+    if (! this.model.useItem()) return false; // アイテムを使ってなかったらfalse
+    
+    // そのアイテムを使っている、かつ、バトルパワーが満タン
+    if (window.app.model.battle_power.isMax()) return true;
+
+    // そのアイテムを使っている、かつ、そのアイテムが0個
+    if (this.model.getCurrentNum() === 0) return true;
+
+    return false;
   };
 
   // クリックイベント
   ViewOrange.prototype.onClick = function() {
-    this.model.decrement();
+    // if (!this.canClick()) return; // そもそもボタンを押せるかどうか
+    
+    if (this.isReset()) {
+      this.model.reset();
+      window.app.model.battle_power.reset();
+    } else {
+      this.model.decrement();
+      window.app.model.battle_power.recovery(1);
+    }
   };
 
   module.exports = ViewOrange; // exports
