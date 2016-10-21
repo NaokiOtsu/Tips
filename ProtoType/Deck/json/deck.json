@@ -1,0 +1,1310 @@
+{
+   "deck" : {
+      "owner" : {
+         "is_mine" : "1",
+         "user_id" : "81535176"
+      },
+      "colosseum" : {
+         "grade_name" : "3億超えの賞金首",
+         "increasing_combo_num" : "0",
+         "grade_attack_bonus_rate" : "107"
+      },
+      "defense" : {
+         "buff" : 197510,
+         "grand_skill_effect" : 0,
+         "raw" : 197510
+      },
+      "attack" : {
+         "buff" : 2271108,
+         "grand_skill_effect" : 149481,
+         "raw" : 210270
+      },
+      "combo" : {
+         "rate" : {
+            "defense" : 1,
+            "attack" : 5.9
+         },
+         "unmatches" : [
+            {
+               "related_any_positions" : [
+                  "4",
+                  "6"
+               ],
+               "related_any_figure_names" : [
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "ｻﾎﾞ"
+               ],
+               "name" : "ﾒﾗﾒﾗの実",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "4",
+                  "6"
+               ],
+               "is_character_id" : "1",
+               "id" : "747",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "5",
+                  "4"
+               ],
+               "related_any_figure_names" : [
+                  "白ひげ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ"
+               ],
+               "name" : "息子とは呼べねｪ",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "2",
+                  "4",
+                  "5"
+               ],
+               "is_character_id" : "1",
+               "id" : "486",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "1"
+               ],
+               "related_any_figure_names" : [
+                  "ﾙﾌｨ&amp;ｼｬﾝｸｽ"
+               ],
+               "name" : "麦わらの絆",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "1",
+                  "7"
+               ],
+               "is_character_id" : "1",
+               "id" : "8",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "5",
+                  "2"
+               ],
+               "related_any_figure_names" : [
+                  "白ひげ",
+                  "ﾃｨｰﾁ&amp;ﾏﾙｺ"
+               ],
+               "name" : "親父",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "2",
+                  "5"
+               ],
+               "is_character_id" : "1",
+               "id" : "188",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "4",
+                  "2"
+               ],
+               "related_any_figure_names" : [
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "ﾃｨｰﾁ&amp;ﾏﾙｺ"
+               ],
+               "name" : "ﾊﾞﾅﾛ島の決闘",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "2",
+                  "4"
+               ],
+               "is_character_id" : "1",
+               "id" : "398",
+               "type" : "1"
+            },
+            {
+               "related_any_positions" : [
+                  "4",
+                  "2"
+               ],
+               "related_any_figure_names" : [
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "ﾃｨｰﾁ&amp;ﾏﾙｺ"
+               ],
+               "name" : "青い炎と赤い炎",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "2",
+                  "4"
+               ],
+               "is_character_id" : "1",
+               "id" : "633",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "7",
+                  "5"
+               ],
+               "related_any_figure_names" : [
+                  "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+                  "白ひげ"
+               ],
+               "name" : "西の海の酒",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "1",
+                  "5",
+                  "7"
+               ],
+               "is_character_id" : "1",
+               "id" : "441",
+               "type" : "1"
+            },
+            {
+               "related_any_positions" : [
+                  "1",
+                  "4"
+               ],
+               "related_any_figure_names" : [
+                  "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ"
+               ],
+               "name" : "人の夢は終わらねェ!!!",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "1",
+                  "2",
+                  "4"
+               ],
+               "is_character_id" : "1",
+               "id" : "459",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "4",
+                  "5"
+               ],
+               "related_any_figure_names" : [
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "白ひげ"
+               ],
+               "name" : "親父",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "4",
+                  "5"
+               ],
+               "is_character_id" : "1",
+               "id" : "99",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "7",
+                  "4"
+               ],
+               "related_any_figure_names" : [
+                  "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ"
+               ],
+               "name" : "疼く傷",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "1",
+                  "2",
+                  "4",
+                  "7"
+               ],
+               "is_character_id" : "1",
+               "id" : "457",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "1",
+                  "4"
+               ],
+               "related_any_figure_names" : [
+                  "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ"
+               ],
+               "name" : "兄弟の絆",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "1",
+                  "4"
+               ],
+               "is_character_id" : "1",
+               "id" : "3",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "1",
+                  "7"
+               ],
+               "related_any_figure_names" : [
+                  "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                  "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ"
+               ],
+               "name" : "約束",
+               "origin_level" : "3",
+               "level" : "3",
+               "related_all_positions" : [
+                  "1",
+                  "7"
+               ],
+               "is_character_id" : "1",
+               "id" : "163",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "1",
+                  "4",
+                  "6"
+               ],
+               "related_any_figure_names" : [
+                  "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "ｻﾎﾞ"
+               ],
+               "name" : "兄弟盃",
+               "origin_level" : "3",
+               "level" : "3",
+               "related_all_positions" : [
+                  "1",
+                  "4",
+                  "6"
+               ],
+               "is_character_id" : "1",
+               "id" : "199",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "7",
+                  "4"
+               ],
+               "related_any_figure_names" : [
+                  "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ"
+               ],
+               "name" : "弟の命の恩人",
+               "origin_level" : "3",
+               "level" : "3",
+               "related_all_positions" : [
+                  "1",
+                  "4",
+                  "7"
+               ],
+               "is_character_id" : "1",
+               "id" : "472",
+               "type" : "3"
+            }
+         ],
+         "matches" : [
+            {
+               "related_any_positions" : [
+                  "1",
+                  "4",
+                  "8",
+                  "6",
+                  "2"
+               ],
+               "related_any_figure_names" : [
+                  "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "赤犬(ｻｶｽﾞｷ)  ",
+                  "ｻﾎﾞ",
+                  "ﾃｨｰﾁ&amp;ﾏﾙｺ"
+               ],
+               "name" : "世界を焦がす炎",
+               "origin_level" : "6",
+               "level" : "6",
+               "related_all_positions" : [
+                  "1",
+                  "2",
+                  "4",
+                  "6",
+                  "8"
+               ],
+               "is_character_id" : "1",
+               "id" : "722",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "1",
+                  "4",
+                  "5",
+                  "2"
+               ],
+               "related_any_figure_names" : [
+                  "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "白ひげ",
+                  "ﾃｨｰﾁ&amp;ﾏﾙｺ"
+               ],
+               "name" : "暴走する時代",
+               "origin_level" : "5",
+               "level" : "5",
+               "related_all_positions" : [
+                  "1",
+                  "2",
+                  "4",
+                  "5",
+                  "7"
+               ],
+               "is_character_id" : "1",
+               "id" : "443",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "1",
+                  "4",
+                  "5",
+                  "8"
+               ],
+               "related_any_figure_names" : [
+                  "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "白ひげ",
+                  "赤犬(ｻｶｽﾞｷ)  "
+               ],
+               "name" : "この時代の名を白ひげと呼ぶ",
+               "origin_level" : "5",
+               "level" : "5",
+               "related_all_positions" : [
+                  "1",
+                  "4",
+                  "5",
+                  "8"
+               ],
+               "is_character_id" : "1",
+               "id" : "294",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "7",
+                  "8"
+               ],
+               "related_any_figure_names" : [
+                  "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+                  "赤犬(ｻｶｽﾞｷ)  "
+               ],
+               "name" : "命がも゛ったいだいっ!!!!",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "1",
+                  "7",
+                  "8"
+               ],
+               "is_character_id" : "1",
+               "id" : "316",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "5",
+                  "8"
+               ],
+               "related_any_figure_names" : [
+                  "白ひげ",
+                  "赤犬(ｻｶｽﾞｷ)  "
+               ],
+               "name" : "言葉なき怒り",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "5",
+                  "8"
+               ],
+               "is_character_id" : "1",
+               "id" : "454",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "7",
+                  "4",
+                  "5",
+                  "2"
+               ],
+               "related_any_figure_names" : [
+                  "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+                  "ｴｰｽ&amp;ﾃｨｰﾁ",
+                  "白ひげ",
+                  "ﾃｨｰﾁ&amp;ﾏﾙｺ"
+               ],
+               "name" : "敬意を払うべき男",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "1",
+                  "2",
+                  "4",
+                  "5",
+                  "7"
+               ],
+               "is_character_id" : "1",
+               "id" : "347",
+               "type" : "3"
+            },
+            {
+               "related_any_positions" : [
+                  "7",
+                  "2"
+               ],
+               "related_any_figure_names" : [
+                  "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+                  "ﾃｨｰﾁ&amp;ﾏﾙｺ"
+               ],
+               "name" : "勧誘",
+               "origin_level" : "4",
+               "level" : "4",
+               "related_all_positions" : [
+                  "1",
+                  "2",
+                  "7"
+               ],
+               "is_character_id" : "1",
+               "id" : "442",
+               "type" : "3"
+            }
+         ],
+         "sum" : {
+            "attack" : 32
+         }
+      },
+      "figures" : [
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "2250",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 23500,
+            "tower" : null,
+            "attack" : 56362,
+            "position" : "1",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "dictionary_link" : "_onepi_gsd_d?figure_attribute_type=115",
+                  "target_position_to_match_num_map" : {
+                     "4" : 2,
+                     "1" : 2,
+                     "7" : 1,
+                     "2" : 2,
+                     "5" : 1
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                     "ﾃｨｰﾁ&amp;ﾏﾙｺ",
+                     "ｴｰｽ&amp;ﾃｨｰﾁ",
+                     "白ひげ",
+                     "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ"
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 1,
+                  "position" : "1",
+                  "effect_value_with_special_effect" : 1500,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "四皇の海賊団とﾙﾌｨ攻撃50%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "17633",
+                  "effect_value" : "1500",
+                  "combo_level" : null,
+                  "targets" : [
+                     "1",
+                     "2",
+                     "4",
+                     "5",
+                     "7"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 25050,
+            "id" : "7305216784",
+            "figure_id" : "90162",
+            "using_position_num" : "1",
+            "defense" : 23500,
+            "name" : "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nxSomAmC5Yt7JaNpzj6qBxSDHTTCcZBmGY50zhtWkgNnVeHIkWAzG0hhuTGrxXy1DYVUETS5SGzc3drZr31Nq1juPPyvL4MjIkkqJcHJiOQu57DeMswNyiT0JCJ8nHByvTxPQewLmyxPmxX1oK0u2ScfhiS9jrtxPfLGCNL99ZXAa5jNCNwh8iYwW0KtGGc2xPzobXByrxSNYf69FxStRAovHPFAmQdV3qGoKIAuheSKlQ8bTqlEgQD3RHsp4IYvZwvjxXMCnNk6tdeLWACpXA1mxP6tc2bZw75CNz2T6aTMcO2ivcGPxPQSA1.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 100,
+            "rarity_name" : "KR",
+            "related_combo_count" : 6,
+            "line_battle_skill" : {
+               "type_name" : "攻撃",
+               "is_target_type_all" : 1,
+               "position" : "1",
+               "target_type_name" : "全体",
+               "name" : "覇王色の覇気",
+               "is_target_type_single" : 0,
+               "level" : {
+                  "max" : "10",
+                  "current" : 10
+               },
+               "desc" : "敵全体に310%の攻撃",
+               "id" : "1700024",
+               "target_type" : "4",
+               "effect_rate" : 310
+            }
+         },
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "2025",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 20930,
+            "tower" : null,
+            "attack" : 45056,
+            "position" : "2",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "dictionary_link" : "_onepi_gsd_d?figure_attribute_type=93",
+                  "target_position_to_match_num_map" : {
+                     "4" : 2,
+                     "2" : 2,
+                     "5" : 1
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "ﾃｨｰﾁ&amp;ﾏﾙｺ",
+                     "ｴｰｽ&amp;ﾃｨｰﾁ",
+                     "白ひげ"
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 1,
+                  "position" : "2",
+                  "effect_value_with_special_effect" : 1350,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "白ひげ海賊団と新旧王下七武海攻撃35%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "17631",
+                  "effect_value" : "1350",
+                  "combo_level" : null,
+                  "targets" : [
+                     "2",
+                     "4",
+                     "5"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 22250,
+            "id" : "7305216803",
+            "figure_id" : "81193",
+            "using_position_num" : "1",
+            "defense" : 20930,
+            "name" : "ﾃｨｰﾁ&amp;ﾏﾙｺ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nYWkO2VLc4AcOd3kN9pptTfdtNQA5OKJnP2pTNZlrI5L1uRmo8BxXh73vvBXvoKFIkTBc3Xj1d68Z1jjHKApNcfTSBkGAugu8mYmTayGcF4E2gxSBwSxXIehIWxPdNhZHExSriiV3KRxPGpD09FRyQdFZBR3jUHmlqxSqujMnaId8p0XZqCiAdaxSEyuR8zB0gRqdy8euMUxSgB8uqpAxPUHKzVvxPRL5axPwLNhXTp5Lu3CZQxXv6eSfrHmOL25bRTejZV0dXfmkE6xXaeVVPCLD85xXq8F5DbO4pZ2Taur8ixSxPa0Q36TwxXR9rqxP6EYUSsWkQ2.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 95,
+            "rarity_name" : "超GR+",
+            "related_combo_count" : 4,
+            "line_battle_skill" : {
+               "type_name" : "攻撃",
+               "is_target_type_all" : 1,
+               "position" : "2",
+               "target_type_name" : "全体",
+               "name" : "不死鳥の舞",
+               "is_target_type_single" : 0,
+               "level" : {
+                  "max" : "10",
+                  "current" : 1
+               },
+               "desc" : "敵全体に200%の攻撃",
+               "id" : "1700025",
+               "target_type" : "4",
+               "effect_rate" : 200
+            }
+         },
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "1500",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 27980,
+            "tower" : null,
+            "attack" : 45144,
+            "position" : "3",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "targets" : [],
+                  "dictionary_link" : "_onepi_cd_d?combo_id=1",
+                  "is_defense" : 0,
+                  "is_attack" : 0,
+                  "is_synergy_gs" : 0,
+                  "is_execute" : 1,
+                  "position" : "3",
+                  "effect_value_with_special_effect" : 1000,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "3004",
+                  "is_combo" : 1,
+                  "desc" : "麦わらの一味の連携Lv+1",
+                  "synergy_gs_info" : {},
+                  "id" : "17248",
+                  "effect_value" : "1000"
+               },
+               {
+                  "dictionary_link" : "_onepi_gsd_d?figure_attribute_type=32",
+                  "target_position_to_match_num_map" : {
+                     "1" : 1,
+                     "3" : 1,
+                     "9" : 1
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                     "ﾁｮｯﾊﾟｰ",
+                     "ｿﾞﾛ&amp;ｺｳｼﾛｳ"
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 1,
+                  "position" : "3",
+                  "effect_value_with_special_effect" : 1500,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "麦わらの一味攻撃50%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "17251",
+                  "effect_value" : "1500",
+                  "combo_level" : null,
+                  "targets" : [
+                     "1",
+                     "3",
+                     "9"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 30096,
+            "id" : "7268652186",
+            "figure_id" : "90135",
+            "using_position_num" : "1",
+            "defense" : 27980,
+            "name" : "ﾁｮｯﾊﾟｰ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8ncbXE0BIQL65fFomRsLiyUOqSVBSdLY2t0OtCVLECHdJObQyV6My1bTGpX4GDxPxPudNB1J8vRbXh85Qi8EjVjVZ1Ps0bI9NX6l9sY75zi8KNxP6YxP1wzHuHqhhkEJaapc6DOMJph4zOfGbfaR7VJRxXxXpSL8f9EGNuL6clAzrta3DQEBpQp2HbTMIzemxXw89Q39RVVoD4cZ1xSxSKkF599P4Bbk89OslxXDJv6yDHdgxS7jRFh5csxSmfYea2kN0A56aPTfxS5e6MpMfxXMbepZMPltG41q6w2.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 110,
+            "rarity_name" : "KR+(進化済)",
+            "related_combo_count" : 0,
+            "line_battle_skill" : {
+               "type_name" : "攻撃",
+               "is_target_type_all" : 1,
+               "position" : "3",
+               "target_type_name" : "全体",
+               "name" : "突撃",
+               "is_target_type_single" : 0,
+               "level" : {
+                  "max" : "10",
+                  "current" : 10
+               },
+               "desc" : "敵全体に180%の攻撃",
+               "id" : "1670025",
+               "target_type" : "4",
+               "effect_rate" : 180
+            }
+         },
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "2025",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 19260,
+            "tower" : null,
+            "attack" : 41330,
+            "position" : "4",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "dictionary_link" : "_onepi_gsd_d?figure_attribute_type=99",
+                  "target_position_to_match_num_map" : {
+                     "4" : 2,
+                     "2" : 2,
+                     "5" : 1
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "ﾃｨｰﾁ&amp;ﾏﾙｺ",
+                     "ｴｰｽ&amp;ﾃｨｰﾁ",
+                     "白ひげ"
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 0,
+                  "position" : "4",
+                  "effect_value_with_special_effect" : 1300,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "白ひげ海賊団と黒ひげ海賊団攻撃30%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "14756",
+                  "effect_value" : "1300",
+                  "combo_level" : null,
+                  "targets" : [
+                     "2",
+                     "4",
+                     "5"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 20410,
+            "id" : "6988540712",
+            "figure_id" : "80638",
+            "using_position_num" : "1",
+            "defense" : 19260,
+            "name" : "ｴｰｽ&amp;ﾃｨｰﾁ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8n8LM4dzevxPA1hLKZLxXbwxXM9DP7xXYhUFCT3yv5gKhjZtkW7CGxPGkngWMwuvgGnqXPLcmdIckcq1IxS652in4O5fRafZBmEzu7R3k2l40brm9zCAE7C8k7Pz3CLTfDM4whhvxPCTciu39BgcmSMStBVCeUILlKnsHvLmKClZxSXSiUqkdSXpYrKHhI8p1aMzBdOB179wk24LpRUQu859BhsaruPpKaGTmwENJ6VmwCsTvMZvTj0lrMSpB6bkXl6HtREYPnqWbgCFDM2QM1.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 90,
+            "rarity_name" : "GR+",
+            "related_combo_count" : 4,
+            "line_battle_skill" : {
+               "type_name" : "攻撃",
+               "is_target_type_all" : 1,
+               "position" : "4",
+               "target_type_name" : "全体",
+               "name" : "神火 不知火",
+               "is_target_type_single" : 0,
+               "level" : {
+                  "max" : "10",
+                  "current" : 1
+               },
+               "desc" : "敵全体に170%の攻撃",
+               "id" : "1360009",
+               "target_type" : "4",
+               "effect_rate" : 170
+            }
+         },
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "2025",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 28004,
+            "tower" : null,
+            "attack" : 60995,
+            "position" : "5",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "dictionary_link" : "_onepi_cd_d?combo_id=498",
+                  "is_defense" : 0,
+                  "is_attack" : 0,
+                  "is_synergy_gs" : 0,
+                  "is_execute" : 0,
+                  "position" : "5",
+                  "effect_value_with_special_effect" : 1000,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "3004",
+                  "is_combo" : 1,
+                  "desc" : "伝説の白ひげ海賊団の連携Lv+1",
+                  "synergy_gs_info" : {},
+                  "id" : "18382",
+                  "effect_value" : "1000"
+               },
+               {
+                  "dictionary_link" : "_onepi_gsd_d?figure_attribute_type=33",
+                  "target_position_to_match_num_map" : {
+                     "4" : 2,
+                     "2" : 2,
+                     "5" : 1
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "ﾃｨｰﾁ&amp;ﾏﾙｺ",
+                     "ｴｰｽ&amp;ﾃｨｰﾁ",
+                     "白ひげ"
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 0,
+                  "position" : "5",
+                  "effect_value_with_special_effect" : 1400,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "白ひげ海賊団攻撃40%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "18385",
+                  "effect_value" : "1400",
+                  "combo_level" : null,
+                  "targets" : [
+                     "2",
+                     "4",
+                     "5"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 30121,
+            "id" : "7403481312",
+            "figure_id" : "90038",
+            "using_position_num" : "1",
+            "defense" : 28004,
+            "name" : "白ひげ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8n7u2IixPImXSEwiLZCsm7kaGVmSr6ooVv8h9yJaxPZm2J2Mhbl2VO7Jo9UMONvpXuEtaODIklAZ4dywC4RzNYxPBu9wwilVeEcnTuGczrGZ5tWD5yaAMng9eSxXR6ZsdHMdZWqnhi2Xzuneg5HNC5qrTBFsYxPdtD21xSRLbaApYDkbOxXlt42dfKb6iXk5sKqUw4YKHKNeyEyZxPQcArK9DxXU0xP2q7WsRLgF8KOCZlX9htYGRjmAdP9XKtndGUXFLLFWzaqS0.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 110,
+            "rarity_name" : "KR+(進化済)",
+            "related_combo_count" : 4,
+            "line_battle_skill" : {
+               "type_name" : "攻撃",
+               "is_target_type_all" : 0,
+               "position" : "5",
+               "target_type_name" : "単体",
+               "name" : "海震",
+               "is_target_type_single" : 1,
+               "level" : {
+                  "max" : "10",
+                  "current" : 10
+               },
+               "desc" : "敵単体に210%の攻撃",
+               "id" : "1790022",
+               "target_type" : "2",
+               "effect_rate" : 210
+            }
+         },
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "0",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 14170,
+            "tower" : null,
+            "attack" : 14110,
+            "position" : "6",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "dictionary_link" : "_onepi_gsd_d?figure_attribute_type=86",
+                  "target_position_to_match_num_map" : {
+                     "6" : 1,
+                     "1" : 1,
+                     "3" : 1,
+                     "9" : 1
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                     "ﾁｮｯﾊﾟｰ",
+                     "ｻﾎﾞ",
+                     "ｿﾞﾛ&amp;ｺｳｼﾛｳ"
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 0,
+                  "position" : "6",
+                  "effect_value_with_special_effect" : 1100,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "ﾄﾞﾚｽﾛｰｻﾞ攻撃10%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "16778",
+                  "effect_value" : "1100",
+                  "combo_level" : null,
+                  "targets" : [
+                     "1",
+                     "3",
+                     "6",
+                     "9"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 14110,
+            "id" : "7206734147",
+            "figure_id" : "72283",
+            "using_position_num" : "1",
+            "defense" : 14170,
+            "name" : "ｻﾎﾞ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nUQnRxSamjdudtLxSGQq13Z5xP9l5sMsV3OxSxSmgRwHWvWrAHCj36jgrgDjxPkCMHWJOF8dLwVvq3D1BDzfDInw0bokxXjctu3ZSKFrcp1Ql2oxXeJ09i0fj8u3jDVukQJ18O2pm0xS7BqZW1UwEzFFXYIq1GD9lk5LzjtxS6nZxX9pnUZCvg625h53dUIBVtP116sIJhooZb6uWJWtXQdhxSxPPezxS8NAP0Bbtt6KtVnIxXfw8rXFzVc1.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 80,
+            "rarity_name" : "GR",
+            "related_combo_count" : 1,
+            "line_battle_skill" : {
+               "type_name" : "攻撃",
+               "is_target_type_all" : 0,
+               "position" : "6",
+               "target_type_name" : "単体",
+               "name" : "鉄ﾊﾟｲﾌﾟ投げ",
+               "is_target_type_single" : 1,
+               "level" : {
+                  "max" : "10",
+                  "current" : 1
+               },
+               "desc" : "敵単体に150%の攻撃",
+               "id" : "1610023",
+               "target_type" : "2",
+               "effect_rate" : 150
+            }
+         },
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "1500",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 27931,
+            "tower" : null,
+            "attack" : 44509,
+            "position" : "7",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "dictionary_link" : "_onepi_gsd_d?figure_attribute_type=132",
+                  "target_position_to_match_num_map" : {
+                     "8" : 1,
+                     "1" : 1,
+                     "7" : 2,
+                     "9" : 2
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "ﾙﾌｨ&amp;ｼｬﾝｸｽ",
+                     "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+                     "赤犬(ｻｶｽﾞｷ)  ",
+                     "ｿﾞﾛ&amp;ｺｳｼﾛｳ"
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 0,
+                  "position" : "7",
+                  "effect_value_with_special_effect" : 1250,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "海軍と剣の使い手攻撃25%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "20451",
+                  "effect_value" : "1250",
+                  "combo_level" : null,
+                  "targets" : [
+                     "1",
+                     "7",
+                     "8",
+                     "9"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 29673,
+            "id" : "7630821932",
+            "figure_id" : "90165",
+            "using_position_num" : "1",
+            "defense" : 27931,
+            "name" : "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8ns3euHPchFowqyC4hiD66ztj7D3AROIY8z1oQGxS65xXxSgxXexX7bjexXBvlQl3vxP8BHcxS2KsTKuCLJzxXHXd8nNa28M1yis5wxXLFoD59qVgfPxXxXOPCxSCrjzzYrQc6R2kmzcuc24dqwvNR27txS3yW4kDiGDiTKqwPvHmdClubEua2nrLStTsFxXDnTpqOZfrgeTCOV6NmZis9wInFdBekPkZfLoDLQFBvwKGNeswQEGuatUUtTTxXONI53oPGgb9MxPK0b2kHQGI4mG3EzBtlnYiBfRS8bJ2HtteWxPBdKxP0.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 110,
+            "rarity_name" : "KR+(進化済)",
+            "related_combo_count" : 4,
+            "line_battle_skill" : {
+               "type_name" : "攻撃",
+               "is_target_type_all" : 0,
+               "position" : "7",
+               "target_type_name" : "単体",
+               "name" : "覇王色の覇気",
+               "is_target_type_single" : 1,
+               "level" : {
+                  "max" : "10",
+                  "current" : 1
+               },
+               "desc" : "敵単体に350%の攻撃",
+               "id" : "10010005",
+               "target_type" : "2",
+               "effect_rate" : 350
+            }
+         },
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "0",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 10290,
+            "tower" : null,
+            "attack" : 11190,
+            "position" : "8",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "dictionary_link" : "",
+                  "target_position_to_match_num_map" : {
+                     "8" : 0
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "赤犬(ｻｶｽﾞｷ)  "
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 0,
+                  "position" : "8",
+                  "effect_value_with_special_effect" : 1150,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "自分の攻撃15%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "10589",
+                  "effect_value" : "1150",
+                  "combo_level" : null,
+                  "targets" : [
+                     "8"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 11190,
+            "id" : "7408745463",
+            "figure_id" : "60134",
+            "using_position_num" : "1",
+            "defense" : 10290,
+            "name" : "赤犬(ｻｶｽﾞｷ)  ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nLHnZcZFfy4Y3aOGtS7h2lnsxPj6ISWmZVdz3fFBIkdPBIQGxPzerggJ0ybEbDVb1KPqxSTGCVk1cuG7rv4Gu7X8bwon6ySXdcQ16gTBWHxSPbO65lsxSrLxPXLc4nOigbXZxX8SWv2mO0BCR0Jcoe5RatVDohOuBkfKqxPI4hE0H8ElSccqzNkRly1XHSSGp2XSMqdSNxPSojeMCC5xSNDuKNexXz0XhXxSGSm2f90r0AzUPN2xPB7WI1.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 70,
+            "rarity_name" : "SR+",
+            "related_combo_count" : 4,
+            "line_battle_skill" : null
+         },
+         {
+            "field_grand_skill_effect" : null,
+            "grand_skill_bonus_rate" : {
+               "affected_special_effect" : 0,
+               "defense" : "0",
+               "attack" : "1500",
+               "affected_synergy_gs" : 0
+            },
+            "special_effect" : {
+               "defense" : 1,
+               "attack" : 1,
+               "rare_boss_attack" : null,
+               "combo" : 0
+            },
+            "base_defense_with_badge" : 25445,
+            "tower" : null,
+            "attack" : 41055,
+            "position" : "9",
+            "growth" : {
+               "is_fixed" : 0,
+               "is_growable" : 0
+            },
+            "grand_skills" : [
+               {
+                  "dictionary_link" : "_onepi_gsd_d?figure_attribute_type=50",
+                  "target_position_to_match_num_map" : {
+                     "9" : 2
+                  },
+                  "combo_origin_level" : null,
+                  "target_names" : [
+                     "ｿﾞﾛ&amp;ｺｳｼﾛｳ"
+                  ],
+                  "target_alias" : "",
+                  "is_execute" : 0,
+                  "position" : "9",
+                  "effect_value_with_special_effect" : 1300,
+                  "synergy_gs_list" : [],
+                  "effect_type" : "1001",
+                  "is_combo" : 0,
+                  "desc" : "剣士攻撃30%UP",
+                  "synergy_gs_info" : {},
+                  "id" : "16716",
+                  "effect_value" : "1300",
+                  "combo_level" : null,
+                  "targets" : [
+                     "9"
+                  ],
+                  "is_defense" : 0,
+                  "is_attack" : 1,
+                  "is_synergy_gs" : 0
+               }
+            ],
+            "base_attack_with_badge" : 27370,
+            "id" : "7201669015",
+            "figure_id" : "90027",
+            "using_position_num" : "1",
+            "defense" : 25445,
+            "name" : "ｿﾞﾛ&amp;ｺｳｼﾛｳ",
+            "image" : {
+               "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nGdTY68iBxXcuv3zBxPMxX00jmE9d4NG2sCkLGfWxPSanoPrpkEWRQV37vA7FUdWBgppVh9GbbfsBt49QyMYSQX2xSkn3ka4ugsgmxXnutOkZckLRlJ19gt6AB8y7SCqJBmOrACe8N0JxPpFxPHWQG9lUVupKEw9xSL9oz05lqWguS1bxSUxPwsQhzqANyvz7loR5hsBYCtkVLOQbdORbP5TqavHmaLqXhOp1YW7gLoq45q4KvRoqljDSk15rFY8Qn4DQc0jborvirsUPSFcXSUOSzFUYhI7Fh7T7NLlaa1R0.jpg"
+            },
+            "field_grand_skill_bonus_rate" : null,
+            "level" : 105,
+            "rarity_name" : "超KR",
+            "related_combo_count" : 0,
+            "line_battle_skill" : {
+               "type_name" : "攻撃",
+               "is_target_type_all" : 0,
+               "position" : "9",
+               "target_type_name" : "単体",
+               "name" : "二刀竹刀",
+               "is_target_type_single" : 1,
+               "level" : {
+                  "max" : "10",
+                  "current" : 1
+               },
+               "desc" : "敵単体に250%の攻撃",
+               "id" : "1600029",
+               "target_type" : "2",
+               "effect_rate" : 250
+            }
+         }
+      ],
+      "field_grand_skills" : [],
+      "type" : "2",
+      "rank" : null,
+      "comeback_special_effect" : {}
+   }
+}

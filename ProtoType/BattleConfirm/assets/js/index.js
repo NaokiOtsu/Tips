@@ -1,13 +1,16 @@
 (function(window) {
   'use strict';
 
+  var _ = require('underscore');
+
   var ModelRemainTime = require('./model/remain_time');
   var ModelBattlePower = require('./model/battle_power');
-  var ModelOrange = require('./model/orange');
+  var ModelItem = require('./model/item');
 
   var ViewRemainTime = require('./view/remain_time');
   var ViewBattlePower = require('./view/battle_power');
-  var ViewOrange = require('./view/orange');
+  var ViewItem = require('./view/item');
+  var ViewAttackBtn = require('./view/attack_btn');
 
   var Observer = require('./observer');
 
@@ -20,26 +23,29 @@
     this.model = {};
     this.view = {};
 
-    // Model,Viewの作成
-    this.createModel();
-    this.createView();
+    this.createModel(); // Modelの作成
+  }
 
+  App.prototype.init = function() {
+    this.createView(); // Viewの作成(Modelを作ってwindowに格納してから)
+    
     // タイマースタート
     this.view.remain_time.start();
-  }
+  };
 
   // Modelの作成
   App.prototype.createModel = function() {
     this.model.remain_time = new ModelRemainTime(this.config.date);
     this.model.battle_power = new ModelBattlePower(this.config.battle_power);
-    this.model.orange = new ModelOrange(this.config.item.orange);
+    this.model.item = new ModelItem(this.config.item);
   };
 
   // Viewの作成
   App.prototype.createView = function() {
     this.view.remain_time = new ViewRemainTime(this.model.remain_time);
     this.view.battle_power = new ViewBattlePower(this.model.battle_power);
-    this.view.orange = new ViewOrange(this.model.orange);
+    this.view.item = new ViewItem(this.model.item);
+    this.view.attack_btn = new ViewAttackBtn();
   };
 
   window.App = App; // export
