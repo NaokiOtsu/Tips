@@ -28,6 +28,10 @@
     });
     
     this.$deck_container.html(htmls);
+
+    this.initializeRenderDeck = function() {
+      this.$deck_container.html(htmls);
+    }.bind(this)
   };
 
   // 最初のFigureのrender
@@ -46,23 +50,33 @@
 
   // 攻がクリックされた時
   View.prototype.toggleAttack = function() {
-    console.log(this);
+    this.initializeRenderDeck();
   };
 
-  // 
-  View.prototype.deckFigureSelect = function(figures) {
+  // デッキのフィギュアが選択された時
+  View.prototype.deckFigureSelect = function() {
     this.$deck_container.find('div').css({ 'border': 'none' });
     $(event.target).css({
       'border': '1px solid #333333'
     });
   };
 
-  // 
+  // 所持フィギュアが選択された時
   View.prototype.userFigureSelect = function(figures) {
     var index = $(event.target).index();
-    console.log(index);
-    console.log(figures[index]);
+
+    this.changeDeckFigure(1, figures[index]);
   };
+
+  // デッキのフィギュアを選択したフィギュアに変更
+  View.prototype.changeDeckFigure = function(select, figure) {
+    var template = this.$template_deck_edit_figure_detail.html();
+    var html = Mustache.render(template, figure);
+    
+    this.$deck_container.find('div').eq(0).replaceWith(html);
+  };
+
+  
 
   // イベントのbind
   View.prototype.bind = function(event, handler) {
