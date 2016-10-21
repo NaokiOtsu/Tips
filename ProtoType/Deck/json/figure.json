@@ -1,0 +1,283 @@
+{
+   "page" : {
+      "max" : 16,
+      "current" : 1
+   },
+   "figures" : [
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 10690,
+         "attack" : 10690,
+         "name" : "ﾌﾞﾙｯｸ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nJDxSSWcu9HRPu8JHxX3SfnqUxPEOC3knNhunOVuKRKwqTlQFFdbv8Hicd3xX6qZeFDxXgpdTjsY6DAZXgDuM26OrrpxSwPskUdC33PBnHvgj6xPrKV9MUsPpdoMExXU2sJqBeG6xPQ5Dsc6ZnawUEmCWQFfSMiZpzzg34RHzMRExP7cLTri8BbGm82xSQcZFFFgZXXXfMUQlt5vqf14S9dsTfyfGXBXT2GddxXEXhHODA0TXMHrpWqQ1.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "自分の攻撃15%UP",
+               "effect_value" : "1150",
+               "id" : "10589"
+            }
+         ],
+         "id" : "7645776433",
+         "figure_id" : "61289",
+         "line_battle_skill" : {}
+      },
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 27931,
+         "attack" : 29673,
+         "name" : "ｼｬﾝｸｽ&amp;ｺﾋﾞｰ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8ns3euHPchFowqyC4hiD66ztj7D3AROIY8z1oQGxS65xXxSgxXexX7bjexXBvlQl3vxP8BHcxS2KsTKuCLJzxXHXd8nNa28M1yis5wxXLFoD59qVgfPxXxXOPCxSCrjzzYrQc6R2kmzcuc24dqwvNR27txS3yW4kDiGDiTKqwPvHmdClubEua2nrLStTsFxXDnTpqOZfrgeTCOV6NmZis9wInFdBekPkZfLoDLQFBvwKGNeswQEGuatUUtTTxXONI53oPGgb9MxPK0b2kHQGI4mG3EzBtlnYiBfRS8bJ2HtteWxPBdKxP0.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "海軍と剣の使い手攻撃25%UP",
+               "effect_value" : "1250",
+               "id" : "20451"
+            }
+         ],
+         "id" : "7630821932",
+         "figure_id" : "90165",
+         "line_battle_skill" : {
+            "level" : {
+               "max" : "10",
+               "current" : 1
+            },
+            "desc" : "敵単体に350%の攻撃",
+            "name" : "覇王色の覇気",
+            "id" : "10010005"
+         }
+      },
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 15166,
+         "attack" : 15387,
+         "name" : "ﾎﾞｱ･ﾊﾝｺｯｸ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nxX5k076xXdgLNsABEwnLXyNYZFEqJcyGLY5M6DfBBEHaztZdIGxXfUitphPl21CEDszyLInWQW9QSfExPLvHtKQ7o7Rm4uN0BMnLNT3sfRQxSPZYlesihSrodglldKGgag87T2zcUz20rjuKBMHU8UTuJaL7FvQtet5qlFk2p2Lbr5YFvHfZiRPblr2CqgdUjzVHSmXhzYkjELMD8tDKOdWq7xS4CwgYGbYxP3Xbu0Zfc210RUxXZz7gfINFxXrqBfcq9Q2Iv0.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "ﾊﾝｺｯｸ攻撃15%UP",
+               "effect_value" : "1150",
+               "id" : "1861001"
+            }
+         ],
+         "id" : "7465414471",
+         "figure_id" : "72560",
+         "line_battle_skill" : {
+            "level" : {
+               "max" : "10",
+               "current" : "10"
+            },
+            "desc" : "敵単体に200%の攻撃",
+            "name" : "蹴り飛ばし",
+            "id" : "1860040"
+         }
+      },
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 13800,
+         "attack" : 14000,
+         "name" : "ﾏｰｼｬﾙ･D･ﾃｨｰﾁ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nCN5JwR5jhxSpI4l27p7ixX0bdn9t9tEhnfZtqPi5R22EiuLxXYo48XUhi6AQaoV8iV5nWTybg6sAxSFymUgQQuVBnDNK9FC2WH7WyjkQ6w9xPBSZRavgjtWSn4t2VXaSBAQfQxXAQQ5mtJbIqREK9dY7tiMELT7UuNiheKrNnK8CKV6HOHHQ3RBxSNEtHrdSCMJR4P8ZNtNk2oxSKmv4Ll3MVpOxSa0YY9TnqocAQnUWhh53LK8Y1.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "黒ひげ(ﾃｨｰﾁ)攻撃15%UP",
+               "effect_value" : "1150",
+               "id" : "1865001"
+            }
+         ],
+         "id" : "7465414473",
+         "figure_id" : "72561",
+         "line_battle_skill" : {
+            "level" : {
+               "max" : "10",
+               "current" : "10"
+            },
+            "desc" : "敵単体に150%の攻撃",
+            "name" : "闇の拳",
+            "id" : "1860031"
+         }
+      },
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 10430,
+         "attack" : 10760,
+         "name" : "ﾛﾋﾞﾝ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nqDXhnwAYN13Z3uT8HQBxSb0FSyFoTe2YvcT5Ent3ZW3IPOpkbxPz9cTqzyVxPOgIwoX82doafBnaQ6ZDzK3AVnjX58bPukBVPELxPPA6xSHAkne1G31D1NX8fAbxXHovs4xPib1AksdZbxSyPsArNWaUpxXC3Cd4InExP8fe3B27E3KmdXc0Pw15HJAY4yg4TERwu27FxXq0rKTkZ0WQ1nrAYp538xXiMMGk5QoAxXrdFWFy9NPVYjts1.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "自分の攻撃15%UP",
+               "effect_value" : "1150",
+               "id" : "10589"
+            }
+         ],
+         "id" : "7428854485",
+         "figure_id" : "60476",
+         "line_battle_skill" : {}
+      },
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 10650,
+         "attack" : 10860,
+         "name" : "ﾄﾞﾌﾗﾐﾝｺﾞ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8n91h1z5d9m2imraB26KZBe8pjjssJIZzzJSFPOI1kBvZREkPxXQjy5uvq4nUFlP1GP0F9JlWAjcgUaZgtH9zsyA78qbfxSknK6AxSnSaOaaxSlbNApCMWZxPKbzMQpNueGxPyWqVBpmRmh2eWRD3OQDyvQzpQ4yG2tHvjplvfI9Tb7j8yhXjVfHNbGp3csts6EHCR0yutas4eEA6OXMv3psZjrsuj6vge9HyeGd4zYQkYOXFfc1.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "自分の攻撃15%UP",
+               "effect_value" : "1150",
+               "id" : "10589"
+            }
+         ],
+         "id" : "7428854491",
+         "figure_id" : "60061",
+         "line_battle_skill" : {}
+      },
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 18990,
+         "attack" : 20250,
+         "name" : "ｼﾞﾝﾍﾞｴ&amp;ﾊﾝｺｯｸ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nJ6m9VxSxS05H85kxSqTVnktf22w8yFO1QfBehxSiYaSZieGklsxP5LxXXzuKbhhLuNxS6I2ylq1LtLf3seYxXO93GdqAUvMxSxSsFfpVHo57k3J3o4IrRmuzJS9y6xPXwDZa0xSL2aHdBvixSOsXtmcsJosGQR2YgEnmxX1xPsJL9L6oMGwN99wMe1I0xS3PBol9BqoDCNjPbakFd4tuIcJEycc0bp1SAdedEc6vsdaruqgWOUty8LiB5ci8IYs4Gwaerc4SMoGDxXrqGhoCABCzqmrE1.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "新旧王下七武海攻撃30%UP",
+               "effect_value" : "1300",
+               "id" : "18644"
+            }
+         ],
+         "id" : "7428853299",
+         "figure_id" : "81322",
+         "line_battle_skill" : {
+            "level" : {
+               "max" : "10",
+               "current" : 1
+            },
+            "desc" : "敵全体に150%の攻撃",
+            "name" : "銃ｷｽ",
+            "id" : "1820017"
+         }
+      },
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 10090,
+         "attack" : 10950,
+         "name" : "ｿﾞﾛ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nR5xXWbNgAdLuxPvYixXNQElDP16R3ERSO3jLdiBqr9HFNS0pvhhwcwwbZXljxX9MhIuXPkiaZ2XvKA5xXP9rlsEaLeBreCHRd9ZEatqGdJOm3J4Z4diiyst5xSRxPcHXnZizdihqxPBDxXJgtIxPqPxPtOqKuwW5NLFhRFBWKznI1gnDlSw7Ic6kPsIOWBAM24BammONH7vxSYQTxSl3MM4pjFZApJIwDXMtkPaxSr7xSe2ZoxSwmQiZBRo1.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "自分の攻撃15%UP",
+               "effect_value" : "1150",
+               "id" : "10589"
+            }
+         ],
+         "id" : "7411852784",
+         "figure_id" : "60176",
+         "line_battle_skill" : {}
+      },
+      {
+         "special_effect" : {
+            "defense" : 1,
+            "attack" : 1,
+            "rare_boss_attack" : 1,
+            "combo" : 0
+         },
+         "using_position_num" : "1",
+         "tower" : null,
+         "defense" : 10530,
+         "attack" : 10760,
+         "name" : "ﾗｸﾖｳ",
+         "image" : {
+            "thumbnail" : "to_jpg_figure.U2FsdGVkX18yMDExXMTAwM0k9UOSHum8nngpxSX7GoZzjUxSa5SVrG2mcULVrjaK3FmiwHd9XlxSAXfpFlVUExXdZl6Zw9xS8BT9cTXWaNHc5ct43w4lJDxSZt6MIW0bqIcnPFD6OoX7RbU1IpA44tczGExP5hVkzM1RWxPuvKDxXtogqKI9GtBiwB0ARxP65pm7WEi8RxPxXX0MAE15xSvxSOWJJ3aPmAkFN9h0d5RTIWby2JMxXfMoxPv3FbaUvGXJpKdeT1SPeVpvZueTDoglxXekM1.jpg"
+         },
+         "grand_skills" : [
+            {
+               "effect_type" : "1001",
+               "desc" : "自分の攻撃15%UP",
+               "effect_value" : "1150",
+               "id" : "10589"
+            }
+         ],
+         "id" : "7410729952",
+         "figure_id" : "61228",
+         "line_battle_skill" : {}
+      }
+   ]
+}

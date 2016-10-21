@@ -57,12 +57,14 @@
 
   // クリックイベント
   ViewBattlePower.prototype.onClick = function() {
+    // バトルパワーボタン
     var $target = $(event.currentTarget);
-    
     if (! $target.hasClass(CLASS_NAME.active)) return; // disableの時は処理しない
-
     this.model.setSelectedNum($target.index());
     this.renderSelectButton();
+
+    // 攻撃ボタン
+    window.app.view.attack_btn.render($target.index());
   };
 
   module.exports = ViewBattlePower; // exports

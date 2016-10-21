@@ -46,24 +46,30 @@
       'use strict';
       
       var config = {
-        'date': '2016/10/20 4:23:50',
+        'date': '2016/10/22 4:23:50',
         'battle_power': {
-          'current': 2,
+          'current': 0,
           'max': 5
         },
         'item': {
           'orange': {
-            'current_num': 100
+            'current_num': 0
           },
           'meat': {
-            'current_num': 5
+            'current_num': 1
           }
+        },
+        'rate': {
+          'normal': 1,
+          'special': 6
         }
       };
 
       window.addEventListener('DOMContentLoaded', function() {
         var app = new window.App(config);
         window.app = app;
+        
+        app.init();
       });
     })(window);
   </script>
