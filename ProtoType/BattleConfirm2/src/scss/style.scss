@@ -1,0 +1,12 @@
+ul {
+  list-style-type: none;
+}
+
+#battle-power {
+  li {
+    display: inline-block;
+    &.active { color: red; }
+    &.gray { color: gray; }
+    &.selected { color: orange; }
+  }
+}
