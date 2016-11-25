@@ -2,79 +2,90 @@
   'use strict';
 
   // ループするカルーセル
-  // 中心の数値を取得
-  // 中心にアイテムが来るように設定
-  // ulも最初に表示するアイテムが来るように設定
-  // クリックしたら、ulの位置を変更すると共にアニメーションするように設定
-  // アニメーション終了したらアイテムのセット「をセットし直す
-
-  var list = document.querySelector('.item-list');
-  var items = Array.prototype.slice.call(document.querySelectorAll('.item'));
-  var prev = document.querySelector('.prev');
-  var next = document.querySelector('.next');
-
-  var length = items.length;
-  var center = Math.floor(length / 2);
-
   function Carousel() { 
-    this.setInitItems();
-    this.buildItemList();
-    this.setItemList();
+    this.list = document.querySelector('.item-list');
+    this.prev = document.querySelector('.prev');
+    this.next = document.querySelector('.next');
+
+    this.itemLength       = this.list.children.length;
+    this.centerNum        = Math.ceil(this.itemLength / 2);
+    this.translateX       = (this.centerNum - 1) * this.list.clientWidth;
+    this.transitionConfig = 'transform 200ms ease-out';
+
+    this.prevTransitionEnd = this.prevTransitionEnd.bind(this);
+    this.nextTransitionEnd = this.nextTransitionEnd.bind(this);
+
+    this.initList();
+    this.resetTranslateX();
     this.addEventListeners();
-    console.log(items);
-    console.log(center);
-    
   }
+
+  // listの中心に初期表示したいアイテムをセットする
+  Carousel.prototype.initList = function() {
+    for(var i = 0; i < this.itemLength - this.centerNum; i++) {
+      this.list.insertBefore(this.list.lastElementChild, this.list.firstElementChild);
+    }
+  };
 
   // イベント設定
   Carousel.prototype.addEventListeners = function() {
-    prev.addEventListener('click', this.prev.bind(this));
+    this.prev.addEventListener('click', this.onPrev.bind(this));
+    this.next.addEventListener('click', this.onNext.bind(this));
+    window.addEventListener('resize', this.resize.bind(this));
   };
 
   // prevのクリック
-  Carousel.prototype.prev = function() {
-    console.log(list.clientWidth);
-    list.style.webkitTransition = 'all 166ms ease-out';
-    this.setPrevItems();
-    this.buildItemList();
-    console.log(items);
+  Carousel.prototype.onPrev = function() {
+    this.transitionOn();
+    this.list.style.transform = 'translateX(-'+ (this.translateX - this.list.clientWidth) +'px)';
+    this.list.addEventListener('webkitTransitionEnd', this.prevTransitionEnd);
   };
 
-  // item-listのセッティング
-  Carousel.prototype.setItemList = function() {
-    var x = center * this.getItemWidth()
-    list.style.webkitTransform = 'translate(-'+ x +'px, 0)';
-    console.log(x);
+  // nextのクリック
+  Carousel.prototype.onNext = function() {
+    this.transitionOn();
+    this.list.style.transform = 'translateX(-'+ (this.translateX + this.list.clientWidth) +'px)';
+    this.list.addEventListener('webkitTransitionEnd', this.nextTransitionEnd);
   };
 
-  // 配列itemsをセッティング(配列の中心に表示したいitemがくるように)
-  Carousel.prototype.setInitItems = function() {
-    for(var i = 0; i < center; i++) {
-      items.splice(0, 0, items[length - 1]); // 配列の最後の要素を先頭に持ってくる
-      items.pop(); // 最後の要素は削除
-    }
+  // prevのtransitionが終わったら
+  Carousel.prototype.prevTransitionEnd = function() {
+    this.resetListStyle();
+    this.list.insertBefore(this.list.lastElementChild, this.list.firstElementChild);
+    this.list.removeEventListener('webkitTransitionEnd', this.prevTransitionEnd);
   };
 
-  // prevを押した時の配列構築
-  Carousel.prototype.setPrevItems = function() {
-    items.splice(0, 0, items[length - 1]); // 配列の最後の要素を先頭に持ってくる
-    items.pop(); // 最後の要素は削除
+  // nextのtransitionが終わったら
+  Carousel.prototype.nextTransitionEnd = function() {
+    this.resetListStyle();
+    this.list.appendChild(this.list.firstElementChild);
+    this.list.removeEventListener('webkitTransitionEnd', this.nextTransitionEnd);
   };
 
-  // item-listのDOM構築
-  Carousel.prototype.buildItemList = function() {
-    var fragment = document.createDocumentFragment();
-
-    list.innerHTML = '';
-    for(var i = 0; i < length; i++) {
-      fragment.appendChild(items[i]);
-    }
-    list.appendChild(fragment);
+  // listのtransitionとtranslateXをリセットする
+  Carousel.prototype.resetListStyle = function() {
+    this.transitionOff();
+    this.resetTranslateX();
   };
 
-  // itemの横幅を返す
-  Carousel.prototype.getItemWidth = function() {
-    return list.clientWidth;
+  Carousel.prototype.resetTranslateX = function() {
+    this.list.style.transform = 'translateX(-'+ this.translateX +'px)';
+  };
+
+  // transitionをONにする
+  Carousel.prototype.transitionOn = function() {
+    this.list.style.transition = this.transitionConfig;
+  };
+
+  // transitionをOFFにする
+  Carousel.prototype.transitionOff = function() {
+    this.list.style.transition = '';
+  };
+
+  // resizeされたらtranslateXをセットしなおす
+  Carousel.prototype.resize = function() {
+    this.translateX = (this.centerNum - 1) * this.list.clientWidth;
+    this.resetTranslateX();
   };
 
   window.addEventListener('DOMContentLoaded', function() {
