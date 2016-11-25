@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+#container {
+  overflow: hidden;
+}
+.item-list {
+  display: flex;
+}
+.item {
+  flex: 1 0 100%;
+}
+.item:nth-child(1) { background: lightpink; }
+.item:nth-child(2) { background: black; }
+.item:nth-child(3) { background: green; }
+.item:nth-child(4) { background: purple; }
+.item:nth-child(5) { background: tomato; }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <ul class="item-list">
+    <li class="item item1">1</li>
+    <li class="item item2">2</li>
+    <li class="item item3">3</li>
+    <li class="item item4">4</li>
+    <li class="item item5">5</li>
+    <li class="item item6">6</li>
+    <li class="item item7">7</li>
+    <li class="item item8">8</li>
+    <!--<li class="item item9">9</li>-->
+  </ul>
+  <ul>
+    <li class="prev">prev</li>
+    <li class="next">next</li>
+  </ul>
+</div>
+
+<script src="./main.js"></script>
+</body>
+</html>
