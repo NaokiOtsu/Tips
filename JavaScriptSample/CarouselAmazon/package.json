@@ -1,0 +1,12 @@
+{
+  "name": "CarouselAmazon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "browser-sync start --server --files '**/*'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.2"
+  }
+}

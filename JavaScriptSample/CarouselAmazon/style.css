@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 100px;
+}
+
+.container {
+  width: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.list {
+  width: 500px;
+  font-size: 0;
+  list-style: none;
+}
+
+.item {
+  width: 100px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.item1 { background: #eee; }
+.item2 { background: #ddd; }
+.item3 { background: #ccc; }
+.item4 { background: #bbb; }
+.item5 { background: #aaa; }
