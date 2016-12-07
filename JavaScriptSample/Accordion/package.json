@@ -1,0 +1,15 @@
+{
+  "name": "Accordion",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.2"
+  },
+  "scripts": {
+    "serve": "browser-sync start --server --files '**/*'"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
