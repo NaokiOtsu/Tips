@@ -45,65 +45,43 @@
   };
 
   function Scroller(config) {
-    this.startY = document.body.scrollTop;
-    this.scrollY; // スクロール量
+    this.startY    = document.body.scrollTop; // スタート位置
+    this.scrollY   = this.getScrollY(config);
+    this.scrollY   += config.offset ? config.offset : 0;
     this.startTime = Date.now();
-    this.duration = 1000;
-    this.easing = 'easeInOutQuint';
+    this.duration  = 1000;
+    this.easing    = 'easeInOutQuint';
 
-    this.settingConfig(config);
-    this.move();
+    if (config.isAfter) return; // すぐにアニメーションしない場合はreturn
+
+    this.scrollTo();
   }
 
   // Configをセットする
-  Scroller.prototype.settingConfig = function(config) {
-    this.scrollY = 0; // デフォルト値
-    
+  Scroller.prototype.getScrollY = function(config) {
     // 数値だったら
     if (! isNaN(config.scrollTo)) {
-      this.scrollY = Number(config.scrollTo);
-      return;
+      return Number(config.scrollTo);
     }
 
     // 存在するHTMLElementだったら
     if (document.querySelector(config.scrollTo) !== null) {
-      this.scrollY = document.querySelector(config.scrollTo).offsetTop;
+      return document.querySelector(config.scrollTo).offsetTop;
     }
-  };
 
-  // スクロールさせる
-  Scroller.prototype.move = function() {
-    requestAnimationFrame(function() {
-      // this.scrollTo(document.body, 1000, 600);
-      this.scrollTo();
-
-      // document.documentElement.scrollTop = document.body.scrollTop = this.scrollY;
-      // $('html, body').animate({ scrollTop: this.scrollY}, 400);
-    }.bind(this));
+    return 0;
   };
 
   // 対象の位置までスクロールさせる
-  Scroller.prototype.scrollTo = function(element, to, duration) {
-    // if (duration <= 0) return;
-    // var difference = to - element.scrollTop;
-    // console.log(to);
-    // var perTick = difference / duration * 10;
-
-    // requestAnimationFrame(function() {
-    //   element.scrollTop = element.scrollTop + perTick;
-    //   if (element.scrollTop === to) return;
-    //   this.scrollTo(element, to, duration - 10);
-    // }.bind(this));
-    
-    
-    var now = Date.now();
-    var time = Math.min(1, ((now - this.startTime) / this.duration));
+  Scroller.prototype.scrollTo = function() {
+    var now          = Date.now();
+    var time         = Math.min(1, ((now - this.startTime) / this.duration));
     var timeFunction = EASINGS[this.easing](time);
-    document.body.scrollTop = (timeFunction * (this.scrollY - this.startY)) + this.startY;
+    
+    document.body.scrollTop = ((this.scrollY - this.startY) * timeFunction) + this.startY;
 
-    if (document.body.scrollTop === this.scrollY) {
-      return;
-    }
+    if (document.body.scrollTop === this.scrollY) return; // ゴールに達したらreturn
+
     requestAnimationFrame(function() {
       this.scrollTo();
     }.bind(this));
@@ -111,7 +89,8 @@
 
   window.addEventListener('load', function() {
     new Scroller({
-      scrollTo: '#goal'
+      scrollTo: '#goal',
+      isAfter: false
     });
   });
 })();
