@@ -46,7 +46,7 @@
 
   function Scroller(config) {
     this.startY = document.body.scrollTop;
-    this.scrollY; // スクロール量
+    this.scrollY = 0; // スクロール量
     this.startTime = Date.now();
     this.duration = 1000;
     this.easing = 'easeInOutQuint';
@@ -57,8 +57,6 @@
 
   // Configをセットする
   Scroller.prototype.settingConfig = function(config) {
-    this.scrollY = 0; // デフォルト値
-    
     // 数値だったら
     if (! isNaN(config.scrollTo)) {
       this.scrollY = Number(config.scrollTo);
@@ -68,6 +66,7 @@
     // 存在するHTMLElementだったら
     if (document.querySelector(config.scrollTo) !== null) {
       this.scrollY = document.querySelector(config.scrollTo).offsetTop;
+      return;
     }
   };
 
