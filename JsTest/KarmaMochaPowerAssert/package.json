@@ -1,0 +1,18 @@
+{
+  "name": "KarmaMochaPowerAssert",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "karma start"
+  },
+  "devDependencies": {
+    "karma": "^1.3.0",
+    "karma-espower-preprocessor": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-power-assert": "^0.0.4",
+    "mocha": "^3.2.0",
+    "power-assert": "^1.4.2"
+  }
+}
