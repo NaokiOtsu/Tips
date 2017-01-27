@@ -1,0 +1,66 @@
+{
+  "name": "web-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "test": "gulp test"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "chai": "^3.5.0",
+    "del": "^2.2.2",
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-mocha": "^3.0.1",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0",
+    "webpack-stream": "^3.2.0"
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "react"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "plugins": [
+      "import"
+    ],
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "new-cap": [
+        2,
+        {
+          "capIsNewExceptions": [
+            "Map",
+            "List"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.22.0",
+    "immutable": "^3.8.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.2.1",
+    "redux-immutable": "^3.0.10"
+  }
+}
