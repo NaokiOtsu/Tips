@@ -1,0 +1,28 @@
+{
+  "name": "Sinon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*.{html|js}'"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.6",
+    "browserify": "^13.3.0",
+    "karma": "^1.4.0",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.7",
+    "watchify": "^3.8.0"
+  }
+}
