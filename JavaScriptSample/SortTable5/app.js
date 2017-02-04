@@ -22,7 +22,17 @@
     
     this.bindEvents();
     this.createTable(this.data);
+    var lists = [1,2,3,4,5]
+    var hoge = this.shuffle(lists);
+    console.log('hoge', hoge);
+    console.log('lists', lists);
   }
+  
+  CreateTable.prototype.loadComplate = function(event) {
+    console.log(event);
+    console.log(this.responseText);
+    console.log(JSON.parse(this.responseText));
+  };
   
   CreateTable.prototype.bindEvents = function() {
     this.start.addEventListener('click', this.onStart.bind(this), false);
@@ -64,18 +74,19 @@
   };
   
   CreateTable.prototype.shuffle = function(array) {
-    var length = array.length;
+    var results = array.slice();
+    var length = resullts.length;
     var temp;
     var num;
 
     while (length) {
       num = Math.floor(Math.random() * length--);
-      temp = array[length];
-      array[length] = array[num];
-      array[num] = temp;
+      temp = results[length];
+      results[length] = results[num];
+      results[num] = temp;
     }
 
-    return array;
+    return results;
   };
   
   CreateTable.prototype.onStart = function() {
