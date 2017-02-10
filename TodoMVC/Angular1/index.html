@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    [ng-cloak] { display: none; }
+  </style>
+</head>
+<body ng-app="todomvc">
+  <ng-view></ng-view>
+  
+  <script type="text/ng-template" id="todomvc-index.html">
+    <section id="todoapp">
+    <form ng-submit="addTodo()">
+      <input ng-model="newTodo" ng-disabled="saving" autofocus>
+      <section ng-show="todos.length" ng-cloak>
+        <input type="checkbox" ng-model="allChecked" ng-click="markAll(allCHecked)">
+        <label for="tiggle-all">Mark all as complete</label>
+        <ul>
+          <li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+            <input type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
+            <label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+            <button ng-click="removeTodo(todo)">destroy</button>
+            <form ng-submit="saveEdits(todo, 'submit')">
+              <input ng-trim="false" ng-model="todo.title" todo-escape="revertEdits(todo)" ng-blur="saveEdits(todo, 'blur')">
+            </form>
+          </li>
+        </ul>
+      </section>
+      <footer ng-show="todos.length" ng-cloak>
+        {{remainingCount}}<br>
+        <ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
+        <ul>
+          <li><a ng-class="{selected: status == ''}" href="#/">All</a></li>
+          <li><a ng-class="{selected: status == 'active'}" href="#/active">Active</a></li>
+          <li><a ng-class="{selected: status == 'completed'}" href="#/completed">Completed</a></li>
+        </ul>
+        <button ng-click="clearCompletedTodos()" ng-show="completedCount">Clear completed</button>
+      </footer>
+    </form>
+    </section>
+  </script>
+
+</body>
+</html>
