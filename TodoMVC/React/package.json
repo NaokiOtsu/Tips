@@ -1,0 +1,11 @@
+{
+  "name": "React",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "director": "^1.2.8",
+    "react": "^15.4.2"
+  }
+}
