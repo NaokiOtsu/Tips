@@ -1,34 +1,42 @@
-import React from 'react'
+import React, { PropTypes } from 'react';
 
-const BattlePowerList = ({current, selected, onClick}) => {
-  const MAX = 5
-  const battlePowers = []
+const BattlePowerList = ({ current, selected, onClick }) => {
+  const MAX = 5;
+  const battlePowers = [];
+  let counter = current;
 
-  for (let i = 0; i < MAX; i++) {
+  for (let i = 0; i < MAX; i += 1) {
     battlePowers.push(
       <li
         key={i}
         style={{
-          color: (current > 0)? 'red' : '',
-          pointerEvents: (current > 0)? '' : 'none',
-          border: (i === selected)? '1px solid #f00' : '',
+          color: (counter > 0) ? 'red' : '',
+          pointerEvents: (counter > 0) ? '' : 'none',
+          border: (i === selected) ? '1px solid #f00' : '',
           display: 'inline-block',
           marginRight: '10px',
-          padding: '5px'
+          padding: '5px',
         }}
+        role="button"
         onClick={() => onClick(i)}
       >
         {i + 1}
-      </li>
-    )
-    current--
+      </li>,
+    );
+    counter -= 1;
   }
 
   return (
     <ul>
       {battlePowers}
     </ul>
-  )
-}
+  );
+};
 
-export default BattlePowerList
+BattlePowerList.propTypes = {
+  current: PropTypes.number.isRequired,
+  selected: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+export default BattlePowerList;

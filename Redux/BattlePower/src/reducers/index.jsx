@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'
-import itemAndBattlePower from './itemAndBattlePower'
+import { combineReducers } from 'redux';
+import itemAndBattlePower from './itemAndBattlePower';
 
 const battlePowerApp = combineReducers({
-  itemAndBattlePower
-})
+  itemAndBattlePower,
+});
 
-export default battlePowerApp
+export default battlePowerApp;

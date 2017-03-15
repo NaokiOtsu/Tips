@@ -1,16 +1,29 @@
-import React from 'react'
+import React, { PropTypes } from 'react';
 
-const ItemList = ({orange, meat, useOrange, useMeat, onOrangeClick, onMeatClick}) => (
+const ItemList = ({ orange, meat, canOrange, canMeat, onOrangeClick, onMeatClick }) => (
   <div>
     <div>
-      <button onClick={() => onOrangeClick()} style={useOrange? {}: {opacity: .5, pointerEvents: 'none'}}>orange</button>
+      <button onClick={() => onOrangeClick()} style={canOrange ? {} : { opacity: 0.5, pointerEvents: 'none' }}>orange</button>
       {orange.current}
     </div>
     <div>
-      <button onClick={() => onMeatClick()} style={useMeat? {}: {opacity: .5, pointerEvents: 'none'}}>meat</button>
+      <button onClick={() => onMeatClick()} style={canMeat ? {} : { opacity: 0.5, pointerEvents: 'none' }}>meat</button>
       {meat.current}
     </div>
   </div>
-)
+);
 
-export default ItemList
+ItemList.propTypes = {
+  orange: PropTypes.shape({
+    current: PropTypes.number.isRequired,
+  }).isRequired,
+  meat: PropTypes.shape({
+    current: PropTypes.number.isRequired,
+  }).isRequired,
+  canOrange: PropTypes.bool.isRequired,
+  canMeat: PropTypes.bool.isRequired,
+  onOrangeClick: PropTypes.func.isRequired,
+  onMeatClick: PropTypes.func.isRequired,
+};
+
+export default ItemList;

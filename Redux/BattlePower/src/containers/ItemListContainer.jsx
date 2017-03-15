@@ -1,32 +1,32 @@
-import { connect } from 'react-redux'
-import { useOrange, useMeat } from '../actions'
-import ItemList from '../components/ItemList'
+import { connect } from 'react-redux';
+import { useOrange, useMeat } from '../actions';
+import ItemList from '../components/ItemList';
 
 const mapStateToProps = (state) => {
-  let useOrange = true;
-  if (!state.itemAndBattlePower.orange.current) useOrange = false;
+  let canOrange = true;
+  if (!state.itemAndBattlePower.orange.current) canOrange = false;
 
-  let useMeat = true;
-  if (!state.itemAndBattlePower.meat.current) useMeat = false;
-  
+  let canMeat = true;
+  if (!state.itemAndBattlePower.meat.current) canMeat = false;
+
   if (state.itemAndBattlePower.battle_power.current >= state.itemAndBattlePower.battle_power.max) {
-    useOrange = false;
-    useMeat = false;
+    canOrange = false;
+    canMeat = false;
   }
 
   return ({
     orange: state.itemAndBattlePower.orange,
     meat: state.itemAndBattlePower.meat,
-    useOrange,
-    useMeat
-  })
-}
+    canOrange,
+    canMeat,
+  });
+};
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = dispatch => ({
   onOrangeClick: () => dispatch(useOrange()),
-  onMeatClick: () => dispatch(useMeat())
-})
+  onMeatClick: () => dispatch(useMeat()),
+});
 
-const ItemListContainer = connect(mapStateToProps, mapDispatchToProps)(ItemList)
+const ItemListContainer = connect(mapStateToProps, mapDispatchToProps)(ItemList);
 
-export default ItemListContainer
+export default ItemListContainer;
