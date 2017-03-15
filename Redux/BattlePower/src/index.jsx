@@ -5,11 +5,11 @@ import { Provider } from 'react-redux'
 import App from './components/App'
 import reducer from './reducers'
 
-const store = createStore(reducer, {visibilityFilter: 'SHOW_ALL'})
+const store = createStore(reducer)
 
 render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('app')
 )
