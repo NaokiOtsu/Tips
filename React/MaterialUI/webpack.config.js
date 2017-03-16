@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const src = path.resolve(__dirname, 'src');
-const dist = path.resolve(__dirname, 'dist');
+const src = path.join(__dirname, 'src');
+const dist = path.join(__dirname, 'dist');
 
 module.exports = {
   entry: src + '/index.jsx',
@@ -13,17 +13,17 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: "babel-loader"
       }
     ]
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
 
   plugins: [
