@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .checked { text-decoration: line-through; }
+  </style>
+</head>
+<body>
+  <script id="todo-template" type="text/x-handlebars-template">
+    {{#each view_list}}
+      <li class="todo-item">
+        <input type="checkbox" class="input" {{checked}}>
+        <div class="{{checked}}">{{val}}</div>
+        <div class="remove">X</div>
+      </li>
+    {{/each}}
+  </script>
+
+  <input type="text" id="todo-input">
+  <ul id="todo-list"></ul>
+</body>
+</html>
