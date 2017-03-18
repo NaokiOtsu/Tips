@@ -15,4 +15,8 @@ export default class CountController {
       this.view.render();
     });
   }
+
+  static create(model, view) {
+    return new CountController(model, view);
+  }
 }
