@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="app">
+
+<a v-link="{ path: '/foo' }">Foo</a><br>
+<a v-link="{ path: '/boo' }">Boo</a><br>
+
+<router-view></router-view>
+
+<script type="text/vue-template" id="foo.html">
+  <p id="foo" v-touch:tap="test($event)">fooooooooooooo</p>
+</script>
+
+<script type="text/vue-template" id="boo.html">
+  <p>booooooooooooo</p>
+</script>
+
+<script src="/js/main.bundle.js"></script>
+</body>
+</html>
