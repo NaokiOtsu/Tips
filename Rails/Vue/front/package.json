@@ -1,0 +1,17 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --watch"
+  },
+  "dependencies": {
+    "vue": "1.0.28",
+    "vue-router": "0.7.13",
+    "vue-touch": "^1.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.3.2"
+  }
+}
