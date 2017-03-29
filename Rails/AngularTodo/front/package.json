@@ -1,0 +1,16 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack -w"
+  },
+  "dependencies": {
+    "angular": "^1.6.3",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "webpack": "^2.3.2"
+  }
+}
