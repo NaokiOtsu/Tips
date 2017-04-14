@@ -11,7 +11,8 @@
       top: 50%;
       left: 50%;
       margin: -175px 0 0 -175px;
-      animation: start-btn-1 1s ease 1 both;
+      /*animation: start-btn-1 1s linear infinite;*/
+      animation: sample 1s linear infinite;
     }
     @keyframes start-btn-1 {
       0% { transform: rotate(0deg) translate3d(1000px,500px,0) rotate(0deg); }
@@ -29,6 +30,11 @@
       0% { transform: rotate(0deg) translate3d(-1000px,-500px,0) rotate(0deg); }
       100% { transform: rotate(-90deg) translate3d(0,0,0) rotate(90deg); }
     }
+    @keyframes sample {
+      0% { transform: rotate(0deg) translate(100px,0) rotate(0deg); }
+      100% { transform: rotate(360deg) translate(100px,0) rotate(-360deg); }
+    }
+    
   </style>
 </head>
 <body>
