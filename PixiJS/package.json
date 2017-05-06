@@ -1,7 +1,6 @@
 {
   "name": "PixiJS",
   "version": "1.0.0",
-  "description": "",
   "main": "pixi.dev.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,10 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-connect": "^0.9.0"
+  },
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "pixi.js": "^4.0.0"
   }
 }

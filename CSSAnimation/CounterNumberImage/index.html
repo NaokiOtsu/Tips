@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+    .num {
+      width: 60px;
+      height: 60px;
+      margin: 0 -10px;
+      background-image: url('./sprite.png');
+      background-position: 0 0;
+      animation-fill-mode: both;
+      /*transition: background-position 1s ease-in-out;*/
+    }
+    .animating .num-9 { animation-name: counter-9; animation-timing-function: steps(19); }
+    .animating .num-8 { animation-name: counter-8; animation-timing-function: steps(18); }
+    .animating .num-7 { animation-name: counter-7; animation-timing-function: steps(17); }
+    .animating .num-6 { animation-name: counter-6; animation-timing-function: steps(16); }
+    .animating .num-5 { animation-name: counter-5; animation-timing-function: steps(15); }
+    .animating .num-4 { animation-name: counter-4; animation-timing-function: steps(14); }
+    .animating .num-3 { animation-name: counter-3; animation-timing-function: steps(13); }
+    .animating .num-2 { animation-name: counter-2; animation-timing-function: steps(12); }
+    .animating .num-1 { animation-name: counter-1; animation-timing-function: steps(11); }
+    .animating .num-0 { animation-name: counter-0; animation-timing-function: steps(10); }
+    .animating .num-9:last-child { animation-name: counter-last-9; animation-timing-function: steps(9); }
+    .animating .num-8:last-child { animation-name: counter-last-8; animation-timing-function: steps(8); }
+    .animating .num-7:last-child { animation-name: counter-last-7; animation-timing-function: steps(7); }
+    .animating .num-6:last-child { animation-name: counter-last-6; animation-timing-function: steps(6); }
+    .animating .num-5:last-child { animation-name: counter-last-5; animation-timing-function: steps(5); }
+    .animating .num-4:last-child { animation-name: counter-last-4; animation-timing-function: steps(4); }
+    .animating .num-3:last-child { animation-name: counter-last-3; animation-timing-function: steps(3); }
+    .animating .num-2:last-child { animation-name: counter-last-2; animation-timing-function: steps(2); }
+    .animating .num-1:last-child { animation-name: counter-last-1; animation-timing-function: steps(1); }
+    @keyframes counter-9 { 0% { background-position: 0 0; } 100% { background-position: 0 -1140px; } }
+    @keyframes counter-8 { 0% { background-position: 0 0; } 100% { background-position: 0 -1080px; } }
+    @keyframes counter-7 { 0% { background-position: 0 0; } 100% { background-position: 0 -1020px; } }
+    @keyframes counter-6 { 0% { background-position: 0 0; } 100% { background-position: 0 -960px; } }
+    @keyframes counter-5 { 0% { background-position: 0 0; } 100% { background-position: 0 -900px; } }
+    @keyframes counter-4 { 0% { background-position: 0 0; } 100% { background-position: 0 -840px; } }
+    @keyframes counter-3 { 0% { background-position: 0 0; } 100% { background-position: 0 -780px; } }
+    @keyframes counter-2 { 0% { background-position: 0 0; } 100% { background-position: 0 -720px; } }
+    @keyframes counter-1 { 0% { background-position: 0 0; } 100% { background-position: 0 -660px; } }
+    @keyframes counter-0 { 0% { background-position: 0 0; } 100% { background-position: 0 -600px; } }
+    @keyframes counter-last-9 { 0% { background-position: 0 0; } 100% { background-position: 0 -540px; } }
+    @keyframes counter-last-8 { 0% { background-position: 0 0; } 100% { background-position: 0 -480px; } }
+    @keyframes counter-last-7 { 0% { background-position: 0 0; } 100% { background-position: 0 -420px; } }
+    @keyframes counter-last-6 { 0% { background-position: 0 0; } 100% { background-position: 0 -360px; } }
+    @keyframes counter-last-5 { 0% { background-position: 0 0; } 100% { background-position: 0 -300px; } }
+    @keyframes counter-last-4 { 0% { background-position: 0 0; } 100% { background-position: 0 -240px; } }
+    @keyframes counter-last-3 { 0% { background-position: 0 0; } 100% { background-position: 0 -180px; } }
+    @keyframes counter-last-2 { 0% { background-position: 0 0; } 100% { background-position: 0 -120px; } }
+    @keyframes counter-last-1 { 0% { background-position: 0 0; } 100% { background-position: 0 -60px; } }
+    .num:nth-child(1) { animation-duration: .1s; }
+    .num:nth-child(2) { animation-duration: .2s; }
+    .num:nth-child(3) { animation-duration: .3s; }
+    .num:nth-child(4) { animation-duration: .4s; }
+    .num:nth-child(5) { animation-duration: .5s; }
+    .num:nth-child(6) { animation-duration: .6s; }
+    .num:nth-child(7) { animation-duration: .7s; }
+    .num:nth-child(8) { animation-duration: .8s; }
+    .num:nth-child(9) { animation-duration: .9s; }
+    .num:nth-child(10) { animation-duration: 1s; }
+    /*.animating .num-0 { background-position: 0 0; }
+    .animating .num-1 { background-position: 0 -60px; }
+    .animating .num-2 { background-position: 0 -120px; }
+    .animating .num-3 { background-position: 0 -180px; }
+    .animating .num-4 { background-position: 0 -240px; }
+    .animating .num-5 { background-position: 0 -300px; }
+    .animating .num-6 { background-position: 0 -360px; }
+    .animating .num-7 { background-position: 0 -420px; }
+    .animating .num-8 { background-position: 0 -480px; }
+    .animating .num-9 { background-position: 0 -540px; }
+    .animating .num:nth-child(1) { transition-duration: .1s; }
+    .animating .num:nth-child(2) { transition-duration: .2s; }
+    .animating .num:nth-child(3) { transition-duration: .3s; }
+    .animating .num:nth-child(4) { transition-duration: .4s; }
+    .animating .num:nth-child(5) { transition-duration: .5s; }
+    .animating .num:nth-child(6) { transition-duration: .6s; }
+    .animating .num:nth-child(7) { transition-duration: .7s; }
+    .animating .num:nth-child(8) { transition-duration: .8s; }
+    .animating .num:nth-child(9) { transition-duration: .9s; }
+    .animating .num:nth-child(10) { transition-duration: 1s; }*/
+  </style>
+</head>
+<body>
+  <button id="start">start</button>
+  <div class="container">
+    <div class="num num-7"></div>
+    <div class="num num-1"></div>
+    <div class="num num-4"></div>
+    <div class="num num-7"></div>
+    <div class="num num-0"></div>
+    <div class="num num-9"></div>
+    <div class="num num-3"></div>
+    <div class="num num-8"></div>
+    <div class="num num-9"></div>
+    <div class="num num-5"></div>
+  </div>
+  <script>
+    var is_animating = false;
+    document.getElementById('start').addEventListener('click', function() {
+
+      document.querySelector('.container').classList.remove('animating');
+      setTimeout(function() {
+        document.querySelector('.container').classList.add('animating');
+      }, 0);
+      // if (is_animating) {
+      //   document.querySelector('.container').classList.remove('animating');
+      //   is_animating = false;
+      // } else {
+      //   document.querySelector('.container').classList.add('animating');
+      //   is_animating = true;
+      // }
+    });
+  </script>
+</body>
+</html>

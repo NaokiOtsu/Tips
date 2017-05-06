@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style> [v-cloak] { display: none; }</style>
+</head>
+<body>
+  <section class="todoapp" v-cloak>
+    <div v-text="newTodo"></div>
+    <input type="text" class="new-todo" autofocus autocomplete="off" placeholder="What needs to be done?" v-model="newTodo" @keyup.enter="addTodo"><br>
+    <section v-show="todos.length">
+      <input type="checkbox" class="toggle-all" v-model="allDone">
+      <ul class="todo-list">
+        <li class="todo" v-for="todo in filteredTodos" :class="{completed: todo.completed, editing: todo == editedTodo}">
+          <input type="checkbox" class="toggle" v-model="todo.completed">
+          <label @dblclick="editTodo(todo)">{{todo.title}}</label>
+          <button class="destroy" @click="removeTodo(todo)">destroy</button>
+          <input type="text" class="edit" v-model="todo.title" v-todo-focus="todo == editedTodo" @blur="doneEdit(todo)" @keyup.enter="doneEdit(todo)" @keyup.esc="cancelEdit(todo)">
+        </li>
+      </ul>
+    </section>
+    <footer v-show="todos.length">
+      <span v-text="remaining"></span> {{pluralize('item', remaining)}} left
+      <ul>
+        <li><a href="#/all" :class="{selected: visibility == 'all'}">All</a></li>
+        <li><a href="#/active" :class="{selected: visibility == 'active'}">Active</a></li>
+        <li><a href="#/completed" :class="{selected: visibility == 'completed'}">Completed</a></li>
+      </ul>
+      <button @click="removeCompleted" v-show="todos.length > remaining">
+        Clear completed
+        }
+      </button>
+    </footer>
+  </section>
+
+  <script src="./node_modules/director/build/director.js"></script>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/routes.js"></script>
+</body>
+</html>

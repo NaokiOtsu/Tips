@@ -1,0 +1,42 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul { list-style: none; }
+
+body {
+  margin: 50px;
+  text-align: center;
+  background: #efefef;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#stage {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#stage ul {
+  font-size: 0;
+}
+
+#stage li {
+  width: 25%;
+  height: 100px;
+  line-height: 100px;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #333;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  background: #ddd;
+}
+
+#stage li.empty { background: #ffffff; }
+
+

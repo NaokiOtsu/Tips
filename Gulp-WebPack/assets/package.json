@@ -1,0 +1,19 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower-webpack-plugin": "^0.1.9",
+    "gulp": "^3.9.1",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5",
+    "webpack": "^1.12.15",
+    "webpack-stream": "^3.1.0"
+  }
+}

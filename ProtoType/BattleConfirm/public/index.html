@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  
+  <p>[<span id="remain-time"></span>]</p>
+  
+  <ul id="bp-btn-list">
+    <li class="selected">1</li>
+    <li class="disable">2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <ul id="item-btn-list">
+    <li id="btn-orange">
+      orange
+      <span class="current-num">0</span>
+    </li>
+    <li id="btn-meat">
+      meat
+      <span class="current-num">0</span>
+    </li>
+  </ul>
+
+  <ul id="attack-btn-list">
+    <li id="attack-normal">
+      通常
+      <span class="rate-num">1倍</span>
+    </li>
+    <li id="attack-special">
+      スペシャル
+      <span class="rate-num">1倍</span>
+    </li>
+  </ul>
+
+  <script src="./js/common.bundle.js"></script>
+  <script src="./js/index.bundle.js"></script>
+  <script>
+    (function(window) {
+      'use strict';
+      
+      var config = {
+        'date': '2016/10/22 4:23:50',
+        'battle_power': {
+          'current': 0,
+          'max': 5
+        },
+        'item': {
+          'orange': {
+            'current_num': 0
+          },
+          'meat': {
+            'current_num': 1
+          }
+        },
+        'rate': {
+          'normal': 1,
+          'special': 6
+        }
+      };
+
+      window.addEventListener('DOMContentLoaded', function() {
+        var app = new window.App(config);
+        window.app = app;
+        
+        app.init();
+      });
+    })(window);
+  </script>
+</body>
+</html>

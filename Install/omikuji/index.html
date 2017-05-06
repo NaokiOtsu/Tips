@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 50px;
+    }
+    #result {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border-radius: 50%;
+      line-height: 100px;
+      text-align: center;
+      color: white;
+      font-size: 30px;
+      box-shadow: 0 0 3px #333;
+      background: #57c0fe;
+    }
+    #btn {
+      width: 200px;
+      height: 50px;
+      margin: 30px auto 0;
+      text-align: center;
+      background: #ff685c;
+      color: white;
+      line-height: 50px;
+      box-shadow: 0 0 3px #333;
+      cursor: pointer;
+    }
+    #btn:hover {
+      background: #ff8a81;
+    }
+    #btn:active {
+      margin-top: 31px;
+    }
+  </style>
+</head>
+<body>
+  <div id="result">?</div>
+  <div id="btn">あなたの運勢は?</div>
+
+  <script>
+    (function() {
+      'use strict';
+
+      var OMIKUJI = ['凶', '小吉', '中吉', '大吉'];
+
+      var result = document.getElementById('result');
+      var btn = document.getElementById('btn');
+
+      function addEventListeners() {
+        btn.addEventListener('click', onClick);
+      }
+
+      function onClick() {
+        var num = getOmikujiNum();
+        render(num);
+      }
+
+      function getOmikujiNum() {
+        return Math.floor(Math.random() * OMIKUJI.length);
+      }
+
+      function render(num) {
+        result.textContent = OMIKUJI[num];
+      }
+
+      window.addEventListener('DOMContentLoaded', function() {
+        addEventListeners();
+      });
+    })();
+  </script>
+</body>
+</html>

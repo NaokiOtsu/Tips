@@ -1,0 +1,8 @@
+.test {
+  padding: 0;
+}
+
+.hoge {
+  @extend .test;
+  margin: 0;
+}

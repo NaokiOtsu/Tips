@@ -2,6 +2,8 @@
 
 $sprite-ja: sprite-map("ja/*.png",  $spacing: 5px, $layout: smart);
 $sprite-ja-img: sprite-url($sprite-ja);
+$sprite-ja-en: sprite-map("ja/en/*.png",  $spacing: 5px, $layout: smart);
+$sprite-ja-en-img: sprite-url($sprite-ja-en);
 %sprite-ja-img {
   @include sprite-base-bg($sprite-ja, $sprite-ja-img);
 }

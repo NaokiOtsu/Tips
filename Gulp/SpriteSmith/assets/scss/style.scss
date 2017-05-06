@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+@import '_sprite';
+
+.test {
+	margin: 0;
+	@include sprite($sprite-image01);
+}

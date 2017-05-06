@@ -1,0 +1,11 @@
+
+<div ng-controller="TodoListCtrl as main">
+  <h1>Templates#index</h1>
+
+  <div>
+    <%= label_tag :name, '名前' %>
+    <%= text_field_tag :name, '', 'ng-model' => 'main.name' %>
+  </div>
+
+  <p>{{main.name}} san {{main.hoge}}</p>
+</div>

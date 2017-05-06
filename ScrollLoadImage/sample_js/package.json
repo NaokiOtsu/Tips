@@ -1,0 +1,12 @@
+{
+  "name": "sample_js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.2"
+  },
+  "scripts": {
+    "serve": "browser-sync start --server --files '**/*'"
+  }
+}

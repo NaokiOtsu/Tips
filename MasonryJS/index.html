@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Masonry.js</title>
+<style>
+.centered { margin: 0 auto; }
+#container{
+	border:1px solid #dadada;
+}
+.box {
+	margin: 5px;
+	padding: 5px;
+	background: #D8D5D2;
+	float: left;
+}
+.col2 { width: 180px; height: 50px; }
+</style>
+</head>
+<body>
+
+<div id="container" class="centered">
+	<div class="box col2"></div>
+	<div class="box col2"></div>
+	<div class="box col2"></div>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="masonry.pkgd.js"></script>
+<script>
+	$(function(){
+		$('#container').masonry({
+			itemSelector: '.box',
+			columnWidth: 200 //一列の幅サイズを指定
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+body {
+  margin: 50px;
+  text-align: center;
+  background: #efefef;
+}
+
+#timer {
+  color: #71d1ff;
+  font-size: 100px;
+  font-weight: bold;
+}

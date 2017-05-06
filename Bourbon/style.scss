@@ -1,0 +1,15 @@
+@import "bourbon/bourbon";
+
+.test {
+	@include display(flex);
+	@include justify-content(center);
+	@include align-items(center);
+	@include appearance(none);
+	@include background(linear-gradient(red, green) left repeat);
+	@include font-face("source-sans-pro", "/fonts/source-sans-pro/source-sans-pro-regular");
+	margin: 0;
+}
+
+.hoge {
+	@include linear-gradient(#1e5799, #2989d8);
+}

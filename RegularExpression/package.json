@@ -1,0 +1,12 @@
+{
+  "name": "RegularExpression",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "live": "browser-sync start --server --files '**/*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
