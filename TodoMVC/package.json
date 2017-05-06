@@ -1,0 +1,12 @@
+{
+  "name": "TodoMVC",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.7"
+  },
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*.(html|js|css)'"
+  }
+}

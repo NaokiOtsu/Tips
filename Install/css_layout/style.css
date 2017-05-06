@@ -1,0 +1,115 @@
+@charset 'utf-8';
+
+body { margin: 40px; }
+
+header {
+  background: tomato;
+  transition: .8s;
+}
+
+header:hover {
+  background: yellow;
+}
+
+main {
+  background: lightblue;
+}
+
+footer {
+  background: skyblue;
+}
+
+.ex1 {
+  width: 100px;
+  height: 100px;
+  background: #eee;
+}
+
+.ex2 {
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  border-style: solid;
+  border-width: 20px;
+  border-color: red blue pink green;
+}
+
+.ex3 {
+  width: 0;
+  height: 0;
+  background: #eee;
+  border-style: solid;
+  border-width: 20px;
+  border-color: red blue pink green;
+}
+
+.ex4 {
+  width: 0;
+  height: 0;
+  background: #eee;
+  border-style: solid;
+  border-width: 20px;
+  border-color: red transparent transparent transparent;
+}
+
+.ex5 {
+  width: 0;
+  height: 0;
+  background: #eee;
+  border-style: solid;
+  border-width: 40px;
+  border-color: red transparent transparent transparent;
+  transform: skew(-15deg, 0);
+}
+
+.ballon1-1 {
+  width: 200px;
+  height: 100px;
+  background: #eee;
+  border-radius: 3px;
+  position: relative;
+}
+
+.ballon1-1:before {
+  position: absolute;
+  right: 20px;
+  bottom: -10px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: #eee transparent transparent transparent;
+}
+
+.ballon2-1 {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  position: relative;
+}
+
+.ballon2-1:before,
+.ballon2-1:after {
+  position: absolute;
+  right: 20px;
+  bottom: -10px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: #333 transparent transparent transparent;
+}
+
+.ballon2-1:after {
+  bottom: -9px;
+  border-color: #fff transparent transparent transparent;
+}
+
+
+
+
+
+

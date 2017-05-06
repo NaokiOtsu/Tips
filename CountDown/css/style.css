@@ -1,0 +1,31 @@
+
+body {
+  background: #333333;
+  color: white;
+}
+
+.countdown-sprite {
+  width: 24px;
+  height: 36px;
+  display: inline-block;
+  vertical-align: bottom;
+  background-image: url('../images/number_countdown.png');
+  background-size: 24px 360px;
+
+  &.num-0 { background-position: 0 0; }
+  &.num-1 { background-position: 0 -36px; }
+  &.num-2 { background-position: 0 -72px; }
+  &.num-3 { background-position: 0 -108px; }
+  &.num-4 { background-position: 0 -144px; }
+  &.num-5 { background-position: 0 -180px; }
+  &.num-6 { background-position: 0 -216px; }
+  &.num-7 { background-position: 0 -252px; }
+  &.num-8 { background-position: 0 -288px; }
+  &.num-9 { background-position: 0 -324px; }
+}
+
+.countdown-text {
+  font-size: 20px;
+  vertical-align: bottom;
+  display: inline-block;
+}

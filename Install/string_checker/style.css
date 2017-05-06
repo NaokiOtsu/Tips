@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+body {
+  margin: 50px;
+  text-align: center;
+  background: #efefef;
+}
+
+.textarea-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn {
+  margin-left: 10px;
+}
+
+.warning {
+  color: red;
+}

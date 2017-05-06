@@ -1,0 +1,19 @@
+<svg viewBox="0 0 18 21" xmlns="http://www.w3.org/2000/svg">
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Mobile-Portrait" transform="translate(-303.000000, -340.000000)" fill="#000000">
+      <g id="icon-note" transform="translate(303.000000, 340.000000)">
+        <g id="Page-1">
+          <g id="Mobile-Portrait">
+            <g id="Note">
+              <path d="M1,1 L1,18 L1,17 L14,17 L14,18 L14,1 L15,1 L0,1 L1,1 Z M15,0 L15,18 L0,18 L0,0 L15,0 L15,0 Z" id="Rectangle-7"></path>
+              <polygon id="Rectangle-7" points="12 5.5 12 4.5 3 4.5 3 5.5"></polygon>
+              <polygon id="Rectangle-7" points="12 9.5 12 8.5 3 8.5 3 9.5"></polygon>
+              <polygon id="Rectangle-7" points="12 13.5 12 12.5 3 12.5 3 13.5"></polygon>
+              <polygon id="Rectangle-7" points="16.5 20 16.5 19.5 3 19.5 3 20.5 17 20.5 17.5 20.5 17.5 20 17.5 3 16.5 3"></polygon>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .carousel-list {
+      display: flex;
+      list-style: none;
+      /*transition: transform .3s ease-in-out;*/
+    }
+    
+    .carousel-item {
+      flex: 0 0 100%;
+    }
+    .carousel-item:nth-child(1) { background: #eeeeee; }
+    .carousel-item:nth-child(2) { background: #dddddd; }
+    .carousel-item:nth-child(3) { background: #cccccc; }
+    .carousel-item:nth-child(4) { background: #bbbbbb; }
+    .carousel-item:nth-child(5) { background: #aaaaaa; }
+
+    .carousel-btn {
+      margin: 10px;
+      font-size: 0;
+    }
+
+    .carousel-btn li {
+      display: inline-block;
+      padding: 10px;
+      border: 1px solid #999;
+      font-size: 14px;
+    }
+    .carousel-btn li + li { margin-left: 10px; }
+    .carousel-btn li:hover {
+      background: #eeeeee;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-wrapper">
+    <ul class="carousel-list">
+      <li class="carousel-item">1</li>
+      <li class="carousel-item">2</li>
+      <li class="carousel-item">3</li>
+      <li class="carousel-item">4</li>
+      <li class="carousel-item">5</li>
+    </ul>
+    <ul class="carousel-btn">
+      <li class="carousel-prev">Prev</li>
+      <li class="carousel-next">Next</li>
+    </ul>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

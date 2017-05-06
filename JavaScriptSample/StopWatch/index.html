@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background: #e0e0e0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #timerText {
+      color: #00aaff;
+      font-size: 128px;
+      margin: 40px auto;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    }
+    .btn {
+      display: inline-block;
+      width: 100px;
+      padding: 7px;
+      border-radius: 5px;
+      box-shadow: 0 4px 0 #0088cc;
+      color: #fff;
+      background: #00aaff;
+      border: none;
+      cursor: pointer;
+    }
+    .btn + .btn {
+      margin-left: 10px;
+    }
+    .btn.active {
+      opacity: 1.0;
+    }
+    .btn.inactive {
+      opacity: .5;
+    }
+  </style>
+</head>
+<body>
+  <div id="timerText">0.00</div>
+  <button id="start" class="btn">START</button>
+  <button id="stop" class="btn">STOP</button>
+  <button id="reset" class="btn">RESET</button>
+  <script>
+    (function() {
+      'use strict';
+
+      var startTime;
+      var timerId;
+      var elapsedTime = 0;
+      var isRunnig = false;
+
+      var startButton = document.getElementById('start');
+      var stopButton = document.getElementById('stop');
+      var resetButton = document.getElementById('reset');
+      var timerText = document.getElementById('timerText');
+
+      function setButtonState(start, stop, reset) {
+        startButton.className = start ? 'btn active' : 'btn inactive';
+        stopButton.className = stop ? 'btn active' : 'btn inactive';
+        resetButton.className = reset ? 'btn active' : 'btn inactive';
+      }
+
+      setButtonState(true, false, false);
+
+      startButton.addEventListener('click', function() {
+        if (isRunnig) return;
+        isRunnig = true;
+        startTime = Date.now();
+        updateTimerText();
+        setButtonState(false, true, false);
+      });
+
+      stopButton.addEventListener('click', function() {
+        if (!isRunnig) return;
+        isRunnig = false;
+        elapsedTime += Date.now() - startTime;
+        clearTimeout(timerId);
+        setButtonState(true, false, true);
+      });
+
+      resetButton.addEventListener('click', function() {
+        if (isRunnig) return;
+        isRunnig = false;
+        timerText.innerHTML = '0.00';
+        elapsedTime = 0;
+        setButtonState(true, false, true);
+      });
+
+      function updateTimerText() {
+        timerId = setTimeout(function() {
+          var t = Date.now() - startTime + elapsedTime;
+          timerText.innerHTML = (t / 1000).toFixed(2);
+          updateTimerText();
+        }, 10);
+      }
+    })();
+  </script>
+</body>
+</html>

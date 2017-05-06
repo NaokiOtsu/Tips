@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+* {margin:0;padding:0;}
+body {
+  margin: 10px;
+}
+dt {
+  background: #efefef;
+}
+dd {
+  overflow: hidden;
+  background: #ddd;
+  transition: height 166ms ease-out;
+}
+</style>
+</head>
+<body>
+  <div class="accordion-container">
+    <dl>
+      <dt data-accordion-trigger="accordion-1">title</dt>
+      <dd data-accordion-contents="accordion-1">text</dd>
+      <dt data-accordion-trigger="accordion-2">title</dt>
+      <dd data-accordion-contents="accordion-2">text<br>text</dd>
+      <dt data-accordion-trigger="accordion-3">title</dt>
+      <dd data-accordion-contents="accordion-3">text</dd>
+    </dl>
+  </div>
+
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./app_jquery.js"></script>
+</body>
+</html>

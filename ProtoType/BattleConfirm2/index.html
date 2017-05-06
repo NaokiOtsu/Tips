@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="./dist/css/style.css">
+</head>
+<body>
+  
+  <ul id="battle-power">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <ul id="item-list">
+    <li id="orange-btn">
+      orange: 
+      <span class="num"></span>
+    </li>
+    <li id="meat-btn">
+      meat: 
+      <span class="num"></span>
+    </li>
+  </ul>
+
+  <ul>
+    <li id="normal-attack">
+      normal: 
+      <span class="rate"></span>
+    </li>
+    <li id="special-attack">
+      special: 
+      <span class="rate"></span>
+    </li>
+  </ul>
+
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/underscore/underscore-min.js"></script>
+
+<script src="./dist/js/model/battle_power.js"></script>
+<script src="./dist/js/model/item.js"></script>
+<script src="./dist/js/model/attack_rate.js"></script>
+
+<script src="./dist/js/view/battle_power.js"></script>
+<script src="./dist/js/view/item.js"></script>
+<script src="./dist/js/view/attack_btn.js"></script>
+
+<script src="./dist/js/controller.js"></script>
+
+<script src="./dist/js/app.js"></script>
+
+<script>
+(function(window) {
+  'use strict';
+
+  var config = {
+    'battle_power': {
+      'current_num': 3,
+      'max_num': 5
+    },
+    'item': {
+      'orange': {
+        'current_num': 10
+      },
+      'meat': {
+        'current_num': 10
+      }
+    },
+    'rate': {
+      'normal': 1,
+      'special': 6
+    }
+  };
+
+  new window.app.App(config);
+})(window);
+</script>
+</body>
+</html>

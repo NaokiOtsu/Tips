@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+#container {
+  overflow: hidden;
+}
+.item-list {
+  display: flex;
+}
+.item {
+  flex: 1 0 100%;
+}
+.item1 { background: #eee; }
+.item2 { background: #ddd; }
+.item3 { background: #ccc; }
+.item4 { background: #bbb; }
+.item5 { background: #aaa; }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <ul class="item-list">
+    <li class="item item1">1</li>
+    <li class="item item2">2</li>
+    <li class="item item3">3</li>
+    <li class="item item4">4</li>
+    <li class="item item5">5</li>
+  </ul>
+  <ul>
+    <li class="prev">prev</li>
+    <li class="next">next</li>
+  </ul>
+</div>
+
+<script src="./main.js"></script>
+</body>
+</html>
