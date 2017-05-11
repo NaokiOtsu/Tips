@@ -1,62 +1,62 @@
 var DATA = [
-  {
-    "price": 1000,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 1
-  },
-  {
-    "price": 1030,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 2
-  },
-  {
-    "price": 1200,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 3
-  },
-  {
-    "price": 1001,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 4
-  },
-  {
-    "price": 2000,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 5
-  },
-  {
-    "price": 1500,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 6
-  },
-  {
-    "price": 1090,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 7
-  },
-  {
-    "price": 1009,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 8
-  },
-  {
-    "price": 1089,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 9
-  },
-  {
-    "price": 1000,
-    "name": "hoge",
-    "img": "<img src=\"\" onerror=\"alert('XSS!!');\">",
-    "id": 10
-  }
+	{
+		"name": "hoge",
+		"id": 1,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 1000
+	},
+	{
+		"name": "hoge",
+		"id": 2,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 10004
+	},
+	{
+		"name": "hoge",
+		"id": 3,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 10002
+	},
+	{
+		"name": "hoge",
+		"id": 4,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 10001
+	},
+	{
+		"name": "hoge",
+		"id": 5,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 10006
+	},
+	{
+		"name": "hoge",
+		"id": 6,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 10009
+	},
+	{
+		"name": "hoge",
+		"id": 7,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 100000
+	},
+	{
+		"name": "hoge",
+		"id": 8,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 100
+	},
+	{
+		"name": "hoge",
+		"id": 9,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 10
+	},
+	{
+		"name": "hoge",
+		"id": 10,
+		"img": "<img src=\"\" alert=\"\">",
+		"price": 100012
+	}
 ];

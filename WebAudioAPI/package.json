@@ -1,0 +1,15 @@
+{
+  "name": "WebAudioAPI",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
