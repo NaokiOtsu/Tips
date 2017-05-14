@@ -1,7 +1,8 @@
 import React from 'react';
+import style from './style.css';
 
 const Trigger = props => (
-  <li>tab1</li>
+  <li className={style['list-item']} onClick={props.handleClick}>tab{props.value}</li>
 );
 
 export default Trigger;
