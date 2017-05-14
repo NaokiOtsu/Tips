@@ -1,1 +1,16 @@
-:local()
+:local(.list) {
+  display: flex;
+  list-style: none;
+}
+
+:local(.list-item) {
+  border: 1px solid #333;
+}
+
+:local(.contents) {
+  display: none;
+}
+
+:local(.active) {
+  display: block;
+}
