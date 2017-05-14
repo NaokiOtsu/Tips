@@ -12,7 +12,7 @@ class Tabs extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className={}>
           <Trigger />
           <Trigger />
           <Trigger />
