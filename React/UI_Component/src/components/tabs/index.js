@@ -18,17 +18,20 @@ class Tabs extends Component {
   }
 
   render() {
+    const triggers = [];
+    const contents = [];
+    for (let i = 1; i <= 3; i++) {
+      triggers.push(<Trigger key={i} value={i} handleClick={() => this.handleClick(i)} />);
+      contents.push(<Contents key={i} value={i} current={this.state.current} />)
+    }
+    
     return (
       <div>
         <ul className={style.list}>
-          <Trigger value={1} handleClick={() => this.handleClick(1)} />
-          <Trigger value={2} handleClick={() => this.handleClick(2)} />
-          <Trigger value={3} handleClick={() => this.handleClick(3)} />
+          {triggers}
         </ul>
         <div>
-          <Contents value={1} current={this.state.current} />
-          <Contents value={2} current={this.state.current} />
-          <Contents value={3} current={this.state.current} />
+          {contents}
         </div>
       </div>
     );
