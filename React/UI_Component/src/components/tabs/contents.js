@@ -9,8 +9,6 @@ const Contents = props => {
       [style.active]: props.current === props.value
     }
   );
-  console.log(props.current)
-  console.log(props.value)
 
   return (
     <div className={contentsClassNames}>
