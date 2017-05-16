@@ -9,6 +9,7 @@ import {
 import Top from './components/top';
 import Modal from './components/modal';
 import Tabs from './components/tabs';
+import Slider from './components/slider';
 
 class App extends Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends Component {
           <Route exact path="/" component={Top} />
           <Route path="/modal" component={Modal} />
           <Route path="/tabs" component={Tabs} />
+          <Route path="/slider" component={Slider} />
 
           <ul>
             <li><Link to="/">Top</Link></li>
