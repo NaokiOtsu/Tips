@@ -1,0 +1,18 @@
+:local(.container) {
+  width: 300px;
+  overflow: hidden;
+}
+
+:local(.list) {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:local(.item) {
+  flex: 1 0 auto;
+  width: 300px;
+  height: 300px;
+  background: #999;
+}
