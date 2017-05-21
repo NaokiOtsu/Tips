@@ -1,0 +1,4 @@
+:local(.contents) {
+  overflow: hidden;
+  transition: height .2s ease;
+}
