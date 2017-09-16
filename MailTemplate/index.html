@@ -68,8 +68,13 @@ header {
   background-color: #333;
   cursor: pointer;
 }
-.right .close {
+.right .table:hover .close {
   display: inline-block;
+  animation: fadein .5s;
+}
+@keyframes fadein {
+  0% {opacity: 0;}
+  1000% {opacity: 1;}
 }
 </style>
 </head>
