@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  word-break: break-all;
+}
+.container {
+  height: 100%;
+  overflow: hidden;
+}
+.left {
+  width: 30%;
+  height: 100%;
+  float: left;
+  overflow-y: scroll;
+}
+.right {
+  width: 70%;
+  height: 100%;
+  float: right;
+  padding: 10px;
+  overflow-y: scroll;
+  box-shadow: -1px 0 0 black;
+  box-sizing: border-box;
+}
+header {
+  margin-bottom: 10px;
+  text-align: center;
+  background: #ccc;
+}
+.left .table {
+  zoom: 0.4;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.left .space {
+  border: 1px solid #333;
+}
+.table {
+  position: relative;
+  margin: 0 auto;
+  background-color: #efefef;
+}
+.space {
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: transparent;
+}
+.close {
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 1px 8px;
+  color: white;
+  border-radius: 3px;
+  background-color: #333;
+  cursor: pointer;
+}
+.right .close {
+  display: inline-block;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <header>Header</header>
+
+      <div id="header">
+        <table class="table" width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+              <span class="close">x</span>
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+            </td>
+          </tr>
+        </table>
+
+        <table class="table" width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+              <span class="close">x</span>
+              <img src="sample.jpg">
+            </td>
+          </tr>
+        </table>
+        
+        <table class="table space" width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+              <span class="close">x</span>
+              space
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <header>Body</header>
+
+      <div id="body">
+        <table class="table" width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+              <span class="close">x</span>
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+            </td>
+          </tr>
+        </table>
+
+        <table class="table" width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+              <span class="close">x</span>
+              <img src="sample.jpg">
+            </td>
+          </tr>
+        </table>
+        
+        <table class="table space" width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+              <span class="close">x</span>
+              space
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <header>Footer</header>
+
+      <div id="footer">
+        <table class="table" width="600" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>
+              <span class="close">x</span>
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <div class="header-contents"></div>
+      <div class="body-contents"></div>
+      <div class="footer-contents"></div>
+    </div>
+  </div>
+
+<script>
+(function() {
+  'use strict';
+
+  var tables = document.querySelectorAll('.table');
+  var contents = {
+    header: document.querySelector('.header-contents'),
+    body: document.querySelector('.body-contents'),
+    footer: document.querySelector('.footer-contents')
+  };
+
+  function initialize() {
+    addEventListeners();
+  }
+
+  function addEventListeners() {
+    tables.forEach(function(table) {
+      table.addEventListener('click', tableClickHandler, false);
+    })
+    document.addEventListener('click', documentClickHandler, false);
+  }
+
+  function tableClickHandler(event) {
+    var cloneNode = this.cloneNode(true);
+    var parent = this.parentNode;
+    var parent_id = parent.id;
+
+    contents[parent_id].appendChild(cloneNode);
+  }
+
+  function documentClickHandler(event) {
+    var parent;
+    var target = event.target;
+    
+    if (target.className === 'close') {
+      parent = getParent(target);
+      parent.parentNode.removeChild(parent);
+    }
+  }
+
+  function getParent(target) {
+    var parent = target.parentNode;
+
+    while (true) {
+      if (parent.tagName === 'TABLE') break;
+      parent = parent.parentNode;
+    }
+
+    return parent;
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    initialize();
+  });
+})();
+</script>
+</body>
+</html>
