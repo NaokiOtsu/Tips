@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<button id="start">start</button>
+<button id="stop">stop</button>
+
+<div id="result"></div>
+
+<script>
+var start = document.getElementById('start');
+var stop = document.getElementById('stop');
+var result = document.getElementById('result');
+var start_time;
+
+start.addEventListener('click', startClickHandler, false);
+stop.addEventListener('click', stopClickHandler, false);
+
+function startClickHandler() {
+  start_time = Date.now();
+}
+
+function stopClickHandler() {
+  var elapsed_time = (Date.now() - start_time) / 1000;
+  var diff = elapsed_time - 5.0;
+  
+  if (valid(diff)) {
+    result.textContent = '当たり!';
+  } else if (diff < 4.5) {
+    result.textContent = '足りなかった...';
+  } else if (diff > 5.5) {
+    result.textContent = '行き過ぎた...';
+  }
+}
+
+function valid(diff) {
+  return Math.abs(diff) < 1.0;
+}
+</script>
+</body>
+</html>
