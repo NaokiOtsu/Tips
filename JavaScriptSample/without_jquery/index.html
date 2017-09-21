@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<div id="result" class="hoge" data-id="2">
+  <ul>
+    <li>zzz</li>
+    <li>zzz</li>
+    <li>zzz</li>
+    <li>zzz</li>
+  </ul>
+</div>
+
+<script>
+var result = document.getElementById('result');
+var div = document.createElement('div')
+div.textContent = 'hoge'
+console.log(result.classList.toggle('fuga'))
+</script>
+</body>
+</html>
