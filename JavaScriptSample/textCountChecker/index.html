@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<textarea id="textarea"></textarea>
+<div id="result">20 character left</div>
+
+<script>
+var total_num = 20;
+var textarea = document.getElementById('textarea');
+var result = document.getElementById('result');
+textarea.addEventListener('keydown', textareaChangeHandler, false);
+
+function textareaChangeHandler() {
+  var target = event.target;
+  var remain = total_num - target.value.length;
+
+  if (remain <= 0) {
+    result.style.color = 'red';
+    result.textContent = '超えてしまいました...';
+  } else if (remain < 10) {
+    result.style.color = 'pink';
+  } else {
+    result.style.color = 'black';
+    result.textContent = remain + ' character left';
+  }
+}
+</script>
+</body>
+</html>
