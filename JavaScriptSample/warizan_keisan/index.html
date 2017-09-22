@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<style>
+#result {
+  white-space: pre-line;
+}
+</style>
+</head>
+<body>
+
+<input type="text" id="price"><br>
+<input type="text" id="num">
+
+<button id="btn">計算</button>
+
+<div id="result"></div>
+
+<script>
+var price = document.getElementById('price')
+var num = document.getElementById('num')
+var btn = document.getElementById('btn')
+var result = document.getElementById('result')
+
+btn.addEventListener('click', btnClickHandler, false);
+
+function btnClickHandler() {
+  var result_text = '';
+  var total = Number(price.value);
+  var person = Number(num.value);
+  var unit = 100;
+
+  if (!total || !person) result_text = '入力された値が正しくありません'
+
+  var divid = total % person;
+  
+  if (divid === 0) {
+    result_text = '一人'+ (total / person) +'円です';
+  } else {
+    var pay_1 = Math.floor(total / person / unit) * unit;
+    var pay_2 = Math.ceil(total / person / unit) * unit;
+    var amari_1 = total - pay_1 * person;
+    var amari_2 = Math.abs(total - pay_2 * person);
+    result_text = '一人'+ pay_1 +'円払ったら、'+ amari_1 +'円足りません\n';
+    result_text += '一人'+ pay_2 +'円払ったら、'+ amari_2 +'円余ります';
+  }
+  
+  result.textContent = result_text;
+}
+</script>
+</body>
+</html>

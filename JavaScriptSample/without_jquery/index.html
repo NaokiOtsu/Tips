@@ -6,20 +6,10 @@
 </head>
 <body>
 
-<div id="result" class="hoge" data-id="2">
-  <ul>
-    <li>zzz</li>
-    <li>zzz</li>
-    <li>zzz</li>
-    <li>zzz</li>
-  </ul>
-</div>
-
+<div id="result" class="hoge" data-id="2"></div>
 <script>
-var result = document.getElementById('result');
-var div = document.createElement('div')
-div.textContent = 'hoge'
-console.log(result.classList.toggle('fuga'))
+var arr = [1,2,3,4,5]
+console.log(arr.join(',').replace(/,/g, '').split(''))
 </script>
 </body>
 </html>
