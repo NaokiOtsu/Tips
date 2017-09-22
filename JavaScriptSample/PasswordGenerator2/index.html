@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="password">
+<button id="btn">generate</button><br>
+
+<br>
+<span id="range_num"></span><input type="range" id="range" value="8" min="4" max="12"><br>
+<br>
+
+<input type="checkbox" id="number">
+Number<br>
+<input type="checkbox" id="symbol">
+Symbol<br>
+
+<script>
+var password = document.getElementById('password');
+var btn = document.getElementById('btn');
+var number = document.getElementById('number');
+var symbol = document.getElementById('symbol');
+var range = document.getElementById('range');
+var range_num = document.getElementById('range_num');
+var count = Number(range.value);
+
+var text = 'abcdefghijklmnopqrstuvwxyz';
+var numbers = '0123456789';
+var symbols = '%*&@!?/';
+
+btn.addEventListener('click', btnClickHandler, false);
+number.addEventListener('change', numberChangeHandler, false);
+symbol.addEventListener('change', symbolChangeHandler, false);
+range.addEventListener('change', rangeChangeHandler, false);
+
+function btnClickHandler() {
+  var result = '';
+
+  var arr = text.split('');
+  for (var i = 0; i < count; i++) {
+    var random = Math.floor(Math.random() * arr.length)
+    if (Math.floor(Math.random() * 2)) {
+      result += arr[random].toUpperCase();
+    } else {
+      result += arr[random];
+    }
+  }
+
+  password.value = result;
+}
+
+function rangeChangeHandler() {
+  range_num.textContent = event.target.value;
+  count = Number(range.value);
+}
+
+function numberChangeHandler() {
+  var target = event.target;
+  if (target.checked) {
+    text += numbers;
+  } else {
+    text = text.replace(numbers, '');
+  }
+}
+
+function symbolChangeHandler() {
+  var target = event.target;
+  if (target.checked) {
+    text += symbols;
+  } else {
+    text = text.replace(symbols, '');
+  }
+}
+
+range_num.textContent = range.value;
+</script>
+</body>
+</html>
