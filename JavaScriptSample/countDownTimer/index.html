@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<div id="count-down-timer"></div>
+
+<button id="start">start</button>
+<button id="reset">reset</button>
+<button id="minute">minute</button>
+<button id="second">second</button>
+
+<script>
+var countDownTimer = document.getElementById('count-down-timer');
+var start = document.getElementById('start');
+var reset = document.getElementById('reset');
+var minute = document.getElementById('minute');
+var second = document.getElementById('second');
+
+var currentTime = 0;
+var startTime = 0;
+var timerId;
+var isPlaying = false;
+
+minute.addEventListener('click', minuteClickHandler, false);
+second.addEventListener('click', secondClickHandler, false);
+start.addEventListener('click', startClickHandler, false);
+reset.addEventListener('click', resetClickHandler, false);
+
+function minuteClickHandler() {
+  currentTime += 60000;
+  displayCountDownTimer();
+}
+
+function secondClickHandler() {
+  currentTime += 1000;
+  displayCountDownTimer();
+}
+
+function startClickHandler() {
+  if (isPlaying) return;
+  if (!currentTime) return;
+  isPlaying = true;
+  timerId = setInterval(tick, 10);
+  startTime = Date.now();
+}
+
+function resetClickHandler() {
+  isPlaying = false;
+  clearInterval(timerId);
+  currentTime = 0;
+  displayCountDownTimer();
+}
+
+function tick() {
+  var elapsedTime = Date.now() - startTime;
+  startTime = Date.now();
+  currentTime -= elapsedTime;
+  displayCountDownTimer();
+}
+
+function displayCountDownTimer() {
+  if (currentTime < 0) {
+    currentTime = 0;
+    clearInterval(timerId);
+  }
+  var minuteTime = Math.floor(currentTime / 60000);
+  var secondTime = Math.floor((currentTime % 60000) / 1000);
+  var millisecondTime = currentTime % 1000;
+  
+  minuteTime = ('0' + minuteTime).slice(-2);
+  secondTime = ('0' + secondTime).slice(-2);
+  millisecondTime = ('00' + millisecondTime).slice(-3);
+  
+  countDownTimer.textContent = minuteTime + ':' + secondTime + '.' + millisecondTime;
+}
+
+displayCountDownTimer();
+
+</script>
+</body>
+</html>
