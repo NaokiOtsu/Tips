@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+<div id="watch">00:00.000</div>
+<button id="start">start</button>
+<button id="stop">stop</button>
+<button id="reset">reset</button>
+
+<script>
+var watch = document.getElementById('watch');
+var start = document.getElementById('start');
+var stop = document.getElementById('stop');
+var reset = document.getElementById('reset');
+var timer_id;
+var start_time;
+var elapsed_time = 0;
+var is_playing = false;
+var wait_time = 0;
+
+start.addEventListener('click', startClickHandler, false);
+stop.addEventListener('click', stopClickHandler, false);
+reset.addEventListener('click', resetClickHandler, false);
+
+function startClickHandler() {
+  if (is_playing) return;
+  is_playing = true;
+  start_time = Date.now() + wait_time;
+  timer_id = setInterval(displayStopWatch, 10);
+}
+
+function stopClickHandler() {
+  is_playing = false;
+  clearInterval(timer_id);
+}
+
+function resetClickHandler() {
+  elapsed_time = 0;
+  start_time = Date.now();
+  displayStopWatch();
+}
+
+function displayStopWatch() {
+  elapsed_time = Date.now() - start_time;
+
+  var minute = Math.floor(elapsed_time / (1000 * 60));
+  var second = Math.floor(elapsed_time % (1000 * 60) / 1000);
+  var milli_second = elapsed_time % 1000;
+
+  minute = ('0' + minute).slice(-2)
+  second = ('0' + second).slice(-2)
+  milli_second = ('00' + milli_second).slice(-3)
+
+  watch.textContent = minute + ':' + second + '.' + milli_second;
+}
+</script>
+</body>
+</html>
