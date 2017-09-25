@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<div id="result"></div>
+
+<script>
+  var result = document.getElementById('result');
+  var text = '<img src="test.png" onerror="console.log(\'xss\')">';
+  var img = document.createElement('img');
+  var regex = /src="([0-9a-zA-Z._-]+)"/;
+  console.log(text.match(regex))
+  img.setAttribute('src', text.match(regex)[1]);
+  result.appendChild(img)
+</script>
+</body>
+</html>
