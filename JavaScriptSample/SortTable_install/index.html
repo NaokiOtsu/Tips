@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <table id="table">
+    <thead>
+      <tr>
+        <th id="name">Name</th>
+        <th id="id">id</th>
+        <th id="price">Price</th>
+        <th id="img">img</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+<script>
+var DATA = [
+  {
+    name: 'hoge',
+    id: 1,
+    price: 1000,
+    img: '<img src="hoge.png" onerror="alert(\"XSS!\")">'
+  },
+  {
+    name: 'fuga',
+    id: 2,
+    price: 5000,
+    img: '<img src="hoge.png" onerror="alert(\"XSS!\")">'
+  },
+  {
+    name: 'zzz',
+    id: 3,
+    price: 4000,
+    img: '<img src="hoge.png" onerror="alert(\"XSS!\")">'
+  },
+  {
+    name: 'aaa',
+    id: 4,
+    price: 3000,
+    img: '<img src="hoge.png" onerror="alert(\"XSS!\")">'
+  },
+  {
+    name: 'yyy',
+    id: 5,
+    price: 2000,
+    img: '<img src="hoge.png" onerror="alert(\"XSS!\")">'
+  }
+];
+var table = document.getElementById('table');
+var tbody = table.querySelector('tbody');
+var ths = table.querySelectorAll('th');
+var order = 1;
+
+ths.forEach(function(th) {
+  th.addEventListener('click', thClickHandler, false);
+})
+
+function thClickHandler() {
+  var data = DATA.sort(function(obj1, obj2) {
+    if (obj1[event.target.id] < obj2[event.target.id]) return -1 * order;
+    if (obj1[event.target.id] > obj2[event.target.id]) return 1 * order;
+    return 0;
+  });
+  order *= -1;
+  tbody.textContent = null;
+  renderTable(data);
+}
+
+function renderTable(data) {
+  var fragment = document.createDocumentFragment();
+  data.forEach(function(obj) {
+    var tr = document.createElement('tr');
+    for (var key in obj) {
+      var td = document.createElement('td');
+      td.textContent = obj[key];
+      tr.appendChild(td);
+    }
+    fragment.appendChild(tr);
+  });
+  tbody.appendChild(fragment);
+}
+
+</script>
+</body>
+</html>
