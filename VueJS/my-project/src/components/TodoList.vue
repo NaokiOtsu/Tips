@@ -2,8 +2,8 @@
   <section>
     <header>
       <input 
-        type="text" 
-        v-model="newTodo"
+        type="text"
+        :value="newTodo"
         @keyup.enter="addTodo"
       >
       <button @click="addTodo">add</button>
@@ -42,17 +42,9 @@
 
 <script>
 import todoStore from '../stores/todo'
-import filters from '../filters/filter'
 
 export default {
   name: 'TodoList',
-  data () {
-    return {
-      newTodo: '',
-      todos: todoStore.fetch(),
-      visibility: 'all'
-    }
-  },
   created: function () {
     window.addEventListener('hashchange', this.onHashChange)
     this.onHashChange()
@@ -66,24 +58,31 @@ export default {
     }
   },
   computed: {
+    todos: function () {
+      return this.$store.state.todos
+    },
+
+    newTodo: function () {
+      return this.$store.getters.newTodo
+    },
+
+    visibility: function () {
+      return this.$store.state.visibility
+    },
+
     filterTodos: function () {
-      return filters[this.visibility](this.todos)
+      return this.$store.getters.filterTodos
     },
 
     remaining: function () {
-      return filters.active(this.todos).length
+      return this.$store.getters.remaining
     }
   },
   methods: {
     addTodo: function () {
+      console.log(this.newTodo)
       if (this.newTodo === '') return
-
-      this.todos.push({
-        text: this.newTodo,
-        completed: false,
-        editing: false
-      })
-      this.newTodo = ''
+      this.$store.commit('addTodo', this.newTodo)
     },
 
     removeTodo: function (index) {
@@ -99,13 +98,7 @@ export default {
     },
 
     onHashChange: function () {
-      const visibility = window.location.hash.replace(/#\/?/, '')
-      if (filters[visibility]) {
-        this.visibility = visibility
-      } else {
-        window.location.hash = ''
-        this.visibility = 'all'
-      }
+      this.$store.commit('onHashChange')
     }
   },
 
