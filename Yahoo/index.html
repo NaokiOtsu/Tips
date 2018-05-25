@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">yahoo login</button>
+</body>
+
+<script>
+  console.log(111);
+
+  const CLIENT_ID = "dj00aiZpPUZqQnR3bzAwWWlNSiZzPWNvbnN1bWVyc2VjcmV0Jng9NDM-";
+  const AUTHORIZATION_URL =
+    "https://auth.login.yahoo.co.jp/yconnect/v2/authorization";
+  const REDIRECT_URI = "http://localhost:3000/hoge.html";
+
+  document.getElementById("btn").addEventListener("click", function () {
+    const width = 480;
+    const height = 640;
+    const win = window.top;
+    const left = win.outerWidth / 2 + win.screenX - width / 2;
+
+    window.open(
+      `${AUTHORIZATION_URL}?response_type=token&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=openid&bail=1`,
+      "oauth",
+      [
+        `height=${height}`,
+        `width=${width}`,
+        `left=${left}`,
+        `top=${top}`,
+        "menubar=no",
+        "toolbar=no",
+        "location=no",
+        "directories=no",
+        "status=no",
+        "dependent=true",
+        "dialog=yes",
+        "copyhistory=no"
+      ].join(",")
+    );
+  });
+
+</script>
+
+</html>
