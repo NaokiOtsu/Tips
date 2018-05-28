@@ -1,0 +1,12 @@
+{
+  "name": "Oauth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.24.4"
+  },
+  "scripts": {
+    "start": "browser-sync start --server --https"
+  }
+}
