@@ -5,12 +5,17 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, ScrollView, Text, View } from "react-native";
 
 import Header from "./components/Header";
 import Profile from "./components/Profile";
 import MoneyState from "./components/MoneyState";
 import InputLink from "./components/InputLink";
+import CostManagement from "./components/CostManagement";
+import Predict from "./components/Predict";
+import CostManagementChange from "./components/CostManagementChange";
+import Recent from "./components/Recent";
+import News from "./components/News";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -21,18 +26,21 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
-  componentDidMount() {
-    console.log("hogehoge");
-  }
-
   render() {
     return (
-      <View style={styles.container}>
-        <Header />
-        <Profile />
-        <MoneyState />
-        <InputLink />
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <Header />
+          <Profile />
+          <MoneyState />
+          <InputLink />
+          <CostManagement />
+          <Predict />
+          <CostManagementChange />
+          <Recent />
+          <News />
+        </View>
+      </ScrollView>
     );
   }
 }
