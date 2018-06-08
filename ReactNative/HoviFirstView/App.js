@@ -8,6 +8,7 @@ import React, { Component } from "react";
 import { Platform, StyleSheet, ScrollView, Text, View } from "react-native";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import MoneyState from "./components/MoneyState";
 import InputLink from "./components/InputLink";
@@ -28,8 +29,8 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <ScrollView>
-        <View style={styles.container}>
+      <View style={styles.container}>
+        <ScrollView>
           <Header />
           <Profile />
           <MoneyState />
@@ -39,8 +40,9 @@ export default class App extends Component<Props> {
           <CostManagementChange />
           <Recent />
           <News />
-        </View>
-      </ScrollView>
+        </ScrollView>
+        <Footer />
+      </View>
     );
   }
 }
@@ -48,6 +50,7 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "ios" ? 20 : 0
+    paddingTop: Platform.OS === "ios" ? 20 : 0,
+    paddingBottom: 50
   }
 });
