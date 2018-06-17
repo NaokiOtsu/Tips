@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>411314474477-1ben4hnntku0f81oh0ipkvf2e2vii1ge.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.411314474477-1ben4hnntku0f81oh0ipkvf2e2vii1ge</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA3x0tSF_S6FVkF4r1QOoUhU2yp6VjrzRk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>411314474477</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.naochael.hovifirstview</string>
+	<key>PROJECT_ID</key>
+	<string>hovi-firstview</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hovi-firstview.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:411314474477:ios:b89df64352dceab9</string>
+	<key>DATABASE_URL</key>
+	<string>https://hovi-firstview.firebaseio.com</string>
+</dict>
+</plist>

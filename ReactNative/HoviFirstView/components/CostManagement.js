@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, ART, Dimensions } from "react-native";
+import { StyleSheet, Text, View, ART } from "react-native";
+import * as d3shape from "d3-shape";
+import * as d3 from "d3";
+
+const { Surface, Group, Shape } = ART;
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -13,7 +17,16 @@ export default class App extends Component<Props> {
         <View style={styles.costWrapper}>
           <View style={styles.costList}>
             <Text style={styles.contTitle}>食費</Text>
-            <View style={styles.costGraph} />
+            <View style={styles.costGraph}>
+              <Surface width={320} height={320}>
+                <Group width={320} height={320}>
+                  <Shape
+                    fill="#e96900"
+                    d="M0,0 L100,0 100,30 0,30"
+                  />
+                </Group>
+              </Surface>
+            </View>
             <View style={styles.contValueWrapper}>
               <Text style={styles.contValue}>36,444円</Text>
               <Text style={styles.contRatio}>(+16%早い)</Text>
@@ -21,7 +34,16 @@ export default class App extends Component<Props> {
           </View>
           <View style={styles.costList}>
             <Text style={styles.contTitle}>賃貸</Text>
-            <View style={styles.costGraph} />
+            <View style={styles.costGraph}>
+              <Surface width={320} height={320}>
+                <Group width={320} height={320}>
+                  <Shape
+                    fill="#e96900"
+                    d="M0,0 L50,0 50,30 0,30"
+                  />
+                </Group>
+              </Surface>
+            </View>
             <View style={styles.contValueWrapper}>
               <Text style={styles.contValue}>36,444円</Text>
               <Text style={styles.contRatio}>(+16%早い)</Text>
@@ -29,7 +51,16 @@ export default class App extends Component<Props> {
           </View>
           <View style={styles.costList}>
             <Text style={styles.contTitle}>娯楽</Text>
-            <View style={styles.costGraph} />
+            <View style={styles.costGraph}>
+              <Surface width={320} height={320}>
+                <Group width={320} height={320}>
+                  <Shape
+                    fill="#e96900"
+                    d="M0,0 L200,0 200,30 0,30"
+                  />
+                </Group>
+              </Surface>
+            </View>
             <View style={styles.contValueWrapper}>
               <Text style={styles.contValue}>36,444円</Text>
               <Text style={styles.contRatio}>(+16%早い)</Text>
@@ -73,7 +104,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 30,
     marginRight: 5,
-    backgroundColor: "#4fc08d"
   },
   contValue: {
     textAlign: "center"

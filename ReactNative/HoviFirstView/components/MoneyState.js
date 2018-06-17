@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, ART, Dimensions } from "react-native";
-import * as d3scale from "d3-scale";
 import * as d3shape from "d3-shape";
-import * as d3Array from "d3-array";
 
 const { Surface, Group, Shape } = ART;
 
@@ -29,7 +27,7 @@ export default class App extends Component<Props> {
   render() {
     const arcs = d3shape.pie().value(item => item.number)(pieData);
     const pieChart = { paths: [] };
-    arcs.map((arc, index) => {
+    arcs.map(arc => {
       const path = d3shape
         .arc()
         .outerRadius(90)
