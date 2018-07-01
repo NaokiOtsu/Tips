@@ -7,7 +7,7 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.header}>
         <View style={styles.logo}>
-          <Text style={styles.logoText}>Hovi</Text>
+          <Text style={styles.logoText}>Touch Life</Text>
         </View>
         <View style={styles.date}>
           <View style={styles.todayWrapper}>

@@ -3,37 +3,38 @@ import { StyleSheet, Text, View, ART, Dimensions } from "react-native";
 import * as d3shape from "d3-shape";
 
 const { Surface, Group, Shape } = ART;
+const ARTText = ART.Text;
 
+const incomeValue = 300000;
 const pieData = [
-  { number: 8, name: "Fun activities" },
-  { number: 7, name: "Dog" },
-  { number: 16, name: "Food" },
-  { number: 23, name: "Car" },
-  { number: 23, name: "Rent" },
-  { number: 4, name: "Misc" }
+  { number: 40000, name: '趣味', color: '#F44336' },
+  { number: 20000, name: '保険', color: '#E91E63' },
+  { number: 20000, name: '交際費', color: '#9C27B0' },
+  { number: 10000, name: '家賃', color: '#673AB7' },
+  { number: 30000, name: '食費', color: '#3F51B5' },
+  { number: 60000, name: '雑費', color: '#2196F3' },
 ];
-
-const colors = [
-  "#F44336",
-  "#E91E63",
-  "#9C27B0",
-  "#673AB7",
-  "#3F51B5",
-  "#2196F3"
-];
+const costValue = pieData.reduce((a, b) => a + b.number, 0);
+const paymentValue = incomeValue - costValue;
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     const arcs = d3shape.pie().value(item => item.number)(pieData);
-    const pieChart = { paths: [] };
-    arcs.map(arc => {
+    const pieCharts = arcs.map(arc => {
       const path = d3shape
         .arc()
         .outerRadius(90)
         .padAngle(0.05)
         .innerRadius(30)(arc);
-      pieChart.paths.push({ path });
+      const points = d3shape
+        .arc()
+        .outerRadius(90)
+        .innerRadius(30)
+        .centroid(arc);
+      const { name } = arc.data;
+      const { color } = arc.data;
+      return { path, points, name, color };
     });
     const width = 200;
 
@@ -42,31 +43,40 @@ export default class App extends Component<Props> {
         <View style={styles.value}>
           <View style={styles.income}>
             <Text style={styles.incomeTitle}>収入</Text>
-            <Text style={styles.incomeValue}>315,171</Text>
+            <Text style={styles.incomeValue}>{incomeValue.toLocaleString()}</Text>
           </View>
           <View style={styles.cost}>
             <Text style={styles.costTitle}>支出</Text>
-            <Text style={styles.costValue}>274,761</Text>
+            <Text style={styles.costValue}>{costValue.toLocaleString()}</Text>
           </View>
           <View style={styles.payment}>
             <Text style={styles.paymentTitle}>収支</Text>
-            <Text style={styles.paymentValue}>40,410</Text>
+            <Text style={styles.paymentValue}>{paymentValue.toLocaleString()}</Text>
           </View>
         </View>
         <View style={styles.graph}>
           <Text style={styles.graphTitle}>現在の家計簿状況</Text>
           <View style={{ alignItems: "center" }}>
             <Surface width={width} height={width}>
-              <Group x={width / 2} y={width / 2}>
-                {pieChart.paths.map((item, index) => (
-                  <Shape
-                    key={`pie_shape_${index}`}
-                    fill={colors[index]}
-                    stroke={colors[index]}
-                    d={item.path}
-                  />
+                {pieCharts.map((item, index) => (
+                  <Group x={width / 2} y={width / 2}>
+                    <Shape
+                      key={`pie_shape_${index}`}
+                      fill={item.color}
+                      stroke={item.color}
+                      d={item.path}
+                    />
+                    <ARTText
+                      font={`13px "Helvetica Neue", "Helvetica", Arial`}
+                      fill="#fff"
+                      alignment="center"
+                      x={item.points[0]}
+                      y={item.points[1]}
+                    >
+                      {item.name}
+                    </ARTText>
+                  </Group>
                 ))}
-              </Group>
             </Surface>
           </View>
           <Text style={styles.graphText}>家計簿の内訳について</Text>
