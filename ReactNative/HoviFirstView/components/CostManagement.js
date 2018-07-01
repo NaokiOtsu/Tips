@@ -8,23 +8,23 @@ const costs = [
   {
     id: 1,
     name: '食費',
-    currentValue: 31444,
+    currentValue: 51444,
     beforeName: '2016年10月',
     beforeValue: 35000,
   },
   {
     id: 2,
     name: '娯楽',
-    currentValue: 10000,
+    currentValue: 20000,
     beforeName: '2016年10月',
     beforeValue: 7000,
   },
   {
     id: 3,
     name: '交通費',
-    currentValue: 5000,
+    currentValue: 15000,
     beforeName: '2016年10月',
-    beforeValue: 10000,
+    beforeValue: 30000,
   },
 ];
 
@@ -197,10 +197,10 @@ const styles = StyleSheet.create({
   costGraph: {
     flex: 1,
     height: 40,
-    marginRight: 10,
   },
   costValueWrapper: {
-    marginTop: 16
+    marginTop: 16,
+    marginLeft: 10,
   },
   costValue: {
     textAlign: "center"
