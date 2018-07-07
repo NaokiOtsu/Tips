@@ -8,16 +8,16 @@ const costs = [
   {
     id: 1,
     name: '食費',
-    currentValue: 51444,
+    currentValue: 89999,
     beforeName: '2016年10月',
     beforeValue: 35000,
   },
   {
     id: 2,
     name: '娯楽',
-    currentValue: 20000,
+    currentValue: 60000,
     beforeName: '2016年10月',
-    beforeValue: 7000,
+    beforeValue: 70000,
   },
   {
     id: 3,
