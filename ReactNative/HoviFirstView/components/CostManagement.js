@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, ART } from "react-native";
+import { StyleSheet, Text, View, Image, ART } from "react-native";
 
 const { Surface, Group, Shape } = ART;
 const ARTText = ART.Text;

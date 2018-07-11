@@ -1,35 +1,59 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import X2JS from 'x2js'
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerNews: [],
+      bodyNews: []
+    };
+  }
+
+  async componentDidMount() {
+    const url = 'https://www.sankeibiz.jp/rss/news/financials.xml'
+    const res = await fetch(url);
+    const rssText = await res.text()
+    const x2js = new X2JS();
+    const json = x2js.xml2js(rssText)
+    const news = json.rss.channel.item.filter(item => !!item.enclosure);
+    this.setState({
+      headerNews: news.slice(0, 3),
+      bodyNews: news.slice(3, 5)
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>あなたに似た人のニューストピック</Text>
         <View style={styles.newsWrapper}>
-          <View style={styles.newsList}>
-            <View style={styles.newsImage} />
-            <Text style={styles.newsTitle}>長友がノーベル平和賞</Text>
-          </View>
-          <View style={styles.newsList}>
-            <View style={styles.newsImage} />
-            <Text style={styles.newsTitle}>長友がノーベル平和賞</Text>
-          </View>
-          <View style={styles.newsList}>
-            <View style={styles.newsImage} />
-            <Text style={styles.newsTitle}>長友がノーベル平和賞</Text>
-          </View>
+          {this.state.headerNews.map(news => {
+            return (
+              <View style={styles.newsList}>
+                <Image
+                  source={{ uri: news.enclosure._url }}
+                  style={styles.newsImage}
+                />
+                <Text style={styles.newsTitle}>{news.title}</Text>
+              </View>
+            )
+          })}
         </View>
         <View style={styles.newsWrapper}>
-          <View style={styles.newsList}>
-            <View style={styles.newsImage} />
-            <Text style={styles.newsTitle}>長友がノーベル平和賞</Text>
-          </View>
-          <View style={styles.newsList}>
-            <View style={styles.newsImage} />
-            <Text style={styles.newsTitle}>長友がノーベル平和賞</Text>
-          </View>
+          {this.state.bodyNews.map(news => {
+            return (
+              <View style={styles.newsList}>
+                <Image
+                  source={{ uri: news.enclosure._url }}
+                  style={styles.newsImage}
+                />
+                <Text style={styles.newsTitle}>{news.title}</Text>
+              </View>
+            )
+          })}
         </View>
 
         <TouchableOpacity style={styles.button}>
@@ -59,7 +83,7 @@ const styles = StyleSheet.create({
   },
   newsImage: {
     flex: 1,
-    height: 80,
+    minHeight: 80,
     marginBottom: 10,
     backgroundColor: "#eee"
   },
