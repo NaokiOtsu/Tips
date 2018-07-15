@@ -50,7 +50,6 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "ios" ? 20 : 0,
     paddingBottom: 50
   }
 });

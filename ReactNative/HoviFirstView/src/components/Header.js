@@ -1,13 +1,20 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import {
+  Actions,
+} from 'react-native-router-flux';
 
 type Props = {};
 export default class App extends Component<Props> {
+  hoge() {
+    Actions.PageB();
+  }
+
   render() {
     return (
       <View style={styles.header}>
         <View style={styles.logo}>
-          <Text style={styles.logoText}>Touch Life</Text>
+          <Text style={styles.logoText} onPress={this.hoge}>Touch Life</Text>
         </View>
         <View style={styles.date}>
           <View style={styles.todayWrapper}>
