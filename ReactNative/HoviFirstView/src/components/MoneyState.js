@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, ART, Dimensions } from "react-native";
-import * as d3shape from "d3-shape";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-const { Surface, Group, Shape } = ART;
-const ARTText = ART.Text;
+import PieGraph from './PieGraph';
+
+import {
+  Actions,
+} from 'react-native-router-flux';
 
 const incomeValue = 300000;
 const pieData = [
@@ -14,72 +16,71 @@ const pieData = [
   { number: 30000, name: '食費', color: '#3F51B5' },
   { number: 60000, name: '雑費', color: '#2196F3' },
 ];
+const beforePieData = [
+  { number: 20000, name: '趣味', color: '#F44336' },
+  { number: 10000, name: '保険', color: '#E91E63' },
+  { number: 10000, name: '交際費', color: '#9C27B0' },
+  { number: 50000, name: '家賃', color: '#673AB7' },
+  { number: 10000, name: '食費', color: '#3F51B5' },
+  { number: 10000, name: '雑費', color: '#2196F3' },
+];
 const costValue = pieData.reduce((a, b) => a + b.number, 0);
+const beforeCostValue = beforePieData.reduce((a, b) => a + b.number, 0);
 const paymentValue = incomeValue - costValue;
+const ratioValue = Math.floor(costValue / beforeCostValue * 100);
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    const arcs = d3shape.pie().value(item => item.number)(pieData);
-    const pieCharts = arcs.map(arc => {
-      const path = d3shape
-        .arc()
-        .outerRadius(90)
-        .padAngle(0.05)
-        .innerRadius(30)(arc);
-      const points = d3shape
-        .arc()
-        .outerRadius(90)
-        .innerRadius(30)
-        .centroid(arc);
-      const { name } = arc.data;
-      const { color } = arc.data;
-      return { path, points, name, color };
-    });
-    const width = 200;
-
     return (
       <View style={styles.moneyState}>
-        <View style={styles.value}>
-          <View style={styles.income}>
-            <Text style={styles.incomeTitle}>収入</Text>
-            <Text style={styles.incomeValue}>{incomeValue.toLocaleString()}</Text>
-          </View>
-          <View style={styles.cost}>
-            <Text style={styles.costTitle}>支出</Text>
-            <Text style={styles.costValue}>{costValue.toLocaleString()}</Text>
-          </View>
-          <View style={styles.payment}>
-            <Text style={styles.paymentTitle}>収支</Text>
-            <Text style={styles.paymentValue}>{paymentValue.toLocaleString()}</Text>
-          </View>
-        </View>
+        {(() => {
+          if (this.props.isHousehold) {
+            return (
+              <View style={styles.value}>
+                <View style={styles.cost}>
+                  <Text style={styles.costTitle}>支出</Text>
+                  <Text style={styles.costValue}>{costValue.toLocaleString()}</Text>
+                </View>
+                <View style={styles.ratio}>
+                  <Text style={styles.ratioTitle}>前月同時期対比</Text>
+                  <Text style={styles.ratioValue}>{ratioValue.toLocaleString()}%</Text>
+                </View>
+                <View style={styles.ratioButton}>
+                  <TouchableOpacity style={styles.beforeMonthRatioButton}>
+                    <Text style={styles.beforeMonthRatioButtonText}>前月対比</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.beforeYearRatioButton}>
+                    <Text style={styles.beforeYearRatioButtonText}>去年対比</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            );
+          } else {
+            return (
+              <View style={styles.value}>
+                <View style={styles.income}>
+                  <Text style={styles.incomeTitle}>収入</Text>
+                  <Text style={styles.incomeValue}>{incomeValue.toLocaleString()}</Text>
+                </View>
+                <View style={styles.cost}>
+                  <Text style={styles.costTitle}>支出</Text>
+                  <Text style={styles.costValue}>{costValue.toLocaleString()}</Text>
+                </View>
+                <View style={styles.payment}>
+                  <Text style={styles.paymentTitle}>収支</Text>
+                  <Text style={styles.paymentValue}>{paymentValue.toLocaleString()}</Text>
+                </View>
+              </View>
+            );
+          }
+        })()}
         <View style={styles.graph}>
           <Text style={styles.graphTitle}>現在の家計簿状況</Text>
-          <View style={{ alignItems: "center" }}>
-            <Surface width={width} height={width}>
-                {pieCharts.map((item, index) => (
-                  <Group x={width / 2} y={width / 2}>
-                    <Shape
-                      key={`pie_shape_${index}`}
-                      fill={item.color}
-                      stroke={item.color}
-                      d={item.path}
-                    />
-                    <ARTText
-                      font={`13px "Helvetica Neue", "Helvetica", Arial`}
-                      fill="#fff"
-                      alignment="center"
-                      x={item.points[0]}
-                      y={item.points[1]}
-                    >
-                      {item.name}
-                    </ARTText>
-                  </Group>
-                ))}
-            </Surface>
-          </View>
-          <Text style={styles.graphText}>家計簿の内訳について</Text>
+          <PieGraph pieData={pieData} />
+          {(() => {
+            if (!this.props.isHousehold) return <Text style={styles.graphText} onPress={Actions.Household}>家計簿の内訳について</Text>;
+          })()}
         </View>
       </View>
     );
@@ -117,6 +118,43 @@ const styles = StyleSheet.create({
   costValue: {
     color: "#ff4949",
     fontSize: 40
+  },
+  ratio: {
+    marginBottom: 10
+  },
+  ratioTitle: {
+    fontSize: 12
+  },
+  ratioValue: {
+    color: "#12a828",
+    fontSize: 40
+  },
+  ratioButton: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  beforeMonthRatioButtonText: {
+    marginRight: 10,
+    padding: 5,
+    fontSize: 12,
+    color: "#fff",
+    textAlign: "center",
+    backgroundColor: '#9C27B0',
+    overflow: "hidden",
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#9C27B0"
+  },
+  beforeYearRatioButtonText: {
+    padding: 5,
+    fontSize: 12,
+    color: "#fff",
+    textAlign: "center",
+    backgroundColor: '#999',
+    overflow: "hidden",
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#999"
   },
   paymentTitle: {
     fontSize: 12

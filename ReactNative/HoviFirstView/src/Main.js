@@ -5,12 +5,13 @@ import {
   Actions
 } from 'react-native-router-flux';
 
-import App from './App';
+import Home from './Home';
+import Household from './Household';
 
 const scenes = Actions.create(
   <Scene key="root">
-    <Scene key="PageA" initial component={App} title="App" />
-    <Scene key="PageB" component={App} title="App" />
+    <Scene key="Home" initial component={Home} title="マイページ" />
+    <Scene key="Household" component={Household} title="家計簿" />
   </Scene>
 );
 

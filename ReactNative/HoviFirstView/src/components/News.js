@@ -13,12 +13,16 @@ export default class App extends Component<Props> {
   }
 
   async componentDidMount() {
-    const url = 'https://www.sankeibiz.jp/rss/news/financials.xml'
-    const res = await fetch(url);
+    const sankeiUrl = 'https://www.sankeibiz.jp/rss/news/financials.xml';
+    const moneyzineUrl = 'https://moneyzine.jp/rss/new/';
+    // const results = await Promise.all([await fetch(sankeiUrl).text(), await fetch(moneyzineUrl).text()]);
+    // console.log(111, results);
+    const res = await fetch(moneyzineUrl);
     const rssText = await res.text()
+    // console.log(222, rssText);
     const x2js = new X2JS();
     const json = x2js.xml2js(rssText)
-    const news = json.rss.channel.item.filter(item => !!item.enclosure);
+    const news = json.rss.channel.item;
     this.setState({
       headerNews: news.slice(0, 3),
       bodyNews: news.slice(3, 5)
@@ -34,7 +38,7 @@ export default class App extends Component<Props> {
             return (
               <View style={styles.newsList}>
                 <Image
-                  source={{ uri: news.enclosure._url }}
+                  source={{ uri: 'https://placehold.jp/100x80.png?text=TouchLife' }}
                   style={styles.newsImage}
                 />
                 <Text style={styles.newsTitle}>{news.title}</Text>
@@ -47,7 +51,7 @@ export default class App extends Component<Props> {
             return (
               <View style={styles.newsList}>
                 <Image
-                  source={{ uri: news.enclosure._url }}
+                  source={{ uri: 'https://placehold.jp/150x80.png?text=TouchLife' }}
                   style={styles.newsImage}
                 />
                 <Text style={styles.newsTitle}>{news.title}</Text>
@@ -75,15 +79,15 @@ const styles = StyleSheet.create({
   newsWrapper: {
     flex: 1,
     flexDirection: "row",
+    justifyContent: 'space-between',
     marginTop: 10
   },
   newsList: {
     flex: 1,
-    marginRight: 10
+    marginRight: 10,
   },
   newsImage: {
-    flex: 1,
-    minHeight: 80,
+    height: 80,
     marginBottom: 10,
     backgroundColor: "#eee"
   },

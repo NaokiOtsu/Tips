@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
+import {
+  Actions,
+} from 'react-native-router-flux';
+
 type Props = {};
 export default class App extends Component<Props> {
   render() {
@@ -11,14 +15,15 @@ export default class App extends Component<Props> {
             source={require("../assets/img/home.png")}
             style={styles.icon}
           />
-          <Text style={styles.text}>マイページ</Text>
+          <Text style={styles.text} onPress={Actions.Home}>マイページ</Text>
         </View>
         <View style={styles.list}>
           <Image
             source={require("../assets/img/note.png")}
             style={styles.icon}
+            onPress={Actions.Household}
           />
-          <Text style={styles.text}>家計簿</Text>
+          <Text style={styles.text} onPress={Actions.Household}>家計簿</Text>
         </View>
         <View style={styles.list}>
           <Image
