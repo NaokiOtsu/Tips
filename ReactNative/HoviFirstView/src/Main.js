@@ -7,6 +7,8 @@ import {
 
 import Home from './Home';
 import Household from './Household';
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
 const scenes = Actions.create(
   <Scene key="root">

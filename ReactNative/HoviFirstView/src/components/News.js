@@ -34,9 +34,9 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
         <Text style={styles.title}>あなたに似た人のニューストピック</Text>
         <View style={styles.newsWrapper}>
-          {this.state.headerNews.map(news => {
+          {this.state.headerNews.map((news, index) => {
             return (
-              <View style={styles.newsList}>
+              <View style={styles.newsList} key={index}>
                 <Image
                   source={{ uri: 'https://placehold.jp/100x80.png?text=TouchLife' }}
                   style={styles.newsImage}
@@ -47,9 +47,9 @@ export default class App extends Component<Props> {
           })}
         </View>
         <View style={styles.newsWrapper}>
-          {this.state.bodyNews.map(news => {
+          {this.state.bodyNews.map((news, index) => {
             return (
-              <View style={styles.newsList}>
+              <View style={styles.newsList} key={index}>
                 <Image
                   source={{ uri: 'https://placehold.jp/150x80.png?text=TouchLife' }}
                   style={styles.newsImage}

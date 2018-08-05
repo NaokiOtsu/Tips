@@ -30,7 +30,7 @@ export default class App extends Component<Props> {
       <View style={{ alignItems: "center" }}>
         <Surface width={width} height={width}>
             {pieCharts.map((item, index) => (
-              <Group x={width / 2} y={width / 2}>
+              <Group x={width / 2} y={width / 2} key={index}>
                 <Shape
                   key={`pie_shape_${index}`}
                   fill={item.color}
