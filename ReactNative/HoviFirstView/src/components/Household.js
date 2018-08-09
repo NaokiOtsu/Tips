@@ -3,60 +3,57 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, ScrollView, Text, View, TouchableOpacity } from "react-native";
 
-import Footer from "./components/Footer";
-import MoneyState from "./components/MoneyState";
+import Footer from "./Footer";
+import MoneyState from "./MoneyState";
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <ScrollView>
-          <View style={styles.dateWrapper}>
-            <Text>＜</Text>
-            <Text>2018年6月</Text>
-            <Text>＞</Text>
-          </View>
-          <MoneyState isHousehold={true} />
-          <Text style={styles.stateCautionText}>
-            {`前月よりも+18%消費が速いペースとなります。\n主に「食費」勘定科目のペースが他項目に比べ早いです。`}
-          </Text>
-          <Text style={styles.costTitle}>支出内訳</Text>
-          <View style={styles.costSortButton}>
-            <TouchableOpacity style={styles.moneySortButton}>
-              <Text style={styles.moneySortButtonText}>金額順</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.ratioSortButton}>
-              <Text style={styles.ratioSortButtonText}>対比順</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.costList}>
-            <Text style={styles.contTitle}>食費</Text>
-            <Text style={styles.costValue}>36,444円</Text>
-            <Text style={styles.contRatio}>60% ></Text>
-          </View>
-          <View style={styles.costList}>
-            <Text style={styles.contTitle2}>娯楽</Text>
-            <Text style={styles.costValue}>16,444円</Text>
-            <Text style={styles.contRatio}>30% ></Text>
-          </View>
-          <View style={styles.costList}>
-            <Text style={styles.contTitle3}>交通費</Text>
-            <Text style={styles.costValue}>6,444円</Text>
-            <Text style={styles.contRatio}>40% ></Text>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.inputTimeLineButton}>入金履歴タイムライン▼</Text>
-          </TouchableOpacity>
-        </ScrollView>
-        <Footer />
+const Household = ({ createdAt, costRatio, mostCostName }) => (
+  <View style={styles.container}>
+    <ScrollView>
+      <View style={styles.dateWrapper}>
+        <Text>＜</Text>
+        <Text>{createdAt}</Text>
+        <Text>＞</Text>
       </View>
-    );
-  }
-}
+      <MoneyState isHousehold={true} />
+      <Text style={styles.stateCautionText}>
+        {`前月よりも${costRatio}%消費が速いペースとなります。\n主に「${mostCostName}」勘定科目のペースが他項目に比べ早いです。`}
+      </Text>
+      <Text style={styles.costTitle}>支出内訳</Text>
+      <View style={styles.costSortButton}>
+        <TouchableOpacity style={styles.moneySortButton}>
+          <Text style={styles.moneySortButtonText}>金額順</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.ratioSortButton}>
+          <Text style={styles.ratioSortButtonText}>対比順</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.costList}>
+        <Text style={styles.contTitle}>食費</Text>
+        <Text style={styles.costValue}>36,444円</Text>
+        <Text style={styles.contRatio}>60% ></Text>
+      </View>
+      <View style={styles.costList}>
+        <Text style={styles.contTitle2}>娯楽</Text>
+        <Text style={styles.costValue}>16,444円</Text>
+        <Text style={styles.contRatio}>30% ></Text>
+      </View>
+      <View style={styles.costList}>
+        <Text style={styles.contTitle3}>交通費</Text>
+        <Text style={styles.costValue}>6,444円</Text>
+        <Text style={styles.contRatio}>40% ></Text>
+      </View>
+      <TouchableOpacity>
+        <Text style={styles.inputTimeLineButton}>入金履歴タイムライン▼</Text>
+      </TouchableOpacity>
+    </ScrollView>
+    <Footer />
+  </View>
+);
+
+export default Household;
 
 const styles = StyleSheet.create({
   container: {

@@ -7,16 +7,16 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, ScrollView, Text, View } from "react-native";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Profile from "./components/Profile";
-import MoneyState from "./components/MoneyState";
-import InputLink from "./components/InputLink";
-import CostManagement from "./components/CostManagement";
-import Predict from "./components/Predict";
-import CostManagementChange from "./components/CostManagementChange";
-import Recent from "./components/Recent";
-import News from "./components/News";
+import Header from "./Header";
+import Footer from "./Footer";
+import Profile from "./Profile";
+import MoneyState from "./MoneyState";
+import InputLink from "./InputLink";
+import CostManagement from "./CostManagement";
+import Predict from "./Predict";
+import CostManagementChange from "./CostManagementChange";
+import Recent from "./Recent";
+import News from "./News";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
