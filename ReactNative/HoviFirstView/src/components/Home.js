@@ -33,7 +33,20 @@ export default class App extends Component<Props> {
         <ScrollView>
           <Header />
           <Profile />
-          <MoneyState />
+          <MoneyState
+            costValue={10000}
+            ratioValue={100}
+            incomeValue={200000}
+            paymentValue={20000 - 10000}
+            pieData={[
+              { value: 10000, name: '趣味', color: '#F44336' },
+              { value: 20000, name: '保険', color: '#E91E63' },
+              { value: 20000, name: '交際費', color: '#9C27B0' },
+              { value: 10000, name: '家賃', color: '#673AB7' },
+              { value: 30000, name: '食費', color: '#3F51B5' },
+              { value: 10000, name: '雑費', color: '#2196F3' },
+            ]}
+          />
           <InputLink />
           <CostManagement />
           <Predict />

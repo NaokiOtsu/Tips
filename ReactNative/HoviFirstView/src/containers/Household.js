@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 // import { toggleTodo } from '../actions'
 import Household from '../components/Household'
 
-// const costValue = pieData.reduce((a, b) => a + b.number, 0);
-// const beforeCostValue = beforePieData.reduce((a, b) => a + b.number, 0);
+// const costValue = pieData.reduce((a, b) => a + b.value, 0);
+// const beforeCostValue = beforePieData.reduce((a, b) => a + b.value, 0);
 // const paymentValue = incomeValue - costValue;
 // const ratioValue = Math.floor(costValue / beforeCostValue * 100);
 
@@ -11,15 +11,15 @@ import Household from '../components/Household'
 export const getCurrentCreatedAt = state => state.currentBalanceSheet.createdAt;
 
 // 現在のコスト合計を返す
-export const getCurrentCostTotal = state => state.currentBalanceSheet.costs.reduce((total, cost) => total + cost.number, 0);
+export const getCurrentCostTotal = state => state.currentBalanceSheet.costs.reduce((total, cost) => total + cost.value, 0);
 
 // 先月のコスト合計を返す
-export const getBeforeCostTotal = state => state.beforeBalanceSheet.costs.reduce((total, cost) => total + cost.number, 0);
+export const getBeforeCostTotal = state => state.beforeBalanceSheet.costs.reduce((total, cost) => total + cost.value, 0);
 
 // 先月と今月の比率を返す
 export const getRatio = ({ current, before }) => Math.floor(current / before * 100) - 100;
 
-// 先月と比べて、N%早いか遅いかを返す
+// 先月と比べた時の比率を返す
 export const getCostRatio = state => {
   const currentCostTotal = getCurrentCostTotal(state);
   const beforeCostTotal = getBeforeCostTotal(state);
@@ -31,23 +31,34 @@ export const getCostRatio = state => {
   return costRatio > 0 ? `+${costRatio}` : costRatio;
 };
 
-// 一番消費が早い項目を返す
+// 一番消費が早い項目名を返す
 export const getMostCostName = state => {
-  const ratios = state.currentBalanceSheet.costs.map((cost, index) => {
-    return {
+  const ratios = state.currentBalanceSheet.costs
+    .map((cost, index) => ({
       name: cost.name,
-      ratio: getRatio({
-        current: cost.number,
-        before: state.beforeBalanceSheet.costs[index].number,
+      value: getRatio({
+        current: cost.value,
+        before: state.beforeBalanceSheet.costs[index].value,
       }),
-    }
-  });
-  console.log(ratios)
-
-  return Math.max(...ratios);
+    }));
+  const max = Math.max(...ratios.map(ratio => ratio.value));
+  return ratios.find(ratio => (ratio.value) === max).name;
 };
 
-
+// 支出内訳のリストを返す
+export const getCostList = state => {
+  return state.currentBalanceSheet.costs
+    .map((cost, index) => ({
+      name: cost.name,
+      value: cost.value,
+      color: cost.color,
+      ratio: getRatio({
+        current: cost.value,
+        before: state.beforeBalanceSheet.costs[index].value,
+      }),
+    }))
+    .slice(0, 3)
+};
 
 const mapStateToProps = state => ({
   createdAt: getCurrentCreatedAt(state),
@@ -55,13 +66,14 @@ const mapStateToProps = state => ({
   costRatio: getCostRatio(state),
 
   mostCostName: getMostCostName(state),
-  // balanceSheet: state.balanceSheet,
 
-  // costValue: state.balanceSheet.pieData.reduce((a, b) => a + b.number, 0),
+  costList: getCostList(state),
 
-  // beforeCostValue: state.balanceSheet.beforePieData.reduce((a, b) => a + b.number, 0),
+  costValue: getCurrentCostTotal(state),
 
-  // paymentValue: console.log(777, costValue)
+  incomeValue: state.currentBalanceSheet.income,
+
+  currentCosts: state.currentBalanceSheet.costs,
 })
 
 // const mapDispatchToProps = dispatch => ({

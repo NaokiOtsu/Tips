@@ -9,19 +9,31 @@ import { StyleSheet, ScrollView, Text, View, TouchableOpacity } from "react-nati
 import Footer from "./Footer";
 import MoneyState from "./MoneyState";
 
-const Household = ({ createdAt, costRatio, mostCostName }) => (
+const Household = ({ createdAt, costRatio, mostCostName, costList, costValue, incomeValue, currentCosts }) => (
   <View style={styles.container}>
     <ScrollView>
+
       <View style={styles.dateWrapper}>
         <Text>＜</Text>
         <Text>{createdAt}</Text>
         <Text>＞</Text>
       </View>
-      <MoneyState isHousehold={true} />
+
+      <MoneyState
+        isHousehold={true}
+        costValue={costValue}
+        ratioValue={costRatio}
+        incomeValue={incomeValue}
+        paymentValue={incomeValue - costValue}
+        pieData={currentCosts}
+      />
+
       <Text style={styles.stateCautionText}>
         {`前月よりも${costRatio}%消費が速いペースとなります。\n主に「${mostCostName}」勘定科目のペースが他項目に比べ早いです。`}
       </Text>
+
       <Text style={styles.costTitle}>支出内訳</Text>
+
       <View style={styles.costSortButton}>
         <TouchableOpacity style={styles.moneySortButton}>
           <Text style={styles.moneySortButtonText}>金額順</Text>
@@ -30,24 +42,19 @@ const Household = ({ createdAt, costRatio, mostCostName }) => (
           <Text style={styles.ratioSortButtonText}>対比順</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.costList}>
-        <Text style={styles.contTitle}>食費</Text>
-        <Text style={styles.costValue}>36,444円</Text>
-        <Text style={styles.contRatio}>60% ></Text>
-      </View>
-      <View style={styles.costList}>
-        <Text style={styles.contTitle2}>娯楽</Text>
-        <Text style={styles.costValue}>16,444円</Text>
-        <Text style={styles.contRatio}>30% ></Text>
-      </View>
-      <View style={styles.costList}>
-        <Text style={styles.contTitle3}>交通費</Text>
-        <Text style={styles.costValue}>6,444円</Text>
-        <Text style={styles.contRatio}>40% ></Text>
-      </View>
+
+      {costList.map((cost, index) => (
+        <View style={styles.costList} key={index}>
+          <Text style={styles.contTitle}>{cost.name}</Text>
+          <Text style={styles.costValue}>{cost.value}円</Text>
+          <Text style={styles.contRatio}>{cost.ratio}% ></Text>
+        </View>
+      ))}
+
       <TouchableOpacity>
         <Text style={styles.inputTimeLineButton}>入金履歴タイムライン▼</Text>
       </TouchableOpacity>
+
     </ScrollView>
     <Footer />
   </View>
@@ -120,34 +127,16 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
   contTitle: {
+    width: 80,
     marginRight: 5,
     padding: 5,
     color: '#fff',
+    textAlign: 'center',
     backgroundColor: '#2196F3',
     overflow: "hidden",
     borderRadius: 5,
     borderWidth: 1,
     borderColor: "#2196F3",
-  },
-  contTitle2: {
-    marginRight: 5,
-    padding: 5,
-    color: '#fff',
-    backgroundColor: '#673AB7',
-    overflow: "hidden",
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "#673AB7",
-  },
-  contTitle3: {
-    marginRight: 5,
-    padding: 5,
-    color: '#fff',
-    backgroundColor: '#3F51B5',
-    overflow: "hidden",
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "#3F51B5",
   },
   costValue: {
     flex: 1,

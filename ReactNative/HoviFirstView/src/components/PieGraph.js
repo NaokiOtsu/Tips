@@ -8,7 +8,7 @@ const ARTText = ART.Text;
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    const arcs = d3shape.pie().value(item => item.number)(this.props.pieData);
+    const arcs = d3shape.pie().value(item => item.value)(this.props.pieData);
     const pieCharts = arcs.map(arc => {
       const path = d3shape
         .arc()

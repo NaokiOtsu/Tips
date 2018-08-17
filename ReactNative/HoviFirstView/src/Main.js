@@ -11,9 +11,15 @@ import {
 import Home from './components/Home';
 import Household from './containers/Household';
 import { YellowBox } from 'react-native';
+import { getAllData } from './actions';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
 const store = createStore(reducers)
+
+store.dispatch({
+  type: 'fuga',
+  payload: 222
+});
 
 const scenes = Actions.create(
   <Scene key="root">
