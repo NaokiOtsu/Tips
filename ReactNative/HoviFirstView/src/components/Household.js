@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 import React from "react";
 import { StyleSheet, ScrollView, Text, View, TouchableOpacity } from "react-native";
 
@@ -29,7 +24,8 @@ const Household = ({ createdAt, costRatio, mostCostName, costList, costValue, in
       />
 
       <Text style={styles.stateCautionText}>
-        {`前月よりも${costRatio}%消費が速いペースとなります。\n主に「${mostCostName}」勘定科目のペースが他項目に比べ早いです。`}
+        {`前月よりも${costRatio}%消費が${costRatio > 0 ? '早い' : '遅い'}ペースとなります。`}
+        {costRatio > 0 ? `\n主に「${mostCostName}」勘定科目のペースが他項目に比べ早いです。` : ''}
       </Text>
 
       <Text style={styles.costTitle}>支出内訳</Text>

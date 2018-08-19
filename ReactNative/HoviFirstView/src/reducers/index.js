@@ -28,13 +28,5 @@ const initialState = {
 };
 
 export default combineReducers({
-  currentBalanceSheet: (state = initialState) => (state.currentBalanceSheet),
-  beforeBalanceSheet: (state = initialState) => (state.beforeBalanceSheet),
-  hoge: (state = initialState, action) => {
-    if (action.type === 'fuga') {
-      return state;
-    } else {
-      return state;
-    }
-  }
+  balanceSheet: (state = initialState) => state,
 })

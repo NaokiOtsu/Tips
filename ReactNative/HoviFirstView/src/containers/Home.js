@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import Household from '../components/Household'
+import Home from '../components/Home'
 
 import {
   getCurrentCreatedAt,
@@ -22,4 +22,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-)(Household)
+)(Home)

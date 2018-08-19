@@ -25,40 +25,30 @@ const instructions = Platform.select({
     "Shake or press menu button for dev menu"
 });
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <ScrollView>
-          <Header />
-          <Profile />
-          <MoneyState
-            costValue={10000}
-            ratioValue={100}
-            incomeValue={200000}
-            paymentValue={20000 - 10000}
-            pieData={[
-              { value: 10000, name: '趣味', color: '#F44336' },
-              { value: 20000, name: '保険', color: '#E91E63' },
-              { value: 20000, name: '交際費', color: '#9C27B0' },
-              { value: 10000, name: '家賃', color: '#673AB7' },
-              { value: 30000, name: '食費', color: '#3F51B5' },
-              { value: 10000, name: '雑費', color: '#2196F3' },
-            ]}
-          />
-          <InputLink />
-          <CostManagement />
-          <Predict />
-          <CostManagementChange />
-          <Recent />
-          <News />
-        </ScrollView>
-        <Footer />
-      </View>
-    );
-  }
-}
+const Home = ({ costRatio, costValue, incomeValue, currentCosts }) => (
+  <View style={styles.container}>
+    <ScrollView>
+      <Header />
+      <Profile />
+      <MoneyState
+        costValue={costValue}
+        ratioValue={costRatio}
+        incomeValue={incomeValue}
+        paymentValue={incomeValue - costValue}
+        pieData={currentCosts}
+      />
+      <InputLink />
+      <CostManagement />
+      <Predict />
+      <CostManagementChange />
+      <Recent />
+      <News />
+    </ScrollView>
+    <Footer />
+  </View>
+);
+
+export default Home;
 
 const styles = StyleSheet.create({
   container: {

@@ -1,30 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import {
   Actions,
 } from 'react-native-router-flux';
+import moment from 'moment';
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.header}>
-        <View style={styles.logo}>
-          <Text style={styles.logoText} onPress={Actions.Household}>Touch Life</Text>
-        </View>
-        <View style={styles.date}>
-          <View style={styles.todayWrapper}>
-            <Text style={[styles.today]}>1</Text>
-            <Text style={[styles.today]}>0</Text>
-            <Text style={[styles.today]}>1</Text>
-            <Text style={[styles.today]}>1</Text>
-          </View>
-          <Text style={styles.period}>09月25日〜10月25日</Text>
-        </View>
+const month = moment().format('MM');
+const month0 = month.split('')[0];
+const month1 = month.split('')[1];
+
+const date = moment().format('DD');
+const date0 = date.split('')[0];
+const date1 = date.split('')[1];
+
+const today = moment().format('MM月DD日');
+const todayNextMonth = moment().add(1, 'months').format('MM月DD日');
+
+export default () => (
+  <View style={styles.header}>
+    <View style={styles.logo}>
+      <Text style={styles.logoText} onPress={Actions.Household}>Touch Life</Text>
+    </View>
+    <View style={styles.date}>
+      <View style={styles.todayWrapper}>
+        <Text style={[styles.today]}>{month0}</Text>
+        <Text style={[styles.today]}>{month1}</Text>
+        <Text style={[styles.today]}>{date0}</Text>
+        <Text style={[styles.today]}>{date1}</Text>
       </View>
-    );
-  }
-}
+      <Text style={styles.period}>{today}〜{todayNextMonth}</Text>
+    </View>
+  </View>
+);
 
 const styles = StyleSheet.create({
   header: {
