@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 import PieGraph from './PieGraph';
@@ -6,28 +6,6 @@ import PieGraph from './PieGraph';
 import {
   Actions,
 } from 'react-native-router-flux';
-
-// const incomeValue = 300000;
-// const pieData = [
-//   { number: 40000, name: '趣味', color: '#F44336' },
-//   { number: 20000, name: '保険', color: '#E91E63' },
-//   { number: 20000, name: '交際費', color: '#9C27B0' },
-//   { number: 10000, name: '家賃', color: '#673AB7' },
-//   { number: 30000, name: '食費', color: '#3F51B5' },
-//   { number: 60000, name: '雑費', color: '#2196F3' },
-// ];
-// const beforePieData = [
-//   { number: 20000, name: '趣味', color: '#F44336' },
-//   { number: 10000, name: '保険', color: '#E91E63' },
-//   { number: 10000, name: '交際費', color: '#9C27B0' },
-//   { number: 50000, name: '家賃', color: '#673AB7' },
-//   { number: 10000, name: '食費', color: '#3F51B5' },
-//   { number: 10000, name: '雑費', color: '#2196F3' },
-// ];
-// const costValue = pieData.reduce((a, b) => a + b.number, 0);
-// const beforeCostValue = beforePieData.reduce((a, b) => a + b.number, 0);
-// const paymentValue = incomeValue - costValue;
-// const ratioValue = Math.floor(costValue / beforeCostValue * 100);
 
 const MoneyState = ({ isHousehold, costValue, ratioValue, incomeValue, paymentValue, pieData }) => (
   <View style={styles.moneyState}>
@@ -58,15 +36,15 @@ const MoneyState = ({ isHousehold, costValue, ratioValue, incomeValue, paymentVa
           <View style={styles.value}>
             <View style={styles.income}>
               <Text style={styles.incomeTitle}>収入</Text>
-              <Text style={styles.incomeValue}>{incomeValue}</Text>
+              <Text style={styles.incomeValue}>{incomeValue.toLocaleString()}</Text>
             </View>
             <View style={styles.cost}>
               <Text style={styles.costTitle}>支出</Text>
-              <Text style={styles.costValue}>{costValue}</Text>
+              <Text style={styles.costValue}>{costValue.toLocaleString()}</Text>
             </View>
             <View style={styles.payment}>
               <Text style={styles.paymentTitle}>収支</Text>
-              <Text style={styles.paymentValue}>{paymentValue}</Text>
+              <Text style={styles.paymentValue}>{paymentValue.toLocaleString()}</Text>
             </View>
           </View>
         );

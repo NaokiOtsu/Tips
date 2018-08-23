@@ -1,46 +1,34 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, ART } from "react-native";
 
+import {
+  getMaxCurrentValue,
+  getRatio,
+} from '../helpers';
+
 const { Surface, Group, Shape } = ART;
 const ARTText = ART.Text;
 
 const costs = [
   {
-    id: 1,
     name: '食費',
-    currentValue: 89999,
+    value: 89999,
     beforeName: '2016年10月',
     beforeValue: 35000,
   },
   {
-    id: 2,
     name: '娯楽',
-    currentValue: 60000,
+    value: 60000,
     beforeName: '2016年10月',
     beforeValue: 70000,
   },
   {
-    id: 3,
     name: '交通費',
-    currentValue: 15000,
+    value: 15000,
     beforeName: '2016年10月',
     beforeValue: 30000,
   },
 ];
-
-function getMaxCurrentValue() {
-  let result = 0;
-  costs.reduce((a, b) => {
-    if (a.currentValue < b.currentValue) {
-      result = b.currentValue;
-      return b;
-    } else {
-      result = a.currentValue;
-      return a;
-    }
-  })
-  return result;
-}
 
 function getBaseValue(currentValue) {
   const digit = currentValue.toString().length - 1; // 桁数
@@ -51,12 +39,14 @@ function getBaseValue(currentValue) {
 
 type Props = {};
 export default class App extends Component<Props> {
-  constructor(props) {
-    super(props);
+  constructor({ costs, beforeCosts }) {
+    super();
+    console.log(getRatio({ current: costs[0].value, before: beforeCosts[0].value }))
     this.state = {
       graphWidth: 0,
       graphHeight: 0,
     };
+    this.maxCurrentValue = getMaxCurrentValue(costs);
   }
 
   onLayoutGraph = e => {
@@ -73,19 +63,17 @@ export default class App extends Component<Props> {
   }
 
   beforeGraphD(cost) {
-    const beforeValue = cost.beforeValue;
-    const maxCurrentValue = getMaxCurrentValue();
-    const baseValue = getBaseValue(maxCurrentValue);
+    const value = cost.value;
+    const baseValue = getBaseValue(this.maxCurrentValue);
     const magnificate = this.state.graphWidth / 100;
-    const w = beforeValue / baseValue * (100 * magnificate);
+    const w = value / baseValue * (100 * magnificate);
     const h = this.state.graphHeight;
     return `M0,14 L${w},14 ${w},${h} 0,${h}`;
   }
 
   currentGraphD(cost) {
-    const currentValue = cost.currentValue;
-    const maxCurrentValue = getMaxCurrentValue();
-    const baseValue = getBaseValue(maxCurrentValue);
+    const currentValue = cost.value;
+    const baseValue = getBaseValue(this.maxCurrentValue);
     const magnificate = this.state.graphWidth / 100;
     const w = currentValue / baseValue * (100 * magnificate);
     const h = this.state.graphHeight;
@@ -93,22 +81,25 @@ export default class App extends Component<Props> {
   }
 
   beforeTextX(cost) {
-    const beforeValue = cost.beforeValue;
-    const maxCurrentValue = getMaxCurrentValue();
-    const baseValue = getBaseValue(maxCurrentValue);
+    const value = cost.value;
+    const baseValue = getBaseValue(this.maxCurrentValue);
     const magnificate = this.state.graphWidth / 100;
-    const x = beforeValue / baseValue * (100 * magnificate) - 5;
+    const x = value / baseValue * (100 * magnificate) - 5;
     return x;
   }
 
-  costRatio(cost) {
-    const beforeValue = cost.beforeValue;
-    const currentValue = cost.currentValue;
-    const ratio = currentValue / beforeValue * 100;
-    return Math.round(ratio) - 100;
+  costRatio(cost, beforeCost) {
+    return getRatio({
+      current: cost.value,
+      before: beforeCost.value,
+    });
   }
 
   render() {
+    const costs = this.props.costs;
+    const beforeCosts = this.props.beforeCosts;
+    const beforeDate = this.props.beforeDate;
+
     return (
       <View style={styles.container}>
         <View style={styles.titleWrapper}>
@@ -116,9 +107,9 @@ export default class App extends Component<Props> {
           <Text style={styles.caution}>※本日時点昨年同日比</Text>
         </View>
         <View style={styles.costWrapper}>
-          {costs.map(cost => {
+          {costs.map((cost, index) => {
             return (
-              <View style={styles.costList} key={cost.id.toString()}>
+              <View style={styles.costList} key={index}>
                 <Text style={styles.contTitle}>{cost.name}</Text>
                 <View onLayout={this.onLayoutGraph} style={styles.costGraph}>
                   <Surface width={400} height={this.state.graphHeight}>
@@ -132,14 +123,14 @@ export default class App extends Component<Props> {
                         font={`10px "Helvetica Neue", "Helvetica", Arial`}
                         fill="#000000"
                         alignment="left"
-                        x={this.beforeTextX(cost)}
+                        x={this.beforeTextX(beforeCosts[index])}
                         y={0}
                       >
-                        ▼ 2016年10月
+                        {`▼ ${beforeDate}`}
                       </ARTText>
                       <Shape
                         fill="#ffc493"
-                        d={this.beforeGraphD(cost)}
+                        d={this.beforeGraphD(beforeCosts[index])}
                       />
                       <Shape
                         fill="#e96900"
@@ -149,9 +140,9 @@ export default class App extends Component<Props> {
                   </Surface>
                 </View>
                 <View style={styles.costValueWrapper}>
-                  <Text style={styles.costValue}>{cost.currentValue.toLocaleString()}円</Text>
-                  <Text style={[styles.costRatio, this.costRatio(cost) > 0 ? styles.costRatioFast : styles.costRatioSlow]}>
-                    ({this.costRatio(cost) > 0 ? '+' : ''}{this.costRatio(cost)}%{this.costRatio(cost) > 0 ? '早い' : '遅い'})
+                  <Text style={styles.costValue}>{cost.value.toLocaleString()}円</Text>
+                  <Text style={[styles.costRatio, this.costRatio(cost, beforeCosts[index]) > 100 ? styles.costRatioFast : styles.costRatioSlow]}>
+                    ({this.costRatio(cost, beforeCosts[index])}%{this.costRatio(cost, beforeCosts[index]) > 100 ? '早い' : '遅い'})
                   </Text>
                 </View>
               </View>

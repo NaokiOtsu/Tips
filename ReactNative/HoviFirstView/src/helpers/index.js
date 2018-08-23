@@ -8,7 +8,7 @@ export const getCurrentCostTotal = state => state.balanceSheet.currentBalanceShe
 export const getBeforeCostTotal = state => state.balanceSheet.beforeBalanceSheet.costs.reduce((total, cost) => total + cost.value, 0);
 
 // 先月と今月の比率を返す
-export const getRatio = ({ current, before }) => Math.floor(current / before * 100) - 100;
+export const getRatio = ({ current, before }) => Math.floor(current / before * 100);
 
 // 先月と比べた時の比率を返す
 export const getCostRatio = state => {
@@ -19,7 +19,7 @@ export const getCostRatio = state => {
     before: beforeCostTotal,
   });
 
-  return costRatio > 0 ? `+${costRatio}` : costRatio;
+  return costRatio;
 };
 
 // 一番消費が早い項目名を返す
@@ -50,3 +50,18 @@ export const getCostList = state => {
     }))
     .slice(0, 3)
 };
+
+// 支出の中で一番大きい金額を返す
+export const getMaxCurrentValue = costs => {
+  let result = 0;
+  costs.reduce((a, b) => {
+    if (a.value < b.value) {
+      result = b.value;
+      return b;
+    } else {
+      result = a.value;
+      return a;
+    }
+  })
+  return result;
+}

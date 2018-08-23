@@ -42,7 +42,7 @@ const Household = ({ createdAt, costRatio, mostCostName, costList, costValue, in
       {costList.map((cost, index) => (
         <View style={styles.costList} key={index}>
           <Text style={styles.contTitle}>{cost.name}</Text>
-          <Text style={styles.costValue}>{cost.value}円</Text>
+          <Text style={styles.costValue}>{cost.value.toLocaleString()}円</Text>
           <Text style={styles.contRatio}>{cost.ratio}% ></Text>
         </View>
       ))}

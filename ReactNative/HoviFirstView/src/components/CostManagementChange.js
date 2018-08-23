@@ -6,7 +6,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>前年比率 +121%増 予測</Text>
+        <Text style={styles.text}>あなたに合わせた支出管理項目に変更可能です。</Text>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>支出管理項目を変更</Text>
         </TouchableOpacity>
@@ -20,10 +20,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 10
+    padding: 10,
   },
   text: {
-    marginRight: 10
+    flex: 1,
+    marginRight: 10,
+    lineHeight: 16,
   },
   button: {
     padding: 20,

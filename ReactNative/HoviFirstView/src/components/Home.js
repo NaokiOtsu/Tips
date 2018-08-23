@@ -25,7 +25,7 @@ const instructions = Platform.select({
     "Shake or press menu button for dev menu"
 });
 
-const Home = ({ costRatio, costValue, incomeValue, currentCosts }) => (
+const Home = ({ costRatio, costValue, incomeValue, currentCosts, beforeCosts, beforeDate }) => (
   <View style={styles.container}>
     <ScrollView>
       <Header />
@@ -38,10 +38,14 @@ const Home = ({ costRatio, costValue, incomeValue, currentCosts }) => (
         pieData={currentCosts}
       />
       <InputLink />
-      <CostManagement />
+      <CostManagement
+        costs={currentCosts.slice(0, 3)}
+        beforeCosts={beforeCosts.slice(0, 3)}
+        beforeDate={beforeDate} />
       <Predict />
       <CostManagementChange />
-      <Recent />
+      <Recent
+        costs={currentCosts.slice(0, 3)} />
       <News />
     </ScrollView>
     <Footer />
