@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, ART } from "react-native";
+import { StyleSheet, Text, View, ART } from "react-native";
 
 import {
   getMaxCurrentValue,
@@ -8,27 +8,6 @@ import {
 
 const { Surface, Group, Shape } = ART;
 const ARTText = ART.Text;
-
-const costs = [
-  {
-    name: '食費',
-    value: 89999,
-    beforeName: '2016年10月',
-    beforeValue: 35000,
-  },
-  {
-    name: '娯楽',
-    value: 60000,
-    beforeName: '2016年10月',
-    beforeValue: 70000,
-  },
-  {
-    name: '交通費',
-    value: 15000,
-    beforeName: '2016年10月',
-    beforeValue: 30000,
-  },
-];
 
 function getBaseValue(currentValue) {
   const digit = currentValue.toString().length - 1; // 桁数

@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from "react";
+import React from "react";
 import { Platform, StyleSheet, ScrollView, Text, View } from "react-native";
 
 import Header from "./Header";
@@ -18,12 +18,12 @@ import CostManagementChange from "./CostManagementChange";
 import Recent from "./Recent";
 import News from "./News";
 
-const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
-});
+// const instructions = Platform.select({
+//   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
+//   android:
+//     "Double tap R on your keyboard to reload,\n" +
+//     "Shake or press menu button for dev menu"
+// });
 
 const Home = ({ costRatio, costValue, incomeValue, currentCosts, beforeCosts, beforeDate }) => (
   <View style={styles.container}>

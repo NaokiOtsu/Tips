@@ -27,6 +27,49 @@ const initialState = {
   },
 };
 
+// 支出
+// {
+//   id: 1, // 追加ごとにインクリメント
+//   key: 'key1', // このkeyを元にデータを集計する
+//   value: 1000, // 金額
+//   name: '趣味', // 項目
+//   date: '2018-05-05 00:00:00', // ○年○月○日 ○時○分のデータか
+//   createdAt: '2018-05-05 00:00:00', // 作られた日
+//   updatedAt: '2018-05-05 00:00:00', // 最後にupdateされた日
+// }
+
+// 収入
+// {
+//   id: 1, // 追加ごとにインクリメント
+//   value: 300000, // 金額
+//   date: '2018-05-05 00:00:00',  // ○年○月○日 ○時○分のデータか
+//   createdAt: '2018-05-05 00:00:00', // 作られた日
+//   updatedAt: '2018-05-05 00:00:00', // 最後にupdateされた日
+// }
+
+const state = {
+  costs: [
+    {
+      id: 1,
+      key: 'key1',
+      value: 1000,
+      name: '趣味',
+      date: '2018-05-05 00:00:00',
+      createdAt: '2018-05-05 00:00:00',
+      updatedAt: '2018-05-05 00:00:00',
+    }
+  ],
+  incomes: [
+    {
+      id: 1,
+      value: 300000,
+      date: '2018-05-05 00:00:00',
+      createdAt: '2018-05-05 00:00:00',
+      updatedAt: '2018-05-05 00:00:00',
+    },
+  ]
+}
+
 export default combineReducers({
   balanceSheet: (state = initialState) => state,
 })
